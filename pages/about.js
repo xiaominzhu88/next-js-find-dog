@@ -65,8 +65,6 @@ export default function About() {
           so you live fully in the moment with her, never fail to share her joy
           or delight in her innocence.
           <br />
-          There’s such beauty in the hard honesty of that, in accepting and
-          giving love while always aware that it comes with an unbearable price.
           <br />
           ⬇️
         </p>{' '}
@@ -96,6 +94,7 @@ export default function About() {
             margin-top: 2em;
             text-align: center;
             font-family: monospace;
+            font-size: 2em;
           }
           .about {
             text-align: center;

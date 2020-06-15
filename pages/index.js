@@ -2,7 +2,6 @@ import React from 'react';
 import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import Content from '../components/Content';
 
 export default function Home() {
   return (
@@ -13,7 +12,7 @@ export default function Home() {
       </Head>
 
       <Header />
-      <Content />
+      <h1>Home</h1>
       <Footer />
       <style jsx global>{`
         html,

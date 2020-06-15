@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 function Header() {
   const linkList = [
-    { name: 'Home', url: '/' },
+    { name: 'Home', url: '/home' },
     { name: 'About', url: '/about' },
     { name: 'Contact', url: '/contact' },
   ];
