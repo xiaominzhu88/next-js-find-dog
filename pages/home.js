@@ -77,7 +77,11 @@ export default function Home({ data }) {
 
         <div className={`current pic ${move}`}>
           <img src={pics[index]} alt="cute-dogs" />
-          <button>Our Stars</button>
+          <Link href="/star">
+            <a>
+              <button>Our Stars</button>
+            </a>
+          </Link>
         </div>
       </div>
 

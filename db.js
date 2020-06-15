@@ -1,9 +1,14 @@
-const dogs = [
+require('dotenv').config();
+
+const postgres = require('postgres');
+const sql = postgres();
+
+const starDogs = [
   {
     id: '1',
     className: 'activ',
     src: '/bullterrier.jpg',
-    url: '/home/1',
+    url: '/star/1',
     h3: 'Bullterrier',
     p: 'activity: 100',
   },
@@ -11,20 +16,27 @@ const dogs = [
     id: '2',
     className: 'middle',
     src: '/favicon.jpg',
-    url: '/home/2',
+    url: '/star/2',
     h3: 'Frenchy',
     p: 'activity:50',
   },
   {
     id: '3',
-    className: 'null',
+    className: 'low',
     src: '/englischedogge.jpg',
-    url: '/home/3',
+    url: '/star/3',
     h3: 'English bulldog',
     p: 'activity:0',
   },
 ];
 
-export function getDogsById(id) {
-  return dogs.find((dog) => dog.id === id);
+export function getDogs() {
+  return starDogs;
+}
+
+export async function getDogsById(id) {
+  const dogs = await sql`
+  select * from dogs WHERE id = ${id}
+  `;
+  return dogs;
 }
