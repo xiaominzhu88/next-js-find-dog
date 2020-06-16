@@ -9,6 +9,7 @@
     "migrate": "dotenv ley"
   },
   "dependencies": {
+    "@types/react": "^16.9.36",
     "dotenv": "^8.2.0",
     "dotenv-cli": "^3.1.0",
     "ley": "^0.5.0",
@@ -16,5 +17,9 @@
     "postgres": "^1.0.2",
     "react": "16.13.1",
     "react-dom": "16.13.1"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.13",
+    "typescript": "^3.9.5"
   }
 }

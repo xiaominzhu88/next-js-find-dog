@@ -3,8 +3,19 @@ import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Link from 'next/link';
+import { NextPageContext } from 'next';
 
-export default function Star(props) {
+type dogsList = {
+  id: string;
+  className: string;
+  src: string;
+  url: string;
+  h3: string;
+  p: string;
+};
+type Props = { dogsList: dogsList[] };
+
+export default function Star(props: Props) {
   return (
     <div>
       <Head>
@@ -20,6 +31,7 @@ export default function Star(props) {
             return (
               <li className={list.className} key={list.id}>
                 <div className="starDogs">
+                  {/* Use Typescript, for Link error add : yarn upgrade @types/react@latest  */}
                   <Link href={list.url}>
                     <a>
                       <img
@@ -99,7 +111,7 @@ export default function Star(props) {
     </div>
   );
 }
-export async function getServerSideProps(context) {
+export async function getServerSideProps(context: NextPageContext) {
   const { getDogs } = await import('../db.js');
 
   const dogsList = getDogs();
