@@ -1,6 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
 import Header from '../components/Header';
+import Auth from '../components/Auth';
+
 import Footer from '../components/Footer';
 
 export default function Home() {
@@ -12,7 +14,7 @@ export default function Home() {
       </Head>
 
       <Header />
-      <h1>Home</h1>
+      <Auth />
       <Footer />
       <style jsx global>{`
         html,

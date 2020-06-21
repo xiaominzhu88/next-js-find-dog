@@ -32,7 +32,7 @@ function Dog(props) {
       <div className="buttons">
         <Link href="/star">
           <a>
-            <button className="toStarButton">To Our Stars</button>
+            <button className="toStarButton">Our Stars</button>
           </a>
         </Link>
         <Link href="/home">
@@ -90,15 +90,17 @@ function Dog(props) {
           margin: 1em auto;
           width: 6em;
           height: 3em;
+          border: none;
           padding: 5px;
           border-radius: 5px;
           cursor: pointer;
-          box-shadow: 2px 3px 3px lightpink;
+          box-shadow: 6px 8px 10px lightpink;
           background-color: rgb(217, 236, 230);
           font-family: cursive;
           font-size: 1em;
           font-weight: bold;
           outline: none;
+          transition: background-color 1s ease-in;
         }
         button:hover {
           background-color: yellow;
@@ -120,7 +122,7 @@ export async function getServerSideProps(context) {
 
   const dogs = await getDogsById(context.params.id);
 
-  console.log('dog id', context.params);
+  console.log('dog id', context.params); // Log out: dog id {id: '1'}...
 
   if (dogs === undefined) {
     return { props: {} };

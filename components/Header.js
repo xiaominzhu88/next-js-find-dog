@@ -35,7 +35,7 @@ function Header() {
           justify-content: space-around;
           align-items: center;
           margin: 0 auto;
-          font-family: fantasy;
+          font-family: 'Bitter', serif;
           font-weight: 800;
           background-color: #e0e3e7;
           box-shadow: 3px 11px 18px #b3d1e9;
@@ -83,6 +83,7 @@ function Header() {
           a {
             font-size: 0.5em;
             line-height: 1.2em;
+            margin-bottom: 1em;
           }
           a:hover {
             text-decoration: underline;
