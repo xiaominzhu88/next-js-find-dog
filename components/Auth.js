@@ -67,13 +67,22 @@ export default function Auth() {
           background-color: beige;
           width: 50%;
           height: 60vh;
-          padding: 5em;
+          padding: 4em;
         }
         .right {
           background-image: url('/welcome.jpg');
           width: 50%;
-          height: 60vh;
-          background-position: 50% 50%;
+          height: 65vh;
+          background-position: 25% 75%;
+          animation: flybirds 16s linear infinite;
+        }
+        @keyframes flybirds {
+          from {
+            background-position: 0px 0px;
+          }
+          to {
+            background-position: 300px 0px;
+          }
         }
         label {
           color: pink;
@@ -91,7 +100,7 @@ export default function Auth() {
           background-color: pink;
         }
         h2 {
-          margin: 14em auto;
+          margin: 3em auto;
           color: pink;
           text-align: center;
         }
