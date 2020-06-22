@@ -88,7 +88,7 @@ export default function Star(props: Props) {
           box-shadow: 3px 11px 18px #7d7d7d7d;
         }
 
-        @media only screen and (max-width: 450px) {
+        @media (max-width: 450px) {
           h1 {
             font-size: 1.8em;
             margin-top: 2em;

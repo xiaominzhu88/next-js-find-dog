@@ -81,18 +81,22 @@ export default function Search() {
           </span>
         </button>
       </div>
-      <div>
-        <p>
-          {inputValue === '' ? (
-            info
-          ) : (
-            <ul>
-              {filtered.map((name, i) => {
-                return <li key={i}>{name}</li>;
-              })}
-            </ul>
-          )}
-        </p>
+      <div className="table">
+        <h3>
+          <span className="span">{filtered.length}</span> Breeds for you{' '}
+          <span role="img" aria-label="emoji">
+            💝
+          </span>
+        </h3>
+        {inputValue === '' ? (
+          info
+        ) : (
+          <ul>
+            {filtered.map((name, i) => {
+              return <li key={i}> {name}</li>;
+            })}
+          </ul>
+        )}
       </div>
       <Footer />
       <style jsx>{`
@@ -132,12 +136,30 @@ export default function Search() {
           transition: transformY(4px);
           background-color: rgb(235, 208, 121);
         }
+        .table,
         ul,
-        p {
+        h3 {
           text-align: center;
           list-style: none;
           font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
           line-height: 2em;
+          margin: 1em auto;
+          background-color: #f8e5e8;
+          border-radius: 15px;
+          width: 60%;
+          padding: 1em;
+        }
+        .span {
+          color: #4b8ada;
+          font-size: 1.2em;
+        }
+        @media (max-width: 450px) {
+          .table {
+            font-size: 0.7em;
+            line-height: 1em;
+            margin: 1em auto;
+            padding: 0.5;
+          }
         }
       `}</style>
     </div>
