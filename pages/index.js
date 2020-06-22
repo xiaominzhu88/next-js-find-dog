@@ -13,9 +13,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header />
+      {/* <Header /> */}
       <Auth />
-      <Footer />
+      {/* <Footer /> */}
       <style jsx global>{`
         html,
         body {
@@ -28,6 +28,7 @@ export default function Home() {
 
         * {
           box-sizing: border-box;
+          margin: 2em auto;
         }
         .start {
           margin: 2em auto;

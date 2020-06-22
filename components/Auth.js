@@ -96,7 +96,7 @@ export default function Auth() {
         }
         .submit {
           width: 5em;
-          margin: 2em auto;
+          margin: 1em auto;
           background-color: pink;
         }
         h2 {
@@ -123,6 +123,13 @@ export default function Auth() {
             margin: 2em auto;
             color: pink;
             text-align: center;
+          }
+          input {
+            margin: 0 auto;
+          }
+          .submit {
+            width: 5em;
+            margin: 1em auto;
           }
         }
       `}</style>
