@@ -33,7 +33,7 @@ export default function Search() {
         return error;
       });
   };
-  console.log(searchDogName);
+  //console.log(searchDogName);
 
   function showValue(e) {
     setInputValue(e.target.value);
@@ -83,7 +83,10 @@ export default function Search() {
       </div>
       <div className="table">
         <h3>
-          <span className="span">{filtered.length}</span> Breeds for you{' '}
+          <span className="span">
+            {inputValue !== '' ? filtered.length : '0'}
+          </span>{' '}
+          Breeds for you{' '}
           <span role="img" aria-label="emoji">
             💝
           </span>

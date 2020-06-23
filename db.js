@@ -40,3 +40,10 @@ export async function getDogsById(id) {
   `;
   return dogs;
 }
+
+export async function getFetchedDogsById(id) {
+  const fetchedDogs = await sql`
+  select * from fetchedDogs WHERE id = ${id}
+  `;
+  return fetchedDogs;
+}
