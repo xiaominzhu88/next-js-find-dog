@@ -8,6 +8,7 @@ function FetchedDog(props) {
   if (!props.fetchedDogs) return <div>Dogs not found!</div>;
 
   console.log(props.fetchedDogs);
+  console.log(props.fetchedDogs.name);
 
   return (
     <div>
@@ -33,9 +34,9 @@ function FetchedDog(props) {
         <p>Temperament: {props.fetchedDogs.temperament}</p>
       </main>
       <div className="buttons">
-        <Link href="/searchdog">
+        <Link href="/search">
           <a>
-            <button className="toStarButton">List</button>
+            <button className="toStarButton">To Search</button>
           </a>
         </Link>
         <Link href="/home">

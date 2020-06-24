@@ -47,3 +47,10 @@ export async function getFetchedDogsById(id) {
   `;
   return fetchedDogs;
 }
+
+//export async function getFetchedDogsByName(name) {
+//  const dogName = await sql`
+//  select * from fetchedDogs WHERE name = ${name}
+//  `;
+//  return dogName;
+//}

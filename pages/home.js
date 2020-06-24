@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Link from 'next/link';
+import Cookies from 'js-cookie';
 
 export default function Home() {
   const apiKey = process.env.apiKey;
@@ -27,7 +28,7 @@ export default function Home() {
     })
       .then((res) => res.json())
       .then((result) => {
-        console.log(result);
+        //console.log(result);
 
         const newUrl = result.map((a) => a.url);
         const dogBreeds = result.map((dog) => dog.breeds);
@@ -56,11 +57,25 @@ export default function Home() {
       });
   };
 
+  //const images = [];
+
+  //  function preload() {
+  //    // use process.browser => window/Image not defined
+  //    if (process.browser) {
+  //      for (let i = 0; i < images.length; i++) {
+  //        images[i] = new window.Image();
+  //        images[i].src = preload.images[i];
+  //      }
+  //      setPreloadImg('/loading1.jpg');
+  //    }
+  //  }
+
   function changeImage(e) {
     e.preventDefault();
     fetchData();
   }
 
+  // ---------------- image slide ----------------------------
   const pics = [
     '/about-us-dog.jpg',
     '/favicon.jpg',
@@ -102,10 +117,38 @@ export default function Home() {
     // Here I have to wrap dependensies inside Array
   }, [index, getNextIndex, setIndexes]);
 
-  //  function toggleShow() {
-  //    setInfoDisplay(true);
+  // -------------------  Preload image ------------------------
+  //  function preload(url, callback) {
+  //    if (process.browser) {
+  //      let image = new window.Image();
+  //      if (image.complete) {
+  //        callback.call(image);
+  //        return;
+  //      }
+  //      image.onload = () => {
+  //        callback.call(image);
+  //      };
+  //      image.src = url;
+  //    }
   //  }
+  //  preload('/loading1.jpg', () => {
+  //    console.log('IMAGE LOADED');
+  //  });
 
+  function goSum() {
+    const sumDogs = {
+      dogImageUrl: dogImageUrl,
+      name: name,
+      lifeSpan: lifeSpan,
+      char: char,
+      breedGroup: breedGroup,
+    };
+
+    const favorite = Cookies.getJSON('sum') || [];
+    favorite.push(sumDogs);
+    Cookies.set('sum', favorite);
+    //window.location.reload();
+  }
   return (
     <div className="container">
       <Head>
@@ -118,17 +161,30 @@ export default function Home() {
       <div className="dogList">
         <div>
           <img alt="dog-images" src={dogImageUrl} />
+
           <button onClick={changeImage}>
             <span role="img" aria-label="emoji">
               ➡️
             </span>
           </button>
-          <button>
+
+          <button onClick={() => goSum()}>
             <span role="img" aria-label="emoji">
               ❤️
             </span>
           </button>
+
+          <Link href="/sum">
+            <a>
+              <button onClick={() => goSum()}>
+                <span role="img" aria-label="emoji">
+                  🔗
+                </span>
+              </button>
+            </a>
+          </Link>
         </div>
+
         <div className={`current pic ${move}`}>
           <img src={pics[index]} alt="cute-dogs" />
           <Link href="/star">

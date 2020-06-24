@@ -72,7 +72,7 @@ function Header() {
           letter-spacing: 4px;
         }
 
-        @media only screen and (max-width: 450px) {
+        @media (max-width: 450px) {
           h1 {
             font-size: 1.5em;
           }

@@ -33,7 +33,7 @@ export default function Search() {
         return error;
       });
   };
-  //console.log(searchDogName);
+  console.log(searchDogName);
 
   function showValue(e) {
     setInputValue(e.target.value);
