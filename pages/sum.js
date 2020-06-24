@@ -17,7 +17,7 @@ export default function SearchDogs({ sum }) {
         <ul>
           {sum.map((eachFavorite, i) => {
             return (
-              <div className="favorite-list">
+              <div className="favorite-list" key={i}>
                 <li>
                   <img src={eachFavorite.dogImageUrl} alt="favorite-dog" />
                 </li>

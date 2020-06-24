@@ -159,18 +159,17 @@ export default function Home() {
       <Header />
 
       <div className="dogList">
+        <button className="heart" onClick={() => goSum()}>
+          <span role="img" aria-label="emoji">
+            ❤️
+          </span>
+        </button>
         <div>
           <img alt="dog-images" src={dogImageUrl} />
 
           <button onClick={changeImage}>
             <span role="img" aria-label="emoji">
               ➡️
-            </span>
-          </button>
-
-          <button onClick={() => goSum()}>
-            <span role="img" aria-label="emoji">
-              ❤️
             </span>
           </button>
 
@@ -198,7 +197,6 @@ export default function Home() {
           </Link>
         </div>
       </div>
-
       {name.length !== 0 ? (
         <div className="information">
           <p>{name}</p>
@@ -286,6 +284,7 @@ export default function Home() {
             transition: transformY(4px);
             background-color: rgb(235, 208, 121);
           }
+
           a {
             text-decoration: none;
           }
@@ -299,8 +298,35 @@ export default function Home() {
               display: block;
               margin: 2em auto;
             }
-            button {
-              margin-left: 1em;
+            .heart {
+              margin-left: 50%;
+              margin-top: 2em;
+              margin-bottom: 0;
+            }
+          }
+
+          .heart {
+            width: 100px;
+            height: 100px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: url(https://cssanimation.rocks/images/posts/steps/heart.png)
+              no-repeat;
+            background-position: 0 0;
+            cursor: pointer;
+            animation: fave-heart 1s steps(28);
+          }
+          .heart:hover {
+            background-position: -2800px 0;
+            transition: background 1s steps(28);
+          }
+          @keyframes fave-heart {
+            0% {
+              background-position: 0 0;
+            }
+            100% {
+              background-position: -2800px 0;
             }
           }
         `}
