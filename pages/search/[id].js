@@ -23,8 +23,8 @@ function FetchedDog(props) {
     );
   }
 
-  console.log('props:', props.fetchedDogs);
-  console.log('name:', props.fetchedDogs.name);
+  //console.log('props:', props.fetchedDogs);
+  //console.log('name:', props.fetchedDogs.name);
 
   return (
     <div>
