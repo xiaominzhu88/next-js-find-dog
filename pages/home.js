@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Link from 'next/link';
 import Cookies from 'js-cookie';
+import Button from '@material-ui/core/Button';
 
 export default function Home() {
   const apiKey = process.env.apiKey;
@@ -159,44 +160,51 @@ export default function Home() {
       <Header />
 
       <div className="dogList">
-        <button className="heart" onClick={() => goSum()}>
-          <span role="img" aria-label="emoji">
-            ❤️
-          </span>
-        </button>
-        <div>
+        <div className="images">
           <img alt="dog-images" src={dogImageUrl} />
-
-          <button onClick={changeImage}>
-            <span role="img" aria-label="emoji">
-              ➡️
-            </span>
-          </button>
-
-          <Link href="/sum">
-            <a>
-              <button onClick={() => goSum()}>
-                <span role="img" aria-label="emoji">
-                  🔗
-                </span>
-              </button>
-            </a>
-          </Link>
-        </div>
-
-        <div className={`current pic ${move}`}>
           <img src={pics[index]} alt="cute-dogs" />
+        </div>
+      </div>
+
+      <div className={`current pic ${move}`}>
+        <div className="buttons">
+          <div className="3buttons">
+            <Button
+              onClick={() => goSum()}
+              variant="contained"
+              color="secondary"
+            >
+              Like
+            </Button>
+            <br />
+            <br />
+            <Button onClick={changeImage} variant="contained">
+              to next
+            </Button>
+            <Link href="/sum">
+              <a>
+                <Button
+                  onClick={() => goSum()}
+                  variant="contained"
+                  color="primary"
+                >
+                  to favourite
+                </Button>
+              </a>
+            </Link>
+          </div>
           <Link href="/star">
             <a>
-              <button>
-                <span role="img" aria-label="emoji">
-                  🥇
-                </span>
-              </button>
+              <div>
+                <Button variant="contained" color="secondary">
+                  View Our Stars
+                </Button>
+              </div>
             </a>
           </Link>
         </div>
       </div>
+
       {name.length !== 0 ? (
         <div className="information">
           <p>{name}</p>
@@ -241,7 +249,7 @@ export default function Home() {
             height: 9em;
             border-radius: 50%;
             box-shadow: 3px 11px 18px #1b1a1aed;
-            margin: 2em auto;
+            margin: 2em 8.5em;
           }
           p {
             text-align: center;
@@ -258,57 +266,14 @@ export default function Home() {
             font-family: monospace;
             color: #1494cd;
           }
-          button {
-            margin-bottom: 1em;
-            width: 3em;
-            height: 2em;
-            padding: 5px;
-            border-radius: 5px;
-            border: none;
-            cursor: pointer;
-            box-shadow: 2px 8px 10px #1494cd;
-            background-color: rgb(217, 236, 230);
-            font-family: cursive;
-            font-size: 1em;
-            font-weight: bold;
-            outline: none;
-            margin-left: 0.5em;
-            transition: background-color 0.5s ease-in;
+          .buttons {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            margin: 2em auto;
           }
-          button:hover {
-            background-color: yellow;
-            color: red;
-            font-weight: 700;
-          }
-          button:active {
-            transition: transformY(4px);
-            background-color: rgb(235, 208, 121);
-          }
-
-          .heart {
-            width: 100px;
-            height: 100px;
-            margin-left: 8em;
-            margin-top: 15em;
-            transform: translate(-50%, -50%);
-            background: url(https://cssanimation.rocks/images/posts/steps/heart.png)
-              no-repeat;
-            background-position: 0 0;
-            cursor: pointer;
-            animation: fave-heart 1s steps(28);
-          }
-          .heart:hover {
-            background-position: -2800px 0;
-            transition: background 1s steps(28);
-          }
-          @keyframes fave-heart {
-            0% {
-              background-position: 0 0;
-            }
-
-            100% {
-              background-position: -2800px 0;
-            }
+          a {
+            text-decoration: none;
           }
 
           @media (max-width: 450px) {
@@ -319,11 +284,6 @@ export default function Home() {
             .dogList {
               display: block;
               margin: 2em auto;
-            }
-            .heart {
-              margin-left: 50%;
-              margin-top: 2em;
-              margin-bottom: 0;
             }
           }
         `}
