@@ -5,10 +5,26 @@ import Footer from '../../components/Footer';
 import Link from 'next/link';
 
 function FetchedDog(props) {
-  if (!props.fetchedDogs) return <div>Dogs not found!</div>;
+  if (!props.fetchedDogs) {
+    return (
+      <div className="error-page">
+        <h1>Ops! This dog is not at home!</h1>
+        <Link href="/search">
+          <a>
+            <button className="toSearchButton">To Search Page</button>
+          </a>
+        </Link>
+        <Link href="/home">
+          <a>
+            <button className="toHomeButton">To Homepage</button>
+          </a>
+        </Link>
+      </div>
+    );
+  }
 
-  console.log(props.fetchedDogs);
-  console.log(props.fetchedDogs.name);
+  console.log('props:', props.fetchedDogs);
+  console.log('name:', props.fetchedDogs.name);
 
   return (
     <div>
@@ -28,10 +44,30 @@ function FetchedDog(props) {
             🌟
           </span>
         </h1>
-        <h2>Life: {props.fetchedDogs.life_span}</h2>
-        <p>Bred for: {props.fetchedDogs.bred_for}</p>
-        <p>Origin: {props.fetchedDogs.origin}</p>
-        <p>Temperament: {props.fetchedDogs.temperament}</p>
+        <h2>
+          Life:{' '}
+          {props.fetchedDogs.life_span
+            ? props.fetchedDogs.life_span
+            : 'There is no information about this'}
+        </h2>
+        <p>
+          Bred for:{' '}
+          {props.fetchedDogs.bred_for
+            ? props.fetchedDogs.bred_for
+            : 'There is no information about this'}
+        </p>
+        <p>
+          Origin:{' '}
+          {props.fetchedDogs.origin
+            ? props.fetchedDogs.origin
+            : 'There is no information about this'}
+        </p>
+        <p>
+          Temperament:{' '}
+          {props.fetchedDogs.temperament
+            ? props.fetchedDogs.temperament
+            : 'There is no information about this'}
+        </p>
       </main>
       <div className="buttons">
         <Link href="/search">
@@ -73,11 +109,12 @@ function FetchedDog(props) {
           color: darkcyan;
           text-align: left;
           font-weight: 700;
-          margin-top: 2em;
+          margin: 1em auto;
           line-height: 1.6em;
           font-size: 0.8em;
           font-family: 'Bitter', serif;
           max-width: 450px;
+          text-align: center;
         }
 
         img {
@@ -126,9 +163,11 @@ export async function getServerSideProps(context) {
 
   const fetchedDogs = await getFetchedDogsById(context.params.id);
 
-  console.log(fetchedDogs);
+  console.log('result: ', fetchedDogs);
 
-  if (fetchedDogs === undefined) {
+  const fetchedId = fetchedDogs.map((item) => item.id);
+
+  if (fetchedDogs.length === 0 || fetchedId > 172) {
     return { props: {} };
   }
   return {

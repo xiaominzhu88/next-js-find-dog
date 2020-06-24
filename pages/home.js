@@ -285,31 +285,11 @@ export default function Home() {
             background-color: rgb(235, 208, 121);
           }
 
-          a {
-            text-decoration: none;
-          }
-
-          @media (max-width: 450px) {
-            img {
-              width: 5em;
-              height: 5em;
-            }
-            .dogList {
-              display: block;
-              margin: 2em auto;
-            }
-            .heart {
-              margin-left: 50%;
-              margin-top: 2em;
-              margin-bottom: 0;
-            }
-          }
-
           .heart {
             width: 100px;
             height: 100px;
-            left: 50%;
-            top: 50%;
+            margin-left: 8em;
+            margin-top: 15em;
             transform: translate(-50%, -50%);
             background: url(https://cssanimation.rocks/images/posts/steps/heart.png)
               no-repeat;
@@ -325,8 +305,25 @@ export default function Home() {
             0% {
               background-position: 0 0;
             }
+
             100% {
               background-position: -2800px 0;
+            }
+          }
+
+          @media (max-width: 450px) {
+            img {
+              width: 5em;
+              height: 5em;
+            }
+            .dogList {
+              display: block;
+              margin: 2em auto;
+            }
+            .heart {
+              margin-left: 50%;
+              margin-top: 2em;
+              margin-bottom: 0;
             }
           }
         `}

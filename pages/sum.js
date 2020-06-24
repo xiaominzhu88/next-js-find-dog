@@ -72,6 +72,7 @@ export default function SearchDogs({ sum }) {
           ul {
             display: flex;
             padding: 2em;
+            flex-wrap: wrap;
           }
           li {
             list-style: none;
@@ -87,7 +88,7 @@ export default function SearchDogs({ sum }) {
             margin: 1em auto;
           }
 
-          @media only screen and (max-width: 450px) {
+          @media (max-width: 450px) {
             .about,
             .about-text {
               font-size: 0.8em;
