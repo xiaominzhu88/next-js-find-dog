@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import Header from '../../components/Header';
+//import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Link from 'next/link';
 
@@ -32,7 +32,6 @@ function FetchedDog(props) {
         <title>Find-your-dog</title>
         <link rel="icon" href="/favicon.jpg" />
       </Head>
-      <Header />
 
       <main>
         <h1>

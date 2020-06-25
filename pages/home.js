@@ -160,15 +160,9 @@ export default function Home() {
       <Header />
 
       <div className="dogList">
-        <div className="images">
-          <img alt="dog-images" src={dogImageUrl} />
-          <img src={pics[index]} alt="cute-dogs" />
-        </div>
-      </div>
-
-      <div className={`current pic ${move}`}>
-        <div className="buttons">
-          <div className="3buttons">
+        <div>
+          <img alt="dog-fetched-images" src={dogImageUrl} />
+          <div>
             <Button
               onClick={() => goSum()}
               variant="contained"
@@ -179,62 +173,76 @@ export default function Home() {
             <br />
             <br />
             <Button onClick={changeImage} variant="contained">
-              to next
+              Change One
             </Button>
+            <br />
+            <br />
             <Link href="/sum">
               <a>
-                <Button
-                  onClick={() => goSum()}
-                  variant="contained"
-                  color="primary"
-                >
+                <Button variant="contained" color="primary">
                   to favourite
                 </Button>
               </a>
             </Link>
           </div>
-          <Link href="/star">
-            <a>
-              <div>
-                <Button variant="contained" color="secondary">
-                  View Our Stars
-                </Button>
-              </div>
-            </a>
-          </Link>
+        </div>
+
+        <div className={`current pic ${move}`}>
+          <div className="3buttons">
+            <img src={pics[index]} alt="cute-dogs" />
+            <div></div>
+            {/* <Button
+              onClick={() => goSum()}
+              variant="contained"
+              color="secondary"
+              >
+              Like
+            </Button> */}
+            <br />
+            <br />
+            <Link href="/star">
+              <a>
+                <div className="star-view">
+                  <Button variant="contained">Visit Our Stars</Button>
+                </div>
+              </a>
+            </Link>
+          </div>
         </div>
       </div>
-
-      {name.length !== 0 ? (
-        <div className="information">
-          <p>{name}</p>
-          <h4>
-            Breed-group:
-            <span role="img" aria-label="emoji">
-              🎋
-            </span>{' '}
-            {breedGroup}
-          </h4>
-          <h4>
-            Life:
-            <span role="img" aria-label="emoji">
-              🔅
-            </span>{' '}
-            {lifeSpan}
-          </h4>
-          <h4>
-            Temperament:
-            <span role="img" aria-label="emoji">
-              🎲
-            </span>{' '}
-            {char}
-          </h4>
-        </div>
-      ) : (
-        <p>
-          Oh there is no information <br /> To next one?
-        </p>
-      )}
+      <hr />
+      <div className="dog-content">
+        {name.length !== 0 ? (
+          <div className="information">
+            <p>{name}</p>
+            <h4>
+              Breed-group:
+              <span role="img" aria-label="emoji">
+                🎋
+              </span>{' '}
+              {breedGroup}
+            </h4>
+            <h4>
+              Life:
+              <span role="img" aria-label="emoji">
+                🔅
+              </span>{' '}
+              {lifeSpan}
+            </h4>
+            <h4>
+              Temperament:
+              <span role="img" aria-label="emoji">
+                🎲
+              </span>{' '}
+              {char}
+            </h4>
+          </div>
+        ) : (
+          <p>
+            Oh there is no information <br /> To next one?
+          </p>
+        )}
+      </div>
 
       <Footer />
       <style jsx>
@@ -243,6 +251,7 @@ export default function Home() {
             display: flex;
             justify-content: space-around;
             align-items: center;
+            margin: 2em auto;
           }
           img {
             width: 9em;
@@ -266,14 +275,12 @@ export default function Home() {
             font-family: monospace;
             color: #1494cd;
           }
-          .buttons {
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-around;
-            margin: 2em auto;
-          }
+
           a {
             text-decoration: none;
+          }
+          .dog-content {
+            margin: 3em auto;
           }
 
           @media (max-width: 450px) {
@@ -283,7 +290,13 @@ export default function Home() {
             }
             .dogList {
               display: block;
-              margin: 2em auto;
+            }
+            .buttons {
+              display: block;
+            }
+
+            .star-view {
+              display: relative;
             }
           }
         `}

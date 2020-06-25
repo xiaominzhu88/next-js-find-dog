@@ -4,6 +4,8 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import nextCookies from 'next-cookies';
 import Link from 'next/link';
+import Button from '@material-ui/core/Button';
+
 export default function SearchDogs({ sum }) {
   return (
     <>
@@ -14,45 +16,60 @@ export default function SearchDogs({ sum }) {
       <Header />
 
       <div className="favorite-sum">
-        <ul>
-          {sum.map((eachFavorite, i) => {
-            return (
-              <div className="favorite-list" key={i}>
-                <li>
-                  <img src={eachFavorite.dogImageUrl} alt="favorite-dog" />
-                </li>
-                <li>
-                  <h3> {eachFavorite.name}</h3>
-                </li>
-                <li>
-                  <b>Life:</b> {eachFavorite.lifeSpan}
-                </li>
-                <li>
-                  <b>Breed Group: </b>
-                  {eachFavorite.breedGroup}
-                </li>
-                <li>
-                  {' '}
-                  <b>Temperament: </b>
-                  {eachFavorite.char}
-                </li>
+        {sum.length !== 0 ? (
+          <ul>
+            {sum.map((eachFavorite, i) => {
+              return (
+                <div className="favorite-list" key={i}>
+                  <li>
+                    <img src={eachFavorite.dogImageUrl} alt="favorite-dog" />
+                  </li>
+                  <li>
+                    <h3> {eachFavorite.name}</h3>
+                  </li>
+                  <li>
+                    <b>Life:</b> {eachFavorite.lifeSpan}
+                  </li>
+                  <li>
+                    <b>Breed Group: </b>
+                    {eachFavorite.breedGroup}
+                  </li>
+                  <li>
+                    {' '}
+                    <b>Temperament: </b>
+                    {eachFavorite.char}
+                  </li>
 
-                <li>
-                  <Link href="/contact">
-                    <a>
-                      <button>
-                        Adopt Me
-                        <span role="img" aria-label="emoji">
-                          💌
-                        </span>
-                      </button>
-                    </a>
-                  </Link>
-                </li>
-              </div>
-            );
-          })}
-        </ul>
+                  <li>
+                    <Link href="/contact">
+                      <a>
+                        <div className="adopt-button">
+                          <Button variant="contained" color="secondary">
+                            Adopt Me{' '}
+                            <span role="img" aria-label="emoji">
+                              💌
+                            </span>
+                          </Button>
+                        </div>
+                      </a>
+                    </Link>
+                  </li>
+                </div>
+              );
+            })}
+          </ul>
+        ) : (
+          <div>
+            <h2>You don't have any favourite now?</h2>
+            <Link href="/home">
+              <a>
+                <Button variant="contained" color="primary">
+                  To Home
+                </Button>
+              </a>
+            </Link>
+          </div>
+        )}
       </div>
 
       <Footer />
@@ -65,8 +82,8 @@ export default function SearchDogs({ sum }) {
             font-size: 2em;
           }
           img {
-            width: 6em;
-            height: 6em;
+            width: 8em;
+            height: 8em;
             border-radius: 50%;
           }
           ul {
@@ -78,6 +95,7 @@ export default function SearchDogs({ sum }) {
             list-style: none;
             margin-right: 2em;
             font-size: 0.9em;
+            font-family: monospace;
           }
           .favorite-list {
             display: flex;
@@ -86,6 +104,15 @@ export default function SearchDogs({ sum }) {
             align-items: flex-start;
             line-height: 1.5em;
             margin: 1em auto;
+          }
+          .adopt-button {
+            margin: 2em auto;
+          }
+          span {
+            margin-left: 1em;
+          }
+          a {
+            text-decoration: none;
           }
 
           @media (max-width: 450px) {
@@ -100,6 +127,10 @@ export default function SearchDogs({ sum }) {
             li {
               font-size: 0.9em;
               margin: 0.5em auto;
+              text-align: center;
+            }
+            .adopt-button {
+              margin: 1em auto;
             }
           }
         `}

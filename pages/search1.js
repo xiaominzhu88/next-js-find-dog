@@ -3,58 +3,44 @@ import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 //import Button from '@material-ui/core/Button';
+import Link from 'next/link';
 
-export default function Search() {
+export default function Search1({ fetchedDogNames }) {
   const [searchDogName, setSearchDogName] = useState([]);
-  const [inputValue, setInputValue] = useState('');
+  const [input, setInput] = useState('');
   const [filtered, setFiltered] = useState([]);
   const [info, setInfo] = useState('');
 
-  const apiKey = process.env.apiKey;
+  // get data from database at the bottom {getFetchedDogsByName}
+  // which is an Array with 'name' and 'id'
+  const fetchedAllDogNames = fetchedDogNames.map((val) => val.name);
 
-  const fetchSearchData = () => {
-    fetch('https://api.TheDogAPI.com/v1/breeds', {
-      method: 'GET',
-      dataType: 'JSON',
-      headers: { 'X-Api-Key': `${apiKey}` },
-    })
-      .then((res) => res.json())
-      .then((result) => {
-        //console.log(result);
+  const id = fetchedDogNames.map((val) => val.id);
 
-        const dogBreedsName = result.map((dog) => dog.name);
-
-        if (!dogBreedsName) {
-          return '';
-        } else {
-          setSearchDogName(dogBreedsName);
-        }
-      })
-      .then((error) => {
-        return error;
-      });
-  };
-  console.log(searchDogName);
-
-  function showValue(e) {
-    setInputValue(e.target.value);
-  }
+  console.log(id);
 
   const oldList = searchDogName.map((el) => {
     return el.toLowerCase();
   });
 
+  // search function, use filter to find the result which contains
+  // the input value
+
   function showDataValue(e) {
     e.preventDefault();
-    fetchSearchData();
-
-    if (inputValue !== '') {
+    setSearchDogName(fetchedAllDogNames);
+    if (input !== '') {
       let newList = [];
-      newList = oldList.filter((val) => val.includes(inputValue));
+      newList = oldList.filter((val) => val.includes(input));
       setFiltered(newList);
     } else {
       setInfo('Ops,search for a breed?');
     }
+  }
+
+  // -------------  update input value  ------------------------
+  function showValue(e) {
+    setInput(e.target.value);
   }
 
   return (
@@ -65,13 +51,11 @@ export default function Search() {
       </Head>
       <Header />
 
-      {/* <p>{searchDogName}</p> */}
-      {/* <input value={searchDogName.map((name) => name)} /> */}
       <div className="searchBar">
         <form>
           <input
             placeholder="Search Breed..."
-            value={inputValue}
+            value={input}
             onChange={showValue}
           />
         </form>
@@ -84,25 +68,32 @@ export default function Search() {
       </div>
       <div className="table">
         <h3>
-          <span className="span">
-            {inputValue !== '' ? filtered.length : '0'}
-          </span>{' '}
+          {/* get the sum from the data result which is as filtered length here */}
+          <span className="span">{input !== '' ? filtered.length : '0'}</span>{' '}
           Breeds for you{' '}
           <span role="img" aria-label="emoji">
             💝
           </span>
         </h3>
-        {inputValue === '' ? (
+        {input === '' ? (
           info
         ) : (
+          // filter from the data result and create each of them as a link
           <ul>
             {filtered.map((name, i) => {
-              return <li key={i}> {name}</li>;
+              return (
+                <li key={i}>
+                  <Link href="/search/[id]" as={`/search/${id}`}>
+                    <a>{name}</a>
+                  </Link>
+                </li>
+              );
             })}
           </ul>
         )}
       </div>
       <Footer />
+
       <style jsx>{`
         .searchBar {
           display: flex;
@@ -157,6 +148,9 @@ export default function Search() {
           color: #4b8ada;
           font-size: 1.2em;
         }
+        a:hover {
+          color: rgb(35, 174, 237);
+        }
         @media (max-width: 450px) {
           .table {
             font-size: 0.7em;
@@ -170,21 +164,19 @@ export default function Search() {
   );
 }
 
-// export async function getServerSideProps(context) {
-//   const { getFetchedDogsById } = await import('../db.js');
+export async function getServerSideProps(context) {
+  const { getFetchedDogsByName } = await import('../db.js');
 
-//   const fetchedDogs = await getFetchedDogsById(context.params);
+  const fetchedDogNames = await getFetchedDogsByName(context.params);
 
-//   console.log('result: ', fetchedDogs);
+  //console.log('result: ', JSON.stringify(fetchedDogNames));
 
-//   const fetchedId = fetchedDogs.map((item) => item.id);
-
-//   if (fetchedDogs.length === 0 || fetchedId > 172) {
-//     return { props: {} };
-//   }
-//   return {
-//     props: {
-//       fetchedDogs: fetchedDogs[0],
-//     },
-//   };
-// }
+  if (fetchedDogNames.length === 0) {
+    return { props: {} };
+  }
+  return {
+    props: {
+      fetchedDogNames,
+    },
+  };
+}

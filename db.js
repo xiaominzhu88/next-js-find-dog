@@ -48,9 +48,15 @@ export async function getFetchedDogsById(id) {
   return fetchedDogs;
 }
 
-//export async function getFetchedDogsByName(name) {
-//  const dogName = await sql`
-//  select * from fetchedDogs WHERE name = ${name}
-//  `;
-//  return dogName;
-//}
+export async function getFetchedDogsByName(name) {
+  const columns = ['name', 'id'];
+
+  const dogNames = await sql`
+  select ${sql(columns)} from fetchedDogs;
+  
+  `;
+  // const dogNames = await sql`
+  //   select * from fetchedDogs WHERE name = ${name}
+  //   `;
+  return dogNames;
+}
