@@ -29,7 +29,7 @@ exports.up = async (sql) => {
       },
       id: '2',
       life_span: '10 - 13 years',
-      name: 'Afghan Hound',
+      name: 'Afghan-Hound',
       origin: 'Afghanistan, Iran, Pakistan',
       temperament: 'Aloof, Clownish, Dignified, Independent, Happy',
       weight: {
@@ -46,7 +46,7 @@ exports.up = async (sql) => {
       },
       id: 3,
       life_span: '11 years',
-      name: 'African Hunting Dog',
+      name: 'African-Hunting-Dog',
       origin: '',
       temperament: 'Wild, Hardworking, Dutiful',
       weight: {
@@ -63,7 +63,7 @@ exports.up = async (sql) => {
       },
       id: 4,
       life_span: '10 - 13 years',
-      name: 'Airedale Terrier',
+      name: 'Airedale-Terrier',
       origin: 'United Kingdom, England',
       temperament:
         'Outgoing, Friendly, Alert, Confident, Intelligent, Courageous',
@@ -81,7 +81,7 @@ exports.up = async (sql) => {
       },
       id: 5,
       life_span: '10 - 12 years',
-      name: 'Akbash Dog',
+      name: 'Akbash-Dog',
       origin: '',
       temperament: 'Loyal, Independent, Intelligent, Brave',
       weight: {
@@ -118,7 +118,7 @@ exports.up = async (sql) => {
       history: '',
       id: 7,
       life_span: '12 - 13 years',
-      name: 'Alapaha Blue Blood Bulldog',
+      name: 'Alapaha-Blue-Blood-Bulldog',
       temperament: 'Loving, Protective, Trainable, Dutiful, Responsible',
       weight: {
         imperial: '55 - 90',
@@ -134,7 +134,7 @@ exports.up = async (sql) => {
       },
       id: 8,
       life_span: '10 - 13 years',
-      name: 'Alaskan Husky',
+      name: 'Alaskan-Husky',
       temperament: 'Friendly, Energetic, Loyal, Gentle, Confident',
       weight: {
         imperial: '38 - 50',
@@ -150,7 +150,7 @@ exports.up = async (sql) => {
       },
       id: 9,
       life_span: '12 - 15 years',
-      name: 'Alaskan Malamute',
+      name: 'Alaskan-Malamute',
       temperament: 'Friendly, Affectionate, Devoted, Loyal, Dignified, Playful',
       weight: {
         imperial: '65 - 100',
@@ -165,7 +165,7 @@ exports.up = async (sql) => {
       },
       id: 10,
       life_span: '10 - 12 years',
-      name: 'American Bulldog',
+      name: 'American-Bulldog',
       temperament:
         'Friendly, Assertive, Energetic, Loyal, Gentle, Confident, Dominant',
       weight: {
@@ -183,7 +183,7 @@ exports.up = async (sql) => {
       },
       id: 11,
       life_span: '8 – 15 years',
-      name: 'American Bully',
+      name: 'American-Bully',
       temperament:
         'Strong Willed, Stubborn, Friendly, Clownish, Affectionate, Loyal, Obedient, Intelligent, Courageous',
       weight: {
@@ -201,7 +201,7 @@ exports.up = async (sql) => {
       },
       id: 12,
       life_span: '12 - 15 years',
-      name: 'American Eskimo Dog',
+      name: 'American-Eskimo-Dog',
       temperament: 'Friendly, Alert, Reserved, Intelligent, Protective',
       weight: {
         imperial: '20 - 40',
@@ -217,7 +217,7 @@ exports.up = async (sql) => {
       },
       id: 13,
       life_span: '13 – 15 years',
-      name: 'American Eskimo Dog (Miniature)',
+      name: 'American-Eskimo-Dog(Miniature)',
       temperament: 'Friendly, Alert, Reserved, Intelligent, Protective',
       weight: {
         imperial: '7 - 10',
@@ -234,7 +234,7 @@ exports.up = async (sql) => {
       },
       id: 14,
       life_span: '8 - 15 years',
-      name: 'American Foxhound',
+      name: 'American-Foxhound',
       temperament:
         'Kind, Sweet-Tempered, Loyal, Independent, Intelligent, Loving',
       weight: {
@@ -252,7 +252,7 @@ exports.up = async (sql) => {
       },
       id: 15,
       life_span: '10 - 15 years',
-      name: 'American Pit Bull Terrier',
+      name: 'American-Pit-Bull-Terrier',
       temperament:
         'Strong Willed, Stubborn, Friendly, Clownish, Affectionate, Loyal, Obedient, Intelligent, Courageous',
       weight: {
@@ -270,7 +270,7 @@ exports.up = async (sql) => {
       },
       id: 16,
       life_span: '12 - 15 years',
-      name: 'American Staffordshire Terrier',
+      name: 'American-Staffordshire-Terrier',
       temperament: 'Tenacious, Friendly, Devoted, Loyal, Attentive, Courageous',
       weight: {
         imperial: '50 - 60',
@@ -287,7 +287,7 @@ exports.up = async (sql) => {
       },
       id: 17,
       life_span: '10 - 12 years',
-      name: 'American Water Spaniel',
+      name: 'American-Water-Spaniel',
       temperament:
         'Friendly, Energetic, Obedient, Intelligent, Protective, Trainable',
       weight: {
@@ -304,7 +304,7 @@ exports.up = async (sql) => {
       },
       id: 18,
       life_span: '11 - 13 years',
-      name: 'Anatolian Shepherd Dog',
+      name: 'Anatolian-Shepherd-Dog',
       temperament: 'Steady, Bold, Independent, Confident, Intelligent, Proud',
       weight: {
         imperial: '80 - 150',
@@ -319,7 +319,7 @@ exports.up = async (sql) => {
       },
       id: 19,
       life_span: '12 – 14 years',
-      name: 'Appenzeller Sennenhund',
+      name: 'Appenzeller-Sennenhund',
       temperament: 'Reliable, Fearless, Energetic, Lively, Self-assured',
       weight: {
         imperial: '48 - 55',
@@ -336,7 +336,7 @@ exports.up = async (sql) => {
       },
       id: 20,
       life_span: '12 - 14 years',
-      name: 'Australian Cattle Dog',
+      name: 'Australian-Cattle-Dog',
       temperament: 'Cautious, Energetic, Loyal, Obedient, Protective, Brave',
       weight: {
         imperial: '44 - 62',
@@ -353,7 +353,7 @@ exports.up = async (sql) => {
       },
       id: 21,
       life_span: '10 - 13 years',
-      name: 'Australian Kelpie',
+      name: 'Australian-Kelpie',
       temperament: 'Friendly, Energetic, Alert, Loyal, Intelligent, Eager',
       weight: {
         imperial: '31 - 46',
@@ -370,7 +370,7 @@ exports.up = async (sql) => {
       },
       id: 22,
       life_span: '12 - 16 years',
-      name: 'Australian Shepherd',
+      name: 'Australian-Shepherd',
       temperament:
         'Good-natured, Affectionate, Intelligent, Active, Protective',
       weight: {
@@ -388,7 +388,7 @@ exports.up = async (sql) => {
       },
       id: 23,
       life_span: '15 years',
-      name: 'Australian Terrier',
+      name: 'Australian-Terrier',
       temperament:
         'Spirited, Alert, Loyal, Companionable, Even Tempered, Courageous',
       weight: {
@@ -453,7 +453,7 @@ exports.up = async (sql) => {
       },
       id: 27,
       life_span: '10 - 14 years',
-      name: 'Basset Bleu de Gascogne',
+      name: 'Basset-Bleu-de-Gascogne',
       temperament: 'Affectionate, Lively, Agile, Curious, Happy, Active',
       weight: {
         imperial: '35 - 40',
@@ -469,7 +469,7 @@ exports.up = async (sql) => {
       },
       id: 28,
       life_span: '12 - 15 years',
-      name: 'Basset Hound',
+      name: 'Basset-Hound',
       temperament:
         'Tenacious, Friendly, Affectionate, Devoted, Sweet-Tempered, Gentle',
       weight: {
@@ -503,7 +503,7 @@ exports.up = async (sql) => {
       },
       id: 30,
       life_span: '12 - 14 years',
-      name: 'Bearded Collie',
+      name: 'Bearded-Collie',
       temperament: 'Self-confidence, Hardy, Lively, Alert, Intelligent, Active',
       weight: {
         imperial: '45 - 55',
@@ -535,7 +535,7 @@ exports.up = async (sql) => {
       },
       id: 32,
       life_span: '14 - 16 years',
-      name: 'Bedlington Terrier',
+      name: 'Bedlington-Terrier',
       temperament: 'Affectionate, Spirited, Intelligent, Good-tempered',
       weight: {
         imperial: '17 - 23',
@@ -551,7 +551,7 @@ exports.up = async (sql) => {
       },
       id: 33,
       life_span: '12 - 14 years',
-      name: 'Belgian Malinois',
+      name: 'Belgian-Malinois',
       temperament:
         'Watchful, Alert, Stubborn, Friendly, Confident, Hard-working, Active, Protective',
       weight: {
@@ -568,7 +568,7 @@ exports.up = async (sql) => {
       },
       id: 34,
       life_span: '10 - 12 years',
-      name: 'Belgian Tervuren',
+      name: 'Belgian-Tervuren',
       temperament:
         'Energetic, Alert, Loyal, Intelligent, Attentive, Protective',
       weight: {
@@ -585,7 +585,7 @@ exports.up = async (sql) => {
       },
       id: 35,
       life_span: '7 - 10 years',
-      name: 'Bernese Mountain Dog',
+      name: 'Bernese-Mountain-Dog',
       temperament: 'Affectionate, Loyal, Intelligent, Faithful',
       weight: {
         imperial: '65 - 120',
@@ -601,7 +601,7 @@ exports.up = async (sql) => {
       },
       id: 36,
       life_span: '15 years',
-      name: 'Bichon Frise',
+      name: 'Bichon-Frise',
       temperament: 'Feisty, Affectionate, Cheerful, Playful, Gentle, Sensitive',
       weight: {
         imperial: '10 - 18',
@@ -617,7 +617,7 @@ exports.up = async (sql) => {
       },
       id: 37,
       life_span: '10 - 12 years',
-      name: 'Black and Tan Coonhound',
+      name: 'Black-and-Tan-Coonhound',
       temperament:
         'Easygoing, Gentle, Adaptable, Trusting, Even Tempered, Lovable',
       weight: {
@@ -650,7 +650,7 @@ exports.up = async (sql) => {
       },
       id: 39,
       life_span: '12 - 14 years',
-      name: 'Bluetick Coonhound',
+      name: 'Bluetick-Coonhound',
       temperament: 'Friendly, Intelligent, Active',
       weight: {
         imperial: '45 - 80',
@@ -682,7 +682,7 @@ exports.up = async (sql) => {
       },
       id: 41,
       life_span: '12 - 16 years',
-      name: 'Border Collie',
+      name: 'Border-Collie',
       temperament: 'Tenacious, Keen, Energetic, Responsive, Alert, Intelligent',
       weight: {
         imperial: '30 - 45',
@@ -698,7 +698,7 @@ exports.up = async (sql) => {
       },
       id: 42,
       life_span: '12 - 14 years',
-      name: 'Border Terrier',
+      name: 'Border-Terrier',
       temperament:
         'Fearless, Affectionate, Alert, Obedient, Intelligent, Even Tempered',
       weight: {
@@ -715,7 +715,7 @@ exports.up = async (sql) => {
       },
       id: 43,
       life_span: '11 - 13 years',
-      name: 'Boston Terrier',
+      name: 'Boston-Terrier',
       temperament: 'Friendly, Lively, Intelligent',
       weight: {
         imperial: '10 - 25',
@@ -731,7 +731,7 @@ exports.up = async (sql) => {
       },
       id: 44,
       life_span: '10 - 15 years',
-      name: 'Bouvier des Flandres',
+      name: 'Bouvier-des-Flandres',
       temperament: 'Protective, Loyal, Gentle, Intelligent, Familial, Rational',
       weight: {
         imperial: '70 - 110',
@@ -764,7 +764,7 @@ exports.up = async (sql) => {
       },
       id: 46,
       life_span: '10 - 14 years',
-      name: 'Boykin Spaniel',
+      name: 'Boykin-Spaniel',
       temperament:
         'Friendly, Energetic, Companionable, Intelligent, Eager, Trainable',
       weight: {
@@ -781,7 +781,7 @@ exports.up = async (sql) => {
       },
       id: 47,
       life_span: '10 - 12 years',
-      name: 'Bracco Italiano',
+      name: 'Bracco-Italiano',
       temperament:
         'Stubborn, Affectionate, Loyal, Playful, Companionable, Trainable',
       weight: {
@@ -831,7 +831,7 @@ exports.up = async (sql) => {
       },
       id: 50,
       life_span: '10 - 12 years',
-      name: 'Bull Terrier',
+      name: 'Bull-Terrier',
       temperament: 'Trainable, Protective, Sweet-Tempered, Keen, Active',
       weight: {
         imperial: '50 - 70',
@@ -846,7 +846,7 @@ exports.up = async (sql) => {
       },
       id: 51,
       life_span: '11 – 14 years',
-      name: 'Bull Terrier (Miniature)',
+      name: 'Bull-Terrier(Miniature)',
       temperament:
         'Trainable, Protective, Sweet-Tempered, Keen, Active, Territorial',
       weight: {
@@ -880,7 +880,7 @@ exports.up = async (sql) => {
       },
       id: 53,
       life_span: '14 - 15 years',
-      name: 'Cairn Terrier',
+      name: 'Cairn-Terrier',
       temperament: 'Hardy, Fearless, Assertive, Gay, Intelligent, Active',
       weight: {
         imperial: '13 - 14',
@@ -896,7 +896,7 @@ exports.up = async (sql) => {
       },
       id: 54,
       life_span: '10 - 11 years',
-      name: 'Cane Corso',
+      name: 'Cane-Corso',
       temperament: 'Trainable, Reserved, Stable, Quiet, Even Tempered, Calm',
       weight: {
         imperial: '88 - 120',
@@ -912,7 +912,7 @@ exports.up = async (sql) => {
       },
       id: 55,
       life_span: '12 - 14 years',
-      name: 'Cardigan Welsh Corgi',
+      name: 'Cardigan-Welsh-Corgi',
       temperament:
         'Affectionate, Devoted, Alert, Companionable, Intelligent, Active',
       weight: {
@@ -929,7 +929,7 @@ exports.up = async (sql) => {
       },
       id: 56,
       life_span: '10 - 12 years',
-      name: 'Catahoula Leopard Dog',
+      name: 'Catahoula-Leopard-Dog',
       temperament:
         'Energetic, Inquisitive, Independent, Gentle, Intelligent, Loving',
       weight: {
@@ -947,7 +947,7 @@ exports.up = async (sql) => {
       },
       id: 57,
       life_span: '10 - 12 years',
-      name: 'Caucasian Shepherd (Ovcharka)',
+      name: 'Caucasian-Shepherd(Ovcharka)',
       temperament: 'Alert, Quick, Dominant, Powerful, Calm, Strong',
       weight: {
         imperial: '80 - 100',
@@ -963,7 +963,7 @@ exports.up = async (sql) => {
       },
       id: 58,
       life_span: '10 - 14 years',
-      name: 'Cavalier King Charles Spaniel',
+      name: 'Cavalier-King-Charles-Spaniel',
       temperament:
         'Fearless, Affectionate, Sociable, Patient, Playful, Adaptable',
       weight: {
@@ -980,7 +980,7 @@ exports.up = async (sql) => {
       },
       id: 59,
       life_span: '10 - 13 years',
-      name: 'Chesapeake Bay Retriever',
+      name: 'Chesapeake-Bay-Retriever',
       temperament:
         'Affectionate, Intelligent, Quiet, Dominant, Happy, Protective',
       weight: {
@@ -997,7 +997,7 @@ exports.up = async (sql) => {
       },
       id: 60,
       life_span: '10 - 14 years',
-      name: 'Chinese Crested',
+      name: 'Chinese-Crested',
       temperament:
         'Affectionate, Sweet-Tempered, Lively, Alert, Playful, Happy',
       weight: {
@@ -1014,7 +1014,7 @@ exports.up = async (sql) => {
       },
       id: 61,
       life_span: '10 years',
-      name: 'Chinese Shar-Pei',
+      name: 'Chinese-Shar-Pei',
       temperament:
         'Suspicious, Affectionate, Devoted, Reserved, Independent, Loving',
       weight: {
@@ -1047,7 +1047,7 @@ exports.up = async (sql) => {
       },
       id: 63,
       life_span: '12 - 15 years',
-      name: 'Chow Chow',
+      name: 'Chow-Chow',
       temperament: 'Aloof, Loyal, Independent, Quiet',
       weight: {
         imperial: '40 - 70',
@@ -1063,7 +1063,7 @@ exports.up = async (sql) => {
       },
       id: 64,
       life_span: '10 - 12 years',
-      name: 'Clumber Spaniel',
+      name: 'Clumber-Spaniel',
       temperament:
         'Affectionate, Loyal, Dignified, Gentle, Calm, Great-hearted',
       weight: {
@@ -1080,7 +1080,7 @@ exports.up = async (sql) => {
       },
       id: 65,
       life_span: '12 - 15 years',
-      name: 'Cocker Spaniel',
+      name: 'Cocker-Spaniel',
       temperament:
         'Trainable, Friendly, Affectionate, Playful, Quiet, Faithful',
       weight: {
@@ -1097,7 +1097,7 @@ exports.up = async (sql) => {
       },
       id: 66,
       life_span: '12 - 15 years',
-      name: 'Cocker Spaniel (American)',
+      name: 'Cocker-Spaniel(American)',
       temperament: 'Outgoing, Sociable, Trusting, Joyful, Even Tempered, Merry',
       weight: {
         imperial: '20 - 30',
@@ -1114,7 +1114,7 @@ exports.up = async (sql) => {
       },
       id: 67,
       life_span: '13 - 16 years',
-      name: 'Coton de Tulear',
+      name: 'Coton-de-Tulear',
       temperament:
         'Affectionate, Lively, Playful, Intelligent, Trainable, Vocal',
       weight: {
@@ -1149,7 +1149,7 @@ exports.up = async (sql) => {
       },
       id: 69,
       life_span: '10 years',
-      name: 'Doberman Pinscher',
+      name: 'Doberman-Pinscher',
       temperament:
         'Fearless, Energetic, Alert, Loyal, Obedient, Confident, Intelligent',
       weight: {
@@ -1166,7 +1166,7 @@ exports.up = async (sql) => {
       },
       id: 70,
       life_span: '10 - 12 years',
-      name: 'Dogo Argentino',
+      name: 'Dogo-Argentino',
       temperament:
         'Friendly, Affectionate, Cheerful, Loyal, Tolerant, Protective',
       weight: {
@@ -1182,7 +1182,7 @@ exports.up = async (sql) => {
       },
       id: 71,
       life_span: '15 years',
-      name: 'Dutch Shepherd',
+      name: 'Dutch-Shepherd',
       temperament: 'Reliable, Affectionate, Alert, Loyal, Obedient, Trainable',
       weight: {
         imperial: '50 - 70',
@@ -1198,7 +1198,7 @@ exports.up = async (sql) => {
       },
       id: 72,
       life_span: '12 years',
-      name: 'English Setter',
+      name: 'English-Setter',
       temperament:
         'Strong Willed, Mischievous, Affectionate, Energetic, Playful, Companionable, Gentle, Hard-working, Intelligent, Eager, People-Oriented',
       weight: {
@@ -1215,7 +1215,7 @@ exports.up = async (sql) => {
       },
       id: 73,
       life_span: '10 - 13 years',
-      name: 'English Shepherd',
+      name: 'English-Shepherd',
       temperament:
         'Kind, Energetic, Independent, Adaptable, Intelligent, Bossy',
       weight: {
@@ -1232,7 +1232,7 @@ exports.up = async (sql) => {
       },
       id: 74,
       life_span: '12 - 14 years',
-      name: 'English Springer Spaniel',
+      name: 'English-Springer-Spaniel',
       temperament:
         'Affectionate, Cheerful, Alert, Intelligent, Attentive, Active',
       weight: {
@@ -1249,7 +1249,7 @@ exports.up = async (sql) => {
       },
       id: 75,
       life_span: '10 - 12 years',
-      name: 'English Toy Spaniel',
+      name: 'English-Toy-Spaniel',
       temperament: 'Affectionate, Reserved, Playful, Gentle, Happy, Loving',
       weight: {
         imperial: '8 - 14',
@@ -1264,7 +1264,7 @@ exports.up = async (sql) => {
       },
       id: 76,
       life_span: '12 - 13 years',
-      name: 'English Toy Terrier',
+      name: 'English-Toy-Terrier',
       temperament:
         'Stubborn, Alert, Companionable, Intelligent, Cunning, Trainable',
       weight: {
@@ -1298,7 +1298,7 @@ exports.up = async (sql) => {
       },
       id: 78,
       life_span: '11 - 15 years',
-      name: 'Field Spaniel',
+      name: 'Field-Spaniel',
       temperament: 'Docile, Cautious, Sociable, Sensitive, Adaptable, Familial',
       weight: {
         imperial: '35 - 50',
@@ -1314,7 +1314,7 @@ exports.up = async (sql) => {
       },
       id: 79,
       life_span: '12 - 15 years',
-      name: 'Finnish Lapphund',
+      name: 'Finnish-Lapphund',
       temperament: 'Friendly, Keen, Faithful, Calm, Courageous',
       weight: {
         imperial: '33 - 53',
@@ -1330,7 +1330,7 @@ exports.up = async (sql) => {
       },
       id: 80,
       life_span: '12 - 15 years',
-      name: 'Finnish Spitz',
+      name: 'Finnish-Spitz',
       temperament: 'Playful, Loyal, Independent, Intelligent, Happy, Vocal',
       weight: {
         imperial: '23 - 28',
@@ -1346,7 +1346,7 @@ exports.up = async (sql) => {
       },
       id: 81,
       life_span: '9 - 11 years',
-      name: 'French Bulldog',
+      name: 'French-Bulldog',
       temperament:
         'Playful, Affectionate, Keen, Sociable, Lively, Alert, Easygoing, Patient, Athletic, Bright',
       weight: {
@@ -1363,7 +1363,7 @@ exports.up = async (sql) => {
       },
       id: 82,
       life_span: '12 - 14 years',
-      name: 'German Pinscher',
+      name: 'German-Pinscher',
       temperament:
         'Spirited, Lively, Intelligent, Loving, Even Tempered, Familial',
       weight: {
@@ -1380,7 +1380,7 @@ exports.up = async (sql) => {
       },
       id: 83,
       life_span: '10 - 13 years',
-      name: 'German Shepherd Dog',
+      name: 'German-Shepherd Dog',
       temperament:
         'Alert, Loyal, Obedient, Curious, Confident, Intelligent, Watchful, Courageous',
       weight: {
@@ -1397,7 +1397,7 @@ exports.up = async (sql) => {
       },
       id: 84,
       life_span: '12 - 14 years',
-      name: 'German Shorthaired Pointer',
+      name: 'German-Shorthaired-Pointer',
       temperament:
         'Boisterous, Bold, Affectionate, Intelligent, Cooperative, Trainable',
       weight: {
@@ -1414,7 +1414,7 @@ exports.up = async (sql) => {
       },
       id: 85,
       life_span: '10 - 12 years',
-      name: 'Giant Schnauzer',
+      name: 'Giant-Schnauzer',
       temperament:
         'Strong Willed, Kind, Loyal, Intelligent, Dominant, Powerful',
       weight: {
@@ -1431,7 +1431,7 @@ exports.up = async (sql) => {
       },
       id: 86,
       life_span: '12 - 15 years',
-      name: 'Glen of Imaal Terrier',
+      name: 'Glen-of-Imaal-Terrier',
       temperament: 'Spirited, Agile, Loyal, Gentle, Active, Courageous',
       weight: {
         imperial: '32 - 40',
@@ -1447,7 +1447,7 @@ exports.up = async (sql) => {
       },
       id: 87,
       life_span: '10 - 12 years',
-      name: 'Golden Retriever',
+      name: 'Golden-Retriever',
       temperament:
         'Intelligent, Kind, Reliable, Friendly, Trustworthy, Confident',
       weight: {
@@ -1464,7 +1464,7 @@ exports.up = async (sql) => {
       },
       id: 88,
       life_span: '10 - 12 years',
-      name: 'Gordon Setter',
+      name: 'Gordon-Setter',
       temperament: 'Fearless, Alert, Loyal, Confident, Gay, Eager',
       weight: {
         imperial: '45 - 80',
@@ -1480,7 +1480,7 @@ exports.up = async (sql) => {
       },
       id: 89,
       life_span: '7 - 10 years',
-      name: 'Great Dane',
+      name: 'Great-Dane',
       temperament: 'Friendly, Devoted, Reserved, Gentle, Confident, Loving',
       weight: {
         imperial: '110 - 190',
@@ -1496,7 +1496,7 @@ exports.up = async (sql) => {
       },
       id: 90,
       life_span: '10 - 12 years',
-      name: 'Great Pyrenees',
+      name: 'Great-Pyrenees',
       temperament:
         'Strong Willed, Fearless, Affectionate, Patient, Gentle, Confident',
       weight: {
@@ -1529,7 +1529,7 @@ exports.up = async (sql) => {
       },
       id: 92,
       life_span: '10 – 15 years',
-      name: 'Griffon Bruxellois',
+      name: 'Griffon-Bruxellois',
       temperament:
         'Self-important, Inquisitive, Alert, Companionable, Sensitive, Watchful',
       weight: {
@@ -1580,7 +1580,7 @@ exports.up = async (sql) => {
       },
       id: 95,
       life_span: '10 - 11 years',
-      name: 'Irish Setter',
+      name: 'Irish-Setter',
       temperament:
         'Affectionate, Energetic, Lively, Independent, Playful, Companionable',
       weight: {
@@ -1596,7 +1596,7 @@ exports.up = async (sql) => {
       },
       id: 96,
       life_span: '12 - 16 years',
-      name: 'Irish Terrier',
+      name: 'Irish-Terrier',
       temperament:
         'Respectful, Lively, Intelligent, Dominant, Protective, Trainable',
       weight: {
@@ -1613,7 +1613,7 @@ exports.up = async (sql) => {
       },
       id: 97,
       life_span: '6 - 8 years',
-      name: 'Irish Wolfhound',
+      name: 'Irish-Wolfhound',
       temperament:
         'Sweet-Tempered, Loyal, Dignified, Patient, Thoughtful, Generous',
       weight: {
@@ -1630,7 +1630,7 @@ exports.up = async (sql) => {
       },
       id: 98,
       life_span: '12 - 15 years',
-      name: 'Italian Greyhound',
+      name: 'Italian-Greyhound',
       temperament:
         'Mischievous, Affectionate, Agile, Athletic, Companionable, Intelligent',
       weight: {
@@ -1647,7 +1647,7 @@ exports.up = async (sql) => {
       },
       id: 99,
       life_span: '12 - 14 years',
-      name: 'Japanese Chin',
+      name: 'Japanese-Chin',
       temperament: 'Alert, Loyal, Independent, Intelligent, Loving, Cat-like',
       weight: {
         imperial: '4 - 9',
@@ -1662,7 +1662,7 @@ exports.up = async (sql) => {
       },
       id: 100,
       life_span: '10 – 16 years',
-      name: 'Japanese Spitz',
+      name: 'Japanese-Spitz',
       temperament:
         'Affectionate, Obedient, Playful, Companionable, Intelligent, Proud',
       weight: {
@@ -1744,7 +1744,7 @@ exports.up = async (sql) => {
       },
       id: 105,
       life_span: '10 - 13 years',
-      name: 'Labrador Retriever',
+      name: 'Labrador-Retriever',
       temperament:
         'Kind, Outgoing, Agile, Gentle, Intelligent, Trusting, Even Tempered',
       weight: {
@@ -1761,7 +1761,7 @@ exports.up = async (sql) => {
       },
       id: 106,
       life_span: '14 - 16 years',
-      name: 'Lagotto Romagnolo',
+      name: 'Lagotto-Romagnolo',
       temperament: 'Keen, Loyal, Companionable, Loving, Active, Trainable',
       weight: {
         imperial: '24 - 35',
@@ -1776,7 +1776,7 @@ exports.up = async (sql) => {
       },
       id: 107,
       life_span: '12 – 15 years',
-      name: 'Lancashire Heeler',
+      name: 'Lancashire-Heeler',
       temperament: 'Clever, Friendly, Alert, Intelligent',
       weight: {
         imperial: '6 - 13',
@@ -1809,7 +1809,7 @@ exports.up = async (sql) => {
       },
       id: 109,
       life_span: '12 - 15 years',
-      name: 'Lhasa Apso',
+      name: 'Lhasa-Apso',
       temperament:
         'Steady, Fearless, Friendly, Devoted, Assertive, Spirited, Energetic, Lively, Alert, Obedient, Playful, Intelligent',
       weight: {
@@ -1842,7 +1842,7 @@ exports.up = async (sql) => {
       },
       id: 111,
       life_span: '12 - 15 years',
-      name: 'Miniature American Shepherd',
+      name: 'Miniature-American-Shepherd',
       temperament: 'Energetic, Loyal, Intelligent, Trainable',
       weight: {
         imperial: '20 - 40',
@@ -1858,7 +1858,7 @@ exports.up = async (sql) => {
       },
       id: 112,
       life_span: '15 years',
-      name: 'Miniature Pinscher',
+      name: 'Miniature-Pinscher',
       temperament: 'Clever, Outgoing, Friendly, Energetic, Responsive, Playful',
       weight: {
         imperial: '8 - 11',
@@ -1874,7 +1874,7 @@ exports.up = async (sql) => {
       },
       id: 113,
       life_span: '12 - 14 years',
-      name: 'Miniature Schnauzer',
+      name: 'Miniature-Schnauzer',
       temperament: 'Fearless, Friendly, Spirited, Alert, Obedient, Intelligent',
       weight: {
         imperial: '11 - 20',
@@ -1906,7 +1906,7 @@ exports.up = async (sql) => {
       },
       id: 115,
       life_span: '12 - 15 years',
-      name: 'Norfolk Terrier',
+      name: 'Norfolk-Terrier',
       temperament:
         'Self-confidence, Fearless, Spirited, Companionable, Happy, Lovable',
       weight: {
@@ -1923,7 +1923,7 @@ exports.up = async (sql) => {
       },
       id: 116,
       life_span: '12 - 15 years',
-      name: 'Norwich Terrier',
+      name: 'Norwich-Terrier',
       temperament: 'Hardy, Affectionate, Energetic, Sensitive, Intelligent',
       weight: {
         imperial: '11 - 12',
@@ -1938,7 +1938,7 @@ exports.up = async (sql) => {
       },
       id: 117,
       life_span: '12 - 14 years',
-      name: 'Nova Scotia Duck Tolling Retriever',
+      name: 'Nova-Scotia-Duck-Tolling-Retriever',
       temperament: 'Outgoing, Alert, Patient, Intelligent, Loving',
       weight: {
         imperial: '35 - 50',
@@ -1954,7 +1954,7 @@ exports.up = async (sql) => {
       },
       id: 118,
       life_span: '10 - 12 years',
-      name: 'Old English Sheepdog',
+      name: 'Old-English-Sheepdog',
       temperament: 'Sociable, Bubbly, Playful, Adaptable, Intelligent, Loving',
       weight: {
         imperial: '60 - 100',
@@ -1968,7 +1968,7 @@ exports.up = async (sql) => {
       },
       id: 119,
       life_span: '9 – 14 years',
-      name: 'Olde English Bulldogge',
+      name: 'Olde-English-Bulldogge',
       temperament: 'Friendly, Alert, Confident, Loving, Courageous, Strong',
       weight: {
         imperial: '65 – 85',
@@ -2017,7 +2017,7 @@ exports.up = async (sql) => {
       },
       id: 122,
       life_span: '12 - 14 years',
-      name: 'Pembroke Welsh Corgi',
+      name: 'Pembroke-Welsh-Corgi',
       temperament: 'Tenacious, Outgoing, Friendly, Bold, Playful, Protective',
       weight: {
         imperial: '25 - 30',
@@ -2032,7 +2032,7 @@ exports.up = async (sql) => {
       },
       id: 123,
       life_span: '10 - 12 years',
-      name: 'Perro de Presa Canario',
+      name: 'Perro-de-Presa-Canario',
       temperament: 'Strong Willed, Suspicious, Gentle, Dominant, Calm',
       weight: {
         imperial: '88 - 110',
@@ -2048,7 +2048,7 @@ exports.up = async (sql) => {
       },
       id: 124,
       life_span: '12 - 14 years',
-      name: 'Pharaoh Hound',
+      name: 'Pharaoh-Hound',
       temperament:
         'Affectionate, Sociable, Playful, Intelligent, Active, Trainable',
       weight: {
@@ -2096,7 +2096,7 @@ exports.up = async (sql) => {
       },
       id: 127,
       life_span: '12 – 15 years',
-      name: 'Poodle (Miniature)',
+      name: 'Poodle(Miniature)',
       weight: {
         imperial: '15 - 17',
         metric: '7 - 8',
@@ -2109,7 +2109,7 @@ exports.up = async (sql) => {
       },
       id: 128,
       life_span: '18 years',
-      name: 'Poodle (Toy)',
+      name: 'Poodle(Toy)',
       weight: {
         imperial: '6 - 9',
         metric: '3 - 4',
@@ -2171,7 +2171,7 @@ exports.up = async (sql) => {
       },
       id: 132,
       life_span: '12 - 18 years',
-      name: 'Rat Terrier',
+      name: 'Rat-Terrier',
       temperament:
         'Affectionate, Lively, Inquisitive, Alert, Intelligent, Loving',
       weight: {
@@ -2188,7 +2188,7 @@ exports.up = async (sql) => {
       },
       id: 133,
       life_span: '10 - 12 years',
-      name: 'Redbone Coonhound',
+      name: 'Redbone-Coonhound',
       temperament:
         'Affectionate, Energetic, Independent, Companionable, Familial, Unflappable',
       weight: {
@@ -2205,7 +2205,7 @@ exports.up = async (sql) => {
       },
       id: 134,
       life_span: '10 - 12 years',
-      name: 'Rhodesian Ridgeback',
+      name: 'Rhodesian-Ridgeback',
       temperament:
         'Strong Willed, Mischievous, Loyal, Dignified, Sensitive, Intelligent',
       weight: {
@@ -2238,7 +2238,7 @@ exports.up = async (sql) => {
       },
       id: 136,
       life_span: '10 - 12 years',
-      name: 'Russian Toy',
+      name: 'Russian-Toy',
       weight: {
         imperial: '3 - 6',
         metric: '1 - 3',
@@ -2253,7 +2253,7 @@ exports.up = async (sql) => {
       },
       id: 137,
       life_span: '7 - 10 years',
-      name: 'Saint Bernard',
+      name: 'Saint-Bernard',
       temperament: 'Friendly, Lively, Gentle, Watchful, Calm',
       weight: {
         imperial: '130 - 180',
@@ -2317,7 +2317,7 @@ exports.up = async (sql) => {
       },
       id: 141,
       life_span: '8 - 10 years',
-      name: 'Scottish Deerhound',
+      name: 'Scottish-Deerhound',
       temperament: 'Docile, Friendly, Dignified, Gentle',
       weight: {
         imperial: '70 - 130',
@@ -2333,7 +2333,7 @@ exports.up = async (sql) => {
       },
       id: 142,
       life_span: '11 - 13 years',
-      name: 'Scottish Terrier',
+      name: 'Scottish-Terrier',
       temperament: 'Feisty, Alert, Independent, Playful, Quick, Self-assured',
       weight: {
         imperial: '18 - 22',
@@ -2349,7 +2349,7 @@ exports.up = async (sql) => {
       },
       id: 143,
       life_span: '12 - 14 years',
-      name: 'Shetland Sheepdog',
+      name: 'Shetland-Sheepdog',
       temperament:
         'Affectionate, Lively, Responsive, Alert, Loyal, Reserved, Playful, Gentle, Intelligent, Active, Trainable, Strong',
       weight: {
@@ -2366,7 +2366,7 @@ exports.up = async (sql) => {
       },
       id: 144,
       life_span: '12 - 16 years',
-      name: 'Shiba Inu',
+      name: 'Shiba-Inu',
       temperament: 'Charming, Fearless, Keen, Alert, Confident, Faithful',
       weight: {
         imperial: '17 - 23',
@@ -2382,7 +2382,7 @@ exports.up = async (sql) => {
       },
       id: 145,
       life_span: '10 - 18 years',
-      name: 'Shih Tzu',
+      name: 'Shih-Tzu',
       temperament:
         'Clever, Spunky, Outgoing, Friendly, Affectionate, Lively, Alert, Loyal, Independent, Playful, Gentle, Intelligent, Happy, Active, Courageous',
       weight: {
@@ -2398,7 +2398,7 @@ exports.up = async (sql) => {
       },
       id: 146,
       life_span: '9 – 14 years',
-      name: 'Shiloh Shepherd',
+      name: 'Shiloh-Shepherd',
       temperament: 'Outgoing, Loyal, Companionable, Gentle, Loving, Trainable',
       weight: {
         imperial: '120 - 140',
@@ -2414,7 +2414,7 @@ exports.up = async (sql) => {
       },
       id: 147,
       life_span: '12 years',
-      name: 'Siberian Husky',
+      name: 'Siberian-Husky',
       temperament: 'Outgoing, Friendly, Alert, Gentle, Intelligent',
       weight: {
         imperial: '35 - 60',
@@ -2430,7 +2430,7 @@ exports.up = async (sql) => {
       },
       id: 148,
       life_span: '12 - 15 years',
-      name: 'Silky Terrier',
+      name: 'Silky-Terrier',
       temperament: 'Friendly, Responsive, Inquisitive, Alert, Quick, Joyful',
       weight: {
         imperial: '8 - 10',
@@ -2446,7 +2446,7 @@ exports.up = async (sql) => {
       },
       id: 149,
       life_span: '12 - 14 years',
-      name: 'Smooth Fox Terrier',
+      name: 'Smooth-Fox-Terrier',
       temperament:
         'Fearless, Affectionate, Alert, Playful, Intelligent, Active',
       weight: {
@@ -2463,7 +2463,7 @@ exports.up = async (sql) => {
       },
       id: 150,
       life_span: '12 - 15 years',
-      name: 'Soft Coated Wheaten Terrier',
+      name: 'Soft-Coated-Wheaten-Terrier',
       temperament:
         'Affectionate, Spirited, Energetic, Playful, Intelligent, Faithful',
       weight: {
@@ -2480,7 +2480,7 @@ exports.up = async (sql) => {
       },
       id: 151,
       life_span: '12 - 15 years',
-      name: 'Spanish Water Dog',
+      name: 'Spanish-Water-Dog',
       temperament:
         'Trainable, Diligent, Affectionate, Loyal, Athletic, Intelligent',
       weight: {
@@ -2496,7 +2496,7 @@ exports.up = async (sql) => {
       },
       id: 152,
       life_span: '10 - 12 years',
-      name: 'Spinone Italiano',
+      name: 'Spinone-Italiano',
       temperament: 'Docile, Friendly, Affectionate, Loyal, Patient, Gentle',
       weight: {
         imperial: '61 - 85',
@@ -2512,7 +2512,7 @@ exports.up = async (sql) => {
       },
       id: 153,
       life_span: '12 - 14 years',
-      name: 'Staffordshire Bull Terrier',
+      name: 'Staffordshire-Bull-Terrier',
       temperament:
         'Reliable, Fearless, Bold, Affectionate, Loyal, Intelligent, Courageous',
       weight: {
@@ -2529,7 +2529,7 @@ exports.up = async (sql) => {
       },
       id: 154,
       life_span: '13 - 15 years',
-      name: 'Standard Schnauzer',
+      name: 'Standard-Schnauzer',
       temperament:
         'Trainable, Good-natured, Devoted, Lively, Playful, Intelligent',
       weight: {
@@ -2545,7 +2545,7 @@ exports.up = async (sql) => {
       },
       id: 155,
       life_span: '12 - 14 years',
-      name: 'Swedish Vallhund',
+      name: 'Swedish-Vallhund',
       temperament:
         'Fearless, Friendly, Energetic, Alert, Intelligent, Watchful',
       weight: {
@@ -2561,7 +2561,7 @@ exports.up = async (sql) => {
       },
       id: 156,
       life_span: '10 - 12 years',
-      name: 'Thai Ridgeback',
+      name: 'Thai-Ridgeback',
       temperament:
         'Protective, Loyal, Independent, Intelligent, Loving, Familial',
       weight: {
@@ -2577,7 +2577,7 @@ exports.up = async (sql) => {
       },
       id: 157,
       life_span: '10 - 14 years',
-      name: 'Tibetan Mastiff',
+      name: 'Tibetan-Mastiff',
       temperament:
         'Strong Willed, Tenacious, Aloof, Stubborn, Intelligent, Protective',
       weight: {
@@ -2593,7 +2593,7 @@ exports.up = async (sql) => {
       },
       id: 158,
       life_span: '12 - 15 years',
-      name: 'Tibetan Spaniel',
+      name: 'Tibetan-Spaniel',
       temperament:
         'Willful, Aloof, Assertive, Independent, Playful, Intelligent, Happy',
       weight: {
@@ -2611,7 +2611,7 @@ exports.up = async (sql) => {
       },
       id: 159,
       life_span: '12 - 15 years',
-      name: 'Tibetan Terrier',
+      name: 'Tibetan-Terrier',
       temperament:
         'Affectionate, Energetic, Amiable, Reserved, Gentle, Sensitive',
       weight: {
@@ -2627,7 +2627,7 @@ exports.up = async (sql) => {
       },
       id: 160,
       life_span: '12 - 15 years',
-      name: 'Toy Fox Terrier',
+      name: 'Toy-Fox-Terrier',
       temperament: 'Friendly, Spirited, Alert, Loyal, Playful, Intelligent',
       weight: {
         imperial: '4 - 9',
@@ -2642,7 +2642,7 @@ exports.up = async (sql) => {
       },
       id: 161,
       life_span: '10 - 13 years',
-      name: 'Treeing Walker Coonhound',
+      name: 'Treeing-Walker-Coonhound',
       temperament:
         'Clever, Affectionate, Confident, Intelligent, Loving, Trainable',
       weight: {
@@ -2692,7 +2692,7 @@ exports.up = async (sql) => {
       },
       id: 164,
       life_span: '12 - 15 years',
-      name: 'Welsh Springer Spaniel',
+      name: 'Welsh-Springer-Spaniel',
       temperament: 'Stubborn, Friendly, Affectionate, Loyal, Playful, Active',
       weight: {
         imperial: '35 - 55',
@@ -2708,7 +2708,7 @@ exports.up = async (sql) => {
       },
       id: 165,
       life_span: '15 - 20 years',
-      name: 'West Highland White Terrier',
+      name: 'West-Highland-White-Terrier',
       temperament:
         'Hardy, Friendly, Alert, Independent, Gay, Active, Courageous',
       weight: {
@@ -2739,7 +2739,7 @@ exports.up = async (sql) => {
       },
       id: 167,
       life_span: '12 – 14 years',
-      name: 'White Shepherd',
+      name: 'White-Shepherd',
       temperament:
         'Self-confidence, Aloof, Fearless, Alert, Companionable, Eager',
       weight: {
@@ -2756,7 +2756,7 @@ exports.up = async (sql) => {
       history: ' England',
       id: 168,
       life_span: '13 – 14 years',
-      name: 'Wire Fox Terrier',
+      name: 'Wire-Fox-Terrier',
       temperament: 'Fearless, Friendly, Bold, Keen, Alert, Quick',
       weight: {
         imperial: '15 - 19',
@@ -2773,7 +2773,7 @@ exports.up = async (sql) => {
       },
       id: 169,
       life_span: '12 - 14 years',
-      name: 'Wirehaired Pointing Griffon',
+      name: 'Wirehaired-Pointing-Griffon',
       temperament: 'Loyal, Gentle, Vigilant, Trainable, Proud',
       weight: {
         imperial: '45 - 70',
@@ -2788,7 +2788,7 @@ exports.up = async (sql) => {
       },
       id: 170,
       life_span: '12 - 14 years',
-      name: 'Wirehaired Vizsla',
+      name: 'Wirehaired-Vizsla',
       weight: {
         imperial: '45 - 65',
         metric: '20 - 29',
@@ -2818,7 +2818,7 @@ exports.up = async (sql) => {
       },
       id: 172,
       life_span: '12 - 16 years',
-      name: 'Yorkshire Terrier',
+      name: 'Yorkshire-Terrier',
       temperament: 'Bold, Independent, Confident, Intelligent, Courageous',
       weight: {
         imperial: '4 - 7',
@@ -2826,6 +2826,7 @@ exports.up = async (sql) => {
       },
     },
   ];
+  
   sql`
 	INSERT INTO fetchedDogs ${sql(
     fetchedDogs,
@@ -2834,6 +2835,9 @@ exports.up = async (sql) => {
     'life_span',
     'origin',
     'temperament',
+    'weight',
+    'height',
+    'breed_group',
   )}`;
 };
 

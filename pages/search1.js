@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-//import Button from '@material-ui/core/Button';
 import Link from 'next/link';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
 
 export default function Search1({ fetchedDogNames }) {
   const [searchDogName, setSearchDogName] = useState([]);
@@ -15,9 +16,8 @@ export default function Search1({ fetchedDogNames }) {
   // which is an Array with 'name' and 'id'
   const fetchedAllDogNames = fetchedDogNames.map((val) => val.name);
 
-  const id = fetchedDogNames.map((val) => val.id);
-
-  console.log(id);
+  // get all the ids for all the dogs from database as an Array
+  const ids = fetchedDogNames.map((val) => val.id);
 
   const oldList = searchDogName.map((el) => {
     return el.toLowerCase();
@@ -51,20 +51,27 @@ export default function Search1({ fetchedDogNames }) {
       </Head>
       <Header />
 
+      {/* use matrial-ui input field */}
       <div className="searchBar">
-        <form>
-          <input
-            placeholder="Search Breed..."
+        <form noValidate autoComplete="off">
+          <TextField
+            id="search"
+            label="Search"
+            color="secondary"
             value={input}
             onChange={showValue}
           />
         </form>
-        <button onClick={showDataValue}>
-          <span role="img" aria-label="emoji">
-            {' '}
-            🔎
-          </span>
-        </button>
+        <div className="searchButton">
+          <Button
+            variant="outlined"
+            size="medium"
+            color="primary"
+            onClick={showDataValue}
+          >
+            Go
+          </Button>
+        </div>
       </div>
       <div className="table">
         <h3>
@@ -83,7 +90,8 @@ export default function Search1({ fetchedDogNames }) {
             {filtered.map((name, i) => {
               return (
                 <li key={i}>
-                  <Link href="/search/[id]" as={`/search/${id}`}>
+                  {/* Use ${id[id]} dynamically attach each dog which has the same id, because id from database was an Array with ingeter, have to use index to get each one*/}
+                  <Link href="/search1/[id]" as={`/search1/${ids[i]}`}>
                     <a>{name}</a>
                   </Link>
                 </li>
@@ -108,28 +116,8 @@ export default function Search1({ fetchedDogNames }) {
           border: none;
           border-radius: 5px;
         }
-        button {
-          width: 3em;
-          height: 2em;
-          padding: 5px;
-          border-radius: 5px;
-          border: none;
-          cursor: pointer;
-          background-color: rgb(217, 236, 230);
-          font-family: cursive;
-          font-size: 1em;
-          font-weight: bold;
-          outline: none;
-          transition: background-color 0.2s ease-in;
-          margin-left: 1em;
-        }
-        button:hover {
-          background-color: yellow;
-          font-weight: 700;
-        }
-        button:active {
-          transition: transformY(4px);
-          background-color: rgb(235, 208, 121);
+        .searchButton {
+          margin-left: 2em;
         }
         .table,
         ul,

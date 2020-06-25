@@ -141,7 +141,7 @@ export default function SearchDogs({ sum }) {
 
 export function getServerSideProps(context) {
   const { sum } = nextCookies(context);
-  console.log(sum);
+  //console.log(sum);
   return {
     props: {
       sum: sum === undefined ? [] : sum,

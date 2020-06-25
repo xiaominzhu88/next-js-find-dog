@@ -3,20 +3,25 @@ import Head from 'next/head';
 //import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Link from 'next/link';
+import Button from '@material-ui/core/Button';
 
-function FetchedDog(props) {
-  if (!props.fetchedDogs) {
+function FetchedDog({ fetchedDogs }) {
+  if (!fetchedDogs) {
     return (
       <div className="error-page">
         <h1>Ops! This dog is not at home!</h1>
-        <Link href="/search">
+        <Link href="/search1">
           <a>
-            <button className="toSearchButton">To Search Page</button>
+            <Button variant="contained" color="primary">
+              To Search Page
+            </Button>
           </a>
         </Link>
         <Link href="/home">
           <a>
-            <button className="toHomeButton">To Homepage</button>
+            <Button variant="contained" color="primary">
+              To Homepage
+            </Button>
           </a>
         </Link>
       </div>
@@ -25,6 +30,8 @@ function FetchedDog(props) {
 
   //console.log('props:', props.fetchedDogs);
   //console.log('name:', props.fetchedDogs.name);
+
+  //const fetchedAllDogNames = fetchedDogNames.map((val) => val.name);
 
   return (
     <div>
@@ -38,45 +45,55 @@ function FetchedDog(props) {
           <span role="img" aria-label="star">
             🌟
           </span>
-          {props.fetchedDogs.name}
+
+          {fetchedDogs.name
+            ? fetchedDogs.name
+            : 'There is no information about this'}
           <span role="img" aria-label="star">
             🌟
           </span>
         </h1>
         <h2>
           Life:{' '}
-          {props.fetchedDogs.life_span
-            ? props.fetchedDogs.life_span
+          {fetchedDogs.life_span
+            ? fetchedDogs.life_span
             : 'There is no information about this'}
         </h2>
         <p>
           Bred for:{' '}
-          {props.fetchedDogs.bred_for
-            ? props.fetchedDogs.bred_for
+          {fetchedDogs.bred_for
+            ? fetchedDogs.bred_for
             : 'There is no information about this'}
         </p>
         <p>
           Origin:{' '}
-          {props.fetchedDogs.origin
-            ? props.fetchedDogs.origin
+          {fetchedDogs.origin
+            ? fetchedDogs.origin
             : 'There is no information about this'}
         </p>
+
         <p>
           Temperament:{' '}
-          {props.fetchedDogs.temperament
-            ? props.fetchedDogs.temperament
+          {fetchedDogs.temperament
+            ? fetchedDogs.temperament
             : 'There is no information about this'}
         </p>
+        <p>Id: {fetchedDogs.id}</p>
       </main>
+
       <div className="buttons">
-        <Link href="/search">
+        <Link href="/search1">
           <a>
-            <button className="toStarButton">To Search</button>
+            <Button variant="contained" color="primary">
+              To Search
+            </Button>
           </a>
         </Link>
         <Link href="/home">
           <a>
-            <button className="toHomeButton">To Home</button>
+            <Button variant="contained" color="secondary">
+              To Home
+            </Button>
           </a>
         </Link>
       </div>
@@ -98,6 +115,12 @@ function FetchedDog(props) {
           padding: 5px;
           text-shadow: 0px 3px 3px orange;
         }
+        h2 {
+          font-family: 'Lucida Console', Monaco, monospace;
+          text-align: center;
+          padding: 3px;
+          color: orange;
+        }
 
         h3 {
           font-family: 'Lucida Console', Monaco, monospace;
@@ -115,7 +138,9 @@ function FetchedDog(props) {
           max-width: 450px;
           text-align: center;
         }
-
+        a {
+          text-decoration: none;
+        }
         img {
           width: 40%;
           height: 50%;
@@ -125,31 +150,7 @@ function FetchedDog(props) {
           display: flex;
           justify-content: space-around;
           align-items: center;
-        }
-        button {
-          margin: 1em auto;
-          width: 6em;
-          height: 3em;
-          border: none;
-          padding: 5px;
-          border-radius: 5px;
-          cursor: pointer;
-          box-shadow: 6px 8px 10px lightpink;
-          background-color: rgb(217, 236, 230);
-          font-family: cursive;
-          font-size: 1em;
-          font-weight: bold;
-          outline: none;
-          transition: background-color 1s ease-in;
-        }
-        button:hover {
-          background-color: yellow;
-          color: hotpink;
-          font-weight: 700;
-        }
-        button:active {
-          transition: transformY(4px);
-          background-color: rgb(235, 208, 121);
+          margin: 2em auto;
         }
       `}</style>
     </div>
@@ -162,7 +163,7 @@ export async function getServerSideProps(context) {
 
   const fetchedDogs = await getFetchedDogsById(context.params.id);
 
-  console.log('result: ', fetchedDogs);
+  //console.log('result: ', fetchedDogs);
 
   const fetchedId = fetchedDogs.map((item) => item.id);
 
