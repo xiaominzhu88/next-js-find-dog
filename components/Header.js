@@ -6,7 +6,7 @@ function Header() {
   const linkList = [
     { name: 'Home', url: '/home' },
     { name: 'About', url: '/about' },
-    { name: 'Search', url: './search1' },
+    { name: 'Search', url: './search' },
     { name: 'Contact', url: '/contact' },
   ];
   return (

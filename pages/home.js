@@ -148,6 +148,7 @@ export default function Home() {
     const favorite = Cookies.getJSON('sum') || [];
     favorite.push(sumDogs);
     Cookies.set('sum', favorite);
+    alert('Saved, you can go to favourite page and visit them');
     //window.location.reload();
   }
   return (
@@ -190,7 +191,7 @@ export default function Home() {
         <div className={`current pic ${move}`}>
           <div className="3buttons">
             <img src={pics[index]} alt="cute-dogs" />
-            <div></div>
+            <div className="stars"></div>
             {/* <Button
               onClick={() => goSum()}
               variant="contained"
@@ -198,12 +199,16 @@ export default function Home() {
               >
               Like
             </Button> */}
-            <br />
-            <br />
+
             <Link href="/star">
               <a>
                 <div className="star-view">
-                  <Button variant="contained">Visit Our Stars</Button>
+                  <Button variant="contained">
+                    Visit Our Stars
+                    <span role="img" aria-label="emoji">
+                      🌟
+                    </span>
+                  </Button>
                 </div>
               </a>
             </Link>
@@ -211,7 +216,7 @@ export default function Home() {
         </div>
       </div>
       <hr />
-      <div className="dog-content">
+      <div>
         {name.length !== 0 ? (
           <div className="information">
             <p>{name}</p>
@@ -282,7 +287,12 @@ export default function Home() {
           .dog-content {
             margin: 3em auto;
           }
-
+          .stars {
+            height: 5.5em;
+          }
+          span {
+            margin-left: 1em;
+          }
           @media (max-width: 450px) {
             img {
               width: 5em;

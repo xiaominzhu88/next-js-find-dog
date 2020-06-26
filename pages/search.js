@@ -2,55 +2,34 @@ import React, { useState } from 'react';
 import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-//import Button from '@material-ui/core/Button';
+import Link from 'next/link';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
 
-export default function Search() {
-  const [searchDogName, setSearchDogName] = useState([]);
-  const [inputValue, setInputValue] = useState('');
+export default function Search1({ fetchedDogNames }) {
+  const [input, setInput] = useState('');
   const [filtered, setFiltered] = useState([]);
   const [info, setInfo] = useState('');
 
-  const apiKey = process.env.apiKey;
-
-  const fetchSearchData = () => {
-    fetch('https://api.TheDogAPI.com/v1/breeds', {
-      method: 'GET',
-      dataType: 'JSON',
-      headers: { 'X-Api-Key': `${apiKey}` },
-    })
-      .then((res) => res.json())
-      .then((result) => {
-        //console.log(result);
-
-        const dogBreedsName = result.map((dog) => dog.name);
-
-        if (!dogBreedsName) {
-          return '';
-        } else {
-          setSearchDogName(dogBreedsName);
-        }
-      })
-      .then((error) => {
-        return error;
-      });
-  };
-  console.log(searchDogName);
+  // -------------  update input value  ------------------------
+  // convert input value to lowercase
 
   function showValue(e) {
-    setInputValue(e.target.value);
+    setInput(e.target.value.toLowerCase());
   }
 
-  const oldList = searchDogName.map((el) => {
-    return el.toLowerCase();
-  });
+  // get list which contains name and id from database for each dog, an Array
+  const oldList = fetchedDogNames.map((el) => el.id + '-' + el.name);
+
+  // from the list above, filter a new list out, which contains the user input
+  // and convert it to a new list as 'newList-filtered', it will be showed in
+  // 'return' below
 
   function showDataValue(e) {
     e.preventDefault();
-    fetchSearchData();
-
-    if (inputValue !== '') {
+    if (input !== '') {
       let newList = [];
-      newList = oldList.filter((val) => val.includes(inputValue));
+      newList = oldList.filter((val) => val.includes(input));
       setFiltered(newList);
     } else {
       setInfo('Ops,search for a breed?');
@@ -65,44 +44,60 @@ export default function Search() {
       </Head>
       <Header />
 
-      {/* <p>{searchDogName}</p> */}
-      {/* <input value={searchDogName.map((name) => name)} /> */}
+      {/* use matrial-ui input field */}
       <div className="searchBar">
-        <form>
-          <input
-            placeholder="Search Breed..."
-            value={inputValue}
+        <form noValidate autoComplete="off">
+          <TextField
+            id="search"
+            label="Search"
+            color="secondary"
+            value={input}
             onChange={showValue}
           />
         </form>
-        <button onClick={showDataValue}>
-          <span role="img" aria-label="emoji">
-            {' '}
-            🔎
-          </span>
-        </button>
+        <div className="searchButton">
+          <Button
+            variant="outlined"
+            size="medium"
+            color="primary"
+            onClick={showDataValue}
+          >
+            Go
+          </Button>
+        </div>
       </div>
       <div className="table">
         <h3>
-          <span className="span">
-            {inputValue !== '' ? filtered.length : '0'}
-          </span>{' '}
+          {/* get the sum from the data result which is as filtered length here */}
+          <span className="span">{input !== '' ? filtered.length : '0'}</span>{' '}
           Breeds for you{' '}
           <span role="img" aria-label="emoji">
             💝
           </span>
         </h3>
-        {inputValue === '' ? (
+        {input === '' ? (
           info
         ) : (
+          // filter from the data result and create each of them as a link
           <ul>
             {filtered.map((name, i) => {
-              return <li key={i}> {name}</li>;
+              const eachId = name.match(/\d/g).join('');
+              console.log('eachId: ', eachId);
+              console.log('name: ', name);
+              return (
+                <li key={i}>
+                  {/* Use ${eachId} dynamically attach each dog which has the same id, which matches each id from each name use Regex */}
+                  <Link href="/search/[id]" as={`/search/${eachId}`}>
+                    <a>{name}</a>
+                  </Link>
+                </li>
+              );
             })}
           </ul>
         )}
       </div>
       <Footer />
+
       <style jsx>{`
         .searchBar {
           display: flex;
@@ -117,28 +112,8 @@ export default function Search() {
           border: none;
           border-radius: 5px;
         }
-        button {
-          width: 3em;
-          height: 2em;
-          padding: 5px;
-          border-radius: 5px;
-          border: none;
-          cursor: pointer;
-          background-color: rgb(217, 236, 230);
-          font-family: cursive;
-          font-size: 1em;
-          font-weight: bold;
-          outline: none;
-          transition: background-color 0.2s ease-in;
-          margin-left: 1em;
-        }
-        button:hover {
-          background-color: yellow;
-          font-weight: 700;
-        }
-        button:active {
-          transition: transformY(4px);
-          background-color: rgb(235, 208, 121);
+        .searchButton {
+          margin-left: 2em;
         }
         .table,
         ul,
@@ -157,6 +132,9 @@ export default function Search() {
           color: #4b8ada;
           font-size: 1.2em;
         }
+        a:hover {
+          color: rgb(35, 174, 237);
+        }
         @media (max-width: 450px) {
           .table {
             font-size: 0.7em;
@@ -168,4 +146,21 @@ export default function Search() {
       `}</style>
     </div>
   );
+}
+
+export async function getServerSideProps(context) {
+  const { getFetchedDogsByName } = await import('../db.js');
+
+  const fetchedDogNames = await getFetchedDogsByName(context.params);
+
+  //console.log('result: ', JSON.stringify(fetchedDogNames));
+
+  if (fetchedDogNames.length === 0) {
+    return { props: {} };
+  }
+  return {
+    props: {
+      fetchedDogNames,
+    },
+  };
 }

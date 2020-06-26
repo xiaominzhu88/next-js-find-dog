@@ -48,7 +48,7 @@ export async function getFetchedDogsById(id) {
   return fetchedDogs;
 }
 
-export async function getFetchedDogsByName(name) {
+export async function getFetchedDogsByName() {
   // use this syntax instead of WHERE to get dogs by name
   const columns = ['name', 'id'];
   const dogNames = await sql`

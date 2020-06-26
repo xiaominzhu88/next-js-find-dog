@@ -10,7 +10,7 @@ function FetchedDog({ fetchedDogs }) {
     return (
       <div className="error-page">
         <h1>Ops! This dog is not at home!</h1>
-        <Link href="/search1">
+        <Link href="/search">
           <a>
             <Button variant="contained" color="primary">
               To Search Page
@@ -82,7 +82,7 @@ function FetchedDog({ fetchedDogs }) {
       </main>
 
       <div className="buttons">
-        <Link href="/search1">
+        <Link href="/search">
           <a>
             <Button variant="contained" color="primary">
               To Search
