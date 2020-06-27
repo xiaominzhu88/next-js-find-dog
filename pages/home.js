@@ -82,6 +82,7 @@ export default function Home() {
     '/favicon.jpg',
     '/bullterrier.jpg',
     '/englischedogge.jpg',
+    
   ];
   const indexStart = 0;
   const [index, setIndex] = useState(indexStart);

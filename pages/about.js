@@ -8,6 +8,9 @@ const pics = [
   '/favicon.jpg',
   '/bullterrier.jpg',
   '/englischedogge.jpg',
+  '/no-dog.jpg',
+  '/bichon-frise.jpg',
+  '/belgian-tervuren.jpg',
 ];
 
 export default function About() {
@@ -41,7 +44,7 @@ export default function About() {
         setMove(false);
         setIndexes(getNextIndex(index));
       });
-    }, 2000);
+    }, 1500);
     // Here i have to clear interval, although images will go faster and crazy !
     return () => clearInterval(interval);
     // Here I have to wrap dependensies inside Array

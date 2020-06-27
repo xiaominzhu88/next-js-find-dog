@@ -608,7 +608,6 @@ exports.up = async (sql) => {
         imperial: '40 - 65',
         metric: '18 - 29',
       },
-      url: '/belgian-tervuren.jpg',
     },
     {
       bred_for: 'Draft work',
@@ -642,7 +641,6 @@ exports.up = async (sql) => {
         imperial: '10 - 18',
         metric: '5 - 8',
       },
-      url: '/bichon-frise.jpg',
     },
     {
       bred_for: 'Hunting raccoons, night hunting',
@@ -953,6 +951,7 @@ exports.up = async (sql) => {
         imperial: '88 - 120',
         metric: '40 - 54',
       },
+      url: 'https://cdn2.thedogapi.com/images/r15m-lc4m_1280.jpg',
     },
     {
       bred_for: 'Cattle droving',
@@ -1708,6 +1707,7 @@ exports.up = async (sql) => {
         imperial: '105 - 180',
         metric: '48 - 82',
       },
+      url: 'https://cdn2.thedogapi.com/images/Hyd2zgcEX_1280.jpg',
     },
     {
       bred_for: 'Lapdog',
@@ -2049,8 +2049,6 @@ exports.up = async (sql) => {
         imperial: '35 - 50',
         metric: '16 - 23',
       },
-      url:
-        'https://de.wikipedia.org/wiki/Nova_Scotia_Duck_Tolling_Retriever#/media/Datei:Duck_Toller.jpg',
     },
     {
       bred_for: 'Driving sheep, cattle',
@@ -2168,8 +2166,6 @@ exports.up = async (sql) => {
         imperial: '40 - 60',
         metric: '18 - 27',
       },
-      url:
-        'https://en.wikipedia.org/wiki/Pharaoh_Hound#/media/File:Pies_faraona_e34.jpg',
     },
     {
       bred_for: 'Hunting big-game like Boar.',
@@ -2204,8 +2200,6 @@ exports.up = async (sql) => {
         imperial: '3 - 7',
         metric: '1 - 3',
       },
-      url:
-        'https://en.wikipedia.org/wiki/Pomeranian_(dog)#/media/File:Pomeranian.JPG',
     },
     {
       height: {
@@ -2472,8 +2466,6 @@ exports.up = async (sql) => {
         imperial: '18 - 22',
         metric: '8 - 10',
       },
-      url:
-        'https://de.wikipedia.org/wiki/Scottish_Terrier#/media/Datei:ScottishTerrier.jpg',
     },
     {
       bred_for: 'Sheep herding',
@@ -2491,8 +2483,6 @@ exports.up = async (sql) => {
         imperial: '30',
         metric: '14',
       },
-      url:
-        'https://de.wikipedia.org/wiki/Shetland_Sheepdog#/media/Datei:ShetlandShpdogBlue2_wb.jpg',
     },
     {
       bred_for: 'Hunting in the mountains of Japan, Alert Watchdog',
@@ -2751,8 +2741,6 @@ exports.up = async (sql) => {
         imperial: '9 - 15',
         metric: '4 - 7',
       },
-      url:
-        'https://de.wikipedia.org/wiki/Tibet-Spaniel#/media/Datei:TibetanSpanielBuddy.jpg',
     },
     {
       bred_for:

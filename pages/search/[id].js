@@ -39,7 +39,17 @@ function FetchedDog({ fetchedDogs }) {
         <link rel="icon" href="/favicon.jpg" />
       </Head>
       <main>
-        <img src={fetchedDogs.url} alt={fetchedDogs.name} />
+        <img
+          src={fetchedDogs.url === null ? '/no-dog.jpg' : fetchedDogs.url}
+          alt={fetchedDogs.name}
+        />
+        <p>
+          {fetchedDogs.url === null
+            ? `Oh, we don't have image for your search 
+            -- ${fetchedDogs.name}
+             `
+            : ''}
+        </p>
         <h1>
           <span role="img" aria-label="star">
             🌟
@@ -77,7 +87,6 @@ function FetchedDog({ fetchedDogs }) {
             ? fetchedDogs.temperament
             : 'There is no information about this'}
         </p>
-        <p>Id: {fetchedDogs.id}</p>
       </main>
 
       <div className="buttons">
