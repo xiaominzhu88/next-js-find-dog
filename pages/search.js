@@ -15,7 +15,7 @@ export default function Search1({ fetchedDogNames }) {
   // convert input value to lowercase
 
   function showValue(e) {
-    setInput(e.target.value.toLowercase());
+    setInput(e.target.value);
   }
 
   // get list which contains name and id from database for each dog, an Array
