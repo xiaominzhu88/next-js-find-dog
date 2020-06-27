@@ -1,12 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import nextCookies from 'next-cookies';
 import Link from 'next/link';
 import Button from '@material-ui/core/Button';
+import Cookies from 'js-cookie';
 
 export default function SearchDogs({ sum }) {
+  const [name, setName] = useState([]);
+
+  function save() {
+    const eachName = sum.map((el) => el.name);
+
+    setName(eachName);
+
+    const favo = Cookies.getJSON('sum') || [];
+    favo.push(name);
+    Cookies.set('adopt', favo);
+  }
   return (
     <>
       <Head>
@@ -28,7 +40,7 @@ export default function SearchDogs({ sum }) {
                     <h3> {eachFavorite.name}</h3>
                   </li>
                   <li>
-                    <b>Life:</b> {eachFavorite.lifeSpan}
+                    <b>Lifespan:</b> {eachFavorite.lifeSpan}
                   </li>
                   <li>
                     <b>Breed Group: </b>
@@ -44,7 +56,11 @@ export default function SearchDogs({ sum }) {
                     <Link href="/contact">
                       <a>
                         <div className="adopt-button">
-                          <Button variant="contained" color="secondary">
+                          <Button
+                            variant="contained"
+                            color="secondary"
+                            onClick={save}
+                          >
                             Adopt Me{' '}
                             <span role="img" aria-label="emoji">
                               💌
@@ -60,10 +76,14 @@ export default function SearchDogs({ sum }) {
           </ul>
         ) : (
           <div>
-            <h2>You don't have any favourite now?</h2>
+            <h2>You don't have any favourite now</h2>
             <Link href="/home">
               <a>
-                <Button variant="contained" color="primary">
+                <Button
+                  variant="contained"
+                  color="primary"
+                  style={{ margin: '1em auto' }}
+                >
                   To Home
                 </Button>
               </a>
@@ -138,7 +158,7 @@ export default function SearchDogs({ sum }) {
     </>
   );
 }
-
+// get 'saved' dogs as cookies with name 'sum'
 export function getServerSideProps(context) {
   const { sum } = nextCookies(context);
   //console.log(sum);

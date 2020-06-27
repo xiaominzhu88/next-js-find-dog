@@ -148,7 +148,7 @@ export default function Home() {
     const favorite = Cookies.getJSON('sum') || [];
     favorite.push(sumDogs);
     Cookies.set('sum', favorite);
-    alert('Saved, you can go to favourite page and visit them');
+    alert("I'm saved as your favourite, take me home");
     //window.location.reload();
   }
   return (
@@ -170,6 +170,9 @@ export default function Home() {
               color="secondary"
             >
               Like
+              <span role="img" aria-label="emoji">
+                ♥️
+              </span>
             </Button>
             <br />
             <br />
@@ -252,6 +255,10 @@ export default function Home() {
       <Footer />
       <style jsx>
         {`
+          .container {
+            margin: 0 auto;
+            padding: 0.5em;
+          }
           .dogList {
             display: flex;
             justify-content: space-around;
@@ -291,8 +298,9 @@ export default function Home() {
             height: 5.5em;
           }
           span {
-            margin-left: 1em;
+            margin-left: 0.5em;
           }
+
           @media (max-width: 450px) {
             img {
               width: 5em;

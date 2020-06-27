@@ -19,7 +19,7 @@ function FetchedDog({ fetchedDogs }) {
         </Link>
         <Link href="/home">
           <a>
-            <Button variant="contained" color="primary">
+            <Button variant="contained" color="secondary">
               To Homepage
             </Button>
           </a>
@@ -30,8 +30,7 @@ function FetchedDog({ fetchedDogs }) {
 
   //console.log('props:', props.fetchedDogs);
   //console.log('name:', props.fetchedDogs.name);
-
-  //const fetchedAllDogNames = fetchedDogNames.map((val) => val.name);
+  console.log(fetchedDogs.url);
 
   return (
     <div>
@@ -39,8 +38,8 @@ function FetchedDog({ fetchedDogs }) {
         <title>Find-your-dog</title>
         <link rel="icon" href="/favicon.jpg" />
       </Head>
-
       <main>
+        <img src={fetchedDogs.url} alt={fetchedDogs.name} />
         <h1>
           <span role="img" aria-label="star">
             🌟
@@ -53,12 +52,12 @@ function FetchedDog({ fetchedDogs }) {
             🌟
           </span>
         </h1>
-        <h2>
-          Life:{' '}
+        <h3>
+          Lifespan:{' '}
           {fetchedDogs.life_span
             ? fetchedDogs.life_span
             : 'There is no information about this'}
-        </h2>
+        </h3>
         <p>
           Bred for:{' '}
           {fetchedDogs.bred_for
@@ -103,7 +102,7 @@ function FetchedDog({ fetchedDogs }) {
         @import url('https://fonts.googleapis.com/css2?family=Bitter:ital@1&display=swap');
 
         main {
-          margin: 0 auto;
+          margin: 3em auto;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -113,21 +112,17 @@ function FetchedDog({ fetchedDogs }) {
           font-family: 'Lucida Console', Monaco, monospace;
           text-align: center;
           padding: 5px;
-          text-shadow: 0px 3px 3px orange;
-        }
-        h2 {
-          font-family: 'Lucida Console', Monaco, monospace;
-          text-align: center;
-          padding: 3px;
-          color: orange;
+          text-shadow: 0px 1px 2px orange;
         }
 
         h3 {
           font-family: 'Lucida Console', Monaco, monospace;
           text-shadow: 0px 3px 3px orange;
+          color: darkcyan;
         }
         p {
           font-size: 15px;
+          text-shadow: 0px 1px 2px orange;
           color: darkcyan;
           text-align: left;
           font-weight: 700;
@@ -142,15 +137,20 @@ function FetchedDog({ fetchedDogs }) {
           text-decoration: none;
         }
         img {
-          width: 40%;
-          height: 50%;
+          width: 10em;
+          height: 10em;
           margin: 0 auto;
+          border-radius: 40%;
         }
         .buttons {
           display: flex;
           justify-content: space-around;
           align-items: center;
           margin: 2em auto;
+        }
+        .error-page {
+          margin: 1em auto;
+          text-align: center;
         }
       `}</style>
     </div>
@@ -163,7 +163,7 @@ export async function getServerSideProps(context) {
 
   const fetchedDogs = await getFetchedDogsById(context.params.id);
 
-  //console.log('result: ', fetchedDogs);
+  console.log('result: ', fetchedDogs);
 
   const fetchedId = fetchedDogs.map((item) => item.id);
 

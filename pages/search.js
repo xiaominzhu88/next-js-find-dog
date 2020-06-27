@@ -15,11 +15,11 @@ export default function Search1({ fetchedDogNames }) {
   // convert input value to lowercase
 
   function showValue(e) {
-    setInput(e.target.value.toLowerCase());
+    setInput(e.target.value.toLowercase());
   }
 
   // get list which contains name and id from database for each dog, an Array
-  const oldList = fetchedDogNames.map((el) => el.id + '-' + el.name);
+  const oldList = fetchedDogNames.map((el) => el.id + '  🐶 ' + el.name);
 
   // from the list above, filter a new list out, which contains the user input
   // and convert it to a new list as 'newList-filtered', it will be showed in
@@ -49,7 +49,7 @@ export default function Search1({ fetchedDogNames }) {
         <form noValidate autoComplete="off">
           <TextField
             id="search"
-            label="Search"
+            label="Search Breed"
             color="secondary"
             value={input}
             onChange={showValue}
@@ -62,7 +62,10 @@ export default function Search1({ fetchedDogNames }) {
             color="primary"
             onClick={showDataValue}
           >
-            Go
+            {' '}
+            <span role="img" aria-label="emoji">
+              🔎
+            </span>
           </Button>
         </div>
       </div>
@@ -81,9 +84,11 @@ export default function Search1({ fetchedDogNames }) {
           // filter from the data result and create each of them as a link
           <ul>
             {filtered.map((name, i) => {
+              // use REGEX to match the exact id from each dog and use it as the path '/search/[id]' which below on line 91
               const eachId = name.match(/\d/g).join('');
-              console.log('eachId: ', eachId);
-              console.log('name: ', name);
+              //console.log('eachId: ', eachId);
+              //console.log('name: ', name);
+
               return (
                 <li key={i}>
                   {/* Use ${eachId} dynamically attach each dog which has the same id, which matches each id from each name use Regex */}
@@ -131,6 +136,9 @@ export default function Search1({ fetchedDogNames }) {
         .span {
           color: #4b8ada;
           font-size: 1.2em;
+        }
+        a {
+          text-decoration: none;
         }
         a:hover {
           color: rgb(35, 174, 237);

@@ -36,6 +36,7 @@ exports.up = async (sql) => {
         imperial: '50 - 60',
         metric: '23 - 27',
       },
+      url: 'https://cdn2.thedogapi.com/images/4WiUpv_4W.jpg',
     },
 
     {
@@ -71,6 +72,7 @@ exports.up = async (sql) => {
         imperial: '40 - 65',
         metric: '18 - 29',
       },
+      url: 'https://cdn2.thedogapi.com/images/lNnWNU4qU.jpg',
     },
     {
       bred_for: 'Sheep guarding',
@@ -88,6 +90,7 @@ exports.up = async (sql) => {
         imperial: '90 - 120',
         metric: '41 - 54',
       },
+      url: 'https://cdn2.thedogapi.com/images/fIXRDcKzn.jpg',
     },
     {
       bred_for: 'Hunting bears',
@@ -105,6 +108,7 @@ exports.up = async (sql) => {
         imperial: '65 - 115',
         metric: '29 - 52',
       },
+      url: 'https://cdn2.thedogapi.com/images/40bvxOUyl.jpg',
     },
     {
       bred_for: 'Guarding',
@@ -140,6 +144,7 @@ exports.up = async (sql) => {
         imperial: '38 - 50',
         metric: '17 - 23',
       },
+      url: 'https://cdn2.thedogapi.com/images/LMjrDDwSJ.jpg',
     },
     {
       bred_for: 'Hauling heavy freight, Sled pulling',
@@ -156,6 +161,7 @@ exports.up = async (sql) => {
         imperial: '65 - 100',
         metric: '29 - 45',
       },
+      url: 'https://cdn2.thedogapi.com/images/rJqd1ecV7_1280.jpg',
     },
     {
       breed_group: 'Working',
@@ -172,6 +178,7 @@ exports.up = async (sql) => {
         imperial: '60 - 120',
         metric: '27 - 54',
       },
+      url: 'https://cdn2.thedogapi.com/images/pk1AAdloG.jpg',
     },
     {
       bred_for: 'Family companion dog',
@@ -190,6 +197,7 @@ exports.up = async (sql) => {
         imperial: '30 - 150',
         metric: '14 - 68',
       },
+      url: 'https://cdn2.thedogapi.com/images/34v9aKCct.jpg',
     },
     {
       bred_for: 'Circus performer',
@@ -259,6 +267,7 @@ exports.up = async (sql) => {
         imperial: '30 - 60',
         metric: '14 - 27',
       },
+      url: 'https://cdn2.thedogapi.com/images/HkC31gcNm_1280.png',
     },
     {
       bred_for: '',
@@ -342,6 +351,7 @@ exports.up = async (sql) => {
         imperial: '44 - 62',
         metric: '20 - 28',
       },
+      url: 'https://cdn2.thedogapi.com/images/ZxP-viFTK.jpg',
     },
     {
       bred_for: 'Farm dog, Cattle herding',
@@ -377,6 +387,7 @@ exports.up = async (sql) => {
         imperial: '35 - 65',
         metric: '16 - 29',
       },
+      url: 'https://cdn2.thedogapi.com/images/B1-llgq4m_1280.jpg',
     },
     {
       bred_for: 'Cattle herdering, hunting snakes and rodents',
@@ -411,6 +422,7 @@ exports.up = async (sql) => {
         imperial: '33 - 55',
         metric: '15 - 25',
       },
+      url: 'https://cdn2.thedogapi.com/images/SkvZgx94m_1280.jpg',
     },
     {
       bred_for: 'Hunting water game',
@@ -509,6 +521,7 @@ exports.up = async (sql) => {
         imperial: '45 - 55',
         metric: '20 - 25',
       },
+      url: 'https://cdn2.thedogapi.com/images/_eGtrKB20.jpg',
     },
     {
       bred_for: 'Boar herding, hunting, guarding',
@@ -591,6 +604,7 @@ exports.up = async (sql) => {
         imperial: '65 - 120',
         metric: '29 - 54',
       },
+      url: 'https://cdn2.thedogapi.com/images/S1fFlx5Em_1280.jpg',
     },
     {
       bred_for: 'Companion',
@@ -640,6 +654,7 @@ exports.up = async (sql) => {
         imperial: '80 - 110',
         metric: '36 - 50',
       },
+      url: 'https://cdn2.thedogapi.com/images/Skdcgx9VX_1280.jpg',
     },
     {
       bred_for: 'Hunting with a superior sense of smell.',
@@ -656,6 +671,7 @@ exports.up = async (sql) => {
         imperial: '45 - 80',
         metric: '20 - 36',
       },
+      url: 'https://cdn2.thedogapi.com/images/rJxieg9VQ_1280.jpg',
     },
     {
       bred_for: 'Guarding the homestead, farm work.',
@@ -672,6 +688,7 @@ exports.up = async (sql) => {
         imperial: '110 - 200',
         metric: '50 - 91',
       },
+      url: 'https://cdn2.thedogapi.com/images/HyOjge5Vm_1280.jpg',
     },
     {
       bred_for: 'Sheep herder',
@@ -688,6 +705,7 @@ exports.up = async (sql) => {
         imperial: '30 - 45',
         metric: '14 - 20',
       },
+      url: 'https://cdn2.thedogapi.com/images/U7OLiFMLX.jpg',
     },
     {
       bred_for: 'Fox bolting, ratting',
@@ -837,6 +855,7 @@ exports.up = async (sql) => {
         imperial: '50 - 70',
         metric: '23 - 32',
       },
+      url: 'https://cdn2.thedogapi.com/images/8WPhRloCS.jpg',
     },
     {
       bred_for: "An elegant man's fashion statement",
@@ -853,6 +872,7 @@ exports.up = async (sql) => {
         imperial: '25 - 33',
         metric: '11 - 15',
       },
+      url: 'https://cdn2.thedogapi.com/images/BkKZWlcVX_1280.jpg',
     },
     {
       bred_for: 'Estate guardian',
@@ -970,6 +990,7 @@ exports.up = async (sql) => {
         imperial: '13 - 18',
         metric: '6 - 8',
       },
+      url: 'https://cdn2.thedogapi.com/images/HJRBbe94Q_1280.jpg',
     },
     {
       bred_for: 'Water Retriever',
@@ -987,6 +1008,7 @@ exports.up = async (sql) => {
         imperial: '55 - 80',
         metric: '25 - 36',
       },
+      url: 'https://cdn2.thedogapi.com/images/4UcpAcdLm.jpg',
     },
     {
       bred_for: 'Ratting, lapdog, curio',
@@ -1087,6 +1109,7 @@ exports.up = async (sql) => {
         imperial: '20 - 30',
         metric: '9 - 14',
       },
+      url: 'https://cdn2.thedogapi.com/images/2v2nAUTLB.jpg',
     },
     {
       bred_for: 'Hunting the American woodcock',
@@ -1188,6 +1211,7 @@ exports.up = async (sql) => {
         imperial: '50 - 70',
         metric: '23 - 32',
       },
+      url: 'https://cdn2.thedogapi.com/images/BkE6Wg5E7_1280.jpg',
     },
     {
       bred_for: 'Bird setting, retrieving',
@@ -1239,6 +1263,7 @@ exports.up = async (sql) => {
         imperial: '35 - 50',
         metric: '16 - 23',
       },
+      url: 'https://cdn2.thedogapi.com/images/Hk0Jfe5VQ_1280.jpg',
     },
     {
       bred_for: 'Companion of kings',
@@ -1336,6 +1361,7 @@ exports.up = async (sql) => {
         imperial: '23 - 28',
         metric: '10 - 13',
       },
+      url: 'https://cdn2.thedogapi.com/images/6_lwtm_Zr.jpg',
     },
     {
       bred_for: 'Lapdog',
@@ -1387,6 +1413,7 @@ exports.up = async (sql) => {
         imperial: '50 - 90',
         metric: '23 - 41',
       },
+      url: 'https://cdn2.thedogapi.com/images/SJyBfg5NX_1280.jpg',
     },
     {
       bred_for: 'General hunting',
@@ -1454,6 +1481,7 @@ exports.up = async (sql) => {
         imperial: '55 - 75',
         metric: '25 - 34',
       },
+      url: 'https://cdn2.thedogapi.com/images/HJ7Pzg5EQ_1280.jpg',
     },
     {
       bred_for: 'Find and point gamebirds',
@@ -1536,6 +1564,7 @@ exports.up = async (sql) => {
         imperial: '12',
         metric: '5',
       },
+      url: 'https://cdn2.thedogapi.com/images/ryoYGec4Q_1280.jpg',
     },
     {
       bred_for: 'Hunting hares by trailing them',
@@ -1717,6 +1746,7 @@ exports.up = async (sql) => {
         imperial: '20 - 30',
         metric: '9 - 14',
       },
+      url: 'https://cdn2.thedogapi.com/images/omhpknDX6.jpg',
     },
     {
       bred_for: 'Guardian, hunting large game',
@@ -1767,6 +1797,7 @@ exports.up = async (sql) => {
         imperial: '24 - 35',
         metric: '11 - 16',
       },
+      url: 'https://cdn2.thedogapi.com/images/ryzzmgqE7_1280.jpg',
     },
     {
       bred_for: 'Cattle herding, Ratting, Driving cattle to market.',
@@ -1848,6 +1879,7 @@ exports.up = async (sql) => {
         imperial: '20 - 40',
         metric: '9 - 18',
       },
+      url: 'https://cdn2.thedogapi.com/images/BkHHQgcN7_1280.jpg',
     },
     {
       bred_for: 'Small vermin hunting',
@@ -1990,6 +2022,7 @@ exports.up = async (sql) => {
         imperial: '3 - 12',
         metric: '1 - 5',
       },
+      url: 'https://cdn2.thedogapi.com/images/SkJj7e547_1280.jpg',
     },
     {
       bred_for: 'Lapdog',
@@ -2229,6 +2262,7 @@ exports.up = async (sql) => {
         imperial: '75 - 110',
         metric: '34 - 50',
       },
+      url: 'https://cdn2.thedogapi.com/images/r1xXEgcNX_1280.jpg',
     },
     {
       breed_group: 'Toy',
@@ -2259,6 +2293,7 @@ exports.up = async (sql) => {
         imperial: '130 - 180',
         metric: '59 - 82',
       },
+      url: 'https://cdn2.thedogapi.com/images/t7FefmYNk.jpg',
     },
     {
       bred_for: 'Coursing gazelle and hare',
@@ -2275,6 +2310,7 @@ exports.up = async (sql) => {
         imperial: '35 - 65',
         metric: '16 - 29',
       },
+      url: 'https://cdn2.thedogapi.com/images/tFQkJi_-6.jpg',
     },
     {
       bred_for: 'Herding reindeer, guardian, draft',
@@ -2307,6 +2343,7 @@ exports.up = async (sql) => {
         imperial: '10 - 16',
         metric: '5 - 7',
       },
+      url: 'https://cdn2.thedogapi.com/images/SyBvVgc47_1280.jpg',
     },
     {
       bred_for: 'Coursing deer',
@@ -2372,6 +2409,7 @@ exports.up = async (sql) => {
         imperial: '17 - 23',
         metric: '8 - 10',
       },
+      url: 'https://cdn2.thedogapi.com/images/xJJyuYXJS.jpg',
     },
     {
       bred_for: 'Lapdog',
@@ -2389,6 +2427,7 @@ exports.up = async (sql) => {
         imperial: '9 - 16',
         metric: '4 - 7',
       },
+      url: 'https://cdn2.thedogapi.com/images/BkrJjgcV7_1280.jpg',
     },
     {
       bred_for: 'Swimming, Carrying backpacks, Pulling carts or sleds',
@@ -2404,6 +2443,7 @@ exports.up = async (sql) => {
         imperial: '120 - 140',
         metric: '54 - 64',
       },
+      url: 'https://cdn2.thedogapi.com/images/SJJxjecEX_1280.jpg',
     },
     {
       bred_for: 'Sled pulling',
@@ -2453,6 +2493,7 @@ exports.up = async (sql) => {
         imperial: 'up - 18',
         metric: 'NaN - 8',
       },
+      url: 'https://cdn2.thedogapi.com/images/Syszjx9Em_1280.jpg',
     },
     {
       bred_for: 'Vermin hunting, guarding, all-around farm helper',
@@ -2519,6 +2560,7 @@ exports.up = async (sql) => {
         imperial: '24 - 38',
         metric: '11 - 17',
       },
+      url: 'https://cdn2.thedogapi.com/images/H1zSie9V7_1280.jpg',
     },
     {
       bred_for: 'Ratting, guarding',
@@ -2536,6 +2578,7 @@ exports.up = async (sql) => {
         imperial: '30 - 50',
         metric: '14 - 23',
       },
+      url: 'https://cdn2.thedogapi.com/images/GZeDDro7-.jpg',
     },
     {
       breed_group: 'Herding',
@@ -2568,6 +2611,7 @@ exports.up = async (sql) => {
         imperial: '35 - 55',
         metric: '16 - 25',
       },
+      url: 'https://cdn2.thedogapi.com/images/0zRjpLfPg.jpg',
     },
     {
       breed_group: 'Working',
@@ -2618,6 +2662,7 @@ exports.up = async (sql) => {
         imperial: '20 - 24',
         metric: '9 - 11',
       },
+      url: 'https://cdn2.thedogapi.com/images/6f5n_42mB.jpg',
     },
     {
       breed_group: 'Toy',
@@ -2665,6 +2710,7 @@ exports.up = async (sql) => {
         imperial: '50 - 65',
         metric: '23 - 29',
       },
+      url: 'https://cdn2.thedogapi.com/images/r1o0jx9Em_1280.jpg',
     },
     {
       bred_for: 'Large game trailing and versatile gundog',
@@ -2826,7 +2872,7 @@ exports.up = async (sql) => {
       },
     },
   ];
-  
+
   sql`
 	INSERT INTO fetchedDogs ${sql(
     fetchedDogs,
@@ -2838,6 +2884,7 @@ exports.up = async (sql) => {
     'weight',
     'height',
     'breed_group',
+    'url',
   )}`;
 };
 

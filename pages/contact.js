@@ -2,8 +2,17 @@ import React from 'react';
 import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Button from '@material-ui/core/Button';
+import Link from 'next/link';
+import TextField from '@material-ui/core/TextField';
+import Cookies from 'js-cookie';
+import nextCookies from 'next-cookies';
 
-export default function Contact() {
+export default function Contact({ adopt }) {
+  function sendMail() {
+    Cookies.remove('sum');
+    Cookies.remove('adopt');
+  }
   return (
     <div>
       <Head>
@@ -11,8 +20,81 @@ export default function Contact() {
         <link rel="icon" href="/favicon.jpg" />
       </Head>
       <Header />
-      <h1>contact</h1>
+      <div className="contact">
+        <h1>contact</h1>
+        <form>
+          <TextField
+            id="outlined-search"
+            label="Name"
+            type="search"
+            variant="outlined"
+          />
+          <br />
+          <br />
+          <TextField
+            id="outlined-search"
+            label="Email"
+            type="search"
+            variant="outlined"
+          />
+          <br />
+          <br />
+          <Button
+            variant="contained"
+            onClick={sendMail}
+            style={{ margin: '1em auto' }}
+          >
+            Send
+          </Button>{' '}
+        </form>
+
+        <div>
+          {!adopt ? (
+            ''
+          ) : (
+            <ul>
+              {adopt.map((el, i) => (
+                <li key={i}> {el.name}</li>
+              ))}
+            </ul>
+          )}
+        </div>
+
+        <Link href="/sum ">
+          <a>
+            <Button
+              variant="contained"
+              color="primary"
+              style={{ margin: '1em auto' }}
+            >
+              To Favourite Page
+            </Button>
+          </a>
+        </Link>
+      </div>
       <Footer />
+      <style jsx>{`
+        a {
+          text-decoration: none;
+        }
+        .contact {
+          margin: 1em auto;
+          text-align: center;
+        }
+        li {
+          list-style: none;
+          line-height: 1.5em;
+        }
+      `}</style>
     </div>
   );
+}
+export function getServerSideProps(context) {
+  const { adopt } = nextCookies(context);
+  //console.log(sum);
+  return {
+    props: {
+      adopt: adopt === undefined ? [] : adopt,
+    },
+  };
 }
