@@ -33,7 +33,7 @@ exports.up = async (sql) => {
       className2: 'english-bull-image',
     },
   ];
-  sql`
+  await sql`
 	INSERT INTO dogs ${sql(
     dogs,
     'name',
@@ -46,7 +46,7 @@ exports.up = async (sql) => {
 };
 
 exports.down = async (sql) => {
-  sql`
+  await sql`
 	DELETE FROM dogs WHERE id = 1 and id = 2 and id = 3
 	
 	`;

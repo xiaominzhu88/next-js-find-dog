@@ -2982,7 +2982,9 @@ exports.up = async (sql) => {
     },
   ];
 
-  sql`
+
+
+  await sql`
 	INSERT INTO fetchedDogs ${sql(
     fetchedDogs,
     'name',
@@ -2998,7 +3000,7 @@ exports.up = async (sql) => {
 };
 
 exports.down = async (sql) => {
-  sql`
+  await sql`
 	DELETE FROM fetchedDogs WHERE id = 264
 	
 	`;
