@@ -1,20 +1,23 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
-//import Header from '../components/Header';
-//
-//import Footer from '../components/Footer';
+import { GetServerSidePropsContext } from 'next';
+//import { getServerSideProps } from './login';
+import Link from 'next/link';
+type Props = {
+  csrfToken: string;
+};
 
-export default function Home() {
-  const [value, setValue] = useState('');
-  const [password, setPassword] = useState('');
+export default function Home(props: Props) {
+  //const [value, setValue] = useState('');
+  //const [password, setPassword] = useState('');
 
-  function handleChange(e) {
-    setValue(e.target.value);
-  }
+  //   function handleChange(e) {
+  //     setValue(e.target.value);
+  //
+  //   function passChange(e) {
+  //     setPassword(e.target.value);
+  //   }
 
-  function passChange(e) {
-    setPassword(e.target.value);
-  }
   return (
     <div className="container">
       <Head>
@@ -22,23 +25,17 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/* <Header /> */}
-
       <div className="auth">
         <div className="left">
-          <div>
-            <h1>Login</h1>
-          </div>
-
-          <form>
+          <form method="POST">
             <label>
               Name: <br />
               <input
                 placeholder="user name"
                 type="text"
-                name="name"
-                value={value}
-                onChange={handleChange}
+                name="username"
+                //  value={value}
+                //   onChange={handleChange}
               />
             </label>{' '}
             <br />
@@ -48,12 +45,18 @@ export default function Home() {
                 placeholder="password"
                 type="password"
                 name="password"
-                value={password}
-                onChange={passChange}
+                //  value={password}
+                //   onChange={passChange}
               />
             </label>
             <br />
-            <button>Submit</button>
+            <input type="hidden" name="csrf" value={props.csrfToken} />
+            <p>{props.csrfToken}</p>
+            <Link href="./login">
+              <a>
+                <button>Sign up</button>
+              </a>
+            </Link>
           </form>
         </div>
 
@@ -86,6 +89,9 @@ export default function Home() {
             color: pink;
             text-align: center;
           }
+          p {
+            color: pink;
+          }
           .auth {
             display: flex;
             justify-content: space-around;
@@ -93,11 +99,10 @@ export default function Home() {
             font-family: 'Bitter', serif;
           }
           .left {
-            display: block;
             background-color: beige;
             width: 50%;
-            height: 60vh;
-            padding: 4em;
+            height: 70vh;
+            padding-left: 1em;
           }
           .right {
             background-image: url('/welcome.jpg');
@@ -164,8 +169,79 @@ export default function Home() {
           }
         `}</style>
       </div>
-
-      {/* <Footer /> */}
     </div>
   );
+}
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  const { hashPassword } = await import('../hashing');
+  const queryString = require('query-string');
+  const { insertUser } = await import('../db.js');
+  require('dotenv').config();
+
+  const Tokens = (await import('csrf')).default;
+  const tokens = new Tokens();
+
+  const secret = process.env.CSRF_TOKEN;
+  console.log('Secret: ', secret);
+
+  if (typeof secret !== 'string') {
+    throw new Error('Token secret misconfigured!');
+  }
+
+  let buffer = '';
+  context.req.on('data', (chunk) => {
+    buffer += chunk;
+  });
+
+  context.req.on('end', async () => {
+    const body = queryString.parse(Buffer.from(buffer).toString());
+
+    if (
+      typeof body.username !== 'string' ||
+      typeof body.password !== 'string'
+    ) {
+      console.log('No username or password passed in body');
+      return;
+    }
+
+    const username = body.username;
+
+    const passwordHash = await hashPassword(body.password);
+
+    await insertUser(body.username, body.password)
+      .then(() => {
+        console.log('seccess');
+      })
+      .catch(() => {
+        console.log('failed');
+      });
+
+    const requestToken = body.csrf;
+    console.log('requestToken: ', requestToken);
+
+    if (typeof requestToken !== 'string') {
+      throw new Error('No CSRF token passed!');
+    }
+
+    if (tokens.verify(secret, requestToken)) {
+      // console.log(user);
+      insertUser(username, passwordHash)
+        .then(() => console.log('succeeded'))
+        .catch((err) => console.error("didn't work", err));
+    } else {
+      console.error('CSRF token not valid!!');
+    }
+  });
+
+  const props: Props = {
+    csrfToken: tokens.create(secret),
+  };
+
+  if (!props.csrfToken) {
+    return { props: {} };
+  }
+  return {
+    props,
+  };
 }

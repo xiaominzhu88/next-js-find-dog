@@ -48,7 +48,13 @@ export default function Contact({ adopt }) {
           </Button>{' '}
         </form>
 
-        <div>
+        <div className="toAdopt">
+          <h3>
+            <span role="img" aria-label="emoji">
+              🐶
+            </span>{' '}
+            We are your favourite
+          </h3>
           {!adopt ? (
             ''
           ) : (
@@ -84,6 +90,18 @@ export default function Contact({ adopt }) {
         li {
           list-style: none;
           line-height: 1.5em;
+        }
+        .toAdopt {
+          dispaly: flex;
+        }
+        h3,
+        h1 {
+          font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+          color: #065c86;
+        }
+        li {
+          font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+          color: rgb(35, 174, 237);
         }
       `}</style>
     </div>

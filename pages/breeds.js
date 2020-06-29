@@ -6,7 +6,7 @@ import Link from 'next/link';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 
-export default function Search1({ fetchedDogNames }) {
+export default function Breeds({ fetchedDogNames }) {
   const [input, setInput] = useState('');
   const [filtered, setFiltered] = useState([]);
   const [info, setInfo] = useState('');
@@ -84,7 +84,7 @@ export default function Search1({ fetchedDogNames }) {
           // filter from the data result and create each of them as a link
           <ul>
             {filtered.map((name, i) => {
-              // use REGEX to match the exact id from each dog and use it as the path '/search/[id]' which below on line 91
+              // use REGEX to match the exact id from each dog and use it as the path '/breeds/[id]' which below on line 91
               const eachId = name.match(/\d/g).join('');
               //console.log('eachId: ', eachId);
               //console.log('name: ', name);
@@ -92,7 +92,7 @@ export default function Search1({ fetchedDogNames }) {
               return (
                 <li key={i}>
                   {/* Use ${eachId} dynamically attach each dog which has the same id, which matches each id from each name use Regex */}
-                  <Link href="/search/[id]" as={`/search/${eachId}`}>
+                  <Link href="/breeds/[id]" as={`/breeds/${eachId}`}>
                     <a>{name}</a>
                   </Link>
                 </li>
@@ -157,11 +157,11 @@ export default function Search1({ fetchedDogNames }) {
 }
 
 export async function getServerSideProps(context) {
-  const { getFetchedDogsByName } = await import('../db.js');
+  const { getFetchedDogsByName } = await import('../db.js'); //;
 
   const fetchedDogNames = await getFetchedDogsByName(context.params);
 
-  //console.log('result: ', JSON.stringify(fetchedDogNames));
+  //console.log('result: ', JSON.stringify(fetchedDogNames)//);
 
   if (fetchedDogNames.length === 0) {
     return { props: {} };
