@@ -1,5 +1,6 @@
 const path = require('path');
 require('dotenv').config({ path: path.resolve(process.cwd(), '.env.local') });
+const argon2 = require('argon2');
 
 const postgres = require('postgres');
 const sql = postgres();
@@ -61,10 +62,32 @@ export async function getFetchedDogsByName() {
   return dogNames;
 }
 
-export async function selectUserByUsername(username) {
-  return sql`
-    SELECT * FROM users WHERE username = ${username}
-  `;
+//export async function selectUserByUsername(username) {
+//  return sql`
+//    SELECT * FROM users WHERE username = ${username}
+//  `;
+//}
+
+export async function selectUserByUsername(username, password) {
+  const usersWithUsername = await sql`
+  SELECT * FROM users WHERE username = ${username}
+  `; //select from always returns an array, even if its one
+  // console.log(usersWithUsername[0]);
+
+  if (usersWithUsername.length === 0) return usersWithUsername;
+
+  const passwordMatches = await argon2.verify(
+    usersWithUsername[0].password_hash,
+    password,
+  );
+  console.log(usersWithUsername);
+
+  //this returns boolean
+  if (passwordMatches) {
+    return usersWithUsername;
+  } else {
+    return [];
+  }
 }
 
 export async function insertUser(username, passwordHash) {

@@ -3,11 +3,12 @@ import Head from 'next/head';
 import { GetServerSidePropsContext } from 'next';
 //import { getServerSideProps } from './login';
 import Link from 'next/link';
+
 type Props = {
   csrfToken: string;
 };
 
-export default function Home(props: Props) {
+export default function Signup(props: Props) {
   //const [value, setValue] = useState('');
   //const [password, setPassword] = useState('');
 
@@ -27,6 +28,10 @@ export default function Home(props: Props) {
 
       <div className="auth">
         <div className="left">
+          <div>
+            <h1>Sign Up</h1>
+          </div>
+
           <form method="POST">
             <label>
               Name: <br />
@@ -52,11 +57,11 @@ export default function Home(props: Props) {
             <br />
             <input type="hidden" name="csrf" value={props.csrfToken} />
             <p>{props.csrfToken}</p>
-            <Link href="./login">
-              <a>
-                <button>Sign up</button>
-              </a>
-            </Link>
+            {/* <Link href="./login">
+              <a> */}
+            <button>Sign up</button>
+            {/* </a>
+            </Link> */}
           </form>
         </div>
 
@@ -183,6 +188,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   const tokens = new Tokens();
 
   const secret = process.env.CSRF_TOKEN;
+
   console.log('Secret: ', secret);
 
   if (typeof secret !== 'string') {
@@ -197,6 +203,9 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   context.req.on('end', async () => {
     const body = queryString.parse(Buffer.from(buffer).toString());
 
+    console.log('body: ', body);
+    console.log(body.username);
+
     if (
       typeof body.username !== 'string' ||
       typeof body.password !== 'string'
@@ -206,16 +215,15 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     }
 
     const username = body.username;
-
     const passwordHash = await hashPassword(body.password);
 
-    await insertUser(body.username, body.password)
-      .then(() => {
-        console.log('seccess');
-      })
-      .catch(() => {
-        console.log('failed');
-      });
+    //  await insertUser(username, passwordHash)
+    //    .then(() => {
+    //      console.log('seccess');
+    //    })
+    //    .catch(() => {
+    //      console.log('failed');
+    //    });
 
     const requestToken = body.csrf;
     console.log('requestToken: ', requestToken);
@@ -238,9 +246,6 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     csrfToken: tokens.create(secret),
   };
 
-  if (!props.csrfToken) {
-    return { props: {} };
-  }
   return {
     props,
   };

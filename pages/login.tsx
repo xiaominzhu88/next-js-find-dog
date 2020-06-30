@@ -3,11 +3,9 @@ import Head from 'next/head';
 import { GetServerSidePropsContext } from 'next';
 import nextCookies from 'next-cookies';
 import Router from 'next/router';
+import Header from '../components/Header';
 
-type Props = {
-  csrfToken: string;
-};
-export default function Home() {
+export default function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [status, setStatus] = useState('');
@@ -18,8 +16,13 @@ export default function Home() {
     // generate and use a CSRF token and pass it along
     // with the fetch to be verified server-side
     // (see pages/register.tsx)
+
+    console.log('username: ', username);
+    console.log('Password: ', password);
+    console.log('status: ', status);
+
     fetch('/api/login', {
-      method: 'POST', // *GET, POST, PUT, DELETE, etc.
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
@@ -29,21 +32,26 @@ export default function Home() {
         if (response.ok !== true) {
           setStatus('Failed logging in - response is not ok');
         }
+        console.log('JSON: ', JSON.stringify({ username, password }));
+
+        console.log('RESPONSE: ', response);
         return response.json();
       })
       .then((json) => {
+        console.log('json: ', json);
+
         if (json.loggedIn === false) {
           setStatus('Failed logging in - check username and password');
         } else {
-          setStatus('Logged in!!');
-          // Redirect to homepage after 2 seconds
+          setStatus('You are Logged in!!');
+          // Redirect to homepage after 3 seconds
           setTimeout(() => {
             Router.replace('/');
-          }, 2000);
+          }, 3000);
         }
       })
-      .catch(() => {
-        setStatus('Failed logging in - request failed');
+      .catch((err) => {
+        setStatus(err);
       });
   }
 
@@ -53,11 +61,13 @@ export default function Home() {
         <title>Find-your-dog</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Header />
 
       <div className="auth">
         <div className="left">
           <div>
             <h1>Login</h1>
+            <p>{status}</p>
           </div>
 
           <form method="POST" onSubmit={onSubmit}>
@@ -81,7 +91,6 @@ export default function Home() {
               />
             </label>
             <br />
-            <input type="hidden" name="csrf" value={':'} />
             <button>Login</button>
           </form>
         </div>
@@ -112,12 +121,10 @@ export default function Home() {
           }
           h1 {
             margin: 0 auto;
-            color: pink;
+            color: lightblue;
             text-align: center;
           }
-          p {
-            color: pink;
-          }
+
           .auth {
             display: flex;
             justify-content: space-around;
@@ -146,7 +153,7 @@ export default function Home() {
             }
           }
           label {
-            color: pink;
+            color: lightblue;
           }
           input {
             margin: 1em auto;
@@ -201,6 +208,7 @@ export default function Home() {
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   // Redirect to homepage right away if logged in already
+
   if (nextCookies(context).token) {
     context.res.setHeader('location', '/');
     context.res.statusCode = 302;

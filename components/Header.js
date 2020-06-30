@@ -8,6 +8,8 @@ function Header() {
     { name: 'About', url: '/about' },
     { name: 'Search', url: './breeds' },
     { name: 'Contact', url: '/contact' },
+    { name: 'Login', url: '/login' },
+    { name: 'Sign Up', url: '/' },
   ];
   return (
     <div className="app">
