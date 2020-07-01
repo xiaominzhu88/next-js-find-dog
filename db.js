@@ -54,8 +54,12 @@ export async function getFetchedDogsByName(name) {
   // use this syntax instead of WHERE to get dogs by name
   const columns = ['name', 'id', 'url'];
   const dogNames = await sql`
-  select ${sql(columns)} from fetchedDogs WHERE name like ${name + '%'};
+  select ${sql(columns)} from fetchedDogs
   `;
+
+  // const dogNames = await sql`
+  // select ${sql(columns)} from fetchedDogs WHERE name like ${name + '%'}
+  // `;
   // const dogNames = await sql`
   //   select * from fetchedDogs WHERE name = ${name}
   //   `;

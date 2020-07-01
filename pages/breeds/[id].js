@@ -197,28 +197,6 @@ export async function getServerSideProps(context) {
 
   const fetchedDogs = await getFetchedDogsById(context.params.id);
 
-  const pMap = require('p-map');
-  const got = require('got');
-
-  const urls = fetchedDogs.map((el) => el.url);
-
-  //------------------ 1 ------------------------------------
-  console.log('URL: ', urls);
-  //------------------- 2 -----------------------------------
-  console.log('result: ', fetchedDogs);
-
-  (async () => {
-    const mapper = async (url) => {
-      const { requestUrl } = await got.head(url);
-      return requestUrl;
-    };
-
-    const result = await pMap(urls, mapper, { concurrency: 2 });
-
-    //-------------------- 3 -------------------------------
-    console.log('resultSSSS: ', result);
-  })();
-
   const fetchedId = fetchedDogs.map((item) => item.id);
 
   if (fetchedDogs.length === 0 || fetchedId > 172) {
