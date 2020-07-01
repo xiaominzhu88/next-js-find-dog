@@ -17,9 +17,7 @@ export default function Login() {
     // with the fetch to be verified server-side
     // (see pages/register.tsx)
 
-    console.log('username: ', username);
-    console.log('Password: ', password);
-    console.log('status: ', status);
+    console.log('status: ', status); // success | '' if wrong username/password
 
     fetch('/api/login', {
       method: 'POST',
@@ -38,7 +36,7 @@ export default function Login() {
         return response.json();
       })
       .then((json) => {
-        console.log('json: ', json);
+        console.log('json: ', json); // loggedIn: true
 
         if (json.loggedIn === false) {
           setStatus('Failed logging in - check username and password');
@@ -46,7 +44,7 @@ export default function Login() {
           setStatus('You are Logged in!!');
           // Redirect to homepage after 3 seconds
           setTimeout(() => {
-            Router.replace('/');
+            Router.replace('/home');
           }, 3000);
         }
       })
@@ -66,7 +64,7 @@ export default function Login() {
       <div className="auth">
         <div className="left">
           <div>
-            <h1>Login</h1>
+            <h1>Welcome</h1>
             <p>{status}</p>
           </div>
 
@@ -91,13 +89,13 @@ export default function Login() {
               />
             </label>
             <br />
-            <button>Login</button>
+            <div className="loginButton">
+              <button>Login</button>
+            </div>
           </form>
         </div>
 
-        <div className="right">
-          <h2>Welcome</h2>
-        </div>
+        <div className="right"></div>
 
         <style jsx>{`
           @import url('https://fonts.googleapis.com/css2?family=Bitter:ital@1&display=swap');
@@ -120,7 +118,7 @@ export default function Login() {
             text-align: center;
           }
           h1 {
-            margin: 0 auto;
+            margin: 1em auto;
             color: lightblue;
             text-align: center;
           }
@@ -144,6 +142,20 @@ export default function Login() {
             background-position: 25% 75%;
             animation: flybirds 16s linear infinite;
           }
+          .loginButton {
+            text-align: center;
+          }
+          button {
+            height: 2em;
+            width: 6em;
+            color: lightblue;
+          }
+          button:hover {
+            background-color: pink;
+            color: blue;
+            border: none;
+          }
+
           @keyframes flybirds {
             from {
               background-position: 0px 0px;
@@ -167,11 +179,7 @@ export default function Login() {
             margin: 1em auto;
             background-color: pink;
           }
-          h2 {
-            margin: 3em auto;
-            color: pink;
-            text-align: center;
-          }
+
           @media (max-width: 450px) {
             .auth {
               display: block;
@@ -187,11 +195,7 @@ export default function Login() {
               width: 100vw;
               height: 60vh;
             }
-            h2 {
-              margin: 2em auto;
-              color: pink;
-              text-align: center;
-            }
+
             input {
               margin: 0 auto;
             }
@@ -206,16 +210,16 @@ export default function Login() {
   );
 }
 
-export async function getServerSideProps(context: GetServerSidePropsContext) {
-  // Redirect to homepage right away if logged in already
-
-  if (nextCookies(context).token) {
-    context.res.setHeader('location', '/');
-    context.res.statusCode = 302;
-    context.res.end();
-  }
-
-  return {
-    props: {},
-  };
-}
+//export async function getServerSideProps(context: //GetServerSidePropsContext) {
+//  // Redirect to homepage right away if logged in already
+//
+//  if (nextCookies(context).token) {
+//    context.res.setHeader('location', '/');
+//    context.res.statusCode = 302;
+//    context.res.end();
+//  }
+//
+//  return {
+//    props: {},
+//  };
+//}

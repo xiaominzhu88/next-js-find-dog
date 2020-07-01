@@ -77,47 +77,46 @@ export default function Home() {
   }
 
   // ---------------- image slide ----------------------------
-  const pics = [
-    '/about-us-dog.jpg',
-    '/favicon.jpg',
-    '/bullterrier.jpg',
-    '/englischedogge.jpg',
-    
-  ];
-  const indexStart = 0;
-  const [index, setIndex] = useState(indexStart);
-  const [move, setMove] = useState(false);
-  const [next, setNext] = useState();
+  // const pics = [
+  //   '/about-us-dog.jpg',
+  //   '/favicon.jpg',
+  //   '/bullterrier.jpg',
+  //   '/englischedogge.jpg',
+  // ];
+  // const indexStart = 0;
+  // const [index, setIndex] = useState(indexStart);
+  // const [move, setMove] = useState(false);
+  // const [next, setNext] = useState();
 
-  // Follow the error and use callback wrap
-  const getNextIndex = useCallback(
-    (idx) => {
-      return idx >= pics.length - 1 ? 0 : index + 1;
-    },
-    [index, pics.length],
-  );
+  // // Follow the error and use callback wrap
+  // const getNextIndex = useCallback(
+  //   (idx) => {
+  //     return idx >= pics.length - 1 ? 0 : index + 1;
+  //   },
+  //   [index, pics.length],
+  // );
 
-  const setIndexes = useCallback(
-    (idx) => {
-      setIndex(idx);
-      setNext(getNextIndex(idx));
-    },
-    [getNextIndex],
-  );
+  // const setIndexes = useCallback(
+  //   (idx) => {
+  //     setIndex(idx);
+  //     setNext(getNextIndex(idx));
+  //   },
+  //   [getNextIndex],
+  // );
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setMove(true);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setMove(true);
 
-      setTimeout(() => {
-        setMove(false);
-        setIndexes(getNextIndex(index));
-      });
-    }, 4000);
-    // Here clear interval, although images will go faster and crazy !
-    return () => clearInterval(interval);
-    // Here I have to wrap dependensies inside Array
-  }, [index, getNextIndex, setIndexes]);
+  //     setTimeout(() => {
+  //       setMove(false);
+  //       setIndexes(getNextIndex(index));
+  //     });
+  //   }, 4000);
+  //   // Here clear interval, although images will go faster and crazy !
+  //   return () => clearInterval(interval);
+  //   // Here I have to wrap dependensies inside Array
+  // }, [index, getNextIndex, setIndexes]);
 
   // -------------------  Preload image ------------------------
   //  function preload(url, callback) {
@@ -192,9 +191,9 @@ export default function Home() {
           </div>
         </div>
 
-        <div className={`current pic ${move}`}>
+        <div className={`current pic `}>
           <div className="3buttons">
-            <img src={pics[index]} alt="cute-dogs" />
+            <img src="/about-us-dog.jpg" alt="cute-dogs" />
             <div className="stars"></div>
             {/* <Button
               onClick={() => goSum()}

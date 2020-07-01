@@ -50,11 +50,11 @@ export async function getFetchedDogsById(id) {
   return fetchedDogs;
 }
 
-export async function getFetchedDogsByName() {
+export async function getFetchedDogsByName(name) {
   // use this syntax instead of WHERE to get dogs by name
-  const columns = ['name', 'id'];
+  const columns = ['name', 'id', 'url'];
   const dogNames = await sql`
-  select ${sql(columns)} from fetchedDogs;
+  select ${sql(columns)} from fetchedDogs WHERE name like ${name + '%'};
   `;
   // const dogNames = await sql`
   //   select * from fetchedDogs WHERE name = ${name}
@@ -80,7 +80,7 @@ export async function selectUserByUsername(username, password) {
     usersWithUsername[0].password_hash,
     password,
   );
-  console.log(usersWithUsername);
+  console.log('usersWithUsername: ', usersWithUsername[0]);
 
   //this returns boolean
   if (passwordMatches) {
@@ -96,7 +96,8 @@ INSERT INTO users (username, password_hash) VALUES (${username}, ${passwordHash}
 `;
 }
 
-export async function selectSessionByToken(token) {
+export function selectSessionByToken(token) {
+  //console.log('TOKEN: ', token);
   return sql`
     SELECT * FROM sessions WHERE token = ${token}
   `;

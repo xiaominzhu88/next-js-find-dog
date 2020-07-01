@@ -1,6 +1,7 @@
-import { getFetchedDogsById } from '../../db.js';
+import { getFetchedDogsByName } from '../../db.js';
+import { NextApiRequest, NextApiResponse } from 'next';
 
-const fetchedDogs = getFetchedDogsById();
-export default (req, res) => {
+export default async (req: NextApiRequest, res: NextApiResponse) => {
+  const fetchedDogs = await getFetchedDogsByName(req.body.name);
   res.status(200).json({ fetchedDogs });
 };

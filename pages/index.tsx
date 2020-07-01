@@ -2,29 +2,21 @@ import React, { useState } from 'react';
 import Head from 'next/head';
 import { GetServerSidePropsContext } from 'next';
 //import { getServerSideProps } from './login';
-import Link from 'next/link';
+//import Link from 'next/link';
+import Header from '../components/Header';
 
 type Props = {
   csrfToken: string;
 };
 
 export default function Signup(props: Props) {
-  //const [value, setValue] = useState('');
-  //const [password, setPassword] = useState('');
-
-  //   function handleChange(e) {
-  //     setValue(e.target.value);
-  //
-  //   function passChange(e) {
-  //     setPassword(e.target.value);
-  //   }
-
   return (
     <div className="container">
       <Head>
         <title>Find-your-dog</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Header />
 
       <div className="auth">
         <div className="left">
@@ -35,39 +27,27 @@ export default function Signup(props: Props) {
           <form method="POST">
             <label>
               Name: <br />
-              <input
-                placeholder="user name"
-                type="text"
-                name="username"
-                //  value={value}
-                //   onChange={handleChange}
-              />
+              <input placeholder="user name" type="text" name="username" />
             </label>{' '}
             <br />
             <label>
               Password: <br />
-              <input
-                placeholder="password"
-                type="password"
-                name="password"
-                //  value={password}
-                //   onChange={passChange}
-              />
+              <input placeholder="password" type="password" name="password" />
             </label>
             <br />
             <input type="hidden" name="csrf" value={props.csrfToken} />
-            <p>{props.csrfToken}</p>
-            {/* <Link href="./login">
-              <a> */}
-            <button>Sign up</button>
-            {/* </a>
-            </Link> */}
+            {/* <p>{props.csrfToken}</p> */}
+            <div className="signUpButton">
+              <button>
+                <span role="img" aria-label="emoji">
+                  👍
+                </span>
+              </button>
+            </div>
           </form>
         </div>
 
-        <div className="right">
-          <h2>Welcome</h2>
-        </div>
+        <div className="right"></div>
 
         <style jsx>{`
           @import url('https://fonts.googleapis.com/css2?family=Bitter:ital@1&display=swap');
@@ -116,6 +96,20 @@ export default function Signup(props: Props) {
             background-position: 25% 75%;
             animation: flybirds 16s linear infinite;
           }
+
+          .signUpButton {
+            text-align: center;
+          }
+
+          button {
+            height: 2em;
+            width: 6em;
+          }
+          button:hover {
+            background-color: pink;
+            border: none;
+          }
+
           @keyframes flybirds {
             from {
               background-position: 0px 0px;
@@ -144,6 +138,7 @@ export default function Signup(props: Props) {
             color: pink;
             text-align: center;
           }
+
           @media (max-width: 450px) {
             .auth {
               display: block;
@@ -179,17 +174,21 @@ export default function Signup(props: Props) {
 }
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
+  //const path = require('path');
+  //require('dotenv').config({ path: path.resolve(process.cwd(), '.env.//local') });
+  require('dotenv').config();
+
   const { hashPassword } = await import('../hashing');
   const queryString = require('query-string');
   const { insertUser } = await import('../db.js');
-  require('dotenv').config();
 
   const Tokens = (await import('csrf')).default;
   const tokens = new Tokens();
 
+  // secret = csrf
   const secret = process.env.CSRF_TOKEN;
 
-  console.log('Secret: ', secret);
+  //console.log('Secret: ', secret);
 
   if (typeof secret !== 'string') {
     throw new Error('Token secret misconfigured!');
@@ -203,9 +202,6 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   context.req.on('end', async () => {
     const body = queryString.parse(Buffer.from(buffer).toString());
 
-    console.log('body: ', body);
-    console.log(body.username);
-
     if (
       typeof body.username !== 'string' ||
       typeof body.password !== 'string'
@@ -213,17 +209,10 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
       console.log('No username or password passed in body');
       return;
     }
+    console.log('body: ', body);
 
     const username = body.username;
     const passwordHash = await hashPassword(body.password);
-
-    //  await insertUser(username, passwordHash)
-    //    .then(() => {
-    //      console.log('seccess');
-    //    })
-    //    .catch(() => {
-    //      console.log('failed');
-    //    });
 
     const requestToken = body.csrf;
     console.log('requestToken: ', requestToken);
@@ -233,9 +222,10 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     }
 
     if (tokens.verify(secret, requestToken)) {
-      // console.log(user);
       insertUser(username, passwordHash)
-        .then(() => console.log('succeeded'))
+        .then(() => {
+          console.log('succeeded');
+        })
         .catch((err) => console.error("didn't work", err));
     } else {
       console.error('CSRF token not valid!!');

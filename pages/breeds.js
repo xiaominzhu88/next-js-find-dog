@@ -19,17 +19,17 @@ export default function Breeds({ fetchedDogNames }) {
   }
 
   // get list which contains name and id from database for each dog, an Array
-  const oldList = fetchedDogNames.map((el) => el.id + '  🐶 ' + el.name);
+  const wholeList = fetchedDogNames.map((el) => el.id + '  🐶 ' + el.name);
 
   // from the list above, filter a new list out, which contains the user input
   // and convert it to a new list as 'newList-filtered', it will be showed in
   // 'return' below
 
-  function showDataValue(e) {
+  function fetchSearchResults(e) {
     e.preventDefault();
     if (input !== '') {
       let newList = [];
-      newList = oldList.filter((val) => val.includes(input));
+      newList = wholeList.filter((val) => val.includes(input));
       setFiltered(newList);
     } else {
       setInfo('Ops,search for a breed?');
@@ -46,7 +46,7 @@ export default function Breeds({ fetchedDogNames }) {
 
       {/* use matrial-ui input field */}
       <div className="searchBar">
-        <form noValidate autoComplete="off">
+        <form onSubmit={fetchSearchResults} noValidate autoComplete="off">
           <TextField
             id="search"
             label="Search Breed"
@@ -54,20 +54,15 @@ export default function Breeds({ fetchedDogNames }) {
             value={input}
             onChange={showValue}
           />
+          <div className="searchButton">
+            <Button variant="outlined" size="medium" color="primary">
+              {' '}
+              <span role="img" aria-label="emoji">
+                🔎
+              </span>
+            </Button>
+          </div>
         </form>
-        <div className="searchButton">
-          <Button
-            variant="outlined"
-            size="medium"
-            color="primary"
-            onClick={showDataValue}
-          >
-            {' '}
-            <span role="img" aria-label="emoji">
-              🔎
-            </span>
-          </Button>
-        </div>
       </div>
       <div className="table">
         <h3>
@@ -157,7 +152,7 @@ export default function Breeds({ fetchedDogNames }) {
 }
 
 export async function getServerSideProps(context) {
-  const { getFetchedDogsByName } = await import('../db.js'); //;
+  const { getFetchedDogsByName } = await import('../db.js');
 
   const fetchedDogNames = await getFetchedDogsByName(context.params);
 

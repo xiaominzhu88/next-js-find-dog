@@ -1,16 +1,58 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 
-function Header() {
+export default function Header() {
+  const [user, setUser] = useState(null);
+
   const linkList = [
     { name: 'Home', url: '/home' },
     { name: 'About', url: '/about' },
     { name: 'Search', url: './breeds' },
     { name: 'Contact', url: '/contact' },
-    { name: 'Login', url: '/login' },
-    { name: 'Sign Up', url: '/' },
   ];
+
+  if (user === null) {
+    linkList.push({ name: 'Register', url: '/' });
+    linkList.push({ name: 'Login', url: '/login' });
+  } else {
+    linkList.push({ name: 'Logout', url: '/logout' });
+  }
+
+  useEffect(() => {
+    fetch('/api/checkLogin', {
+      method: 'POST', // *GET, POST, PUT, DELETE, etc.
+      // mode: 'cors', // no-cors, *cors, same-origin
+      // cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+      // credentials: 'same-origin', // include, *same-origin, omit
+      headers: {
+        'Content-Type': 'application/json',
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      // redirect: 'follow', // manual, *follow, error
+      // referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+      //body: JSON.stringify({ user }),
+    })
+      .then((response) => {
+        console.log('header-response', response);
+
+        if (response.ok !== true) {
+          throw new Error('Error fetching session');
+        }
+        return response.json();
+      })
+      .then((json) => {
+        if (json === true) {
+          setUser('You are logged in!');
+        }
+      })
+      .catch((err) => {
+        console.error('error fetching session', err);
+      });
+  }, []);
+
+  console.log('USER: ', user);
+
   return (
     <div className="app">
       <Head>
@@ -21,6 +63,7 @@ function Header() {
       <header className="nav-header">
         <div className="nav">
           <h1>Find-your-dog</h1>
+          <p>{user}</p>
         </div>
         <div className="links">
           {linkList.map((link, i) => {
@@ -98,5 +141,3 @@ function Header() {
     </div>
   );
 }
-
-export default Header;

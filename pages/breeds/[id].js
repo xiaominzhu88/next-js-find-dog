@@ -30,7 +30,7 @@ function FetchedDog({ fetchedDogs }) {
 
   //console.log('props:', props.fetchedDogs);
   //console.log('name:', props.fetchedDogs.name);
-  console.log(fetchedDogs.url);
+  //console.log(fetchedDogs.url);
 
   return (
     <div>
@@ -50,6 +50,7 @@ function FetchedDog({ fetchedDogs }) {
              `
             : ''}
         </p>
+
         <h1>
           <span role="img" aria-label="star">
             🌟
@@ -73,6 +74,30 @@ function FetchedDog({ fetchedDogs }) {
           {fetchedDogs.bred_for
             ? fetchedDogs.bred_for
             : 'There is no information about this'}
+        </p>
+        <p>
+          Weight-Imperial:{' '}
+          {fetchedDogs.bred_for
+            ? fetchedDogs.weight_imperial
+            : 'There is no information about this'}{' '}
+        </p>
+        <p>
+          Weight-Metirc:{' '}
+          {fetchedDogs.bred_for
+            ? fetchedDogs.weight_metric
+            : 'There is no information about this'}{' '}
+        </p>
+        <p>
+          Height-Imperial:{' '}
+          {fetchedDogs.bred_for
+            ? fetchedDogs.height_imperial
+            : 'There is no information about this'}{' '}
+        </p>
+        <p>
+          Height-Metric:{' '}
+          {fetchedDogs.bred_for
+            ? fetchedDogs.height_metric
+            : 'There is no information about this'}{' '}
         </p>
         <p>
           Origin:{' '}
@@ -172,7 +197,27 @@ export async function getServerSideProps(context) {
 
   const fetchedDogs = await getFetchedDogsById(context.params.id);
 
+  const pMap = require('p-map');
+  const got = require('got');
+
+  const urls = fetchedDogs.map((el) => el.url);
+
+  //------------------ 1 ------------------------------------
+  console.log('URL: ', urls);
+  //------------------- 2 -----------------------------------
   console.log('result: ', fetchedDogs);
+
+  (async () => {
+    const mapper = async (url) => {
+      const { requestUrl } = await got.head(url);
+      return requestUrl;
+    };
+
+    const result = await pMap(urls, mapper, { concurrency: 2 });
+
+    //-------------------- 3 -------------------------------
+    console.log('resultSSSS: ', result);
+  })();
 
   const fetchedId = fetchedDogs.map((item) => item.id);
 

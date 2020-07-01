@@ -25,12 +25,14 @@ export default async function login(req: NextApiRequest, res: NextApiResponse) {
     return;
   }
 
-  console.log('YOU ARE logged in');
+  //console.log('YOU ARE logged in');
 
   const maxAge = 60 * 60 * 8; // 8 hours
+
   const token = crypto.randomBytes(24).toString('base64');
 
-  console.log(token);
+  console.log('user-token: ', token);
+
   await insertSession(users[0].id, token);
 
   const cookie = serialize('token', token, {

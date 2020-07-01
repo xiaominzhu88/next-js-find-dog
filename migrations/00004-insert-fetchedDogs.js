@@ -13,10 +13,9 @@ exports.up = async (sql) => {
       origin: 'Germany, France',
       temperament:
         'Stubborn, Curious, Playful, Adventurous, Active, Fun-loving',
-      weight: {
-        imperial: '6 - 13',
-        metric: '3 - 6',
-      },
+      weight_imperial: '6 - 13',
+      weight_metric: '3 - 6',
+
       url: 'https://cdn2.thedogapi.com/images/Dkqdl0c6N.jpg',
     },
 
@@ -30,86 +29,77 @@ exports.up = async (sql) => {
       },
       id: '2',
       life_span: '10 - 13 years',
-      name: 'Afghan-Hound',
+      name: 'Afghan Hound',
       origin: 'Afghanistan, Iran, Pakistan',
       temperament: 'Aloof, Clownish, Dignified, Independent, Happy',
-      weight: {
-        imperial: '50 - 60',
-        metric: '23 - 27',
-      },
+      weight_imperial: '50 - 60',
+      weight_metric: '23 - 27',
+
       url: 'https://cdn2.thedogapi.com/images/4WiUpv_4W.jpg',
     },
 
     {
       bred_for: 'A wild pack animal',
-      height: {
-        imperial: '30',
-        metric: '76',
-      },
+      height_imperial: '30',
+      height_metric: '76',
+
       id: 3,
       life_span: '11 years',
-      name: 'African-Hunting-Dog',
+      name: 'African Hunting Dog',
       origin: '',
       temperament: 'Wild, Hardworking, Dutiful',
-      weight: {
-        imperial: '44 - 66',
-        metric: '20 - 30',
-      },
+      weight_imperial: '44 - 66',
+      weight_metric: '20 - 30',
+
       url: 'https://cdn2.thedogapi.com/images/Z8LiOtceX.jpg',
     },
     {
       bred_for: 'Badger, otter hunting',
       breed_group: 'Terrier',
-      height: {
-        imperial: '21 - 23',
-        metric: '53 - 58',
-      },
+      height_imperial: '21 - 23',
+      height_metric: '53 - 58',
+
       id: 4,
       life_span: '10 - 13 years',
-      name: 'Airedale-Terrier',
+      name: 'Airedale Terrier',
       origin: 'United Kingdom, England',
       temperament:
         'Outgoing, Friendly, Alert, Confident, Intelligent, Courageous',
-      weight: {
-        imperial: '40 - 65',
-        metric: '18 - 29',
-      },
+      weight_imperial: '40 - 65',
+      weight_metric: '18 - 29',
+
       url: 'https://cdn2.thedogapi.com/images/lNnWNU4qU.jpg',
     },
     {
       bred_for: 'Sheep guarding',
       breed_group: 'Working',
-      height: {
-        imperial: '28 - 34',
-        metric: '71 - 86',
-      },
+      height_imperial: '28 - 34',
+      height_metric: '71 - 86',
+
       id: 5,
       life_span: '10 - 12 years',
-      name: 'Akbash-Dog',
+      name: 'Akbash Dog',
       origin: '',
       temperament: 'Loyal, Independent, Intelligent, Brave',
-      weight: {
-        imperial: '90 - 120',
-        metric: '41 - 54',
-      },
+      weight_imperial: '90 - 120',
+      weight_metric: '41 - 54',
+
       url: 'https://cdn2.thedogapi.com/images/fIXRDcKzn.jpg',
     },
     {
       bred_for: 'Hunting bears',
       breed_group: 'Working',
-      height: {
-        imperial: '24 - 28',
-        metric: '61 - 71',
-      },
+      height_imperial: '24 - 28',
+      height_metric: '61 - 71',
+
       id: 6,
       life_span: '10 - 14 years',
       name: 'Akita',
       temperament:
         'Docile, Alert, Responsive, Dignified, Composed, Friendly, Receptive, Faithful, Courageous',
-      weight: {
-        imperial: '65 - 115',
-        metric: '29 - 52',
-      },
+      weight_imperial: '65 - 115',
+      weight_metric: '29 - 52',
+
       url: 'https://cdn2.thedogapi.com/images/40bvxOUyl.jpg',
     },
     {
@@ -117,190 +107,169 @@ exports.up = async (sql) => {
       breed_group: 'Mixed',
       description:
         "The Alapaha Blue Blood Bulldog is a well-developed, exaggerated bulldog with a broad head and natural drop ears. The prominent muzzle is covered by loose upper lips. The prominent eyes are set well apart. The Alapaha's coat is relatively short and fairly stiff. Preferred colors are blue merle, brown merle, or red merle all trimmed in white or chocolate and white. Also preferred are the glass eyes (blue) or marble eyes (brown and blue mixed in a single eye). The ears and tail are never trimmed or docked. The body is sturdy and very muscular. The well-muscled hips are narrower than the chest. The straight back is as long as the dog is high at the shoulders. The dewclaws are never removed and the feet are cat-like.",
-      height: {
-        imperial: '18 - 24',
-        metric: '46 - 61',
-      },
+      height_imperial: '18 - 24',
+      height_metric: '46 - 61',
+
       history: '',
       id: 7,
       life_span: '12 - 13 years',
-      name: 'Alapaha-Blue-Blood-Bulldog',
+      name: 'Alapaha Blue Blood Bulldog',
       temperament: 'Loving, Protective, Trainable, Dutiful, Responsible',
-      weight: {
-        imperial: '55 - 90',
-        metric: '25 - 41',
-      },
+      weight_imperial: '55 - 90',
+      weight_metric: '25 - 41',
+
       url: 'https://cdn2.thedogapi.com/images/5hQo-doWf.jpg',
     },
     {
       bred_for: 'Sled pulling',
       breed_group: 'Mixed',
-      height: {
-        imperial: '23 - 26',
-        metric: '58 - 66',
-      },
+      height_imperial: '23 - 26',
+      height_metric: '58 - 66',
+
       id: 8,
       life_span: '10 - 13 years',
       name: 'Alaskan-Husky',
       temperament: 'Friendly, Energetic, Loyal, Gentle, Confident',
-      weight: {
-        imperial: '38 - 50',
-        metric: '17 - 23',
-      },
+      weight_imperial: '38 - 50',
+      weight_metric: '17 - 23',
+
       url: 'https://cdn2.thedogapi.com/images/LMjrDDwSJ.jpg',
     },
     {
       bred_for: 'Hauling heavy freight, Sled pulling',
       breed_group: 'Working',
-      height: {
-        imperial: '23 - 25',
-        metric: '58 - 64',
-      },
+      height_imperial: '23 - 25',
+      height_metric: '58 - 64',
+
       id: 9,
       life_span: '12 - 15 years',
       name: 'Alaskan-Malamute',
       temperament: 'Friendly, Affectionate, Devoted, Loyal, Dignified, Playful',
-      weight: {
-        imperial: '65 - 100',
-        metric: '29 - 45',
-      },
+      weight_imperial: '65 - 100',
+      weight_metric: '29 - 45',
+
       url: 'https://cdn2.thedogapi.com/images/rJqd1ecV7_1280.jpg',
     },
     {
       breed_group: 'Working',
-      height: {
-        imperial: '22 - 27',
-        metric: '56 - 69',
-      },
+      height_imperial: '22 - 27',
+      height_metric: '56 - 69',
+
       id: 10,
       life_span: '10 - 12 years',
       name: 'American-Bulldog',
       temperament:
         'Friendly, Assertive, Energetic, Loyal, Gentle, Confident, Dominant',
-      weight: {
-        imperial: '60 - 120',
-        metric: '27 - 54',
-      },
+      weight_imperial: '60 - 120',
+      weight_metric: '27 - 54',
+
       url: 'https://cdn2.thedogapi.com/images/pk1AAdloG.jpg',
     },
     {
       bred_for: 'Family companion dog',
       breed_group: '',
       country_code: 'US',
-      height: {
-        imperial: '14 - 17',
-        metric: '36 - 43',
-      },
+      height_imperial: '14 - 17',
+      height_metric: '36 - 43',
+
       id: 11,
       life_span: '8 – 15 years',
       name: 'American-Bully',
       temperament:
         'Strong Willed, Stubborn, Friendly, Clownish, Affectionate, Loyal, Obedient, Intelligent, Courageous',
-      weight: {
-        imperial: '30 - 150',
-        metric: '14 - 68',
-      },
+      weight_imperial: '30 - 150',
+      weight_metric: '14 - 68',
+
       url: 'https://cdn2.thedogapi.com/images/34v9aKCct.jpg',
     },
     {
       bred_for: 'Circus performer',
       breed_group: 'Non-Sporting',
       country_code: 'US',
-      height: {
-        imperial: '15 - 19',
-        metric: '38 - 48',
-      },
+      height_imperial: '15 - 19',
+      height_metric: '38 - 48',
+
       id: 12,
       life_span: '12 - 15 years',
       name: 'American-Eskimo-Dog',
       temperament: 'Friendly, Alert, Reserved, Intelligent, Protective',
-      weight: {
-        imperial: '20 - 40',
-        metric: '9 - 18',
-      },
+      weight_imperial: '20 - 40',
+      weight_metric: '9 - 18',
+
       url: 'https://cdn2.thedogapi.com/images/EB8A5HQHX.jpg',
     },
     {
       bred_for: 'Companionship',
       country_code: 'US',
-      height: {
-        imperial: '9 - 12',
-        metric: '23 - 30',
-      },
+      height_imperial: '9 - 12',
+      height_metric: '23 - 30',
+
       id: 13,
       life_span: '13 – 15 years',
       name: 'American-Eskimo-Dog(Miniature)',
       temperament: 'Friendly, Alert, Reserved, Intelligent, Protective',
-      weight: {
-        imperial: '7 - 10',
-        metric: '3 - 5',
-      },
+      weight_imperial: '7 - 10',
+      weight_metric: '3 - 5',
+
       url: 'https://cdn2.thedogapi.com/images/0yxSqpNj4.jpg',
     },
     {
       bred_for: 'Fox hunting, scent hound',
       breed_group: 'Hound',
       country_code: 'US',
-      height: {
-        imperial: '21 - 28',
-        metric: '53 - 71',
-      },
+      height_imperial: '21 - 28',
+      height_metric: '53 - 71',
+
       id: 14,
       life_span: '8 - 15 years',
       name: 'American-Foxhound',
       temperament:
         'Kind, Sweet-Tempered, Loyal, Independent, Intelligent, Loving',
-      weight: {
-        imperial: '65 - 75',
-        metric: '29 - 34',
-      },
+      weight_imperial: '65 - 75',
+      weight_metric: '29 - 34',
+
       url: 'https://cdn2.thedogapi.com/images/LvKF3cSkb.jpg',
     },
     {
       bred_for: 'Fighting',
       breed_group: 'Terrier',
       country_code: 'US',
-      height: {
-        imperial: '17 - 21',
-        metric: '43 - 53',
-      },
+      height_imperial: '17 - 21',
+      height_metric: '43 - 53',
+
       id: 15,
       life_span: '10 - 15 years',
       name: 'American-Pit-Bull-Terrier',
       temperament:
         'Strong Willed, Stubborn, Friendly, Clownish, Affectionate, Loyal, Obedient, Intelligent, Courageous',
-      weight: {
-        imperial: '30 - 60',
-        metric: '14 - 27',
-      },
+      weight_imperial: '30 - 60',
+      weight_metric: '14 - 27',
+
       url: 'https://cdn2.thedogapi.com/images/HkC31gcNm_1280.png',
     },
     {
       bred_for: '',
       breed_group: 'Terrier',
       country_code: 'US',
-      height: {
-        imperial: '17 - 19',
-        metric: '43 - 48',
-      },
+      height_imperial: '17 - 19',
+      height_metric: '43 - 48',
+
       id: 16,
       life_span: '12 - 15 years',
       name: 'American-Staffordshire-Terrier',
       temperament: 'Tenacious, Friendly, Devoted, Loyal, Attentive, Courageous',
-      weight: {
-        imperial: '50 - 60',
-        metric: '23 - 27',
-      },
+      weight_imperial: '50 - 60',
+      weight_metric: '23 - 27',
+
       url: 'https://cdn2.thedogapi.com/images/rJIakgc4m_1280.jpg',
     },
     {
       bred_for: 'Bird flushing and retrieving',
       breed_group: 'Sporting',
       country_code: 'US',
-      height: {
-        imperial: '15 - 18',
-        metric: '38 - 46',
-      },
+      height_imperial: '15 - 18',
+      height_metric: '38 - 46',
+
       id: 17,
       life_span: '10 - 12 years',
       name: 'American-Water-Spaniel',
@@ -315,141 +284,125 @@ exports.up = async (sql) => {
     {
       bred_for: 'Livestock herding',
       breed_group: 'Working',
-      height: {
-        imperial: '27 - 29',
-        metric: '69 - 74',
-      },
+      height_imperial: '27 - 29',
+      height_metric: '69 - 74',
+
       id: 18,
       life_span: '11 - 13 years',
       name: 'Anatolian-Shepherd-Dog',
       temperament: 'Steady, Bold, Independent, Confident, Intelligent, Proud',
-      weight: {
-        imperial: '80 - 150',
-        metric: '36 - 68',
-      },
+      weight_imperial: '80 - 150',
+      weight_metric: '36 - 68',
+
       url: 'https://cdn2.thedogapi.com/images/B1uW7l5VX.jpg',
     },
     {
       bred_for: 'Herding livestock, pulling carts, and guarding the farm',
-      height: {
-        imperial: '20 - 22',
-        metric: '51 - 56',
-      },
+      height_imperial: '20 - 22',
+      height_metric: '51 - 56',
+
       id: 19,
       life_span: '12 – 14 years',
       name: 'Appenzeller-Sennenhund',
       temperament: 'Reliable, Fearless, Energetic, Lively, Self-assured',
-      weight: {
-        imperial: '48 - 55',
-        metric: '22 - 25',
-      },
+      weight_imperial: '48 - 55',
+      weight_metric: '22 - 25',
+
       url: 'https://cdn2.thedogapi.com/images/CAy4xLsx6.jpg',
     },
     {
       bred_for: 'Cattle herding, herding trials',
       breed_group: 'Herding',
       country_code: 'AU',
-      height: {
-        imperial: '17 - 20',
-        metric: '43 - 51',
-      },
+      height_imperial: '17 - 20',
+      height_metric: '43 - 51',
+
       id: 20,
       life_span: '12 - 14 years',
       name: 'Australian-Cattle-Dog',
       temperament: 'Cautious, Energetic, Loyal, Obedient, Protective, Brave',
-      weight: {
-        imperial: '44 - 62',
-        metric: '20 - 28',
-      },
+      weight_imperial: '44 - 62',
+      weight_metric: '20 - 28',
+
       url: 'https://cdn2.thedogapi.com/images/ZxP-viFTK.jpg',
     },
     {
       bred_for: 'Farm dog, Cattle herding',
       breed_group: 'Herding',
       country_code: 'AU',
-      height: {
-        imperial: '17 - 20',
-        metric: '43 - 51',
-      },
+      height_imperial: '17 - 20',
+      height_metric: '43 - 51',
+
       id: 21,
       life_span: '10 - 13 years',
       name: 'Australian-Kelpie',
       temperament: 'Friendly, Energetic, Alert, Loyal, Intelligent, Eager',
-      weight: {
-        imperial: '31 - 46',
-        metric: '14 - 21',
-      },
+      weight_imperial: '31 - 46',
+      weight_metric: '14 - 21',
+
       url: 'https://cdn2.thedogapi.com/images/Hyq1ge9VQ_1280.jpg',
     },
     {
       bred_for: 'Sheep herding',
       breed_group: 'Herding',
       country_code: 'AU',
-      height: {
-        imperial: '18 - 23',
-        metric: '46 - 58',
-      },
+      height_imperial: '18 - 23',
+      height_metric: '46 - 58',
+
       id: 22,
       life_span: '12 - 16 years',
       name: 'Australian-Shepherd',
       temperament:
         'Good-natured, Affectionate, Intelligent, Active, Protective',
-      weight: {
-        imperial: '35 - 65',
-        metric: '16 - 29',
-      },
+      weight_imperial: '35 - 65',
+      weight_metric: '16 - 29',
+
       url: 'https://cdn2.thedogapi.com/images/B1-llgq4m_1280.jpg',
     },
     {
       bred_for: 'Cattle herdering, hunting snakes and rodents',
       breed_group: 'Terrier',
       country_code: 'AU',
-      height: {
-        imperial: '10 - 11',
-        metric: '25 - 28',
-      },
+      height_imperial: '10 - 11',
+      height_metric: '25 - 28',
+
       id: 23,
       life_span: '15 years',
       name: 'Australian-Terrier',
       temperament:
         'Spirited, Alert, Loyal, Companionable, Even Tempered, Courageous',
-      weight: {
-        imperial: '14 - 16',
-        metric: '6 - 7',
-      },
+      weight_imperial: '14 - 16',
+      weight_metric: '6 - 7',
+
       url: 'https://cdn2.thedogapi.com/images/r1Ylge5Vm_1280.jpg',
     },
     {
       bred_for: 'Livestock guardian, hunting',
       breed_group: 'Hound',
-      height: {
-        imperial: '23 - 29',
-        metric: '58 - 74',
-      },
+      height_imperial: '23 - 29',
+      height_metric: '58 - 74',
+
       id: 24,
       life_span: '10 - 13 years',
       name: 'Azawakh',
       temperament: 'Aloof, Affectionate, Attentive, Rugged, Fierce, Refined',
-      weight: {
-        imperial: '33 - 55',
-        metric: '15 - 25',
-      },
+      weight_imperial: '33 - 55',
+      weight_metric: '15 - 25',
+
       url: 'https://cdn2.thedogapi.com/images/SkvZgx94m_1280.jpg',
     },
     {
       bred_for: 'Hunting water game',
-      height: {
-        imperial: '20 - 26',
-        metric: '51 - 66',
-      },
+      height_imperial: '20 - 26',
+      height_metric: '51 - 66',
+
       id: 25,
       life_span: '13 – 15 years',
       name: 'Barbet',
       temperament: 'Obedient, Companionable, Intelligent, Joyful',
-      weight: {
-        imperial: '40 - 65',
-        metric: '18 - 29',
-      },
+      weight_imperial: '40 - 65',
+      weight_metric: '18 - 29',
+
       url: 'https://cdn2.thedogapi.com/images/HyWGexcVQ_1280.jpg',
     },
     {
@@ -2982,8 +2935,6 @@ exports.up = async (sql) => {
     },
   ];
 
-
-
   await sql`
 	INSERT INTO fetchedDogs ${sql(
     fetchedDogs,
@@ -2992,8 +2943,10 @@ exports.up = async (sql) => {
     'life_span',
     'origin',
     'temperament',
-    'weight',
-    'height',
+    'height_imperial',
+    'height_metric',
+    'weight_imperial',
+    'weight_metric',
     'breed_group',
     'url',
   )}`;
