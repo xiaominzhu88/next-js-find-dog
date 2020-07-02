@@ -43,7 +43,7 @@ export default function Header() {
       })
       .then((json) => {
         if (json === true) {
-          setUser('You are logged in!');
+          setUser('You are logged in! 👍');
         }
       })
       .catch((err) => {
@@ -115,6 +115,9 @@ export default function Header() {
           color: rgb(6, 91, 134);
           text-shadow: 3px 5px 8px rgb(97, 134, 152);
           letter-spacing: 4px;
+        }
+        p {
+          text-align: center;
         }
 
         @media (max-width: 450px) {

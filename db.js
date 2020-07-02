@@ -74,9 +74,9 @@ export async function selectUserByUsername(username, password) {
     usersWithUsername[0].password_hash,
     password,
   );
+  //console.log(passwordMatches); // returns boolean
   console.log('usersWithUsername: ', usersWithUsername[0]);
 
-  //this returns boolean
   if (passwordMatches) {
     return usersWithUsername;
   } else {
@@ -90,17 +90,17 @@ INSERT INTO users (username, password_hash) VALUES (${username}, ${passwordHash}
 `;
 }
 
-export function selectSessionByToken(token) {
-  //console.log('TOKEN: ', token);
-  return sql`
-    SELECT * FROM sessions WHERE token = ${token}
-  `;
-}
-
 export async function insertSession(userId, token) {
   return sql`
     INSERT INTO sessions (user_id, token) VALUES (${userId}, ${token})
   `;
+}
+
+export function selectSessionByToken(token) {
+  //console.log('TOKEN: ', token);
+  return sql`
+    SELECT * FROM sessions WHERE token = ${token}
+        `;
 }
 
 export async function deleteSessionByToken(token) {

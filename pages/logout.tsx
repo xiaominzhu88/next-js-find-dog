@@ -1,16 +1,27 @@
 import React from 'react';
 import Head from 'next/head';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 import { GetServerSidePropsContext } from 'next';
 
 export default function Logout() {
   return (
     <div>
-      <Header />
       <Head>
         <title>Logged out</title>
       </Head>
-      You are Logged Out
+      <Header />
+      <div>
+        <h1>You are Logged Out✍️</h1>
+      </div>
+      <Footer />
+      <style jsx>
+        {`
+          h1 {
+            text-align: center;
+          }
+        `}
+      </style>
     </div>
   );
 }

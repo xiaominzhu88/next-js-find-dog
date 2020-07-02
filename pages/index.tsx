@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
 import { GetServerSidePropsContext } from 'next';
-//import { getServerSideProps } from './login';
-//import Link from 'next/link';
 import Header from '../components/Header';
 
 type Props = {
@@ -21,7 +19,7 @@ export default function Signup(props: Props) {
       <div className="auth">
         <div className="left">
           <div>
-            <h1>Sign Up</h1>
+            <h1>Register</h1>
           </div>
 
           <form method="POST">
@@ -35,12 +33,12 @@ export default function Signup(props: Props) {
               <input placeholder="password" type="password" name="password" />
             </label>
             <br />
-            <input type="hidden" name="csrf" value={props.csrfToken} />
+            {/* <input type="hidden" name="csrf" value={props.csrfToken} /> */}
             {/* <p>{props.csrfToken}</p> */}
             <div className="signUpButton">
               <button>
                 <span role="img" aria-label="emoji">
-                  👍
+                  ✍️
                 </span>
               </button>
             </div>
@@ -102,11 +100,13 @@ export default function Signup(props: Props) {
           }
 
           button {
-            height: 2em;
-            width: 6em;
+            height: 2.5em;
+            width: 8em;
+            border: none;
+            background-color: pink;
           }
           button:hover {
-            background-color: pink;
+            background-color: silver;
             border: none;
           }
 
@@ -174,12 +174,10 @@ export default function Signup(props: Props) {
 }
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
-  //const path = require('path');
-  //require('dotenv').config({ path: path.resolve(process.cwd(), '.env.//local') });
   require('dotenv').config();
+  const queryString = require('query-string');
 
   const { hashPassword } = await import('../hashing');
-  const queryString = require('query-string');
   const { insertUser } = await import('../db.js');
 
   const Tokens = (await import('csrf')).default;
@@ -187,8 +185,6 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 
   // secret = csrf
   const secret = process.env.CSRF_TOKEN;
-
-  //console.log('Secret: ', secret);
 
   if (typeof secret !== 'string') {
     throw new Error('Token secret misconfigured!');
@@ -209,8 +205,10 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
       console.log('No username or password passed in body');
       return;
     }
+    // body contains username and password(convert as csrf)
     console.log('body: ', body);
 
+    // below imported from hashing which hashes password
     const username = body.username;
     const passwordHash = await hashPassword(body.password);
 
@@ -221,6 +219,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
       throw new Error('No CSRF token passed!');
     }
 
+    // insertUser below imported from db, which insert username and password_hash into users Table(00005) as registered
     if (tokens.verify(secret, requestToken)) {
       insertUser(username, passwordHash)
         .then(() => {

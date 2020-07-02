@@ -58,7 +58,7 @@ function FetchedDog({ fetchedDogs }) {
 
           {fetchedDogs.name
             ? fetchedDogs.name
-            : 'There is no information about this'}
+            : 'There is no information about me'}
           <span role="img" aria-label="star">
             🌟
           </span>
@@ -67,50 +67,50 @@ function FetchedDog({ fetchedDogs }) {
           Lifespan:{' '}
           {fetchedDogs.life_span
             ? fetchedDogs.life_span
-            : 'There is no information about this'}
+            : 'There is no information about me'}
         </h3>
         <p>
           Bred for:{' '}
           {fetchedDogs.bred_for
             ? fetchedDogs.bred_for
-            : 'There is no information about this'}
+            : 'There is no information about me'}
         </p>
         <p>
           Weight-Imperial:{' '}
           {fetchedDogs.weight_imperial
             ? fetchedDogs.weight_imperial
-            : 'There is no information about this'}{' '}
+            : 'There is no information about me'}{' '}
         </p>
         <p>
           Weight-Metirc:{' '}
           {fetchedDogs.weight_metric
             ? fetchedDogs.weight_metric
-            : 'There is no information about this'}{' '}
+            : 'There is no information about me'}{' '}
         </p>
         <p>
           Height-Imperial:{' '}
           {fetchedDogs.height_imperial
             ? fetchedDogs.height_imperial
-            : 'There is no information about this'}{' '}
+            : 'There is no information about me'}{' '}
         </p>
         <p>
           Height-Metric:{' '}
           {fetchedDogs.height_metric
             ? fetchedDogs.height_metric
-            : 'There is no information about this'}{' '}
+            : 'There is no information about me'}{' '}
         </p>
         <p>
           Origin:{' '}
           {fetchedDogs.origin
             ? fetchedDogs.origin
-            : 'There is no information about this'}
+            : 'There is no information about me'}
         </p>
 
         <p>
           Temperament:{' '}
           {fetchedDogs.temperament
             ? fetchedDogs.temperament
-            : 'There is no information about this'}
+            : 'There is no information about me'}
         </p>
       </main>
 

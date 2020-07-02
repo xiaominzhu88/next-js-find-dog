@@ -1,7 +1,5 @@
 import React, { useState, FormEvent } from 'react';
 import Head from 'next/head';
-import { GetServerSidePropsContext } from 'next';
-import nextCookies from 'next-cookies';
 import Router from 'next/router';
 import Header from '../components/Header';
 
@@ -12,12 +10,8 @@ export default function Login() {
 
   function onSubmit(event: FormEvent) {
     event.preventDefault();
-    // TODO: To secure your application even further,
-    // generate and use a CSRF token and pass it along
+    // use a CSRF token and pass it along
     // with the fetch to be verified server-side
-    // (see pages/register.tsx)
-
-    console.log('status: ', status); // success | '' if wrong username/password
 
     fetch('/api/login', {
       method: 'POST',
@@ -42,10 +36,10 @@ export default function Login() {
           setStatus('Failed logging in - check username and password');
         } else {
           setStatus('You are Logged in!!');
-          // Redirect to homepage after 3 seconds
+          // Redirect to homepage after 2 seconds
           setTimeout(() => {
             Router.replace('/home');
-          }, 3000);
+          }, 2000);
         }
       })
       .catch((err) => {
@@ -146,14 +140,18 @@ export default function Login() {
             text-align: center;
           }
           button {
-            height: 2em;
-            width: 6em;
-            color: lightblue;
+            height: 2.5em;
+            width: 8em;
+            background-color: lightblue;
+            border: none;
           }
           button:hover {
             background-color: pink;
             color: blue;
             border: none;
+          }
+          p {
+            margin: 1em auto;
           }
 
           @keyframes flybirds {
@@ -210,6 +208,7 @@ export default function Login() {
   );
 }
 
+// in case not use api router
 //export async function getServerSideProps(context: //GetServerSidePropsContext) {
 //  // Redirect to homepage right away if logged in already
 //
