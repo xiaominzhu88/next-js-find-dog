@@ -141,7 +141,7 @@ exports.up = async (sql) => {
 
       id: 9,
       life_span: '12 - 15 years',
-      name: 'Alaskan-Malamute',
+      name: 'Alaskan Malamute',
       temperament: 'Friendly, Affectionate, Devoted, Loyal, Dignified, Playful',
       weight_imperial: '65 - 100',
       weight_metric: '29 - 45',
@@ -155,7 +155,7 @@ exports.up = async (sql) => {
 
       id: 10,
       life_span: '10 - 12 years',
-      name: 'American-Bulldog',
+      name: 'American Bulldog',
       temperament:
         'Friendly, Assertive, Energetic, Loyal, Gentle, Confident, Dominant',
       weight_imperial: '60 - 120',
@@ -172,7 +172,7 @@ exports.up = async (sql) => {
 
       id: 11,
       life_span: '8 – 15 years',
-      name: 'American-Bully',
+      name: 'American Bully',
       temperament:
         'Strong Willed, Stubborn, Friendly, Clownish, Affectionate, Loyal, Obedient, Intelligent, Courageous',
       weight_imperial: '30 - 150',
@@ -189,7 +189,7 @@ exports.up = async (sql) => {
 
       id: 12,
       life_span: '12 - 15 years',
-      name: 'American-Eskimo-Dog',
+      name: 'American Eskimo Dog',
       temperament: 'Friendly, Alert, Reserved, Intelligent, Protective',
       weight_imperial: '20 - 40',
       weight_metric: '9 - 18',
@@ -204,7 +204,7 @@ exports.up = async (sql) => {
 
       id: 13,
       life_span: '13 – 15 years',
-      name: 'American-Eskimo-Dog(Miniature)',
+      name: 'American Eskimo Dog(Miniature)',
       temperament: 'Friendly, Alert, Reserved, Intelligent, Protective',
       weight_imperial: '7 - 10',
       weight_metric: '3 - 5',
@@ -220,7 +220,7 @@ exports.up = async (sql) => {
 
       id: 14,
       life_span: '8 - 15 years',
-      name: 'American-Foxhound',
+      name: 'American Foxhound',
       temperament:
         'Kind, Sweet-Tempered, Loyal, Independent, Intelligent, Loving',
       weight_imperial: '65 - 75',
@@ -237,7 +237,7 @@ exports.up = async (sql) => {
 
       id: 15,
       life_span: '10 - 15 years',
-      name: 'American-Pit-Bull-Terrier',
+      name: 'American Pit Bull Terrier',
       temperament:
         'Strong Willed, Stubborn, Friendly, Clownish, Affectionate, Loyal, Obedient, Intelligent, Courageous',
       weight_imperial: '30 - 60',
@@ -254,7 +254,7 @@ exports.up = async (sql) => {
 
       id: 16,
       life_span: '12 - 15 years',
-      name: 'American-Staffordshire-Terrier',
+      name: 'American Staffordshire Terrier',
       temperament: 'Tenacious, Friendly, Devoted, Loyal, Attentive, Courageous',
       weight_imperial: '50 - 60',
       weight_metric: '23 - 27',
@@ -270,7 +270,7 @@ exports.up = async (sql) => {
 
       id: 17,
       life_span: '10 - 12 years',
-      name: 'American-Water-Spaniel',
+      name: 'American Water Spaniel',
       temperament:
         'Friendly, Energetic, Obedient, Intelligent, Protective, Trainable',
       weight_imperial: '25 - 45',
@@ -286,7 +286,7 @@ exports.up = async (sql) => {
 
       id: 18,
       life_span: '11 - 13 years',
-      name: 'Anatolian-Shepherd-Dog',
+      name: 'Anatolian Shepherd Dog',
       temperament: 'Steady, Bold, Independent, Confident, Intelligent, Proud',
       weight_imperial: '80 - 150',
       weight_metric: '36 - 68',
@@ -300,7 +300,7 @@ exports.up = async (sql) => {
 
       id: 19,
       life_span: '12 – 14 years',
-      name: 'Appenzeller-Sennenhund',
+      name: 'Appenzeller Sennenhund',
       temperament: 'Reliable, Fearless, Energetic, Lively, Self-assured',
       weight_imperial: '48 - 55',
       weight_metric: '22 - 25',
@@ -316,7 +316,7 @@ exports.up = async (sql) => {
 
       id: 20,
       life_span: '12 - 14 years',
-      name: 'Australian-Cattle-Dog',
+      name: 'Australian Cattle Dog',
       temperament: 'Cautious, Energetic, Loyal, Obedient, Protective, Brave',
       weight_imperial: '44 - 62',
       weight_metric: '20 - 28',
@@ -332,7 +332,7 @@ exports.up = async (sql) => {
 
       id: 21,
       life_span: '10 - 13 years',
-      name: 'Australian-Kelpie',
+      name: 'Australian Kelpie',
       temperament: 'Friendly, Energetic, Alert, Loyal, Intelligent, Eager',
       weight_imperial: '31 - 46',
       weight_metric: '14 - 21',
@@ -348,7 +348,7 @@ exports.up = async (sql) => {
 
       id: 22,
       life_span: '12 - 16 years',
-      name: 'Australian-Shepherd',
+      name: 'Australian Shepherd',
       temperament:
         'Good-natured, Affectionate, Intelligent, Active, Protective',
       weight_imperial: '35 - 65',
@@ -365,7 +365,7 @@ exports.up = async (sql) => {
 
       id: 23,
       life_span: '15 years',
-      name: 'Australian-Terrier',
+      name: 'Australian Terrier',
       temperament:
         'Spirited, Alert, Loyal, Companionable, Even Tempered, Courageous',
       weight_imperial: '14 - 16',
@@ -426,7 +426,7 @@ exports.up = async (sql) => {
 
       id: 27,
       life_span: '10 - 14 years',
-      name: 'Basset-Bleu-de-Gascogne',
+      name: 'Basset Bleu de Gascogne',
       temperament: 'Affectionate, Lively, Agile, Curious, Happy, Active',
       weight_imperial: '35 - 40',
       weight_metric: '16 - 18',
@@ -441,7 +441,7 @@ exports.up = async (sql) => {
 
       id: 28,
       life_span: '12 - 15 years',
-      name: 'Basset-Hound',
+      name: 'Basset Hound',
       temperament:
         'Tenacious, Friendly, Affectionate, Devoted, Sweet-Tempered, Gentle',
       weight_imperial: '50 - 65',
@@ -473,7 +473,7 @@ exports.up = async (sql) => {
 
       id: 30,
       life_span: '12 - 14 years',
-      name: 'Bearded-Collie',
+      name: 'Bearded Collie',
       temperament: 'Self-confidence, Hardy, Lively, Alert, Intelligent, Active',
       weight_imperial: '45 - 55',
       weight_metric: '20 - 25',
@@ -503,7 +503,7 @@ exports.up = async (sql) => {
 
       id: 32,
       life_span: '14 - 16 years',
-      name: 'Bedlington-Terrier',
+      name: 'Bedlington Terrier',
       temperament: 'Affectionate, Spirited, Intelligent, Good-tempered',
       weight_imperial: '17 - 23',
       weight_metric: '8 - 10',
@@ -518,7 +518,7 @@ exports.up = async (sql) => {
 
       id: 33,
       life_span: '12 - 14 years',
-      name: 'Belgian-Malinois',
+      name: 'Belgian Malinois',
       temperament:
         'Watchful, Alert, Stubborn, Friendly, Confident, Hard-working, Active, Protective',
       weight_imperial: '40 - 80',
@@ -534,7 +534,7 @@ exports.up = async (sql) => {
 
       id: 34,
       life_span: '10 - 12 years',
-      name: 'Belgian-Tervuren',
+      name: 'Belgian Tervuren',
       temperament:
         'Energetic, Alert, Loyal, Intelligent, Attentive, Protective',
       weight_imperial: '40 - 65',
@@ -548,7 +548,7 @@ exports.up = async (sql) => {
 
       id: 35,
       life_span: '7 - 10 years',
-      name: 'Bernese-Mountain-Dog',
+      name: 'Bernese Mountain Dog',
       temperament: 'Affectionate, Loyal, Intelligent, Faithful',
       weight_imperial: '65 - 120',
       weight_metric: '29 - 54',
@@ -563,7 +563,7 @@ exports.up = async (sql) => {
 
       id: 36,
       life_span: '15 years',
-      name: 'Bichon-Frise',
+      name: 'Bichon Frise',
       temperament: 'Feisty, Affectionate, Cheerful, Playful, Gentle, Sensitive',
       weight_imperial: '10 - 18',
       weight_metric: '5 - 8',
@@ -576,7 +576,7 @@ exports.up = async (sql) => {
 
       id: 37,
       life_span: '10 - 12 years',
-      name: 'Black-and-Tan-Coonhound',
+      name: 'Black and Tan Coonhound',
       temperament:
         'Easygoing, Gentle, Adaptable, Trusting, Even Tempered, Lovable',
       weight_imperial: '65 - 100',
@@ -607,7 +607,7 @@ exports.up = async (sql) => {
 
       id: 39,
       life_span: '12 - 14 years',
-      name: 'Bluetick-Coonhound',
+      name: 'Bluetick Coonhound',
       temperament: 'Friendly, Intelligent, Active',
       weight_imperial: '45 - 80',
       weight_metric: '20 - 36',
@@ -637,7 +637,7 @@ exports.up = async (sql) => {
 
       id: 41,
       life_span: '12 - 16 years',
-      name: 'Border-Collie',
+      name: 'Border Collie',
       temperament: 'Tenacious, Keen, Energetic, Responsive, Alert, Intelligent',
       weight_imperial: '30 - 45',
       weight_metric: '14 - 20',
@@ -652,7 +652,7 @@ exports.up = async (sql) => {
 
       id: 42,
       life_span: '12 - 14 years',
-      name: 'Border-Terrier',
+      name: 'Border Terrier',
       temperament:
         'Fearless, Affectionate, Alert, Obedient, Intelligent, Even Tempered',
       weight_imperial: '11.5 - 15.5',
@@ -666,7 +666,7 @@ exports.up = async (sql) => {
 
       id: 43,
       life_span: '11 - 13 years',
-      name: 'Boston-Terrier',
+      name: 'Boston Terrier',
       temperament: 'Friendly, Lively, Intelligent',
       weight_imperial: '10 - 25',
       weight_metric: '5 - 11',
@@ -681,7 +681,7 @@ exports.up = async (sql) => {
 
       id: 44,
       life_span: '10 - 15 years',
-      name: 'Bouvier-des-Flandres',
+      name: 'Bouvier des Flandres',
       temperament: 'Protective, Loyal, Gentle, Intelligent, Familial, Rational',
       weight_imperial: '70 - 110',
       weight_metric: '32 - 50',
@@ -712,7 +712,7 @@ exports.up = async (sql) => {
 
       id: 46,
       life_span: '10 - 14 years',
-      name: 'Boykin-Spaniel',
+      name: 'Boykin Spaniel',
       temperament:
         'Friendly, Energetic, Companionable, Intelligent, Eager, Trainable',
       weight_imperial: '25 - 40',
@@ -726,7 +726,7 @@ exports.up = async (sql) => {
 
       id: 47,
       life_span: '10 - 12 years',
-      name: 'Bracco-Italiano',
+      name: 'Bracco Italiano',
       temperament:
         'Stubborn, Affectionate, Loyal, Playful, Companionable, Trainable',
       weight_imperial: '55 - 88',
@@ -773,7 +773,7 @@ exports.up = async (sql) => {
 
       id: 50,
       life_span: '10 - 12 years',
-      name: 'Bull-Terrier',
+      name: 'Bull Terrier',
       temperament: 'Trainable, Protective, Sweet-Tempered, Keen, Active',
       weight_imperial: '50 - 70',
       weight_metric: '23 - 32',
@@ -782,266 +782,235 @@ exports.up = async (sql) => {
     },
     {
       bred_for: "An elegant man's fashion statement",
-      height: {
-        imperial: '10 - 14',
-        metric: '25 - 36',
-      },
+      height_imperial: '10 - 14',
+      height_metric: '25 - 36',
+
       id: 51,
       life_span: '11 – 14 years',
-      name: 'Bull-Terrier(Miniature)',
+      name: 'Bull Terrier(Miniature)',
       temperament:
         'Trainable, Protective, Sweet-Tempered, Keen, Active, Territorial',
-      weight: {
-        imperial: '25 - 33',
-        metric: '11 - 15',
-      },
+      weight_imperial: '25 - 33',
+      weight_metric: '11 - 15',
+
       url: 'https://cdn2.thedogapi.com/images/BkKZWlcVX_1280.jpg',
     },
     {
       bred_for: 'Estate guardian',
       breed_group: 'Working',
-      height: {
-        imperial: '24 - 27',
-        metric: '61 - 69',
-      },
+      height_imperial: '24 - 27',
+      height_metric: '61 - 69',
+
       id: 52,
       life_span: '8 - 12 years',
       name: 'Bullmastiff',
       temperament:
         'Docile, Reliable, Devoted, Alert, Loyal, Reserved, Loving, Protective, Powerful, Calm, Courageous',
-      weight: {
-        imperial: '100 - 130',
-        metric: '45 - 59',
-      },
+      weight_imperial: '100 - 130',
+      weight_metric: '45 - 59',
+
       url: 'https://cdn2.thedogapi.com/images/r1dgtOnBm_1280.jpg',
     },
     {
       bred_for: 'Bolting of otter, foxes, other vermin',
       breed_group: 'Terrier',
-      height: {
-        imperial: '9 - 10',
-        metric: '23 - 25',
-      },
+      height_imperial: '9 - 10',
+      height_metric: '23 - 25',
+
       id: 53,
       life_span: '14 - 15 years',
-      name: 'Cairn-Terrier',
+      name: 'Cairn Terrier',
       temperament: 'Hardy, Fearless, Assertive, Gay, Intelligent, Active',
-      weight: {
-        imperial: '13 - 14',
-        metric: '6 - 6',
-      },
+      weight_imperial: '13 - 14',
+      weight_metric: '6 - 6',
+
       url: 'https://cdn2.thedogapi.com/images/Sk7Qbg9E7_1280.jpg',
     },
     {
       bred_for: 'Companion, guard dog, and hunter',
       breed_group: 'Working',
-      height: {
-        imperial: '23.5 - 27.5',
-        metric: '60 - 70',
-      },
+      height_imperial: '23.5 - 27.5',
+      height_metric: '60 - 70',
+
       id: 54,
       life_span: '10 - 11 years',
-      name: 'Cane-Corso',
+      name: 'Cane Corso',
       temperament: 'Trainable, Reserved, Stable, Quiet, Even Tempered, Calm',
-      weight: {
-        imperial: '88 - 120',
-        metric: '40 - 54',
-      },
+      weight_imperial: '88 - 120',
+      weight_metric: '40 - 54',
+
       url: 'https://cdn2.thedogapi.com/images/r15m-lc4m_1280.jpg',
     },
     {
       bred_for: 'Cattle droving',
       breed_group: 'Herding',
-      height: {
-        imperial: '10.5 - 12.5',
-        metric: '27 - 32',
-      },
+      height_imperial: '10.5 - 12.5',
+      height_metric: '27 - 32',
+
       id: 55,
       life_span: '12 - 14 years',
-      name: 'Cardigan-Welsh-Corgi',
+      name: 'Cardigan Welsh Corgi',
       temperament:
         'Affectionate, Devoted, Alert, Companionable, Intelligent, Active',
-      weight: {
-        imperial: '25 - 38',
-        metric: '11 - 17',
-      },
+      weight_imperial: '25 - 38',
+      weight_metric: '11 - 17',
     },
     {
       bred_for: 'Driving livestock',
       breed_group: 'Herding',
-      height: {
-        imperial: '20 - 26',
-        metric: '51 - 66',
-      },
+      height_imperial: '20 - 26',
+      height_metric: '51 - 66',
+
       id: 56,
       life_span: '10 - 12 years',
-      name: 'Catahoula-Leopard-Dog',
+      name: 'Catahoula Leopard Dog',
       temperament:
         'Energetic, Inquisitive, Independent, Gentle, Intelligent, Loving',
-      weight: {
-        imperial: '50 - 95',
-        metric: '23 - 43',
-      },
+      weight_imperial: '50 - 95',
+      weight_metric: '23 - 43',
+
       url: 'https://cdn2.thedogapi.com/images/BJcNbec4X_1280.jpg',
     },
     {
       bred_for:
         'Guard dogs, defending sheep from predators, mainly wolves, jackals and bears',
       breed_group: 'Working',
-      height: {
-        imperial: '24 - 33.5',
-        metric: '61 - 85',
-      },
+      height_imperial: '24 - 33.5',
+      height_metric: '61 - 85',
+
       id: 57,
       life_span: '10 - 12 years',
-      name: 'Caucasian-Shepherd(Ovcharka)',
+      name: 'Caucasian Shepherd(Ovcharka)',
       temperament: 'Alert, Quick, Dominant, Powerful, Calm, Strong',
-      weight: {
-        imperial: '80 - 100',
-        metric: '36 - 45',
-      },
+      weight_imperial: '80 - 100',
+      weight_metric: '36 - 45',
+
       url: 'https://cdn2.thedogapi.com/images/r1rrWe5Em_1280.jpg',
     },
     {
       bred_for: 'Flushing small birds, companion',
       breed_group: 'Toy',
-      height: {
-        imperial: '12 - 13',
-        metric: '30 - 33',
-      },
+      height_imperial: '12 - 13',
+      height_metric: '30 - 33',
+
       id: 58,
       life_span: '10 - 14 years',
-      name: 'Cavalier-King-Charles-Spaniel',
+      name: 'Cavalier King Charles Spaniel',
       temperament:
         'Fearless, Affectionate, Sociable, Patient, Playful, Adaptable',
-      weight: {
-        imperial: '13 - 18',
-        metric: '6 - 8',
-      },
+      weight_imperial: '13 - 18',
+      weight_metric: '6 - 8',
+
       url: 'https://cdn2.thedogapi.com/images/HJRBbe94Q_1280.jpg',
     },
     {
       bred_for: 'Water Retriever',
       breed_group: 'Sporting',
-      height: {
-        imperial: '21 - 26',
-        metric: '53 - 66',
-      },
+      height_imperial: '21 - 26',
+      height_metric: '53 - 66',
+
       id: 59,
       life_span: '10 - 13 years',
-      name: 'Chesapeake-Bay-Retriever',
+      name: 'Chesapeake Bay Retriever',
       temperament:
         'Affectionate, Intelligent, Quiet, Dominant, Happy, Protective',
-      weight: {
-        imperial: '55 - 80',
-        metric: '25 - 36',
-      },
+      weight_imperial: '55 - 80',
+      weight_metric: '25 - 36',
+
       url: 'https://cdn2.thedogapi.com/images/4UcpAcdLm.jpg',
     },
     {
       bred_for: 'Ratting, lapdog, curio',
       breed_group: 'Toy',
-      height: {
-        imperial: '11 - 13',
-        metric: '28 - 33',
-      },
+      height_imperial: '11 - 13',
+      height_metric: '28 - 33',
+
       id: 60,
       life_span: '10 - 14 years',
-      name: 'Chinese-Crested',
+      name: 'Chinese Crested',
       temperament:
         'Affectionate, Sweet-Tempered, Lively, Alert, Playful, Happy',
-      weight: {
-        imperial: '10 - 13',
-        metric: '5 - 6',
-      },
+      weight_imperial: '10 - 13',
+      weight_metric: '5 - 6',
+
       url: 'https://cdn2.thedogapi.com/images/B1pDZx9Nm_1280.jpg',
     },
     {
       bred_for: 'Fighting',
       breed_group: 'Non-Sporting',
-      height: {
-        imperial: '18 - 20',
-        metric: '46 - 51',
-      },
+      height_imperial: '18 - 20',
+      height_metric: '46 - 51',
+
       id: 61,
       life_span: '10 years',
-      name: 'Chinese-Shar-Pei',
+      name: 'Chinese Shar Pei',
       temperament:
         'Suspicious, Affectionate, Devoted, Reserved, Independent, Loving',
-      weight: {
-        imperial: '45 - 60',
-        metric: '20 - 27',
-      },
+      weight_imperial: '45 - 60',
+      weight_metric: '20 - 27',
+
       url: 'https://cdn2.thedogapi.com/images/B1ruWl94Q_1280.jpg',
     },
     {
       bred_for: 'Sled pulling',
       breed_group: 'Working',
-      height: {
-        imperial: '22 - 26',
-        metric: '56 - 66',
-      },
+      height_imperial: '22 - 26',
+      height_metric: '56 - 66',
+
       id: 62,
       life_span: '12 - 15 years',
       name: 'Chinook',
       temperament: 'Friendly, Alert, Dignified, Intelligent, Calm',
-      weight: {
-        imperial: '50 - 90',
-        metric: '23 - 41',
-      },
+      weight_imperial: '50 - 90',
+      weight_metric: '23 - 41',
+
       url: 'https://cdn2.thedogapi.com/images/Sypubg54Q_1280.jpg',
     },
     {
       bred_for: 'Guardian, cart pulling, hunting',
       breed_group: 'Non-Sporting',
-      height: {
-        imperial: '17 - 20',
-        metric: '43 - 51',
-      },
+      height_imperial: '17 - 20',
+      height_metric: '43 - 51',
+
       id: 63,
       life_span: '12 - 15 years',
-      name: 'Chow-Chow',
+      name: 'Chow Chow',
       temperament: 'Aloof, Loyal, Independent, Quiet',
-      weight: {
-        imperial: '40 - 70',
-        metric: '18 - 32',
-      },
+      weight_imperial: '40 - 70',
+      weight_metric: '18 - 32',
+
       url: 'https://cdn2.thedogapi.com/images/ry8KWgqEQ_1280.jpg',
     },
     {
       bred_for: 'Bird flushing, retrieving',
       breed_group: 'Sporting',
-      height: {
-        imperial: '17 - 20',
-        metric: '43 - 51',
-      },
+      height_imperial: '17 - 20',
+      height_metric: '43 - 51',
+
       id: 64,
       life_span: '10 - 12 years',
-      name: 'Clumber-Spaniel',
+      name: 'Clumber Spaniel',
       temperament:
         'Affectionate, Loyal, Dignified, Gentle, Calm, Great-hearted',
-      weight: {
-        imperial: '55 - 85',
-        metric: '25 - 39',
-      },
+      weight_imperial: '55 - 85',
+      weight_metric: '25 - 39',
+
       url: 'https://cdn2.thedogapi.com/images/rkeqWgq4Q_1280.jpg',
     },
     {
       bred_for: 'Bird flushing, retrieving',
       breed_group: 'Sporting',
-      height: {
-        imperial: '14 - 15',
-        metric: '36 - 38',
-      },
+      height_imperial: '14 - 15',
+      height_metric: '36 - 38',
+
       id: 65,
       life_span: '12 - 15 years',
-      name: 'Cocker-Spaniel',
+      name: 'Cocker Spaniel',
       temperament:
         'Trainable, Friendly, Affectionate, Playful, Quiet, Faithful',
-      weight: {
-        imperial: '20 - 30',
-        metric: '9 - 14',
-      },
+      weight_imperial: '20 - 30',
+      weight_metric: '9 - 14',
+
       url: 'https://cdn2.thedogapi.com/images/2v2nAUTLB.jpg',
     },
     {

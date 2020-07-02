@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -18,8 +18,7 @@ export default function Home() {
     'Trainable, Protective, Sweet-Tempered, Keen, Active',
   ]);
   const [breedGroup, setBreedGroup] = useState(['Terrier']);
-
-  //if (dogs.length === 0 || !dogs) return <p>No dogs found</p>;
+  const [loading, setLoading] = useState(false);
 
   const fetchData = () => {
     fetch('https://api.thedogapi.com/v1/images/search', {
@@ -28,14 +27,12 @@ export default function Home() {
       headers: { 'X-Api-Key': `${apiKey}` },
     })
       .then((res) => res.json())
+
       .then((result) => {
-        //console.log(result);
+        setLoading(true);
 
         const newUrl = result.map((a) => a.url);
         const dogBreeds = result.map((dog) => dog.breeds);
-
-        //console.log(dogBreeds[0].map((a) => a.name));
-
         const dogName = dogBreeds[0].map((a) => a.name);
         const life = dogBreeds[0].map((a) => a.life_span);
         const temperament = dogBreeds[0].map((a) => a.temperament);
@@ -50,91 +47,27 @@ export default function Home() {
           setChar(temperament);
           setBreedGroup(dogBreedGroup);
         }
-
-        //console.log(result.map((dog) => dog.breeds));
+      })
+      .then(() => {
+        setTimeout(() => {
+          setLoading(false);
+        }, 250);
       })
       .then((error) => {
         return error;
       });
   };
 
-  //const images = [];
-
-  //  function preload() {
-  //    // use process.browser => window/Image not defined
-  //    if (process.browser) {
-  //      for (let i = 0; i < images.length; i++) {
-  //        images[i] = new window.Image();
-  //        images[i].src = preload.images[i];
-  //      }
-  //      setPreloadImg('/loading1.jpg');
-  //    }
-  //  }
-
   function changeImage(e) {
     e.preventDefault();
     fetchData();
   }
 
-  // ---------------- image slide ----------------------------
-  // const pics = [
-  //   '/about-us-dog.jpg',
-  //   '/favicon.jpg',
-  //   '/bullterrier.jpg',
-  //   '/englischedogge.jpg',
-  // ];
-  // const indexStart = 0;
-  // const [index, setIndex] = useState(indexStart);
-  // const [move, setMove] = useState(false);
-  // const [next, setNext] = useState();
+  // -------------------  Preloading image ------------------------
 
-  // // Follow the error and use callback wrap
-  // const getNextIndex = useCallback(
-  //   (idx) => {
-  //     return idx >= pics.length - 1 ? 0 : index + 1;
-  //   },
-  //   [index, pics.length],
-  // );
+  const preloadingUrl = './loadingDog.png';
 
-  // const setIndexes = useCallback(
-  //   (idx) => {
-  //     setIndex(idx);
-  //     setNext(getNextIndex(idx));
-  //   },
-  //   [getNextIndex],
-  // );
-
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setMove(true);
-
-  //     setTimeout(() => {
-  //       setMove(false);
-  //       setIndexes(getNextIndex(index));
-  //     });
-  //   }, 4000);
-  //   // Here clear interval, although images will go faster and crazy !
-  //   return () => clearInterval(interval);
-  //   // Here I have to wrap dependensies inside Array
-  // }, [index, getNextIndex, setIndexes]);
-
-  // -------------------  Preload image ------------------------
-  //  function preload(url, callback) {
-  //    if (process.browser) {
-  //      let image = new window.Image();
-  //      if (image.complete) {
-  //        callback.call(image);
-  //        return;
-  //      }
-  //      image.onload = () => {
-  //        callback.call(image);
-  //      };
-  //      image.src = url;
-  //    }
-  //  }
-  //  preload('/loading1.jpg', () => {
-  //    console.log('IMAGE LOADED');
-  //  });
+  // -------------------  Save favourite -----------------------
 
   function goSum() {
     const sumDogs = {
@@ -162,7 +95,12 @@ export default function Home() {
 
       <div className="dogList">
         <div>
-          <img alt="dog-fetched-images" src={dogImageUrl} />
+          {loading ? (
+            <img src={preloadingUrl} alt="preloadingUrl" />
+          ) : (
+            <img alt="dog-fetched-images" src={dogImageUrl} />
+          )}
+
           <div>
             <Button
               onClick={() => goSum()}
@@ -177,7 +115,7 @@ export default function Home() {
             <br />
             <br />
             <Button onClick={changeImage} variant="contained">
-              Change One
+              To Next
             </Button>
             <br />
             <br />
@@ -195,13 +133,6 @@ export default function Home() {
           <div className="3buttons">
             <img src="/about-us-dog.jpg" alt="cute-dogs" />
             <div className="stars"></div>
-            {/* <Button
-              onClick={() => goSum()}
-              variant="contained"
-              color="secondary"
-              >
-              Like
-            </Button> */}
 
             <Link href="/star">
               <a>
@@ -246,9 +177,7 @@ export default function Home() {
             </h4>
           </div>
         ) : (
-          <p>
-            Oh there is no information <br /> To next one?
-          </p>
+          <p>Relex ! Visit Next !</p>
         )}
       </div>
 
