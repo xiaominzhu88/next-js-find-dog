@@ -32,11 +32,11 @@ export default function Login() {
         }
         console.log('JSON: ', JSON.stringify({ username, password }));
 
-        console.log('RESPONSE: ', response);
+        //console.log('RESPONSE: ', response);
         return response.json();
       })
       .then((json) => {
-        console.log('json: ', json); // loggedIn: true
+        //console.log('json: ', json); // loggedIn: true
 
         if (json.loggedIn === false) {
           setStatus('Failed logging in - check username and password');

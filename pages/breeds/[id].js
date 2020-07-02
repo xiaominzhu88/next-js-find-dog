@@ -77,25 +77,25 @@ function FetchedDog({ fetchedDogs }) {
         </p>
         <p>
           Weight-Imperial:{' '}
-          {fetchedDogs.bred_for
+          {fetchedDogs.weight_imperial
             ? fetchedDogs.weight_imperial
             : 'There is no information about this'}{' '}
         </p>
         <p>
           Weight-Metirc:{' '}
-          {fetchedDogs.bred_for
+          {fetchedDogs.weight_metric
             ? fetchedDogs.weight_metric
             : 'There is no information about this'}{' '}
         </p>
         <p>
           Height-Imperial:{' '}
-          {fetchedDogs.bred_for
+          {fetchedDogs.height_imperial
             ? fetchedDogs.height_imperial
             : 'There is no information about this'}{' '}
         </p>
         <p>
           Height-Metric:{' '}
-          {fetchedDogs.bred_for
+          {fetchedDogs.height_metric
             ? fetchedDogs.height_metric
             : 'There is no information about this'}{' '}
         </p>
@@ -115,7 +115,7 @@ function FetchedDog({ fetchedDogs }) {
       </main>
 
       <div className="buttons">
-        <Link href="/breeds">
+        <Link href="/search">
           <a>
             <Button variant="contained" color="primary">
               To Search

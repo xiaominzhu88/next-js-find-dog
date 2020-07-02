@@ -51,26 +51,16 @@ export async function getFetchedDogsById(id) {
 }
 
 export async function getFetchedDogsByName(name) {
-  // use this syntax instead of WHERE to get dogs by name
+  // use this syntax 'WHERE LOWER(name) like' to get name either lowercase or uppercase
   const columns = ['name', 'id', 'url'];
   const dogNames = await sql`
-  select ${sql(columns)} from fetchedDogs
-  `;
+   select ${sql(columns)} from fetchedDogs WHERE LOWER(name) like LOWER(${
+    '%' + name + '%'
+  })
+   `;
 
-  // const dogNames = await sql`
-  // select ${sql(columns)} from fetchedDogs WHERE name like ${name + '%'}
-  // `;
-  // const dogNames = await sql`
-  //   select * from fetchedDogs WHERE name = ${name}
-  //   `;
   return dogNames;
 }
-
-//export async function selectUserByUsername(username) {
-//  return sql`
-//    SELECT * FROM users WHERE username = ${username}
-//  `;
-//}
 
 export async function selectUserByUsername(username, password) {
   const usersWithUsername = await sql`
