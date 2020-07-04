@@ -2,9 +2,10 @@ import React, { useState, useEffect, useCallback } from 'react';
 import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Link from 'next/link';
+import Button from '@material-ui/core/Button';
 
 const pics = [
-  '/about-us-dog.jpg',
   '/favicon.jpg',
   '/bullterrier.jpg',
   '/englischedogge.jpg',
@@ -45,9 +46,9 @@ export default function About() {
         setIndexes(getNextIndex(index));
       });
     }, 1500);
-    // Here i have to clear interval, although images will go faster and crazy !
+    // clear interval, although images will go faster and crazy !
     return () => clearInterval(interval);
-    // Here I have to wrap dependensies inside Array
+    // wrap dependensies inside Array
   }, [index, getNextIndex, setIndexes]);
 
   return (
@@ -58,10 +59,8 @@ export default function About() {
       </Head>
       <Header />
 
-      <div className="about-us">
-        <h2>About Us</h2>
-      </div>
-      <div>
+      <div className="content">
+        <h2>Before you get a dog ...</h2>
         <p className="about">
           Dogs’ lives are short, but you know that going in. <br />
           You know the pain is coming, <br />
@@ -69,65 +68,109 @@ export default function About() {
           or delight in her innocence.
           <br />
           <br />
-          ⬇️
         </p>{' '}
-        <div className={`current pic ${move}`}>
+        <div className="dog-items">
           <img src={pics[index]} alt="cute-dogs" />
+
+          <p className="about-text">
+            {' '}
+            “Before you get a dog, <br />
+            you can’t quite imagine what living with one might be like;
+            <br /> Afterward, <br />
+            you can’t imagine living any other way.” <br />– Caroline Knapp
+            <br />
+          </p>
+          <p className="about-text">
+            “When you adopt a dog, you have a lot of very good days and one very
+            bad day.” <br />– W. Bruce Cameron
+          </p>
         </div>
+      </div>
+      <div className="stars">
+        <img src="/about-us-dog.jpg" alt="cute-dogs" />
         <br />
-        <p className="about-text">
-          {' '}
-          “Before you get a dog, <br />
-          you can’t quite imagine what living with one might be like;
-          <br /> Afterward, <br />
-          you can’t imagine living any other way.” <br />– Caroline Knapp
-          <br />
-          🔮
-        </p>
-        <p className="about-text">
-          “When you adopt a dog, you have a lot of very good days and one very
-          bad day.” <br />– W. Bruce Cameron
-        </p>
+        <Link href="/star">
+          <a>
+            <div className="star-view">
+              <Button variant="contained" color="secondary">
+                Visit Our Stars
+                <span role="img" aria-label="emoji">
+                  🌟
+                </span>
+              </Button>
+            </div>
+          </a>
+        </Link>
       </div>
 
       <Footer />
       <style jsx>
         {`
+          @import url('https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap');
+
+          .content {
+            margin: 0 50px;
+          }
           h2 {
             margin-top: 2em;
             text-align: center;
             font-family: monospace;
             font-size: 2em;
           }
-          .about {
-            text-align: center;
-            font-family: monospace;
-            line-height: 2em;
-            padding: 5px;
-
-            letter-spacing: 0.1em;
-          }
           .about-text {
-            text-align: center;
-            letter-spacing: 0.2em;
-            line-height: 2em;
-            font-family: monospace;
+            margin-left: 50px;
           }
-          .current {
-            padding: 5px;
+          .dog-items {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-top: 1em;
           }
+
+          p {
+            line-height: 2em;
+            font-family: 'Fira Mono', monospace;
+            margin-top: 10px;
+          }
+
           img {
             width: 8em;
             height: 8em;
-            border-radius: 50%;
-            box-shadow: 3px 11px 18px #1b1a1aed;
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.33);
+            margin-top: 1em;
           }
+          .stars {
+            margin: 0.5em auto;
+            text-align: center;
+          }
+          span {
+            margin-left: 0.5em;
+          }
+          a {
+            text-decoration: none;
+          }
+          .stars {
+            display: flex;
+            align-items: flex-end;
+            padding-left: 2.5em;
+            margin-bottom: 2em;
+          }
+          .star-view {
+            margin-left: 2.5em;
+          }
+
           @media only screen and (max-width: 450px) {
             .about,
             .about-text {
               font-size: 0.8em;
+              margin-left: 0;
+            }
+            .dog-items {
+              display: block;
+            }
+            img {
+              margin: 1em auto;
             }
           }
         `}

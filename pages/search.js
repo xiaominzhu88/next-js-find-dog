@@ -60,9 +60,9 @@ export default function Breeds() {
       <div className="searchBar">
         <form onSubmit={fetchSearchResults} noValidate autoComplete="off">
           <TextField
-            id="search"
+            id="filled-search"
             label="Search Breed"
-            color="secondary"
+            type="search"
             value={input}
             onChange={showValue}
           />
@@ -74,7 +74,7 @@ export default function Breeds() {
           {/* get the sum from the data result which is as filtered length here */}
           <span className="span">{input !== '' ? filtered.length : '0'}</span>{' '}
           Breeds for you{' '}
-          <span role="img" aria-label="emoji">
+          <span className="span" role="img" aria-label="emoji">
             💝
           </span>
         </h3>
@@ -125,32 +125,24 @@ export default function Breeds() {
           margin: 2em auto;
           width: 10em;
         }
-        input {
-          width: 10em;
-          height: 2em;
-          background-color: rgb(217, 236, 230);
-          border: none;
-          border-radius: 5px;
-        }
-        .searchButton {
-          margin-left: 2em;
-        }
-        .table,
+
+        table,
         ul,
         h3 {
           text-align: center;
           list-style: none;
-          font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+          font-family: Gill sans;
           line-height: 2em;
           margin: 1em auto;
-          background-color: #f8e5e8;
+          background-color: rgb(227, 52, 167);
           border-radius: 15px;
           width: 60%;
           padding: 1em;
+          color: #fff;
         }
         .span {
-          color: #4b8ada;
-          font-size: 1.2em;
+          color: #fff;
+          font-size: 2em;
         }
         a {
           text-decoration: none;

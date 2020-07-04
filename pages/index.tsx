@@ -49,44 +49,41 @@ export default function Signup(props: Props) {
         <div className="right"></div>
 
         <style jsx>{`
-          @import url('https://fonts.googleapis.com/css2?family=Bitter:ital@1&display=swap');
-
           html,
           body {
-            padding: 0;
-            margin: 0;
             font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
               Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
               sans-serif;
           }
 
-          * {
-            box-sizing: border-box;
-            margin: 2em auto;
-          }
           .start {
             margin: 2em auto;
             text-align: center;
           }
           h1 {
             margin: 0 auto;
-            color: pink;
+            color: rgb(240, 93, 130);
             text-align: center;
           }
-          p {
-            color: pink;
+
+          label {
+            color: rgb(240, 93, 130);
           }
+
           .auth {
             display: flex;
             justify-content: space-around;
             align-items: center;
-            font-family: 'Bitter', serif;
+            font-family: Gill sans;
+            margin-top: 2em;
+            padding: 0.5em;
           }
           .left {
-            background-color: beige;
+            background-color: #b5b1b5;
             width: 50%;
-            height: 70vh;
+            height: auto;
             padding-left: 1em;
+            padding-top: 4em;
           }
           .right {
             background-image: url('/welcome.jpg');
@@ -96,18 +93,17 @@ export default function Signup(props: Props) {
             animation: flybirds 16s linear infinite;
           }
 
-          .signUpButton {
-            text-align: center;
-          }
-
           button {
             height: 2.5em;
             width: 8em;
             border: none;
-            background-color: pink;
+            background-color: rgb(240, 93, 130);
+            margin: 2em auto;
+            text-align: center;
+            border-radius: 5px;
           }
           button:hover {
-            background-color: silver;
+            background-color: yellow;
             border: none;
           }
 
@@ -118,9 +114,6 @@ export default function Signup(props: Props) {
             to {
               background-position: 300px 0px;
             }
-          }
-          label {
-            color: pink;
           }
           input {
             margin: 1em auto;

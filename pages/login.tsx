@@ -94,8 +94,6 @@ export default function Login() {
         </div>
 
         <style jsx>{`
-          @import url('https://fonts.googleapis.com/css2?family=Bitter:ital@1&display=swap');
-
           html,
           body {
             padding: 0;
@@ -115,7 +113,7 @@ export default function Login() {
           }
           h1 {
             margin: 1em auto;
-            color: lightblue;
+            color: rgb(240, 93, 130);
             text-align: center;
           }
 
@@ -123,27 +121,31 @@ export default function Login() {
             display: flex;
             justify-content: space-around;
             align-items: center;
-            font-family: 'Bitter', serif;
-          }
-          .left {
-            background-color: beige;
-            width: 50%;
-            height: 70vh;
-            padding-left: 1em;
+            font-family: Gill sans;
           }
 
-          .loginButton {
-            text-align: center;
+          .left {
+            background-color: #b5b1b5;
+            width: 50%;
+            height: auto;
+            padding-left: 1em;
+            padding-top: 4em;
           }
+          .right {
+            width: 50%;
+            height: 65vh;
+            background-position: 25% 75%;
+          }
+
           button {
             height: 2.5em;
             width: 8em;
-            background-color: lightblue;
+            background-color: rgb(240, 93, 130);
             border: none;
+            text-align: center;
           }
           button:hover {
-            background-color: pink;
-            color: blue;
+            background-color: yellow;
             border: none;
           }
           p {
@@ -151,7 +153,7 @@ export default function Login() {
           }
 
           label {
-            color: lightblue;
+            color: rgb(240, 93, 130);
           }
           input {
             margin: 1em auto;
@@ -163,7 +165,9 @@ export default function Login() {
           .submit {
             width: 5em;
             margin: 1em auto;
-            background-color: pink;
+            background-color: rgb(240, 93, 130);
+            color: #fff;
+            border-radius: 5px;
           }
           img {
             width: 50vw;

@@ -57,13 +57,16 @@ export default function Header() {
     <div className="app">
       <Head>
         <title>Find-your-dog</title>
-        <link rel="icon" href="/favicon.jpg" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <header className="nav-header">
         <div className="nav">
-          <h1>Find-your-dog</h1>
-          <p>{user}</p>
+          <div className="logo">
+            <span role="img" aria-label="emoji">
+              🐶<p className="logo-text">Findogs</p>
+            </span>
+          </div>
         </div>
         <div className="links">
           {linkList.map((link, i) => {
@@ -74,38 +77,41 @@ export default function Header() {
             );
           })}
         </div>
+
+        <p className="status">{user}</p>
       </header>
       <style jsx>{`
         .nav-header {
-          display: flex;
-          justify-content: space-around;
-          align-items: center;
           margin: 0 auto;
-          font-family: 'Bitter', serif;
           font-weight: 800;
-          background-color: #e0e3e7;
+          background: rgb(247, 138, 103);
+          background: linear-gradient(
+            90deg,
+            rgba(247, 138, 103, 1) 0%,
+            rgba(224, 39, 174, 1) 100%
+          );
           box-shadow: 3px 11px 18px #b3d1e9;
-          background-position: fixed;
+          text-align: center;
+          padding-top: 15px;
+        }
+
+        .links {
+          display: inline-block;
         }
         a {
           text-decoration: none;
-          color: #1494cd;
+          color: #fff;
           font-size: 1.2em;
           font-weight: 700;
           line-height: 1em;
           margin-right: 1em;
+          font-family: monospace;
         }
         a:hover {
           text-decoration: underline;
-          color: hotpink;
+          color: silver;
           font-weight: 700;
           font-size: 1.2em;
-        }
-
-        .links {
-          justify-content: space-between;
-          align-items: center;
-          display: flex;
         }
 
         h1 {
@@ -119,6 +125,24 @@ export default function Header() {
         p {
           text-align: center;
           color: orange;
+        }
+        .logo {
+          font-size: 3em;
+        }
+        .logo-text {
+          margin: 0 0 0 15px;
+          display: inline-block;
+          font-weight: bold;
+          font-family: Gill sans;
+          letter-spacing: -1px;
+          font-size: 45px;
+          vertical-align: 5px;
+          color: #fff;
+        }
+        .status {
+          border-left: 1px solid #fff;
+          padding-left: 2em;
+          display: inline-block;
         }
 
         @media (max-width: 450px) {
@@ -136,8 +160,6 @@ export default function Header() {
             margin-bottom: 1em;
           }
           a:hover {
-            text-decoration: underline;
-            color: hotpink;
             font-size: 0.5em;
           }
         }

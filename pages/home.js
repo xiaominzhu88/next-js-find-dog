@@ -4,7 +4,6 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Link from 'next/link';
 import Cookies from 'js-cookie';
-import Button from '@material-ui/core/Button';
 
 // below is preloading with SWR
 //import useSWR from 'swr';
@@ -192,90 +191,71 @@ export default function Home() {
           ) : (
             <img alt="dog-fetched-images" src={dog.url} />
           )}
-
-          <div>
-            <Button
-              onClick={() => goSum()}
-              variant="contained"
-              color="secondary"
-            >
-              Like
-              <span role="img" aria-label="emoji">
-                ♥️
-              </span>
-            </Button>
-            <br />
-            <br />
-            <Button
-              onClick={changeImage}
-              variant="contained"
-              disabled={loading}
-            >
-              To Next
-            </Button>
-            <br />
-            <br />
-            <Link href="/sum">
-              <a>
-                <Button variant="contained" color="primary">
-                  to favourite
-                </Button>
-              </a>
-            </Link>
-          </div>
         </div>
         <div>
           {sumDogs.name !== undefined ? (
             <div className="information">
-              <p>{sumDogs.name}</p>
-              <h4>
+              <h2>{sumDogs.name}</h2>
+              <p>
                 Breed-group:
                 <span role="img" aria-label="emoji">
                   🎋
                 </span>{' '}
                 {sumDogs.breedGroup}
-              </h4>
-              <h4>
+              </p>
+              <p>
                 Life:
                 <span role="img" aria-label="emoji">
                   🔅
                 </span>{' '}
                 {sumDogs.lifeSpan}
-              </h4>
-              <h4>
+              </p>
+              <p>
                 Temperament:
                 <span role="img" aria-label="emoji">
                   🎲
                 </span>{' '}
                 {sumDogs.char}
-              </h4>
+              </p>
             </div>
           ) : (
-            <p>Relex ! Visit Next !</p>
+            <p>Relax ! Visit Next !</p>
           )}
         </div>
       </div>
-      <hr />
-      <div className="stars">
-        <img src="/about-us-dog.jpg" alt="cute-dogs" />
-        <br />
-        <br />
-        <Link href="/star">
+      <div className="button-container">
+        <button onClick={() => goSum()} className="likeButton" type="button">
+          <span role="img" aria-label="emoji">
+            🤍
+          </span>
+        </button>
+
+        <button className="changeButton" type="button" onClick={changeImage}>
+          <span className="MuiButton-label" role="img" aria-label="emoji">
+            🐶
+          </span>
+        </button>
+
+        <Link href="/sum">
           <a>
-            <div className="star-view">
-              <Button variant="contained" color="primary">
-                Visit Our Stars
-                <span role="img" aria-label="emoji">
-                  🌟
-                </span>
-              </Button>
-            </div>
+            <button className="favoButton" type="button">
+              <span role="img" aria-label="emoji">
+                ⭐️
+              </span>
+            </button>
           </a>
         </Link>
       </div>
+
       <Footer />
       <style jsx>
         {`
+          @import url('https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap');
+
+          * {
+            box-sizing: border-box;
+          }
+
           .container {
             margin: 0 auto;
             padding: 0.5em;
@@ -294,32 +274,63 @@ export default function Home() {
             box-shadow: 3px 11px 18px #1b1a1aed;
             margin: 2em 8.5em;
           }
-          p {
-            text-align: center;
+          h2 {
             letter-spacing: 0.2em;
             line-height: 1em;
-            font-family: monospace;
+            font-family: 'Fira Mono', monospace;
             font-size: 1.5em;
             color: #e078b3;
           }
-          h4 {
-            text-align: center;
-            letter-spacing: 0.2em;
+          p {
             line-height: 2em;
-            font-family: monospace;
-            color: #1494cd;
+            font-family: 'Fira Mono', monospace;
+            margin-top: 10px;
+            color: #9d9c9f;
           }
 
           a {
             text-decoration: none;
           }
 
-          span {
-            margin-left: 0.5em;
+          button {
+            border: none;
+            cursor: pointer;
           }
-          .stars {
-            margin: 0.5em auto;
+
+          button:hover .MuiButton-label {
+            font-size: 5em !important;
+            transition: 0.5s;
+          }
+          .button-container {
             text-align: center;
+          }
+
+          .likeButton {
+            background-color: rgba(247, 138, 103, 1);
+            padding-right: 50px;
+            margin-right: -25px;
+            border-radius: 10px;
+          }
+
+          .changeButton {
+            border-radius: 50%;
+            z-index: 2;
+            position: relative;
+            width: 100px;
+            height: 100px;
+          }
+          .favoButton {
+            background-color: rgb(225, 52, 174);
+            padding-left: 100px;
+            margin-left: -50px;
+            border-radius: 10px;
+          }
+
+          .button-container span {
+            margin: 0;
+            font-weight: 800;
+            color: #777777;
+            font-size: 4em;
           }
 
           @media (max-width: 450px) {

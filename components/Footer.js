@@ -18,10 +18,11 @@ function Footer() {
             text-align: center;
             font-weight: bold;
             font-family: Didot, serif;
+            color: #fff;
           }
+
           footer {
-            background-color: #e0e3e7;
-            height: 100%;
+            background-color: rgb(72, 73, 74);
             padding: 5px;
           }
         `}
