@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Head from 'next/head';
 import { GetServerSidePropsContext } from 'next';
 import Header from '../components/Header';
@@ -33,7 +33,8 @@ export default function Signup(props: Props) {
               <input placeholder="password" type="password" name="password" />
             </label>
             <br />
-            {/* <input type="hidden" name="csrf" value={props.csrfToken} /> */}
+            {/* if use API, then do not need input below */}
+            <input type="hidden" name="csrf" value={props.csrfToken} />
             {/* <p>{props.csrfToken}</p> */}
             <div className="signUpButton">
               <button>
@@ -174,7 +175,9 @@ export default function Signup(props: Props) {
 }
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
-  require('dotenv').config();
+  const path = require('path');
+  require('dotenv').config({ path: path.resolve(process.cwd(), '.env.local') });
+  //require('dotenv').config();
   const queryString = require('query-string');
 
   const { hashPassword } = await import('../hashing');
@@ -196,7 +199,9 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   });
 
   context.req.on('end', async () => {
+    // body contains username and password(convert as csrf)
     const body = queryString.parse(Buffer.from(buffer).toString());
+    console.log('body: ', body);
 
     if (
       typeof body.username !== 'string' ||
@@ -205,12 +210,12 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
       console.log('No username or password passed in body');
       return;
     }
-    // body contains username and password(convert as csrf)
-    console.log('body: ', body);
 
     // below imported from hashing which hashes password
     const username = body.username;
     const passwordHash = await hashPassword(body.password);
+
+    console.log('passwordHashed: ', passwordHash);
 
     const requestToken = body.csrf;
     console.log('requestToken: ', requestToken);

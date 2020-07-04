@@ -10,8 +10,8 @@ function FetchedDog({ fetchedDogs }) {
     return (
       <div className="error-page">
         <h1>Ops! This dog is not at home!</h1>
-        <Link href="/breeds">
-          <a>
+        <Link href="/search">
+          <a style={{ textDecoration: 'none' }}>
             <Button variant="contained" color="primary">
               To Search Page
             </Button>
@@ -168,7 +168,7 @@ function FetchedDog({ fetchedDogs }) {
           text-align: center;
         }
         a {
-          text-decoration: none;
+          text-decoration: none !important;
         }
         img {
           width: 10em;

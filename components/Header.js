@@ -118,6 +118,7 @@ export default function Header() {
         }
         p {
           text-align: center;
+          color: orange;
         }
 
         @media (max-width: 450px) {

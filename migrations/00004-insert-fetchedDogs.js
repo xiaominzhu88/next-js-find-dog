@@ -1782,82 +1782,71 @@ exports.up = async (sql) => {
     {
       bred_for: 'Ratting, fox bolting',
       breed_group: 'Terrier',
-      height: {
-        imperial: '10',
-        metric: '25',
-      },
+      height_imperial: '10',
+      height_metric: '25',
+
       id: 116,
       life_span: '12 - 15 years',
-      name: 'Norwich-Terrier',
+      name: 'Norwich Terrier',
       temperament: 'Hardy, Affectionate, Energetic, Sensitive, Intelligent',
-      weight: {
-        imperial: '11 - 12',
-        metric: '5 - 5',
-      },
+      weight_imperial: '11 - 12',
+      weight_metric: '5 - 5',
+
       url: 'https://cdn2.thedogapi.com/images/BkgKXlqE7_1280.jpg',
     },
     {
       breed_group: 'Sporting',
-      height: {
-        imperial: '17 - 21',
-        metric: '43 - 53',
-      },
+      height_imperial: '17 - 21',
+      height_metric: '43 - 53',
+
       id: 117,
       life_span: '12 - 14 years',
-      name: 'Nova-Scotia-Duck-Tolling-Retriever',
+      name: 'Nova Scotia Duck Tolling Retriever',
       temperament: 'Outgoing, Alert, Patient, Intelligent, Loving',
-      weight: {
-        imperial: '35 - 50',
-        metric: '16 - 23',
-      },
+      weight_imperial: '35 - 50',
+      weight_metric: '16 - 23',
     },
     {
       bred_for: 'Driving sheep, cattle',
       breed_group: 'Herding',
-      height: {
-        imperial: '21',
-        metric: '53',
-      },
+      height_imperial: '21',
+      height_metric: '53',
+
       id: 118,
       life_span: '10 - 12 years',
-      name: 'Old-English-Sheepdog',
+      name: 'Old English Sheepdog',
       temperament: 'Sociable, Bubbly, Playful, Adaptable, Intelligent, Loving',
-      weight: {
-        imperial: '60 - 100',
-        metric: '27 - 45',
-      },
+      weight_imperial: '60 - 100',
+      weight_metric: '27 - 45',
+
       url: 'https://cdn2.thedogapi.com/images/HkZ57lq4m_1280.jpg',
     },
     {
-      height: {
-        imperial: '15 - 19',
-        metric: '38 - 48',
-      },
+      height_imperial: '15 - 19',
+      height_metric: '38 - 48',
+
       id: 119,
       life_span: '9 – 14 years',
-      name: 'Olde-English-Bulldogge',
+      name: 'Olde English Bulldogge',
       temperament: 'Friendly, Alert, Confident, Loving, Courageous, Strong',
-      weight: {
-        imperial: '65 – 85',
-        metric: 'NaN',
-      },
+      weight_imperial: '65 – 85',
+      weight_metric: 'NaN',
+
       url: 'https://cdn2.thedogapi.com/images/W2nbhuint_1280.jpg',
     },
     {
       bred_for: 'Lapdog',
       breed_group: 'Toy',
-      height: {
-        imperial: '8 - 11',
-        metric: '20 - 28',
-      },
+      height_imperial: '8 - 11',
+      height_metric: '20 - 28',
+
       id: 120,
       life_span: '13 - 17 years',
       name: 'Papillon',
       temperament: 'Hardy, Friendly, Energetic, Alert, Intelligent, Happy',
-      weight: {
-        imperial: '3 - 12',
-        metric: '1 - 5',
-      },
+      weight_imperial: '3 - 12',
+      weight_metric: '1 - 5',
+
       url: 'https://cdn2.thedogapi.com/images/SkJj7e547_1280.jpg',
     },
     {

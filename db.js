@@ -96,8 +96,8 @@ export async function insertSession(userId, token) {
   `;
 }
 
-export function selectSessionByToken(token) {
-  //console.log('TOKEN: ', token);
+export async function selectSessionByToken(token) {
+  console.log('TOKEN: ', token);
   return sql`
     SELECT * FROM sessions WHERE token = ${token}
         `;

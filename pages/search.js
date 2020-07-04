@@ -123,6 +123,7 @@ export default function Breeds() {
           justify-content: center;
           align-items: center;
           margin: 2em auto;
+          width: 10em;
         }
         input {
           width: 10em;

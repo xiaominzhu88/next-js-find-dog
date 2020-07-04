@@ -36,10 +36,10 @@ export default function Login() {
           setStatus('Failed logging in - check username and password');
         } else {
           setStatus('You are Logged in!!');
-          // Redirect to homepage after 2 seconds
+          // Redirect to homepage after 1 seconds
           setTimeout(() => {
             Router.replace('/home');
-          }, 2000);
+          }, 1000);
         }
       })
       .catch((err) => {
@@ -89,7 +89,9 @@ export default function Login() {
           </form>
         </div>
 
-        <div className="right"></div>
+        <div className="right">
+          <img src="./jogging.gif" alt="gif" />
+        </div>
 
         <style jsx>{`
           @import url('https://fonts.googleapis.com/css2?family=Bitter:ital@1&display=swap');
@@ -129,13 +131,7 @@ export default function Login() {
             height: 70vh;
             padding-left: 1em;
           }
-          .right {
-            background-image: url('/welcome.jpg');
-            width: 50%;
-            height: 65vh;
-            background-position: 25% 75%;
-            animation: flybirds 16s linear infinite;
-          }
+
           .loginButton {
             text-align: center;
           }
@@ -154,14 +150,6 @@ export default function Login() {
             margin: 1em auto;
           }
 
-          @keyframes flybirds {
-            from {
-              background-position: 0px 0px;
-            }
-            to {
-              background-position: 300px 0px;
-            }
-          }
           label {
             color: lightblue;
           }
@@ -177,6 +165,10 @@ export default function Login() {
             margin: 1em auto;
             background-color: pink;
           }
+          img {
+            width: 50vw;
+            height: 50vh;
+          }
 
           @media (max-width: 450px) {
             .auth {
@@ -186,12 +178,6 @@ export default function Login() {
               width: 100vw;
               height: 45vh;
               padding: 2em;
-            }
-            .right {
-              background-image: url('/welcome.jpg');
-              background-position: 50% 50%;
-              width: 100vw;
-              height: 60vh;
             }
 
             input {
