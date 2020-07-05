@@ -1,18 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import Button from '@material-ui/core/Button';
 import Link from 'next/link';
 import TextField from '@material-ui/core/TextField';
 import Cookies from 'js-cookie';
 import nextCookies from 'next-cookies';
+import Snackbar from '@material-ui/core/Snackbar';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
 
 export default function Contact({ adopt }) {
+  const [open, setOpen] = useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (e, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setOpen(false);
+  };
+
   function sendMail() {
     Cookies.remove('sum');
     Cookies.remove('adopt');
+    handleClick();
+    //alert('NN');
   }
+
   return (
     <div>
       <Head>
@@ -40,26 +59,55 @@ export default function Contact({ adopt }) {
           />
           <br />
           <br />
-          <Button
-            variant="contained"
-            onClick={sendMail}
-            style={{ margin: '1em auto' }}
-          >
+          <Button variant="contained" onClick={() => sendMail()}>
             Send
           </Button>{' '}
+          <Snackbar
+            anchorOrigin={{
+              vertical: 'bottom',
+              horizontal: 'center',
+              backgroundColor: 'rgb(240, 93, 130)',
+            }}
+            open={open}
+            autoHideDuration={5000}
+            onClose={handleClose}
+            message="Thank you for your Email 🍭"
+            action={
+              <React.Fragment>
+                <Button
+                  color="secondary"
+                  size="small"
+                  onClick={handleClose}
+                ></Button>
+                <IconButton
+                  size="small"
+                  aria-label="close"
+                  color="inherit"
+                  onClick={handleClose}
+                >
+                  <CloseIcon fontSize="small" />
+                </IconButton>
+              </React.Fragment>
+            }
+          />
         </form>
 
         <div className="toAdopt">
-          <h3>
-            <span role="img" aria-label="emoji">
-              🐶
-            </span>{' '}
-            We are your favourite
-          </h3>
-          {!adopt ? (
-            ''
+          {adopt.length === 0 ? (
+            <h3>
+              <span role="img" aria-label="emoji">
+                🐶
+              </span>{' '}
+              No favourite to adopt{' '}
+            </h3>
           ) : (
             <ul>
+              <h3>
+                <span role="img" aria-label="emoji">
+                  🐶
+                </span>{' '}
+                We are your favourite
+              </h3>
               {adopt.map((el, i) => (
                 <li key={i}> {el.name}</li>
               ))}
@@ -97,11 +145,11 @@ export default function Contact({ adopt }) {
         }
         h3,
         h1 {
-          font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+          font-family: Gill sans;
           color: #065c86;
         }
         li {
-          font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+          font-family: Gill sans;
           color: rgb(35, 174, 237);
         }
       `}</style>
@@ -110,7 +158,7 @@ export default function Contact({ adopt }) {
 }
 export function getServerSideProps(context) {
   const { adopt } = nextCookies(context);
-  //console.log(sum);
+
   return {
     props: {
       adopt: adopt === undefined ? [] : adopt,

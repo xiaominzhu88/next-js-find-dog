@@ -4,20 +4,19 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Link from 'next/link';
 import Cookies from 'js-cookie';
+import Snackbar from '@material-ui/core/Snackbar';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
 
-// below is preloading with SWR
-//import useSWR from 'swr';
+// preloading with SWR
+// import useSWR from 'swr';
 // const fetcher = (url, apiKey) =>
 //   fetch(url, {
 //     method: 'GET',
 //     dataType: 'JSON',
 //     headers: { 'X-Api-Key': `${apiKey}` },
 //   }).then((r) => r.json());
-
-function preloadImage(url) {
-  const img = new Image();
-  img.src = url;
-}
 
 const dogs = [
   {
@@ -35,9 +34,6 @@ const dogs = [
     ],
     id: 'GhtSdrW29',
     url: 'https://cdn2.thedogapi.com/images/VSraIEQGd.jpg',
-
-    width: 3888,
-    height: 2592,
   },
   {
     breeds: [
@@ -55,14 +51,27 @@ const dogs = [
     ],
     id: 'Bkam2l9Vm',
     url: 'https://cdn2.thedogapi.com/images/Bkam2l9Vm_1280.jpg',
-    width: 2328,
-    height: 1604,
   },
 ];
+
 export default function Home() {
   const apiKey = process.env.apiKey;
 
-  //below using SWR preloading
+  // below is used for Snackbar effect
+  const [open, setOpen] = useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (e, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setOpen(false);
+  };
+
+  // using SWR preloading
   // const { data, error } = useSWR(
   //   ['https://api.thedogapi.com/v1/images/search', apiKey],
   //   fetcher,
@@ -89,6 +98,10 @@ export default function Home() {
     lifeSpan: dog.breeds[0]?.life_span,
     char: dog.breeds[0]?.temperament,
     breedGroup: dog.breeds[0]?.breed_group,
+    weight_imperial: dog.breeds[0]?.weight.imperial,
+    weight_metric: dog.breeds[0]?.weight.metric,
+    height_imperial: dog.breeds[0]?.height.imperial,
+    height_metric: dog.breeds[0]?.height.metric,
   };
 
   useEffect(() => {
@@ -102,14 +115,20 @@ export default function Home() {
       .then((json) => {
         setLoading(false);
         dogs.push(json[0]);
-      });
+      })
+      .catch((err) => err);
   }, [apiKey, dogId]);
+
+  function preloadImage(url) {
+    const img = new Image();
+    img.src = url;
+  }
 
   useEffect(() => {
     preloadImage(dogs[dogId + 1].url);
   }, [dogId, dog]);
 
-  // below is using state with initial content where the page first started
+  // below is using state with initial content when the page first started
   // const [dogImageUrl, setDogImageUrl] = useState(
   //   'https://cdn2.thedogapi.com/images/VSraIEQGd.jpg',
   // );
@@ -123,7 +142,7 @@ export default function Home() {
   const fetchData = () => {
     setDogId(dogId + 1);
 
-    // below is using direct url fetch, update state every button click, it is slowly than useEffect with defined a dog Array
+    // below is using direct url fetch, update state every button click, it works but is slowly than useEffect with defined a dog Array
     // fetch('https://api.thedogapi.com/v1/images/search', {
     //   method: 'GET',
     //   dataType: 'JSON',
@@ -172,8 +191,9 @@ export default function Home() {
     const favorite = Cookies.getJSON('sum') || [];
     favorite.push(sumDogs);
     Cookies.set('sum', favorite);
-    alert("I'm saved as your favourite, take me home");
+    //alert("I'm saved as your favourite, take me home");
     //window.location.reload();
+    handleClick();
   }
   return (
     <div className="container">
@@ -204,12 +224,41 @@ export default function Home() {
                 {sumDogs.breedGroup}
               </p>
               <p>
-                Life:
+                Lifespan:
                 <span role="img" aria-label="emoji">
                   🔅
                 </span>{' '}
                 {sumDogs.lifeSpan}
               </p>
+              <p>
+                Weight-imperial:
+                <span role="img" aria-label="emoji">
+                  🔅
+                </span>{' '}
+                {sumDogs.weight_imperial}
+              </p>
+              <p>
+                Weight-metric:
+                <span role="img" aria-label="emoji">
+                  🔅
+                </span>{' '}
+                {sumDogs.weight_metric}
+              </p>
+              <p>
+                Height-imperial:
+                <span role="img" aria-label="emoji">
+                  🔅
+                </span>{' '}
+                {sumDogs.height_imperial}
+              </p>
+              <p>
+                Height-imperial:
+                <span role="img" aria-label="emoji">
+                  🔅
+                </span>{' '}
+                {sumDogs.height_imperial}
+              </p>
+
               <p>
                 Temperament:
                 <span role="img" aria-label="emoji">
@@ -225,10 +274,36 @@ export default function Home() {
       </div>
       <div className="button-container">
         <button onClick={() => goSum()} className="likeButton" type="button">
-          <span role="img" aria-label="emoji">
+          <span className="buttonSpan" role="img" aria-label="emoji">
             🤍
           </span>
         </button>
+        <Snackbar
+          anchorOrigin={{
+            vertical: 'bottom',
+            horizontal: 'center',
+            backgroundColor: 'rgb(240, 93, 130)',
+          }}
+          open={open}
+          autoHideDuration={5000}
+          onClose={handleClose}
+          message=" I'm saved as your favourite, take me home 💌"
+          action={
+            <React.Fragment>
+              <Button color="secondary" size="small" onClick={handleClose}>
+                YES
+              </Button>
+              <IconButton
+                size="small"
+                aria-label="close"
+                color="inherit"
+                onClick={handleClose}
+              >
+                <CloseIcon fontSize="small" />
+              </IconButton>
+            </React.Fragment>
+          }
+        />
 
         <button className="changeButton" type="button" onClick={changeImage}>
           <span className="MuiButton-label" role="img" aria-label="emoji">
@@ -239,7 +314,7 @@ export default function Home() {
         <Link href="/sum">
           <a>
             <button className="favoButton" type="button">
-              <span role="img" aria-label="emoji">
+              <span className="buttonSpan" role="img" aria-label="emoji">
                 ⭐️
               </span>
             </button>
@@ -295,12 +370,21 @@ export default function Home() {
           button {
             border: none;
             cursor: pointer;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.33);
           }
 
           button:hover .MuiButton-label {
             font-size: 5em !important;
             transition: 0.5s;
           }
+          button:focus {
+            outline: 0 !important;
+          }
+          button:active {
+            transition: transformY(4px);
+            background-color: rgb(235, 208, 121);
+          }
+
           .button-container {
             text-align: center;
           }
@@ -310,6 +394,9 @@ export default function Home() {
             padding-right: 50px;
             margin-right: -25px;
             border-radius: 10px;
+          }
+          buttonSpan {
+            font-size: 2em;
           }
 
           .changeButton {

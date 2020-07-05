@@ -10,7 +10,7 @@ function Footer() {
       </Head>
 
       <footer className="footer">
-        <p>Created by Zhu</p>
+        <p>Created by ZHU</p>
       </footer>
       <style jsx>
         {`

@@ -61,7 +61,7 @@ export default function Breeds() {
         <form onSubmit={fetchSearchResults} noValidate autoComplete="off">
           <TextField
             id="filled-search"
-            label="Search Breed"
+            label="Search 🔎"
             type="search"
             value={input}
             onChange={showValue}
@@ -70,18 +70,20 @@ export default function Breeds() {
       </div>
 
       <div className="table">
-        <h3>
-          {/* get the sum from the data result which is as filtered length here */}
-          <span className="span">{input !== '' ? filtered.length : '0'}</span>{' '}
-          Breeds for you{' '}
-          <span className="span" role="img" aria-label="emoji">
-            💝
-          </span>
-        </h3>
         {input === '' ? (
           []
         ) : (
           <ul>
+            <h3>
+              {/* get the sum from the data result which is as filtered length here */}
+              <span className="span">
+                {input !== '' ? filtered.length : '0'}
+              </span>{' '}
+              Breeds for you{' '}
+              <span className="span" role="img" aria-label="emoji">
+                💝
+              </span>
+            </h3>
             {filtered.map((dog, i) => {
               // use REGEX to match the exact id from each dog and use it as the path '/breeds/[id]' to get each dog
               //const eachId = name.match(/\d/g).join('');
@@ -127,13 +129,12 @@ export default function Breeds() {
         }
 
         table,
-        ul,
-        h3 {
+        ul {
           text-align: center;
           list-style: none;
           font-family: Gill sans;
           line-height: 2em;
-          margin: 1em auto;
+          margin: 2em auto;
           background-color: rgb(227, 52, 167);
           border-radius: 15px;
           width: 60%;
