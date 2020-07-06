@@ -106,27 +106,23 @@ export default function SearchDogs({ sum }) {
             height: 8em;
             border-radius: 50%;
           }
-          ul {
-            display: flex;
-            padding: 2em;
-            flex-wrap: wrap;
+          ul  {
+            margin-top: 5em;
           }
+
           li {
             list-style: none;
-            margin-right: 2em;
+            margin-left: 2em;
             font-size: 0.9em;
-            font-family: monospace;
+            font-family: 'Fira Mono', monospace;
+            color: #9d9c9f;
           }
+
           .favorite-list {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: flex-start;
             line-height: 1.5em;
-            margin: 1em auto;
           }
           .adopt-button {
-            margin: 2em auto;
+            margin: 1.5em auto;
           }
           span {
             margin-left: 1em;

@@ -8,7 +8,10 @@ import Button from '@material-ui/core/Button';
 function FetchedDog({ fetchedDogs }) {
   if (!fetchedDogs) {
     return (
-      <div className="error-page">
+      <div
+        className="error-page"
+        style={{ margin: '1em auto', textAlign: 'center', padding: '1em' }}
+      >
         <h1>Ops! This dog is not at home!</h1>
         <Link href="/search">
           <a style={{ textDecoration: 'none' }}>
@@ -18,7 +21,7 @@ function FetchedDog({ fetchedDogs }) {
           </a>
         </Link>
         <Link href="/home">
-          <a>
+          <a style={{ textDecoration: 'none' }}>
             <Button variant="contained" color="secondary">
               To Homepage
             </Button>
@@ -181,6 +184,7 @@ function FetchedDog({ fetchedDogs }) {
           justify-content: space-around;
           align-items: center;
           margin: 2em auto;
+          text-decoration: none !important;
         }
         .error-page {
           margin: 1em auto;
