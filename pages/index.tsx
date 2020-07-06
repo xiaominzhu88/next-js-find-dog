@@ -1,13 +1,53 @@
-import React from 'react';
+import React, { useState, FormEvent } from 'react';
 import Head from 'next/head';
 import { GetServerSidePropsContext } from 'next';
 import Header from '../components/Header';
+import Router from 'next/router';
 
 type Props = {
   csrfToken: string;
 };
 
 export default function Signup(props: Props) {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [status, setStatus] = useState('');
+
+  // use typescript onsubmit=>FormEvent
+  function onSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    fetch('/api/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        csrf: props.csrfToken,
+        username: username,
+        password: password,
+      }),
+    })
+      .then((res) => {
+        if (res.ok !== true) {
+          setStatus('Failed register - response is not ok');
+        }
+        return res.json();
+      })
+      .then((json) => {
+        console.log('JSON with HASH_password: ', json);
+
+        if (json.username === '') {
+          setStatus('NO USERNAME!');
+        } else {
+          setStatus('You are signed up!');
+          setTimeout(() => {
+            Router.replace('/login');
+          }, 2000);
+        }
+      })
+      .catch(() => setStatus('sign up nop'));
+  }
+
   return (
     <div className="container">
       <Head>
@@ -20,22 +60,35 @@ export default function Signup(props: Props) {
         <div className="left">
           <div>
             <h1>Register</h1>
+            <p>{status}</p>
           </div>
 
-          <form method="POST">
+          <form method="POST" onSubmit={onSubmit}>
             <label>
               Name: <br />
-              <input placeholder="user name" type="text" name="username" />
+              <input
+                placeholder="user name"
+                type="text"
+                name="username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
             </label>{' '}
             <br />
             <label>
               Password: <br />
-              <input placeholder="password" type="password" name="password" />
+              <input
+                placeholder="password"
+                type="password"
+                name="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
             </label>
             <br />
             {/* if use API, then do not need input below */}
-            <input type="hidden" name="csrf" value={props.csrfToken} />
-            {/* <p>{props.csrfToken}</p> */}
+            {/* Use API can remove hidden input below */}
+            {/* <input type="hidden" name="csrf" value={props.csrfToken} /> */}
             <div className="signUpButton">
               <button>
                 <span role="img" aria-label="emoji">
@@ -170,69 +223,78 @@ export default function Signup(props: Props) {
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   const path = require('path');
   require('dotenv').config({ path: path.resolve(process.cwd(), '.env.local') });
-  //require('dotenv').config();
-  const queryString = require('query-string');
-
-  const { hashPassword } = await import('../hashing');
-  const { insertUser } = await import('../db.js');
-
   const Tokens = (await import('csrf')).default;
   const tokens = new Tokens();
 
   // secret = csrf
   const secret = process.env.CSRF_TOKEN;
 
+  // typeScript secret as string | undefined
   if (typeof secret !== 'string') {
     throw new Error('Token secret misconfigured!');
   }
 
-  let buffer = '';
-  context.req.on('data', (chunk) => {
-    buffer += chunk;
-  });
+  // const queryString = require('query-string');
 
-  context.req.on('end', async () => {
-    // body contains username and password(convert as csrf)
-    const body = queryString.parse(Buffer.from(buffer).toString());
-    console.log('body: ', body);
+  // const { hashPassword } = await import('../hashing');
+  // const { insertUser } = await import('../db.js');
 
-    if (
-      typeof body.username !== 'string' ||
-      typeof body.password !== 'string'
-    ) {
-      console.log('No username or password passed in body');
-      return;
-    }
+  // if (typeof secret !== 'string') {
+  //   throw new Error('Token secret misconfigured!');
+  // }
 
-    // below imported from hashing which hashes password
-    const username = body.username;
-    const passwordHash = await hashPassword(body.password);
+  // let buffer = '';
+  // context.req.on('data', (chunk) => {
+  //   buffer += chunk;
+  // });
 
-    console.log('passwordHashed: ', passwordHash);
+  // context.req.on('end', async () => {
+  //   // body contains username and password(convert as csrf)
+  //   const body = queryString.parse(Buffer.from(buffer).toString());
+  //   console.log('body: ', body);
 
-    const requestToken = body.csrf;
-    console.log('requestToken: ', requestToken);
+  //   if (
+  //     typeof body.username !== 'string' ||
+  //     typeof body.password !== 'string'
+  //   ) {
+  //     console.log('No username or password passed in body');
+  //     return;
+  //   }
 
-    if (typeof requestToken !== 'string') {
-      throw new Error('No CSRF token passed!');
-    }
+  //   // below imported from hashing which hashes password
+  //   const username = body.username;
+  //   const passwordHash = await hashPassword(body.password);
 
-    // insertUser below imported from db, which insert username and password_hash into users Table(00005) as registered
-    if (tokens.verify(secret, requestToken)) {
-      insertUser(username, passwordHash)
-        .then(() => {
-          console.log('succeeded');
-        })
-        .catch((err) => console.error("didn't work", err));
-    } else {
-      console.error('CSRF token not valid!!');
-    }
-  });
+  //   console.log('passwordHashed: ', passwordHash);
+
+  //   const requestToken = body.csrf;
+  //   console.log('requestToken: ', requestToken);
+
+  //   if (typeof requestToken !== 'string') {
+  //     throw new Error('No CSRF token passed!');
+  //   }
+
+  //   // insertUser below imported from db, which insert username and password_hash into users Table(00005) as registered
+  //   if (tokens.verify(secret, requestToken)) {
+  //     insertUser(username, passwordHash)
+  //       .then(() => {
+  //         console.log('succeeded');
+  //       })
+  //       .catch((err) => console.error("didn't work", err));
+  //   } else {
+  //     console.error('CSRF token not valid!!');
+  //   }
+  // });
 
   const props: Props = {
     csrfToken: tokens.create(secret),
   };
 
+  if (props === undefined) {
+    return {
+      props: {},
+    };
+  }
   return {
     props,
   };

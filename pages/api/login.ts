@@ -15,14 +15,14 @@ export default async function login(req: NextApiRequest, res: NextApiResponse) {
   const users = await selectUserByUsername(username, password);
 
   if (users.length === 0) {
-    console.log('denied login - zero users with that username');
+    console.log('Login.ts--denied login - 0 users with that username');
     res.json({ loggedIn: false });
     return;
   }
 
   // below imported from hashing which use argon2 to 'hash' and 'verify' password, if it's not match, then log res.json => loggedIn: false
   if (!(await verifyHashMatchesPassword(users[0].password_hash, password))) {
-    console.log("denied login - password doesn't match");
+    console.log("Login.ts--denied login - password doesn't match");
     res.json({ loggedIn: false });
     return;
   }
@@ -33,7 +33,7 @@ export default async function login(req: NextApiRequest, res: NextApiResponse) {
   const maxAge = 60 * 60 * 8;
   const token = crypto.randomBytes(24).toString('base64');
 
-  console.log('session-token: ', token);
+  console.log('Login.ts--session-token: ', token);
 
   // below imported from db, which insert userId and token to sessions Table(00006)
   await insertSession(users[0].id, token);

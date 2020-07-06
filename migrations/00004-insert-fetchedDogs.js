@@ -1852,104 +1852,90 @@ exports.up = async (sql) => {
     {
       bred_for: 'Lapdog',
       breed_group: 'Toy',
-      height: {
-        imperial: '6 - 9',
-        metric: '15 - 23',
-      },
+      height_imperial: '6 - 9',
+      height_metric: '15 - 23',
+
       id: 121,
       life_span: '14 - 18 years',
       name: 'Pekingese',
       temperament:
         'Opinionated, Good-natured, Stubborn, Affectionate, Aggressive, Intelligent',
-      weight: {
-        imperial: '14',
-        metric: '6',
-      },
+      weight_imperial: '14',
+      weight_metric: '6',
+
       url: 'https://cdn2.thedogapi.com/images/ByIiml9Nm_1280.jpg',
     },
     {
       bred_for: 'Driving stock to market in northern Wales',
       breed_group: 'Herding',
-      height: {
-        imperial: '10 - 12',
-        metric: '25 - 30',
-      },
+      height_imperial: '10 - 12',
+      height_metric: '25 - 30',
+
       id: 122,
       life_span: '12 - 14 years',
-      name: 'Pembroke-Welsh-Corgi',
+      name: 'Pembroke Welsh Corgi',
       temperament: 'Tenacious, Outgoing, Friendly, Bold, Playful, Protective',
-      weight: {
-        imperial: '25 - 30',
-        metric: '11 - 14',
-      },
+      weight_imperial: '25 - 30',
+      weight_metric: '11 - 14',
+
       url: 'https://cdn2.thedogapi.com/images/rJ6iQeqEm_1280.jpg',
     },
     {
       breed_group: 'Working',
-      height: {
-        imperial: '22 - 25.5',
-        metric: '56 - 65',
-      },
+      height_imperial: '22 - 25.5',
+      height_metric: '56 - 65',
+
       id: 123,
       life_span: '10 - 12 years',
-      name: 'Perro-de-Presa-Canario',
+      name: 'Perro de Presa Canario',
       temperament: 'Strong Willed, Suspicious, Gentle, Dominant, Calm',
-      weight: {
-        imperial: '88 - 110',
-        metric: '40 - 50',
-      },
+      weight_imperial: '88 - 110',
+      weight_metric: '40 - 50',
+
       url: 'https://cdn2.thedogapi.com/images/S1V3Qeq4X_1280.jpg',
     },
     {
       bred_for: 'Hunting rabbits',
       breed_group: 'Hound',
-      height: {
-        imperial: '21 - 25',
-        metric: '53 - 64',
-      },
+      height_imperial: '21 - 25',
+      height_metric: '53 - 64',
+
       id: 124,
       life_span: '12 - 14 years',
-      name: 'Pharaoh-Hound',
+      name: 'Pharaoh Hound',
       temperament:
         'Affectionate, Sociable, Playful, Intelligent, Active, Trainable',
-      weight: {
-        imperial: '40 - 60',
-        metric: '18 - 27',
-      },
+      weight_imperial: '40 - 60',
+      weight_metric: '18 - 27',
     },
     {
       bred_for: 'Hunting big-game like Boar.',
       breed_group: 'Hound',
-      height: {
-        imperial: '20 - 25',
-        metric: '51 - 64',
-      },
+      height_imperial: '20 - 25',
+      height_metric: '51 - 64',
+
       id: 125,
       life_span: '12 - 14 years',
       name: 'Plott',
       temperament: 'Bold, Alert, Loyal, Intelligent',
-      weight: {
-        imperial: '40 - 60',
-        metric: '18 - 27',
-      },
+      weight_imperial: '40 - 60',
+      weight_metric: '18 - 27',
+
       url: 'https://cdn2.thedogapi.com/images/B1i67l5VQ_1280.jpg',
     },
     {
       bred_for: 'Companion',
       breed_group: 'Toy',
-      height: {
-        imperial: '8 - 12',
-        metric: '20 - 30',
-      },
+      height_imperial: '8 - 12',
+      height_metric: '20 - 30',
+
       id: 126,
       life_span: '15 years',
       name: 'Pomeranian',
       temperament:
         'Extroverted, Friendly, Sociable, Playful, Intelligent, Active',
-      weight: {
-        imperial: '3 - 7',
-        metric: '1 - 3',
-      },
+      weight_imperial: '3 - 7',
+      weight_metric: '1 - 3',
     },
     {
       height: {
@@ -1959,59 +1945,52 @@ exports.up = async (sql) => {
       id: 127,
       life_span: '12 – 15 years',
       name: 'Poodle(Miniature)',
-      weight: {
-        imperial: '15 - 17',
-        metric: '7 - 8',
-      },
+      weight_imperial: '15 - 17',
+      weight_metric: '7 - 8',
+
       url: 'https://cdn2.thedogapi.com/images/Hkxk4ecVX_1280.jpg',
     },
     {
-      height: {
-        imperial: '9 - 11',
-        metric: '23 - 28',
-      },
+      height_imperial: '9 - 11',
+      height_metric: '23 - 28',
+
       id: 128,
       life_span: '18 years',
       name: 'Poodle(Toy)',
-      weight: {
-        imperial: '6 - 9',
-        metric: '3 - 4',
-      },
+      weight_imperial: '6 - 9',
+      weight_metric: '3 - 4',
+
       url: 'https://cdn2.thedogapi.com/images/XXNYMzrDO.jpg',
     },
     {
       bred_for: 'Lapdog',
       breed_group: 'Toy',
-      height: {
-        imperial: '10 - 12',
-        metric: '25 - 30',
-      },
+      height_imperial: '10 - 12',
+      height_metric: '25 - 30',
+
       id: 129,
       life_span: '12 - 14 years',
       name: 'Pug',
       temperament:
         'Docile, Clever, Charming, Stubborn, Sociable, Playful, Quiet, Attentive',
-      weight: {
-        imperial: '14 - 18',
-        metric: '6 - 8',
-      },
+      weight_imperial: '14 - 18',
+      weight_metric: '6 - 8',
+
       url: 'https://cdn2.thedogapi.com/images/HyJvcl9N7_1280.jpg',
     },
     {
       bred_for: 'Herding',
       breed_group: 'Herding',
-      height: {
-        imperial: '16 - 17',
-        metric: '41 - 43',
-      },
+      height_imperial: '16 - 17',
+      height_metric: '41 - 43',
+
       id: 130,
       life_span: '12 - 16 Years years',
       name: 'Puli',
       temperament: 'Energetic, Agile, Loyal, Obedient, Intelligent, Faithful',
-      weight: {
-        imperial: '25 - 35',
-        metric: '11 - 16',
-      },
+      weight_imperial: '25 - 35',
+      weight_metric: '11 - 16',
+
       url: 'https://cdn2.thedogapi.com/images/ryPgVl5N7_1280.jpg',
     },
     {
