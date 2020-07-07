@@ -61,10 +61,11 @@ export default function Breeds() {
         <form onSubmit={fetchSearchResults} noValidate autoComplete="off">
           <TextField
             id="filled-search"
-            label="Search 🔎"
+            label="Search Breed 🔎"
             type="search"
             value={input}
             onChange={showValue}
+            style={{ width: 400 }}
           />
         </form>
       </div>
@@ -147,6 +148,7 @@ export default function Breeds() {
         }
         a {
           text-decoration: none;
+          color: #fff;
         }
         a:hover {
           color: rgb(35, 174, 237);

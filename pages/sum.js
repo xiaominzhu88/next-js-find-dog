@@ -39,18 +39,30 @@ export default function SearchDogs({ sum }) {
                   <li>
                     <h3> {eachFavorite.name}</h3>
                   </li>
-                  <li>
-                    <b>Lifespan:</b> {eachFavorite.lifeSpan}
-                  </li>
-                  <li>
-                    <b>Breed Group: </b>
-                    {eachFavorite.breedGroup}
-                  </li>
-                  <li>
-                    {' '}
-                    <b>Temperament: </b>
-                    {eachFavorite.char}
-                  </li>
+                  {eachFavorite.lifeSpan ? (
+                    <li>
+                      <b>Lifespan:</b> {eachFavorite.lifeSpan}
+                    </li>
+                  ) : (
+                    ''
+                  )}
+                  {eachFavorite.breedGroup ? (
+                    <li>
+                      <b>Breed Group: </b>
+                      {eachFavorite.breedGroup}
+                    </li>
+                  ) : (
+                    ''
+                  )}
+                  {eachFavorite.char ? (
+                    <li>
+                      {' '}
+                      <b>Temperament: </b>
+                      {eachFavorite.char}
+                    </li>
+                  ) : (
+                    ''
+                  )}
 
                   <li>
                     <Link href="/contact">

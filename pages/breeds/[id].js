@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 //import Header from '../../components/Header';
-import Footer from '../../components/Footer';
+//import Footer from '../../components/Footer';
 import Link from 'next/link';
 import Button from '@material-ui/core/Button';
 
@@ -134,7 +134,7 @@ function FetchedDog({ fetchedDogs }) {
         </Link>
       </div>
 
-      <Footer />
+      {/* <Footer /> */}
       <style jsx>{`
         @import url('https://fonts.googleapis.com/css2?family=Bitter:ital@1&display=swap');
 
