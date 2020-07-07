@@ -62,13 +62,21 @@ export default function About() {
       <div className="content">
         <h2>Before you get a dog ...</h2>
         <p className="about">
-          Dogs’ lives are short, but you know that going in. <br />
-          You know the pain is coming, <br />
-          so you live fully in the moment with her, never fail to share her joy
-          or delight in her innocence.
+          While adopting a dog is super rewarding, it is also a life-changing.
+          You need to be prepared: <br />
+          * You're Going to Spend a Lot of Money <br />
+          * Any Extra Mental and Physical Energy You Have? Yep, That Goes to the
+          Dog
           <br />
+          * Are You Ready for a Little Family Drama?
+          <br />
+          * Say Goodbye to Spontaneous Travel or Late Nights for That Matter
+          <br />
+          * It's Not Going to Be What You Expect
           <br />
         </p>{' '}
+        <h2>You can go to search page and view our dogs</h2>
+        <br />
         <div className="dog-items">
           <img src={pics[index]} alt="cute-dogs" />
 
@@ -131,6 +139,7 @@ export default function About() {
             line-height: 2em;
             font-family: 'Fira Mono', monospace;
             margin-top: 10px;
+            color: #9d9c9f;
           }
 
           img {
@@ -170,6 +179,14 @@ export default function About() {
               display: block;
             }
             img {
+              margin: 1em auto;
+            }
+            .stars {
+              display: block;
+              text-align: left;
+              margin: 1em auto;
+            }
+            .star-view {
               margin: 1em auto;
             }
           }

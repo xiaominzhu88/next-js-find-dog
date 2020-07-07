@@ -42,7 +42,7 @@ export default function Signup(props: Props) {
           setStatus('You are signed up!');
           setTimeout(() => {
             Router.replace('/login');
-          }, 2000);
+          }, 1000);
         }
       })
       .catch(() => setStatus('sign up nop'));

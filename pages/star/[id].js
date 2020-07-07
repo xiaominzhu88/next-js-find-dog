@@ -44,8 +44,6 @@ function Dog(props) {
 
       <Footer />
       <style jsx>{`
-        @import url('https://fonts.googleapis.com/css2?family=Bitter:ital@1&display=swap');
-
         main {
           margin: 0 auto;
           display: flex;
@@ -61,7 +59,7 @@ function Dog(props) {
         }
 
         h3 {
-          font-family: 'Lucida Console', Monaco, monospace;
+          font-family: 'Fira Mono', monospace;
           text-shadow: 0px 3px 3px orange;
         }
         p {
@@ -72,8 +70,8 @@ function Dog(props) {
           margin-top: 2em;
           line-height: 1.6em;
           font-size: 0.8em;
-          font-family: 'Bitter', serif;
           max-width: 450px;
+          font-family: 'Fira Mono', monospace;
         }
 
         img {

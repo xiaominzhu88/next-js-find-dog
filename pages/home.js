@@ -272,6 +272,7 @@ export default function Home() {
           )}
         </div>
       </div>
+
       <div className="button-container">
         <button onClick={() => goSum()} className="likeButton" type="button">
           <span className="buttonSpan" role="img" aria-label="emoji">
@@ -428,12 +429,32 @@ export default function Home() {
             .dogList {
               display: block;
             }
-            .buttons {
-              display: block;
+
+            .button-container {
+              margin-bottom: 2em;
             }
 
-            .star-view {
-              display: relative;
+            .likeButton {
+              padding-right: 25px;
+              margin-right: -25px;
+            }
+            buttonSpan {
+              font-size: 0.5em;
+            }
+
+            .changeButton {
+              position: relative;
+              width: 90px;
+              height: 90px;
+            }
+            .favoButton {
+              padding-left: 50px;
+              margin-left: -50px;
+            }
+
+            .button-container span {
+              font-weight: 500;
+              font-size: 4em;
             }
           }
         `}

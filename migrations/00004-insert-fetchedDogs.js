@@ -1995,718 +1995,631 @@ exports.up = async (sql) => {
     },
     {
       breed_group: 'Herding',
-      height: {
-        imperial: '15 - 18.5',
-        metric: '38 - 47',
-      },
+      height_imperial: '15 - 18.5',
+      height_metric: '38 - 47',
+
       id: 131,
       life_span: '13 - 15 years',
       name: 'Pumi',
       temperament: 'Lively, Reserved, Intelligent, Active, Protective, Vocal',
-      weight: {
-        imperial: '18 - 33',
-        metric: '8 - 15',
-      },
+      weight_imperial: '18 - 33',
+      weight_metric: '8 - 15',
+
       url: 'https://cdn2.thedogapi.com/images/SyRe4xcN7_1280.jpg',
     },
     {
       breed_group: 'Terrier',
-      height: {
-        imperial: '10 - 13',
-        metric: '25 - 33',
-      },
+      height_imperial: '10 - 13',
+      height_metric: '25 - 33',
+
       id: 132,
       life_span: '12 - 18 years',
-      name: 'Rat-Terrier',
+      name: 'Rat Terrier',
       temperament:
         'Affectionate, Lively, Inquisitive, Alert, Intelligent, Loving',
-      weight: {
-        imperial: '8 - 25',
-        metric: '4 - 11',
-      },
+      weight_imperial: '8 - 25',
+      weight_metric: '4 - 11',
+
       url: 'https://cdn2.thedogapi.com/images/HkXWNl9E7_1280.jpg',
     },
     {
       bred_for: 'Hunting raccoon, deer, bear, and cougar.',
       breed_group: 'Hound',
-      height: {
-        imperial: '21 - 27',
-        metric: '53 - 69',
-      },
+      height_imperial: '21 - 27',
+      height_metric: '53 - 69',
+
       id: 133,
       life_span: '10 - 12 years',
-      name: 'Redbone-Coonhound',
+      name: 'Redbone Coonhound',
       temperament:
         'Affectionate, Energetic, Independent, Companionable, Familial, Unflappable',
-      weight: {
-        imperial: '45 - 80',
-        metric: '20 - 36',
-      },
+      weight_imperial: '45 - 80',
+      weight_metric: '20 - 36',
+
       url: 'https://cdn2.thedogapi.com/images/_zy2OcyhQ.jpg',
     },
     {
       bred_for: 'Big game hunting, guarding',
       breed_group: 'Hound',
-      height: {
-        imperial: '24 - 27',
-        metric: '61 - 69',
-      },
+      height_imperial: '24 - 27',
+      height_metric: '61 - 69',
+
       id: 134,
       life_span: '10 - 12 years',
-      name: 'Rhodesian-Ridgeback',
+      name: 'Rhodesian Ridgeback',
       temperament:
         'Strong Willed, Mischievous, Loyal, Dignified, Sensitive, Intelligent',
-      weight: {
-        imperial: '75 - 80',
-        metric: '34 - 36',
-      },
+      weight_imperial: '75 - 80',
+      weight_metric: '34 - 36',
+
       url: 'https://cdn2.thedogapi.com/images/By9zNgqE7_1280.jpg',
     },
     {
       bred_for: 'Cattle drover, guardian, draft',
       breed_group: 'Working',
-      height: {
-        imperial: '22 - 27',
-        metric: '56 - 69',
-      },
+      height_imperial: '22 - 27',
+      height_metric: '56 - 69',
+
       id: 135,
       life_span: '8 - 10 years',
       name: 'Rottweiler',
       temperament:
         'Steady, Good-natured, Fearless, Devoted, Alert, Obedient, Confident, Self-assured, Calm, Courageous',
-      weight: {
-        imperial: '75 - 110',
-        metric: '34 - 50',
-      },
+      weight_imperial: '75 - 110',
+      weight_metric: '34 - 50',
+
       url: 'https://cdn2.thedogapi.com/images/r1xXEgcNX_1280.jpg',
     },
     {
       breed_group: 'Toy',
-      height: {
-        imperial: '7.5 - 10.5',
-        metric: '19 - 27',
-      },
+      height_imperial: '7.5 - 10.5',
+      height_metric: '19 - 27',
+
       id: 136,
       life_span: '10 - 12 years',
-      name: 'Russian-Toy',
-      weight: {
-        imperial: '3 - 6',
-        metric: '1 - 3',
-      },
+      name: 'Russian Toy',
+      weight_imperial: '3 - 6',
+      weight_metric: '1 - 3',
+
       url: 'https://cdn2.thedogapi.com/images/HkP7Vxc4Q_1280.jpg',
     },
     {
       bred_for: 'Draft, search, rescue',
       breed_group: 'Working',
-      height: {
-        imperial: '25.5 - 27.5',
-        metric: '65 - 70',
-      },
+      height_imperial: '25.5 - 27.5',
+      height_metric: '65 - 70',
+
       id: 137,
       life_span: '7 - 10 years',
-      name: 'Saint-Bernard',
+      name: 'Saint Bernard',
       temperament: 'Friendly, Lively, Gentle, Watchful, Calm',
-      weight: {
-        imperial: '130 - 180',
-        metric: '59 - 82',
-      },
+      weight_imperial: '130 - 180',
+      weight_metric: '59 - 82',
+
       url: 'https://cdn2.thedogapi.com/images/t7FefmYNk.jpg',
     },
     {
       bred_for: 'Coursing gazelle and hare',
       breed_group: 'Hound',
-      height: {
-        imperial: '23 - 28',
-        metric: '58 - 71',
-      },
+      height_imperial: '23 - 28',
+      height_metric: '58 - 71',
+
       id: 138,
       life_span: '12 - 14 years',
       name: 'Saluki',
       temperament: 'Aloof, Reserved, Intelligent, Quiet',
-      weight: {
-        imperial: '35 - 65',
-        metric: '16 - 29',
-      },
+      weight_imperial: '35 - 65',
+      weight_metric: '16 - 29',
+
       url: 'https://cdn2.thedogapi.com/images/tFQkJi_-6.jpg',
     },
     {
       bred_for: 'Herding reindeer, guardian, draft',
       breed_group: 'Working',
-      height: {
-        imperial: '19 - 23.5',
-        metric: '48 - 60',
-      },
+      height_imperial: '19 - 23.5',
+      height_metric: '48 - 60',
+
       id: 139,
       life_span: '12 - 14 years',
       name: 'Samoyed',
       temperament: 'Stubborn, Friendly, Sociable, Lively, Alert, Playful',
-      weight: {
-        imperial: '50 - 60',
-        metric: '23 - 27',
-      },
+      weight_imperial: '50 - 60',
+      weight_metric: '23 - 27',
+
       url: 'https://cdn2.thedogapi.com/images/S1T8Ee9Nm_1280.jpg',
     },
     {
       bred_for: 'Barge watchdog',
       breed_group: 'Non-Sporting',
-      height: {
-        imperial: '10 - 13',
-        metric: '25 - 33',
-      },
+      height_imperial: '10 - 13',
+      height_metric: '25 - 33',
+
       id: 140,
       life_span: '13 - 15 years',
       name: 'Schipperke',
       temperament: 'Fearless, Agile, Curious, Independent, Confident, Faithful',
-      weight: {
-        imperial: '10 - 16',
-        metric: '5 - 7',
-      },
+      weight_imperial: '10 - 16',
+      weight_metric: '5 - 7',
+
       url: 'https://cdn2.thedogapi.com/images/SyBvVgc47_1280.jpg',
     },
     {
       bred_for: 'Coursing deer',
       breed_group: 'Hound',
-      height: {
-        imperial: '28 - 32',
-        metric: '71 - 81',
-      },
+      height_imperial: '28 - 32',
+      height_metric: '71 - 81',
+
       id: 141,
       life_span: '8 - 10 years',
-      name: 'Scottish-Deerhound',
+      name: 'Scottish Deerhound',
       temperament: 'Docile, Friendly, Dignified, Gentle',
-      weight: {
-        imperial: '70 - 130',
-        metric: '32 - 59',
-      },
+      weight_imperial: '70 - 130',
+      weight_metric: '32 - 59',
+
       url: 'https://cdn2.thedogapi.com/images/SkNjqx9NQ_1280.jpg',
     },
     {
       bred_for: 'Vermin hunting',
       breed_group: 'Terrier',
-      height: {
-        imperial: '10',
-        metric: '25',
-      },
+      height_imperial: '10',
+      height_metric: '25',
+
       id: 142,
       life_span: '11 - 13 years',
-      name: 'Scottish-Terrier',
+      name: 'Scottish Terrier',
       temperament: 'Feisty, Alert, Independent, Playful, Quick, Self-assured',
-      weight: {
-        imperial: '18 - 22',
-        metric: '8 - 10',
-      },
+      weight_imperial: '18 - 22',
+      weight_metric: '8 - 10',
     },
     {
       bred_for: 'Sheep herding',
       breed_group: 'Herding',
-      height: {
-        imperial: '13 - 16',
-        metric: '33 - 41',
-      },
+      height_imperial: '13 - 16',
+      height_metric: '33 - 41',
+
       id: 143,
       life_span: '12 - 14 years',
-      name: 'Shetland-Sheepdog',
+      name: 'Shetland Sheepdog',
       temperament:
         'Affectionate, Lively, Responsive, Alert, Loyal, Reserved, Playful, Gentle, Intelligent, Active, Trainable, Strong',
-      weight: {
-        imperial: '30',
-        metric: '14',
-      },
+      weight_imperial: '30',
+      weight_metric: '14',
     },
     {
       bred_for: 'Hunting in the mountains of Japan, Alert Watchdog',
       breed_group: 'Non-Sporting',
-      height: {
-        imperial: '13.5 - 16.5',
-        metric: '34 - 42',
-      },
+      height_imperial: '13.5 - 16.5',
+      height_metric: '34 - 42',
+
       id: 144,
       life_span: '12 - 16 years',
-      name: 'Shiba-Inu',
+      name: 'Shiba Inu',
       temperament: 'Charming, Fearless, Keen, Alert, Confident, Faithful',
-      weight: {
-        imperial: '17 - 23',
-        metric: '8 - 10',
-      },
+      weight_imperial: '17 - 23',
+      weight_metric: '8 - 10',
+
       url: 'https://cdn2.thedogapi.com/images/xJJyuYXJS.jpg',
     },
     {
       bred_for: 'Lapdog',
       breed_group: 'Toy',
-      height: {
-        imperial: '8 - 11',
-        metric: '20 - 28',
-      },
+      height_imperial: '8 - 11',
+      height_metric: '20 - 28',
+
       id: 145,
       life_span: '10 - 18 years',
-      name: 'Shih-Tzu',
+      name: 'Shih Tzu',
       temperament:
         'Clever, Spunky, Outgoing, Friendly, Affectionate, Lively, Alert, Loyal, Independent, Playful, Gentle, Intelligent, Happy, Active, Courageous',
-      weight: {
-        imperial: '9 - 16',
-        metric: '4 - 7',
-      },
+      weight_imperial: '9 - 16',
+      weight_metric: '4 - 7',
+
       url: 'https://cdn2.thedogapi.com/images/BkrJjgcV7_1280.jpg',
     },
     {
       bred_for: 'Swimming, Carrying backpacks, Pulling carts or sleds',
-      height: {
-        imperial: '26 - 30',
-        metric: '66 - 76',
-      },
+      height_imperial: '26 - 30',
+      height_metric: '66 - 76',
+
       id: 146,
       life_span: '9 – 14 years',
-      name: 'Shiloh-Shepherd',
+      name: 'Shiloh Shepherd',
       temperament: 'Outgoing, Loyal, Companionable, Gentle, Loving, Trainable',
-      weight: {
-        imperial: '120 - 140',
-        metric: '54 - 64',
-      },
+      weight_imperial: '120 - 140',
+      weight_metric: '54 - 64',
+
       url: 'https://cdn2.thedogapi.com/images/SJJxjecEX_1280.jpg',
     },
     {
       bred_for: 'Sled pulling',
       breed_group: 'Working',
-      height: {
-        imperial: '20 - 23.5',
-        metric: '51 - 60',
-      },
+      height_imperial: '20 - 23.5',
+      height_metric: '51 - 60',
+
       id: 147,
       life_span: '12 years',
-      name: 'Siberian-Husky',
+      name: 'Siberian Husky',
       temperament: 'Outgoing, Friendly, Alert, Gentle, Intelligent',
-      weight: {
-        imperial: '35 - 60',
-        metric: '16 - 27',
-      },
+      weight_imperial: '35 - 60',
+      weight_metric: '16 - 27',
+
       url: 'https://cdn2.thedogapi.com/images/S17ZilqNm_1280.jpg',
     },
     {
       bred_for: 'Small vermin hunting, companionship',
       breed_group: 'Toy',
-      height: {
-        imperial: '9 - 10',
-        metric: '23 - 25',
-      },
+      height_imperial: '9 - 10',
+      height_metric: '23 - 25',
+
       id: 148,
       life_span: '12 - 15 years',
-      name: 'Silky-Terrier',
+      name: 'Silky Terrier',
       temperament: 'Friendly, Responsive, Inquisitive, Alert, Quick, Joyful',
-      weight: {
-        imperial: '8 - 10',
-        metric: '4 - 5',
-      },
+      weight_imperial: '8 - 10',
+      weight_metric: '4 - 5',
+
       url: 'https://cdn2.thedogapi.com/images/ByzGsl5Nm_1280.jpg',
     },
     {
       bred_for: 'Fox bolting',
       breed_group: 'Terrier',
-      height: {
-        imperial: '15.5',
-        metric: '39',
-      },
+      height_imperial: '15.5',
+      height_metric: '39',
+
       id: 149,
       life_span: '12 - 14 years',
-      name: 'Smooth-Fox-Terrier',
+      name: 'Smooth Fox Terrier',
       temperament:
         'Fearless, Affectionate, Alert, Playful, Intelligent, Active',
-      weight: {
-        imperial: 'up - 18',
-        metric: 'NaN - 8',
-      },
+      weight_imperial: 'up - 18',
+      weight_metric: 'up - 8',
+
       url: 'https://cdn2.thedogapi.com/images/Syszjx9Em_1280.jpg',
     },
     {
       bred_for: 'Vermin hunting, guarding, all-around farm helper',
       breed_group: 'Terrier',
-      height: {
-        imperial: '16 - 18',
-        metric: '41 - 46',
-      },
+      height_imperial: '16 - 18',
+      height_metric: '41 - 46',
+
       id: 150,
       life_span: '12 - 15 years',
-      name: 'Soft-Coated-Wheaten-Terrier',
+      name: 'Soft Coated Wheaten Terrier',
       temperament:
         'Affectionate, Spirited, Energetic, Playful, Intelligent, Faithful',
-      weight: {
-        imperial: '30 - 40',
-        metric: '14 - 18',
-      },
+      weight_imperial: '30 - 40',
+      weight_metric: '14 - 18',
+
       url: 'https://cdn2.thedogapi.com/images/HJHmix5NQ_1280.jpg',
     },
     {
       bred_for: 'Herding flocks of sheep and goats from one pasture to another',
       breed_group: 'Sporting',
-      height: {
-        imperial: '16 - 20',
-        metric: '41 - 51',
-      },
+      height_imperial: '16 - 20',
+      height_metric: '41 - 51',
+
       id: 151,
       life_span: '12 - 15 years',
-      name: 'Spanish-Water-Dog',
+      name: 'Spanish Water Dog',
       temperament:
         'Trainable, Diligent, Affectionate, Loyal, Athletic, Intelligent',
-      weight: {
-        imperial: '30 - 50',
-        metric: '14 - 23',
-      },
+      weight_imperial: '30 - 50',
+      weight_metric: '14 - 23',
+
       url: 'https://cdn2.thedogapi.com/images/HJf4jl9VX_1280.jpg',
     },
     {
       breed_group: 'Sporting',
-      height: {
-        imperial: '22.5 - 27.5',
-        metric: '57 - 70',
-      },
+      height_imperial: '22.5 - 27.5',
+      height_metric: '57 - 70',
+
       id: 152,
       life_span: '10 - 12 years',
-      name: 'Spinone-Italiano',
+      name: 'Spinone Italiano',
       temperament: 'Docile, Friendly, Affectionate, Loyal, Patient, Gentle',
-      weight: {
-        imperial: '61 - 85',
-        metric: '28 - 39',
-      },
+      weight_imperial: '61 - 85',
+      weight_metric: '28 - 39',
+
       url: 'https://cdn2.thedogapi.com/images/rk5Eoe5Nm_1280.jpg',
     },
     {
       bred_for: '',
       breed_group: 'Terrier',
-      height: {
-        imperial: '14 - 16',
-        metric: '36 - 41',
-      },
+      height_imperial: '14 - 16',
+      height_metric: '36 - 41',
+
       id: 153,
       life_span: '12 - 14 years',
-      name: 'Staffordshire-Bull-Terrier',
+      name: 'Staffordshire Bull Terrier',
       temperament:
         'Reliable, Fearless, Bold, Affectionate, Loyal, Intelligent, Courageous',
-      weight: {
-        imperial: '24 - 38',
-        metric: '11 - 17',
-      },
+      weight_imperial: '24 - 38',
+      weight_metric: '11 - 17',
+
       url: 'https://cdn2.thedogapi.com/images/H1zSie9V7_1280.jpg',
     },
     {
       bred_for: 'Ratting, guarding',
       breed_group: 'Working',
-      height: {
-        imperial: '17.5 - 19.5',
-        metric: '44 - 50',
-      },
+      height_imperial: '17.5 - 19.5',
+      height_metric: '44 - 50',
+
       id: 154,
       life_span: '13 - 15 years',
-      name: 'Standard-Schnauzer',
+      name: 'Standard Schnauzer',
       temperament:
         'Trainable, Good-natured, Devoted, Lively, Playful, Intelligent',
-      weight: {
-        imperial: '30 - 50',
-        metric: '14 - 23',
-      },
+      weight_imperial: '30 - 50',
+      weight_metric: '14 - 23',
+
       url: 'https://cdn2.thedogapi.com/images/GZeDDro7-.jpg',
     },
     {
       breed_group: 'Herding',
-      height: {
-        imperial: '11.5 - 13.5',
-        metric: '29 - 34',
-      },
+      height_imperial: '11.5 - 13.5',
+      height_metric: '29 - 34',
+
       id: 155,
       life_span: '12 - 14 years',
-      name: 'Swedish-Vallhund',
+      name: 'Swedish Vallhund',
       temperament:
         'Fearless, Friendly, Energetic, Alert, Intelligent, Watchful',
-      weight: {
-        imperial: '20 - 30',
-        metric: '9 - 14',
-      },
+      weight_imperial: '20 - 30',
+      weight_metric: '9 - 14',
+
       url: 'https://cdn2.thedogapi.com/images/HJ-Dix94Q_1280.jpg',
     },
     {
       breed_group: 'Hound',
-      height: {
-        imperial: '20 - 24',
-        metric: '51 - 61',
-      },
+      height_imperial: '20 - 24',
+      height_metric: '51 - 61',
+
       id: 156,
       life_span: '10 - 12 years',
-      name: 'Thai-Ridgeback',
+      name: 'Thai Ridgeback',
       temperament:
         'Protective, Loyal, Independent, Intelligent, Loving, Familial',
-      weight: {
-        imperial: '35 - 55',
-        metric: '16 - 25',
-      },
+      weight_imperial: '35 - 55',
+      weight_metric: '16 - 25',
+
       url: 'https://cdn2.thedogapi.com/images/0zRjpLfPg.jpg',
     },
     {
       breed_group: 'Working',
-      height: {
-        imperial: '24 - 26',
-        metric: '61 - 66',
-      },
+      height_imperial: '24 - 26',
+      height_metric: '61 - 66',
+
       id: 157,
       life_span: '10 - 14 years',
-      name: 'Tibetan-Mastiff',
+      name: 'Tibetan Mastiff',
       temperament:
         'Strong Willed, Tenacious, Aloof, Stubborn, Intelligent, Protective',
-      weight: {
-        imperial: '85 - 140',
-        metric: '39 - 64',
-      },
+      weight_imperial: '85 - 140',
+      weight_metric: '39 - 64',
+
       url: 'https://cdn2.thedogapi.com/images/SkM9sec47_1280.jpg',
     },
     {
       breed_group: 'Non-Sporting',
-      height: {
-        imperial: '10',
-        metric: '25',
-      },
+      height_imperial: '10',
+      height_metric: '25',
+
       id: 158,
       life_span: '12 - 15 years',
-      name: 'Tibetan-Spaniel',
+      name: 'Tibetan Spaniel',
       temperament:
         'Willful, Aloof, Assertive, Independent, Playful, Intelligent, Happy',
-      weight: {
-        imperial: '9 - 15',
-        metric: '4 - 7',
-      },
+      weight_imperial: '9 - 15',
+      weight_metric: '4 - 7',
     },
     {
       bred_for:
         'Good luck charms, mascots, watchdogs, herding dogs, and companions',
       breed_group: 'Non-Sporting',
-      height: {
-        imperial: '14 - 17',
-        metric: '36 - 43',
-      },
+      height_imperial: '14 - 17',
+      height_metric: '36 - 43',
+
       id: 159,
       life_span: '12 - 15 years',
-      name: 'Tibetan-Terrier',
+      name: 'Tibetan Terrier',
       temperament:
         'Affectionate, Energetic, Amiable, Reserved, Gentle, Sensitive',
-      weight: {
-        imperial: '20 - 24',
-        metric: '9 - 11',
-      },
+      weight_imperial: '20 - 24',
+      weight_metric: '9 - 11',
+
       url: 'https://cdn2.thedogapi.com/images/6f5n_42mB.jpg',
     },
     {
       breed_group: 'Toy',
-      height: {
-        imperial: '8 - 11',
-        metric: '20 - 28',
-      },
+      height_imperial: '8 - 11',
+      height_metric: '20 - 28',
+
       id: 160,
       life_span: '12 - 15 years',
-      name: 'Toy-Fox-Terrier',
+      name: 'Toy Fox Terrier',
       temperament: 'Friendly, Spirited, Alert, Loyal, Playful, Intelligent',
-      weight: {
-        imperial: '4 - 9',
-        metric: '2 - 4',
-      },
+      weight_imperial: '4 - 9',
+      weight_metric: '2 - 4',
+
       url: 'https://cdn2.thedogapi.com/images/B17ase9V7_1280.jpg',
     },
     {
       breed_group: 'Hound',
-      height: {
-        imperial: '20 - 27',
-        metric: '51 - 69',
-      },
+      height_imperial: '20 - 27',
+      height_metric: '51 - 69',
+
       id: 161,
       life_span: '10 - 13 years',
-      name: 'Treeing-Walker-Coonhound',
+      name: 'Treeing Walker Coonhound',
       temperament:
         'Clever, Affectionate, Confident, Intelligent, Loving, Trainable',
-      weight: {
-        imperial: '45 - 80',
-        metric: '20 - 36',
-      },
+      weight_imperial: '45 - 80',
+      weight_metric: '20 - 36',
+
       url: 'https://cdn2.thedogapi.com/images/SkRpsgc47_1280.jpg',
     },
     {
       bred_for: 'Pointing and trailing',
       breed_group: 'Sporting',
-      height: {
-        imperial: '21 - 24',
-        metric: '53 - 61',
-      },
+      height_imperial: '21 - 24',
+      height_metric: '53 - 61',
+
       id: 162,
       life_span: '10 - 14 years',
       name: 'Vizsla',
       temperament: 'Affectionate, Energetic, Loyal, Gentle, Quiet',
-      weight: {
-        imperial: '50 - 65',
-        metric: '23 - 29',
-      },
+      weight_imperial: '50 - 65',
+      weight_metric: '23 - 29',
+
       url: 'https://cdn2.thedogapi.com/images/r1o0jx9Em_1280.jpg',
     },
     {
       bred_for: 'Large game trailing and versatile gundog',
       breed_group: 'Sporting',
-      height: {
-        imperial: '23 - 27',
-        metric: '58 - 69',
-      },
+      height_imperial: '23 - 27',
+      height_metric: '58 - 69',
+
       id: 163,
       life_span: '12 - 15 years',
       name: 'Weimaraner',
       temperament:
         'Steady, Aloof, Stubborn, Energetic, Alert, Intelligent, Powerful, Fast',
-      weight: {
-        imperial: '55 - 90',
-        metric: '25 - 41',
-      },
+      weight_imperial: '55 - 90',
+      weight_metric: '25 - 41',
+
       url: 'https://cdn2.thedogapi.com/images/SyU12l9V7_1280.jpg',
     },
     {
       bred_for: 'Flushing and retrieving birds',
       breed_group: 'Sporting',
-      height: {
-        imperial: '17 - 19',
-        metric: '43 - 48',
-      },
+      height_imperial: '17 - 19',
+      height_metric: '43 - 48',
+
       id: 164,
       life_span: '12 - 15 years',
-      name: 'Welsh-Springer-Spaniel',
+      name: 'Welsh Springer Spaniel',
       temperament: 'Stubborn, Friendly, Affectionate, Loyal, Playful, Active',
-      weight: {
-        imperial: '35 - 55',
-        metric: '16 - 25',
-      },
+      weight_imperial: '35 - 55',
+      weight_metric: '16 - 25',
+
       url: 'https://cdn2.thedogapi.com/images/BJ1gnx5Vm_1280.jpg',
     },
     {
       bred_for: 'Fox, badger, vermin hunting',
       breed_group: 'Terrier',
-      height: {
-        imperial: '10 - 11',
-        metric: '25 - 28',
-      },
+      height_imperial: '10 - 11',
+      height_metric: '25 - 28',
+
       id: 165,
       life_span: '15 - 20 years',
-      name: 'West-Highland-White-Terrier',
+      name: 'West Highland White Terrier',
       temperament:
         'Hardy, Friendly, Alert, Independent, Gay, Active, Courageous',
-      weight: {
-        imperial: '15 - 22',
-        metric: '7 - 10',
-      },
+      weight_imperial: '15 - 22',
+      weight_metric: '7 - 10',
+
       url: 'https://cdn2.thedogapi.com/images/Bkdx2g5Em_1280.jpg',
     },
     {
       bred_for: 'Coursing, racing',
       breed_group: 'Hound',
-      height: {
-        imperial: '18 - 22',
-        metric: '46 - 56',
-      },
+      height_imperial: '18 - 22',
+      height_metric: '46 - 56',
+
       id: 166,
       life_span: '12 - 15 years',
       name: 'Whippet',
       temperament: 'Friendly, Affectionate, Lively, Gentle, Intelligent, Quiet',
-      weight: {
-        imperial: '25 - 35',
-        metric: '11 - 16',
-      },
+      weight_imperial: '25 - 35',
+      weight_metric: '11 - 16',
+
       url: 'https://cdn2.thedogapi.com/images/Hyv-ne94m_1280.jpg',
     },
     {
-      height: {
-        imperial: '22 - 25',
-        metric: '56 - 64',
-      },
+      height_imperial: '22 - 25',
+      height_metric: '56 - 64',
+
       id: 167,
       life_span: '12 – 14 years',
-      name: 'White-Shepherd',
+      name: 'White Shepherd',
       temperament:
         'Self-confidence, Aloof, Fearless, Alert, Companionable, Eager',
-      weight: {
-        imperial: '60 - 85',
-        metric: '27 - 39',
-      },
+      weight_imperial: '60 - 85',
+      weight_metric: '27 - 39',
+
       url: 'https://cdn2.thedogapi.com/images/r14M3e9E7_1280.jpg',
     },
     {
       bred_for: 'Vermin hunting, fox bolting',
-      height: {
-        imperial: '13 - 16',
-        metric: '33 - 41',
-      },
+      height_imperial: '13 - 16',
+      height_metric: '33 - 41',
+
       history: ' England',
       id: 168,
       life_span: '13 – 14 years',
-      name: 'Wire-Fox-Terrier',
+      name: 'Wire Fox Terrier',
       temperament: 'Fearless, Friendly, Bold, Keen, Alert, Quick',
-      weight: {
-        imperial: '15 - 19',
-        metric: '7 - 9',
-      },
+      weight_imperial: '15 - 19',
+      weight_metric: '7 - 9',
+
       url: 'https://cdn2.thedogapi.com/images/SJ6f2g9EQ_1280.jpg',
     },
     {
       bred_for:
         'Gundog, "swamp-tromping", Flushing, pointing, and retrieving water fowl & game birds',
       breed_group: 'Sporting',
-      height: {
-        imperial: '20 - 24',
-        metric: '51 - 61',
-      },
+      height_imperial: '20 - 24',
+      height_metric: '51 - 61',
+
       id: 169,
       life_span: '12 - 14 years',
-      name: 'Wirehaired-Pointing-Griffon',
+      name: 'Wirehaired Pointing Griffon',
       temperament: 'Loyal, Gentle, Vigilant, Trainable, Proud',
-      weight: {
-        imperial: '45 - 70',
-        metric: '20 - 32',
-      },
+      weight_imperial: '45 - 70',
+      weight_metric: '20 - 32',
+
       url: 'https://cdn2.thedogapi.com/images/Bkam2l9Vm_1280.jpg',
     },
     {
       breed_group: 'Sporting',
-      height: {
-        imperial: '21.5 - 25',
-        metric: '55 - 64',
-      },
+      height_imperial: '21.5 - 25',
+      height_metric: '55 - 64',
+
       id: 170,
       life_span: '12 - 14 years',
-      name: 'Wirehaired-Vizsla',
-      weight: {
-        imperial: '45 - 65',
-        metric: '20 - 29',
-      },
+      name: 'Wirehaired Vizsla',
+      weight_imperial: '45 - 65',
+      weight_metric: '20 - 29',
+
       url: 'https://cdn2.thedogapi.com/images/r1I4hl5Em_1280.jpg',
     },
     {
       breed_group: 'Non-Sporting',
-      height: {
-        imperial: '10 - 23',
-        metric: '25 - 58',
-      },
+      height_imperial: '10 - 23',
+      height_metric: '25 - 58',
+
       id: 171,
       life_span: '12 - 14 years',
       name: 'Xoloitzcuintli',
       temperament:
         'Cheerful, Alert, Companionable, Intelligent, Protective, Calm',
-      weight: {
-        imperial: '9 - 31',
-        metric: '4 - 14',
-      },
+      weight_imperial: '9 - 31',
+      weight_metric: '4 - 14',
+
       url: 'https://cdn2.thedogapi.com/images/HkNS3gqEm_1280.jpg',
     },
     {
       bred_for: 'Small vermin hunting',
-      height: {
-        imperial: '8 - 9',
-        metric: '20 - 23',
-      },
+      height_imperial: '8 - 9',
+      height_metric: '20 - 23',
+
       id: 172,
       life_span: '12 - 16 years',
-      name: 'Yorkshire-Terrier',
+      name: 'Yorkshire Terrier',
       temperament: 'Bold, Independent, Confident, Intelligent, Courageous',
-      weight: {
-        imperial: '4 - 7',
-        metric: '2 - 3',
-      },
+      weight_imperial: '4 - 7',
+      weight_metric: '2 - 3',
+
       url: 'https://cdn2.thedogapi.com/images/FxLgZUpCp.jpg',
     },
   ];
