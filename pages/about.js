@@ -49,7 +49,7 @@ export default function About() {
     // clear interval, although images will go faster and crazy !
     return () => clearInterval(interval);
     // wrap dependensies inside Array
-  }, [index, getNextIndex, setIndexes]);
+  }, [index, getNextIndex, setIndexes, move, next]);
 
   return (
     <>
@@ -60,7 +60,7 @@ export default function About() {
       <Header />
 
       <div className="content">
-        <h2>Before you get a dog ...</h2>
+        <h2>Before you choose a dog ...</h2>
         <p className="about">
           While adopting a dog is super rewarding, it is also a life-changing.
           You need to be prepared: <br />

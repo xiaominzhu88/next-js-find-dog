@@ -4,8 +4,9 @@ import Head from 'next/head';
 //import Footer from '../../components/Footer';
 import Link from 'next/link';
 import Button from '@material-ui/core/Button';
+import Error from 'next/error';
 
-function FetchedDog({ fetchedDogs }) {
+function FetchedDog({ fetchedDogs, statusCode }) {
   if (!fetchedDogs) {
     return (
       <div
@@ -35,6 +36,10 @@ function FetchedDog({ fetchedDogs }) {
   //console.log('name:', props.fetchedDogs.name);
   //console.log(fetchedDogs.url);
 
+  if (statusCode === 404) {
+    // This line will show the default Error Page
+    return <Error statusCode={statusCode} />;
+  }
   return (
     <div>
       <Head>
@@ -206,9 +211,13 @@ export async function getServerSideProps(context) {
   if (fetchedDogs.length === 0 || fetchedId > 172) {
     return { props: {} };
   }
+  if (!fetchedDogs) {
+    context.res.statusCode = 404;
+  }
   return {
     props: {
       fetchedDogs: fetchedDogs[0],
+      statusCode: fetchedDogs ? 200 : 404,
     },
   };
 }

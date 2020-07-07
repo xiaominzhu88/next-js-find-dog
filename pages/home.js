@@ -55,9 +55,11 @@ const dogs = [
 ];
 
 export default function Home() {
+  const [loading, setLoading] = useState(false);
+  const [dogId, setDogId] = useState(0);
   const apiKey = process.env.apiKey;
 
-  // below is used for Snackbar effect
+  // below using Snackbar effect
   const [open, setOpen] = useState(false);
 
   const handleClick = () => {
@@ -84,9 +86,6 @@ export default function Home() {
   // -------------------  Preloading image ------------------------
 
   const loadingUrl = './gif.gif';
-
-  const [loading, setLoading] = useState(false);
-  const [dogId, setDogId] = useState(0);
 
   // define a dog Array which being loaded at the beginning
   const dog = dogs[dogId];
@@ -283,16 +282,15 @@ export default function Home() {
           anchorOrigin={{
             vertical: 'bottom',
             horizontal: 'center',
-            backgroundColor: 'rgb(240, 93, 130)',
           }}
           open={open}
-          autoHideDuration={5000}
+          autoHideDuration={2500}
           onClose={handleClose}
           message=" I'm saved as your favourite, take me home 💌"
           action={
             <React.Fragment>
               <Button color="secondary" size="small" onClick={handleClose}>
-                YES
+                ok
               </Button>
               <IconButton
                 size="small"

@@ -10,6 +10,7 @@ import Snackbar from '@material-ui/core/Snackbar';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
+import Router from 'next/router';
 
 export default function Contact({ adopt }) {
   const [open, setOpen] = useState(false);
@@ -29,7 +30,9 @@ export default function Contact({ adopt }) {
     Cookies.remove('sum');
     Cookies.remove('adopt');
     handleClick();
-    //alert('NN');
+    setTimeout(() => {
+      Router.replace('/home');
+    }, 3000);
   }
 
   return (
@@ -119,7 +122,7 @@ export default function Contact({ adopt }) {
           <a>
             <Button
               variant="contained"
-              color="primary"
+              color="secondary"
               style={{ margin: '1em auto' }}
             >
               To Favourite Page
@@ -150,7 +153,7 @@ export default function Contact({ adopt }) {
         }
         li {
           font-family: Gill sans;
-          color: rgb(35, 174, 237);
+          color: rgba(224, 39, 174, 1);
         }
       `}</style>
     </div>

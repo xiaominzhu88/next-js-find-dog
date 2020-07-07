@@ -94,7 +94,7 @@ export default function SearchDogs({ sum }) {
                 <Button
                   variant="contained"
                   color="primary"
-                  style={{ margin: '1em auto' }}
+                  style={{ marginLeft: '45%' }}
                 >
                   To Home
                 </Button>
