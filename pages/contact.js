@@ -3,21 +3,26 @@ import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Link from 'next/link';
-import TextField from '@material-ui/core/TextField';
 import Cookies from 'js-cookie';
 import nextCookies from 'next-cookies';
+//import TextField from '@material-ui/core/TextField';
 import Snackbar from '@material-ui/core/Snackbar';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
-import Router from 'next/router';
 
 export default function Contact({ adopt }) {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [nameError, setNameError] = useState('');
+  const [emailError, setEmailError] = useState('');
+
+  // below using snackbar
   const [open, setOpen] = useState(false);
 
-  const handleClick = () => {
+  function openSnackBar() {
     setOpen(true);
-  };
+  }
 
   const handleClose = (e, reason) => {
     if (reason === 'clickaway') {
@@ -26,13 +31,49 @@ export default function Contact({ adopt }) {
     setOpen(false);
   };
 
-  function sendMail() {
-    Cookies.remove('sum');
-    Cookies.remove('adopt');
-    handleClick();
-    setTimeout(() => {
-      Router.replace('/home');
-    }, 3000);
+  // input validation
+  function handleChangeName(e) {
+    setName(e.target.value);
+  }
+  function handleChangeEmail(e) {
+    setEmail(e.target.value);
+  }
+
+  const validate = () => {
+    if (!email.includes('@')) {
+      setEmailError('Invalid Email');
+      return false;
+    } else {
+      setEmailError(null);
+    }
+
+    if (!name) {
+      setNameError('Name can not be blank');
+      return false;
+    } else {
+      setNameError(null);
+    }
+
+    return true;
+  };
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    const isValid = validate();
+    console.log('VALIDATION: ', isValid);
+
+    if (isValid === 'false') {
+      setNameError(nameError);
+      setEmailError(emailError);
+    } else {
+      console.log('INPUT-name: ', name);
+      console.log('INPUT-email: ', email);
+      Cookies.remove('sum');
+      Cookies.remove('adopt');
+
+      openSnackBar();
+    }
   }
 
   return (
@@ -45,47 +86,48 @@ export default function Contact({ adopt }) {
       <div className="contact">
         <h1>contact</h1>
 
-        <form>
-          <TextField
-            id="outlined-search"
-            label="Name"
-            type="search"
-            variant="outlined"
+        <form onSubmit={handleSubmit}>
+          <input
+            placeholder="Name"
+            name="name"
+            value={name}
+            type="text"
+            onChange={handleChangeName}
           />
+          {nameError ? <div style={{ color: 'red' }}>{nameError}</div> : null}
           <br />
           <br />
-          <TextField
-            id="outlined-search"
-            label="Email"
-            type="search"
-            variant="outlined"
+          <input
+            placeholder="Email"
+            name="email"
+            value={email}
+            type="text"
+            onChange={handleChangeEmail}
           />
+          {emailError ? <div style={{ color: 'red' }}>{emailError}</div> : null}{' '}
           <br />
           <br />
-          <Button variant="contained" onClick={() => sendMail()}>
-            Send
-          </Button>{' '}
+          <button type="submit">Submit</button>{' '}
           <Snackbar
             anchorOrigin={{
               vertical: 'bottom',
-              horizontal: 'center',
-              backgroundColor: 'rgb(240, 93, 130)',
+              horizontal: 'left',
             }}
             open={open}
             autoHideDuration={5000}
             onClose={handleClose}
-            message="Thank you for your Email 🍭"
+            message="Thanks for your Email "
             action={
               <React.Fragment>
-                <Button
-                  color="secondary"
-                  size="small"
-                  onClick={handleClose}
-                ></Button>
+                <Button color="secondary" size="small" onClick={handleClose}>
+                  <span role="img" aria-label="emoji">
+                    🍭
+                  </span>
+                </Button>
                 <IconButton
                   size="small"
                   aria-label="close"
-                  color="inherit"
+                  color="secondary"
                   onClick={handleClose}
                 >
                   <CloseIcon fontSize="small" />
@@ -154,6 +196,10 @@ export default function Contact({ adopt }) {
         li {
           font-family: Gill sans;
           color: rgba(224, 39, 174, 1);
+        }
+        input {
+          width: 12em;
+          height: 2em;
         }
       `}</style>
     </div>

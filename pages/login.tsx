@@ -53,7 +53,7 @@ export default function Login() {
         <title>Find-your-dog</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
+      {/* <Header /> */}
 
       <div className="auth">
         <div className="left">

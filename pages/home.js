@@ -280,11 +280,11 @@ export default function Home() {
         </button>
         <Snackbar
           anchorOrigin={{
-            vertical: 'bottom',
+            vertical: 'top',
             horizontal: 'center',
           }}
           open={open}
-          autoHideDuration={2500}
+          autoHideDuration={2000}
           onClose={handleClose}
           message=" I'm saved as your favourite, take me home 💌"
           action={

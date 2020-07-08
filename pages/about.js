@@ -75,7 +75,7 @@ export default function About() {
           * It's Not Going to Be What You Expect
           <br />
         </p>{' '}
-        <h2>You can go to search page and view our dogs</h2>
+        <h2>You can go to search page and find your dogs</h2>
         <br />
         <div className="dog-items">
           <img src={pics[index]} alt="cute-dogs" />
