@@ -9,16 +9,19 @@ import Cookies from 'js-cookie';
 
 export default function SearchDogs({ sum }) {
   const [name, setName] = useState([]);
+  // const [lifeSpan, setLifeSpan] = useState([]);
+  // const [breedGroup, setBreedGroup] = useState([]);
+  // const [temperament, setTemperament] = useState([]);
+  // const [status, setStatus] = useState('');
 
   function save() {
     const eachName = sum.map((el) => el.name);
-
     setName(eachName);
-
     const favo = Cookies.getJSON('sum') || [];
     favo.push(name);
     Cookies.set('adopt', favo);
   }
+
   return (
     <>
       <Head>
@@ -166,7 +169,7 @@ export default function SearchDogs({ sum }) {
     </>
   );
 }
-// get 'saved' dogs as cookies with name 'sum'
+//get 'saved' dogs as cookies with name 'sum'
 export function getServerSideProps(context) {
   const { sum } = nextCookies(context);
   //console.log(sum);
@@ -176,3 +179,14 @@ export function getServerSideProps(context) {
     },
   };
 }
+
+// export async function getServerSideProps(context) {
+//   const { getFavos } = await import('../db');
+//   const favoDogList = getFavos(context);
+
+//   return {
+//     props: {
+//       favoDogList: favoDogList === undefined ? [] : favoDogList,
+//     },
+//   };
+// }

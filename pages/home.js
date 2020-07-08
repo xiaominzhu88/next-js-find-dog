@@ -55,6 +55,8 @@ const dogs = [
 ];
 
 export default function Home() {
+  const [status, setStatus] = useState('');
+
   const [loading, setLoading] = useState(false);
   const [dogId, setDogId] = useState(0);
   const apiKey = process.env.apiKey;
@@ -89,7 +91,7 @@ export default function Home() {
 
   // define a dog Array which being loaded at the beginning
   const dog = dogs[dogId];
-  console.log('DOG: ', dog);
+  //console.log('DOG: ', dog);
 
   const sumDogs = {
     dogImageUrl: dog.url,
@@ -187,13 +189,41 @@ export default function Home() {
   // -------------------  Save favourite -----------------------
 
   function goSum() {
-    const favorite = Cookies.getJSON('sum') || [];
-    favorite.push(sumDogs);
-    Cookies.set('sum', favorite);
-    //alert("I'm saved as your favourite, take me home");
-    //window.location.reload();
+    // const favorite = Cookies.getJSON('sum') || [];
+    // favorite.push(sumDogs);
+    // Cookies.set('sum', favorite);
+    // //alert("I'm saved as your favourite, take me home");
+    // //window.location.reload();
     handleClick();
+
+    fetch('/api/favos', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      // define each favoDog info
+      body: JSON.stringify({
+        favoName: sumDogs.name,
+        lifeSpan: sumDogs.lifeSpan,
+        breedGroup: sumDogs.breedGroup,
+        temperament: sumDogs.char,
+        url: sumDogs.dogImageUrl,
+      }),
+    })
+      .then((res) => {
+        if (res.ok !== true) {
+          setStatus('SAVE ERROR!!!');
+        }
+        //console.log('RESSSSS: ', res);
+        return res.json();
+      })
+      .then((json) => {
+        console.log('JSON SAVED: ', json);
+        setStatus('SAVED AS FAVO!!!');
+      })
+      .catch(() => setStatus("NOOOP, doesn't work!!!"));
   }
+
   return (
     <div className="container">
       <Head>
@@ -204,6 +234,7 @@ export default function Home() {
       <Header />
 
       <div className="dogList">
+        {status}
         <div>
           {loading ? (
             <img src={loadingUrl} alt="preloadingUrl" />

@@ -114,3 +114,23 @@ export async function deleteSessionByToken(token) {
     DELETE FROM sessions WHERE token = ${token}
   `;
 }
+
+export async function insertFavo(
+  favoName,
+  lifeSpan,
+  breedGroup,
+  temperament,
+  url,
+) {
+  return sql`
+    INSERT INTO favos (favoName,lifeSpan,breedGroup,temperament,url) VALUES (${favoName},${lifeSpan},${breedGroup},${temperament},${url})
+  
+  `;
+}
+
+export async function getFavos(favoName) {
+  const favoDogs = await sql`
+  select * from favos WHERE favoName=${favoName}
+  `;
+  return favoDogs;
+}
