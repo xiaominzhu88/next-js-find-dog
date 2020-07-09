@@ -128,9 +128,9 @@ export async function insertFavo(
   `;
 }
 
-export async function getFavos(favoName) {
+export async function getFavoDogs() {
   const favoDogs = await sql`
-  select * from favos WHERE favoName=${favoName}
+  SELECT * FROM favos
   `;
   return favoDogs;
 }

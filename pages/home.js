@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Link from 'next/link';
-import Cookies from 'js-cookie';
+//import Cookies from 'js-cookie';
 import Snackbar from '@material-ui/core/Snackbar';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
@@ -215,10 +215,12 @@ export default function Home() {
           setStatus('SAVE ERROR!!!');
         }
         //console.log('RESSSSS: ', res);
+        console.log(status);
         return res.json();
       })
       .then((json) => {
         console.log('JSON SAVED: ', json);
+        // if there is no info, all undefined except url
         setStatus('SAVED AS FAVO!!!');
       })
       .catch(() => setStatus("NOOOP, doesn't work!!!"));
@@ -234,7 +236,6 @@ export default function Home() {
       <Header />
 
       <div className="dogList">
-        {status}
         <div>
           {loading ? (
             <img src={loadingUrl} alt="preloadingUrl" />

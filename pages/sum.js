@@ -1,26 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import nextCookies from 'next-cookies';
+//import nextCookies from 'next-cookies';
 import Link from 'next/link';
 import Button from '@material-ui/core/Button';
-import Cookies from 'js-cookie';
+//import Cookies from 'js-cookie';
 
-export default function SearchDogs({ sum }) {
-  const [name, setName] = useState([]);
-  // const [lifeSpan, setLifeSpan] = useState([]);
-  // const [breedGroup, setBreedGroup] = useState([]);
-  // const [temperament, setTemperament] = useState([]);
-  // const [status, setStatus] = useState('');
-
-  function save() {
-    const eachName = sum.map((el) => el.name);
-    setName(eachName);
-    const favo = Cookies.getJSON('sum') || [];
-    favo.push(name);
-    Cookies.set('adopt', favo);
-  }
+export default function SearchDogs({ favoDogList }) {
+  // function save() {
+  //   const eachName = favoDogList.map((el) => el.favoname);
+  //   console.log('EACHNAME....', eachName);
+  //   setFavoName(eachName);
+  //   const favo = Cookies.getJSON('sum') || [];
+  //   favo.push(favoName);
+  //   Cookies.set('adopt', favo);
+  // }
 
   return (
     <>
@@ -31,25 +26,25 @@ export default function SearchDogs({ sum }) {
       <Header />
 
       <div className="favorite-sum">
-        {sum.length !== 0 ? (
+        {favoDogList.length !== 0 ? (
           <ul>
-            {sum.map((eachFavorite, i) => {
+            {favoDogList.map((eachFavorite, i) => {
               return (
                 <div className="favorite-list" key={i}>
                   <li>
-                    <img src={eachFavorite.dogImageUrl} alt="favorite-dog" />
+                    <img src={eachFavorite.url} alt="favorite-dog" />
                   </li>
                   <li>
-                    <h3> {eachFavorite.name}</h3>
+                    <h3> {eachFavorite.favoname}</h3>
                   </li>
-                  {eachFavorite.lifeSpan ? (
+                  {eachFavorite.lifespan ? (
                     <li>
                       <b>Lifespan:</b> {eachFavorite.lifeSpan}
                     </li>
                   ) : (
                     ''
                   )}
-                  {eachFavorite.breedGroup ? (
+                  {eachFavorite.breedgroup ? (
                     <li>
                       <b>Breed Group: </b>
                       {eachFavorite.breedGroup}
@@ -57,11 +52,11 @@ export default function SearchDogs({ sum }) {
                   ) : (
                     ''
                   )}
-                  {eachFavorite.char ? (
+                  {eachFavorite.temperament ? (
                     <li>
                       {' '}
                       <b>Temperament: </b>
-                      {eachFavorite.char}
+                      {eachFavorite.temperament}
                     </li>
                   ) : (
                     ''
@@ -74,7 +69,7 @@ export default function SearchDogs({ sum }) {
                           <Button
                             variant="contained"
                             color="secondary"
-                            onClick={save}
+                            //onClick={save}
                           >
                             Adopt Me{' '}
                             <span role="img" aria-label="emoji">
@@ -170,23 +165,26 @@ export default function SearchDogs({ sum }) {
   );
 }
 //get 'saved' dogs as cookies with name 'sum'
-export function getServerSideProps(context) {
-  const { sum } = nextCookies(context);
-  //console.log(sum);
-  return {
-    props: {
-      sum: sum === undefined ? [] : sum,
-    },
-  };
-}
-
-// export async function getServerSideProps(context) {
-//   const { getFavos } = await import('../db');
-//   const favoDogList = getFavos(context);
-
+// export function getServerSideProps(context) {
+//   const { sum } = nextCookies(context);
+//   //console.log(sum);
 //   return {
 //     props: {
-//       favoDogList: favoDogList === undefined ? [] : favoDogList,
+//       sum: sum === undefined ? [] : sum,
 //     },
 //   };
 // }
+
+// get 'saved' dogs from API / DB
+export async function getServerSideProps(context) {
+  const { getFavoDogs } = await import('../db');
+  const favoDogList = await getFavoDogs();
+
+  //console.log('FAVOLIST: ', favoDogList);
+
+  return {
+    props: {
+      favoDogList: favoDogList === undefined ? [] : favoDogList,
+    },
+  };
+}

@@ -4,14 +4,14 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Link from 'next/link';
 import Cookies from 'js-cookie';
-import nextCookies from 'next-cookies';
+//import nextCookies from 'next-cookies';
 //import TextField from '@material-ui/core/TextField';
 import Snackbar from '@material-ui/core/Snackbar';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 
-export default function Contact({ adopt }) {
+export default function Contact({ favoDogList }) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [nameError, setNameError] = useState('');
@@ -66,6 +66,7 @@ export default function Contact({ adopt }) {
     if (isValid === 'false') {
       setNameError(nameError);
       setEmailError(emailError);
+      return;
     } else {
       console.log('INPUT-name: ', name);
       console.log('INPUT-email: ', email);
@@ -114,7 +115,7 @@ export default function Contact({ adopt }) {
               horizontal: 'left',
             }}
             open={open}
-            autoHideDuration={5000}
+            autoHideDuration={4000}
             onClose={handleClose}
             message="Thanks for your Email "
             action={
@@ -138,7 +139,7 @@ export default function Contact({ adopt }) {
         </form>
 
         <div className="toAdopt">
-          {adopt.length === 0 ? (
+          {favoDogList.length === 0 ? (
             <h3>
               <span role="img" aria-label="emoji">
                 🐶
@@ -153,8 +154,8 @@ export default function Contact({ adopt }) {
                 </span>{' '}
                 We are your favourite
               </h3>
-              {adopt.map((el, i) => (
-                <li key={i}> {el.name}</li>
+              {favoDogList.map((el, i) => (
+                <li key={i}> {el.favoname}</li>
               ))}
             </ul>
           )}
@@ -205,12 +206,25 @@ export default function Contact({ adopt }) {
     </div>
   );
 }
-export function getServerSideProps(context) {
-  const { adopt } = nextCookies(context);
+// get NAMES from cookies which were saved from sum page
+// export function getServerSideProps(context) {
+//   const { adopt } = nextCookies(context);
+
+//   return {
+//     props: {
+//       adopt: adopt === undefined ? [] : adopt,
+//     },
+//   };
+// }
+
+// get only NAMES from 'saved' favourite from DB which the same like sum page
+export async function getServerSideProps(context) {
+  const { getFavoDogs } = await import('../db');
+  const favoDogList = await getFavoDogs();
 
   return {
     props: {
-      adopt: adopt === undefined ? [] : adopt,
+      favoDogList: favoDogList === undefined ? [] : favoDogList,
     },
   };
 }
