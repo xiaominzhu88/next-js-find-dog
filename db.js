@@ -134,3 +134,12 @@ export async function getFavoDogs() {
   `;
   return favoDogs;
 }
+
+export async function deleteFavo() {
+  const dogsToDelete = await sql`
+  DELETE FROM favos 
+
+`;
+  console.log('DOGSTODELETE: ', dogsToDelete);
+  return dogsToDelete;
+}

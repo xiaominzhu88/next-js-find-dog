@@ -12,13 +12,16 @@ export default function Logout() {
       </Head>
       <Header />
       <div>
-        <h1>You are Logged Out✍️</h1>
+        <h1>You are Logged Out</h1>
+        <h2>Thank you ✍️</h2>
       </div>
       <Footer />
       <style jsx>
         {`
-          h1 {
+          h1,
+          h2 {
             text-align: center;
+            color: #9d9c9f;
           }
         `}
       </style>

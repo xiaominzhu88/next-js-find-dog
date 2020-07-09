@@ -24,5 +24,5 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     console.log('NO FAVOS TO SAVE');
   }
   res.json({ favoDogs });
-  console.log('Api-favos.ts-FAVODOGS: ', favoDogs);
+  //console.log('Api-favos.ts-FAVODOGS: ', favoDogs);
 };

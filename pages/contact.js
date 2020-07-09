@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Link from 'next/link';
-import Cookies from 'js-cookie';
+//import Cookies from 'js-cookie';
 //import nextCookies from 'next-cookies';
 //import TextField from '@material-ui/core/TextField';
 import Snackbar from '@material-ui/core/Snackbar';
@@ -16,6 +16,8 @@ export default function Contact({ favoDogList }) {
   const [email, setEmail] = useState('');
   const [nameError, setNameError] = useState('');
   const [emailError, setEmailError] = useState('');
+
+  const [status, setStatus] = useState('');
 
   // below using snackbar
   const [open, setOpen] = useState(false);
@@ -31,7 +33,7 @@ export default function Contact({ favoDogList }) {
     setOpen(false);
   };
 
-  // input validation
+  // simple input validation
   function handleChangeName(e) {
     setName(e.target.value);
   }
@@ -67,14 +69,27 @@ export default function Contact({ favoDogList }) {
       setNameError(nameError);
       setEmailError(emailError);
       return;
-    } else {
-      console.log('INPUT-name: ', name);
-      console.log('INPUT-email: ', email);
-      Cookies.remove('sum');
-      Cookies.remove('adopt');
-
-      openSnackBar();
     }
+
+    fetch('/api/deleteFavos', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((res) => {
+        if (res.ok !== true) {
+          setStatus('DELETE ERROR!!!');
+        }
+        return res.json();
+      })
+      .then((json) => {
+        setStatus('DELETED FAVO!!!');
+        console.log(status);
+      })
+      .catch(() => setStatus("NOOOP, doesn't work!!!"));
+
+    openSnackBar();
   }
 
   return (
@@ -201,6 +216,17 @@ export default function Contact({ favoDogList }) {
         input {
           width: 12em;
           height: 2em;
+        }
+        button {
+          width: 5em;
+          height: 2em;
+          border: none;
+          cursor: pointer;
+          border-radius: 5px;
+        }
+        button:hover {
+          background-color: rgba(224, 39, 174, 1);
+          color: #fff;
         }
       `}</style>
     </div>

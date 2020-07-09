@@ -8,6 +8,7 @@ import Button from '@material-ui/core/Button';
 //import Cookies from 'js-cookie';
 
 export default function SearchDogs({ favoDogList }) {
+  // save cookie with favo names for contact page
   // function save() {
   //   const eachName = favoDogList.map((el) => el.favoname);
   //   console.log('EACHNAME....', eachName);
@@ -16,6 +17,16 @@ export default function SearchDogs({ favoDogList }) {
   //   favo.push(favoName);
   //   Cookies.set('adopt', favo);
   // }
+
+  // could add a delete button with remove function to remove each dog
+  // function remove(indexToDelete) {
+  //   // return favoDogList.length === 1 && indexToDelete === 0
+  //   //   ? null
+  //   //   : setLists((list) =>
+  //   //       lists
+  //   //         .slice(0, indexToDelete)
+  //   //         .concat(lists.slice(indexToDelete + 1, lists.length)),
+  //   //     );
 
   return (
     <>
@@ -80,6 +91,20 @@ export default function SearchDogs({ favoDogList }) {
                       </a>
                     </Link>
                   </li>
+                  {/* <li>
+                    <div className="adopt-button">
+                      <Button
+                        variant="contained"
+                        color="primary"
+                        onClick={() => remove(i)}
+                      >
+                        Remove Me{' '}
+                        <span role="img" aria-label="emoji">
+                          ☘️
+                        </span>
+                      </Button>
+                    </div>
+                  </li> */}
                 </div>
               );
             })}
