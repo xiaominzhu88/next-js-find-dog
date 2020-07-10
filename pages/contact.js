@@ -59,7 +59,7 @@ export default function Contact({ favoDogList }) {
     return true;
   };
 
-  function handleSubmit(e) {
+  function handleSubmit(e, success) {
     e.preventDefault();
 
     const isValid = validate();
@@ -68,7 +68,6 @@ export default function Contact({ favoDogList }) {
     if (isValid === 'false') {
       setNameError(nameError);
       setEmailError(emailError);
-      return;
     }
 
     fetch('/api/deleteFavos', {
@@ -88,7 +87,6 @@ export default function Contact({ favoDogList }) {
         console.log(status);
       })
       .catch(() => setStatus("NOOOP, doesn't work!!!"));
-
     openSnackBar();
   }
 

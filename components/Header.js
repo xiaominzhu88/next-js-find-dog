@@ -34,7 +34,7 @@ export default function Header() {
       //body: JSON.stringify({ user }),
     })
       .then((response) => {
-        console.log('header-response', response);
+        //console.log('header-response', response);
 
         if (response.ok !== true) {
           throw new Error('Error fetching session');
@@ -51,7 +51,7 @@ export default function Header() {
       });
   }, []);
 
-  console.log('USER: ', user);
+  //console.log('USER: ', user);
 
   return (
     <div className="app">

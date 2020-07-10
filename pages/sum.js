@@ -50,7 +50,7 @@ export default function SearchDogs({ favoDogList }) {
                   </li>
                   {eachFavorite.lifespan ? (
                     <li>
-                      <b>Lifespan:</b> {eachFavorite.lifeSpan}
+                      <b>Lifespan:</b> {eachFavorite.lifespan}
                     </li>
                   ) : (
                     ''
@@ -58,7 +58,7 @@ export default function SearchDogs({ favoDogList }) {
                   {eachFavorite.breedgroup ? (
                     <li>
                       <b>Breed Group: </b>
-                      {eachFavorite.breedGroup}
+                      {eachFavorite.breedgroup}
                     </li>
                   ) : (
                     ''
@@ -205,7 +205,7 @@ export async function getServerSideProps(context) {
   const { getFavoDogs } = await import('../db');
   const favoDogList = await getFavoDogs();
 
-  //console.log('FAVOLIST: ', favoDogList);
+  console.log('FAVOLIST: ', favoDogList);
 
   return {
     props: {
