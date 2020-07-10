@@ -2,7 +2,7 @@
 # Findogs
 
 ## Description
-### “FINDOGS” makes the dog adoption process easier, by helping the user to discover a winning match. The user can search and match hundreds of adoptable dogs from different shelters or contact the shelter directly to get in touch.
+- “FINDOGS” makes the dog adoption process easier, by helping the user to discover a winning match. The user can search and match hundreds of adoptable dogs from different shelters or contact the shelter directly to get in touch.
 
 ### As a user, you have possibility to 
 
