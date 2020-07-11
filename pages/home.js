@@ -68,10 +68,7 @@ export default function Home() {
     setOpen(true);
   };
 
-  const handleClose = (e, reason) => {
-    if (reason === 'clickaway') {
-      return;
-    }
+  const handleClose = () => {
     setOpen(false);
   };
 
@@ -103,6 +100,7 @@ export default function Home() {
     weight_metric: dog.breeds[0]?.weight.metric,
     height_imperial: dog.breeds[0]?.height.imperial,
     height_metric: dog.breeds[0]?.height.metric,
+    id: dog.breeds[0]?.id,
   };
 
   useEffect(() => {
@@ -208,6 +206,7 @@ export default function Home() {
         breedGroup: sumDogs.breedGroup,
         temperament: sumDogs.char,
         url: sumDogs.dogImageUrl,
+        dogId: sumDogs.id,
       }),
     })
       .then((res) => {
@@ -296,6 +295,13 @@ export default function Home() {
                   🎲
                 </span>{' '}
                 {sumDogs.char}
+              </p>
+              <p>
+                Id:
+                <span role="img" aria-label="emoji">
+                  🎲
+                </span>{' '}
+                {sumDogs.id}
               </p>
             </div>
           ) : (

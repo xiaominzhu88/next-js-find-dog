@@ -8,7 +8,10 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     breedGroup: req.body.breedGroup,
     temperament: req.body.temperament,
     url: req.body.url,
+    dogId: req.body.dogId,
   };
+
+  console.log('REQUEST_BODY: ', req.body);
 
   if (req.body) {
     insertFavo(
@@ -17,6 +20,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       favoDogs.breedGroup,
       favoDogs.temperament,
       favoDogs.url,
+      favoDogs.dogId,
     )
       .then(() => console.log('FAVO SAVED'))
       .catch((err) => console.error('SAVE ERROR: ', err));
@@ -24,5 +28,5 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     console.log('NO FAVOS TO SAVE');
   }
   res.json({ favoDogs });
-  //console.log('Api-favos.ts-FAVODOGS: ', favoDogs);
+  console.log('Api-favos.ts-FAVODOGS: ', favoDogs);
 };

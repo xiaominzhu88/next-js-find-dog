@@ -24,7 +24,7 @@ export default function Login() {
         if (response.ok !== true) {
           setStatus('Failed logging in - response is not ok');
         }
-        console.log('JSON: ', JSON.stringify({ username, password }));
+        //console.log('JSON: ', JSON.stringify({ username, password }));
 
         //console.log('RESPONSE: ', response);
         return response.json();
@@ -53,7 +53,7 @@ export default function Login() {
         <title>Find-your-dog</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* <Header /> */}
+      <Header />
 
       <div className="auth">
         <div className="left">

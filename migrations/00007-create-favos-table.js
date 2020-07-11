@@ -1,5 +1,5 @@
 exports.up = async (sql) => {
-  sql`
+  await sql`
   CREATE TABLE favos(
     id SERIAL PRIMARY KEY,
    
@@ -7,11 +7,14 @@ exports.up = async (sql) => {
     lifeSpan VARCHAR,
     breedGroup VARCHAR,
     temperament VARCHAR,
-    url VARCHAR
+    url VARCHAR,
+    dogId VARCHAR,
+    -- use unique dogId to be sure that same dog will not be saved
+    UNIQUE(dogId)
 )`;
 };
 exports.down = async (sql) => {
-  sql`
+  await sql`
 	
 	DROP TABLE favos
 	

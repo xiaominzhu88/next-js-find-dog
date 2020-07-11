@@ -115,19 +115,22 @@ export async function deleteSessionByToken(token) {
   `;
 }
 
+// for home page save favourite
 export async function insertFavo(
   favoName,
   lifeSpan,
   breedGroup,
   temperament,
   url,
+  dogId,
 ) {
-  return sql`
-    INSERT INTO favos (favoName,lifeSpan,breedGroup,temperament,url) VALUES (${favoName},${lifeSpan},${breedGroup},${temperament},${url})
-  
-  `;
+  return await sql`
+    INSERT INTO favos (favoName,lifeSpan,breedGroup,temperament,url,dogId)
+    VALUES (${favoName},${lifeSpan},${breedGroup},${temperament},${url},${dogId})
+`;
 }
 
+// for sum page get favourite
 export async function getFavoDogs() {
   const favoDogs = await sql`
   SELECT * FROM favos
@@ -135,6 +138,7 @@ export async function getFavoDogs() {
   return favoDogs;
 }
 
+// for contact page button click remove favourite
 export async function deleteFavo() {
   const dogsToDelete = await sql`
   DELETE FROM favos 

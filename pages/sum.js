@@ -72,6 +72,15 @@ export default function SearchDogs({ favoDogList }) {
                   ) : (
                     ''
                   )}
+                  {eachFavorite.dogid ? (
+                    <li>
+                      {' '}
+                      <b>Id: </b>
+                      {eachFavorite.dogid}
+                    </li>
+                  ) : (
+                    ''
+                  )}
 
                   <li>
                     <Link href="/contact">
@@ -205,6 +214,7 @@ export async function getServerSideProps(context) {
   const { getFavoDogs } = await import('../db');
   const favoDogList = await getFavoDogs();
 
+  // returns Array
   console.log('FAVOLIST: ', favoDogList);
 
   return {

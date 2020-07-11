@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Fragment } from 'react';
 import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -22,24 +22,13 @@ export default function Contact({ favoDogList }) {
   // below using snackbar
   const [open, setOpen] = useState(false);
 
-  function openSnackBar() {
+  const openSnackBar = () => {
     setOpen(true);
-  }
-
-  const handleClose = (e, reason) => {
-    if (reason === 'clickaway') {
-      return;
-    }
-    setOpen(false);
   };
 
-  // simple input validation
-  function handleChangeName(e) {
-    setName(e.target.value);
-  }
-  function handleChangeEmail(e) {
-    setEmail(e.target.value);
-  }
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   const validate = () => {
     if (!email.includes('@')) {
@@ -59,16 +48,11 @@ export default function Contact({ favoDogList }) {
     return true;
   };
 
-  function handleSubmit(e, success) {
+  function handleSubmit(e) {
     e.preventDefault();
 
     const isValid = validate();
     console.log('VALIDATION: ', isValid);
-
-    if (isValid === 'false') {
-      setNameError(nameError);
-      setEmailError(emailError);
-    }
 
     fetch('/api/deleteFavos', {
       method: 'POST',
@@ -84,9 +68,10 @@ export default function Contact({ favoDogList }) {
       })
       .then((json) => {
         setStatus('DELETED FAVO!!!');
-        console.log(status);
+        console.log('STATUS: ', status);
       })
       .catch(() => setStatus("NOOOP, doesn't work!!!"));
+
     openSnackBar();
   }
 
@@ -106,7 +91,7 @@ export default function Contact({ favoDogList }) {
             name="name"
             value={name}
             type="text"
-            onChange={handleChangeName}
+            onChange={(e) => setName(e.target.value)}
           />
           {nameError ? <div style={{ color: 'red' }}>{nameError}</div> : null}
           <br />
@@ -116,39 +101,43 @@ export default function Contact({ favoDogList }) {
             name="email"
             value={email}
             type="text"
-            onChange={handleChangeEmail}
+            onChange={(e) => setEmail(e.target.value)}
           />
           {emailError ? <div style={{ color: 'red' }}>{emailError}</div> : null}{' '}
           <br />
           <br />
-          <button type="submit">Submit</button>{' '}
-          <Snackbar
-            anchorOrigin={{
-              vertical: 'bottom',
-              horizontal: 'left',
-            }}
-            open={open}
-            autoHideDuration={4000}
-            onClose={handleClose}
-            message="Thanks for your Email "
-            action={
-              <React.Fragment>
-                <Button color="secondary" size="small" onClick={handleClose}>
-                  <span role="img" aria-label="emoji">
-                    🍭
-                  </span>
-                </Button>
-                <IconButton
-                  size="small"
-                  aria-label="close"
-                  color="secondary"
-                  onClick={handleClose}
-                >
-                  <CloseIcon fontSize="small" />
-                </IconButton>
-              </React.Fragment>
-            }
-          />
+          <Fragment>
+            <Button type="submit" variant="contained" onClick={openSnackBar}>
+              Submit
+            </Button>{' '}
+            <Snackbar
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+              }}
+              open={open}
+              autoHideDuration={4000}
+              onClose={handleClose}
+              message="Thanks for your Email "
+              action={
+                <React.Fragment>
+                  <Button color="secondary" size="small" onClick={handleClose}>
+                    <span role="img" aria-label="emoji">
+                      🍭
+                    </span>
+                  </Button>
+                  <IconButton
+                    size="small"
+                    aria-label="close"
+                    color="secondary"
+                    onClick={handleClose}
+                  >
+                    <CloseIcon fontSize="small" />
+                  </IconButton>
+                </React.Fragment>
+              }
+            />
+          </Fragment>
         </form>
 
         <div className="toAdopt">
@@ -212,8 +201,8 @@ export default function Contact({ favoDogList }) {
           color: rgba(224, 39, 174, 1);
         }
         input {
-          width: 12em;
-          height: 2em;
+          width: 13em;
+          height: 2.5em;
         }
         button {
           width: 5em;
