@@ -18,16 +18,6 @@ export default function SearchDogs({ favoDogList }) {
   //   Cookies.set('adopt', favo);
   // }
 
-  // could add a delete button with remove function to remove each dog
-  // function remove(indexToDelete) {
-  //   // return favoDogList.length === 1 && indexToDelete === 0
-  //   //   ? null
-  //   //   : setLists((list) =>
-  //   //       lists
-  //   //         .slice(0, indexToDelete)
-  //   //         .concat(lists.slice(indexToDelete + 1, lists.length)),
-  //   //     );
-
   return (
     <>
       <Head>
@@ -100,20 +90,6 @@ export default function SearchDogs({ favoDogList }) {
                       </a>
                     </Link>
                   </li>
-                  {/* <li>
-                    <div className="adopt-button">
-                      <Button
-                        variant="contained"
-                        color="primary"
-                        onClick={() => remove(i)}
-                      >
-                        Remove Me{' '}
-                        <span role="img" aria-label="emoji">
-                          ☘️
-                        </span>
-                      </Button>
-                    </div>
-                  </li> */}
                 </div>
               );
             })}
@@ -214,7 +190,7 @@ export async function getServerSideProps(context) {
   const { getFavoDogs } = await import('../db');
   const favoDogList = await getFavoDogs();
 
-  // returns Array
+  // returns Array with saved favourite
   console.log('FAVOLIST: ', favoDogList);
 
   return {

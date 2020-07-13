@@ -222,7 +222,7 @@ export default function Home() {
         // if there is no info, all undefined except url
         setStatus('SAVED AS FAVO!!!');
       })
-      .catch(() => setStatus("NOOOP, doesn't work!!!"));
+      .catch((err) => setStatus("NOOOP, doesn't work!!!", err));
   }
 
   return (

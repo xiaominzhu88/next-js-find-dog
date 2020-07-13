@@ -51,7 +51,7 @@ export default function Contact({ favoDogList }) {
   function handleSubmit(e) {
     e.preventDefault();
 
-    const isValid = validate();
+    const isValid = validate(openSnackBar());
     console.log('VALIDATION: ', isValid);
 
     fetch('/api/deleteFavos', {
@@ -67,12 +67,10 @@ export default function Contact({ favoDogList }) {
         return res.json();
       })
       .then((json) => {
-        setStatus('DELETED FAVO!!!');
-        console.log('STATUS: ', status);
+        setStatus('DOGS DELETED!!!');
       })
       .catch(() => setStatus("NOOOP, doesn't work!!!"));
-
-    openSnackBar();
+    console.log('STATUS: ', status);
   }
 
   return (
@@ -115,17 +113,16 @@ export default function Contact({ favoDogList }) {
                 vertical: 'bottom',
                 horizontal: 'left',
               }}
-              open={open}
+              open={!emailError && !nameError ? open : false}
               autoHideDuration={4000}
-              onClose={handleClose}
-              message="Thanks for your Email "
+              message="Thank you for visit us  🍭"
               action={
                 <React.Fragment>
-                  <Button color="secondary" size="small" onClick={handleClose}>
-                    <span role="img" aria-label="emoji">
-                      🍭
-                    </span>
-                  </Button>
+                  <Button
+                    color="secondary"
+                    size="small"
+                    onClick={handleClose}
+                  ></Button>
                   <IconButton
                     size="small"
                     aria-label="close"
@@ -157,7 +154,7 @@ export default function Contact({ favoDogList }) {
                 We are your favourite
               </h3>
               {favoDogList.map((el, i) => (
-                <li key={i}> {el.favoname}</li>
+                <li key={i}> {el.favoname ? el.favoname : '🐶'}</li>
               ))}
             </ul>
           )}
@@ -230,7 +227,7 @@ export default function Contact({ favoDogList }) {
 //   };
 // }
 
-// get only NAMES from 'saved' favourite from DB which the same like sum page
+// get only NAMES from 'saved' favourite from DB
 export async function getServerSideProps(context) {
   const { getFavoDogs } = await import('../db');
   const favoDogList = await getFavoDogs();
