@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "migrate": "dotenv -e .env.local ley"
+    "migrate": "dotenv -e .env.local ley",
+    "heroku-postbuild": "yarn migrate up && yarn build"
   },
   "dependencies": {
     "@material-ui/core": "^4.10.2",
@@ -21,7 +22,6 @@
     "ley": "^0.5.0",
     "next": "9.4.4",
     "next-cookies": "^2.0.3",
-    "p-map": "^4.0.0",
     "postgres": "^1.0.2",
     "query-string": "^6.13.1",
     "react": "16.13.1",
