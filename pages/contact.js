@@ -115,7 +115,7 @@ export default function Contact({ favoDogList }) {
               }}
               open={!emailError && !nameError ? open : false}
               autoHideDuration={4000}
-              message="Thank you for visit us  🍭"
+              message="Thank you for visiting us  🍭"
               action={
                 <React.Fragment>
                   <Button
