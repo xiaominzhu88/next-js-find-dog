@@ -133,8 +133,6 @@ export default function Login() {
           }
           .right {
             width: 50%;
-            height: 65vh;
-            background-position: 25% 75%;
           }
 
           button {
@@ -157,11 +155,12 @@ export default function Login() {
           }
           input {
             margin: 1em auto;
-            width: 50%;
+            width: 80%;
             height: 2em;
             border-radius: 5px;
             border: none;
           }
+
           .submit {
             width: 5em;
             margin: 1em auto;
@@ -177,15 +176,24 @@ export default function Login() {
           @media (max-width: 450px) {
             .auth {
               display: block;
+              margin: 0 auto;
             }
             .left {
-              width: 100vw;
-              height: 45vh;
-              padding: 2em;
+              padding: 1em;
+              text-align: center;
+              margin: 1em auto;
+            }
+            img {
+              height: 20vh;
+              margin: 0 auto;
+            }
+
+            h1 {
+              font-size: 1.2em;
             }
 
             input {
-              margin: 0 auto;
+              margin: 1em auto;
             }
             .submit {
               width: 5em;

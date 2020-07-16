@@ -2,7 +2,6 @@ exports.up = async (sql) => {
   await sql`
   CREATE TABLE favos(
     id SERIAL PRIMARY KEY,
-   
     favoName VARCHAR,
     lifeSpan VARCHAR,
     breedGroup VARCHAR,

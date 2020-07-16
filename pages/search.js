@@ -10,7 +10,6 @@ import TextField from '@material-ui/core/TextField';
 export default function Breeds() {
   const [input, setInput] = useState('');
   const [filtered, setFiltered] = useState([]);
-
   // -------------  update input value  ------------------------
 
   function showValue(e) {
@@ -47,7 +46,6 @@ export default function Breeds() {
     // }
   }
   //console.log('filtered: ', filtered);
-
   return (
     <div>
       <Head>
@@ -65,7 +63,7 @@ export default function Breeds() {
             type="search"
             value={input}
             onChange={showValue}
-            style={{ width: 400 }}
+            style={{ width: 300 }}
           />
         </form>
       </div>
@@ -159,6 +157,9 @@ export default function Breeds() {
             line-height: 1em;
             margin: 1em auto;
             padding: 0.5;
+          }
+          .searchBar {
+            width: 200px;
           }
         }
       `}</style>

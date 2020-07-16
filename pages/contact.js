@@ -26,6 +26,10 @@ export default function Contact({ favoDogList }) {
     setOpen(true);
   };
 
+  const sendMail = () => {
+    return open ? (window.location.href = 'mailto:findogs@gmail.com') : null;
+  };
+
   const handleClose = () => {
     setOpen(false);
   };
@@ -107,6 +111,9 @@ export default function Contact({ favoDogList }) {
           <Fragment>
             <Button type="submit" variant="contained" onClick={openSnackBar}>
               Submit
+            </Button>{' '}
+            <Button type="submit" variant="contained" onClick={sendMail}>
+              Send
             </Button>{' '}
             <Snackbar
               anchorOrigin={{

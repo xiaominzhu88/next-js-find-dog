@@ -128,7 +128,7 @@ export async function insertFavo(
 ) {
   return await sql`
     INSERT INTO favos (favoName,lifeSpan,breedGroup,temperament,url,dogId)
-    VALUES (${favoName},${lifeSpan},${breedGroup},${temperament},${url},${dogId})
+    VALUES (${favoName},${lifeSpan},${breedGroup},${temperament},${url},${dogId}) 
 `;
 }
 

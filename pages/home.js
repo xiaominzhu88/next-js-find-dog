@@ -457,13 +457,17 @@ export default function Home() {
             font-size: 4em;
           }
 
-          @media (max-width: 450px) {
+          @media (max-width: 950px) {
+            .container {
+              width: 100vw;
+            }
             img {
-              width: 5em;
-              height: 5em;
+              width: 7em;
+              height: 7em;
             }
             .dogList {
               display: block;
+              width: 100vw;
             }
 
             .button-container {
@@ -471,8 +475,8 @@ export default function Home() {
             }
 
             .likeButton {
-              padding-right: 25px;
-              margin-right: -25px;
+              padding-right: 15px;
+              margin-right: -15px;
             }
             buttonSpan {
               font-size: 0.5em;
@@ -484,8 +488,8 @@ export default function Home() {
               height: 90px;
             }
             .favoButton {
-              padding-left: 50px;
-              margin-left: -50px;
+              padding-left: 30px;
+              margin-left: -30px;
             }
 
             .button-container span {

@@ -54,11 +54,11 @@ export default function Signup(props: Props) {
         <title>Find-your-dog</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* <Header /> */}
+      <Header />
 
       <div className="auth">
         <div className="left">
-          <div>
+          <div className="left-text">
             <h1>Register</h1>
             <p>{status}</p>
           </div>
@@ -131,6 +131,9 @@ export default function Signup(props: Props) {
             margin-top: 2em;
             padding: 0.5em;
           }
+          form {
+            margin: 1em auto;
+          }
           .left {
             background-color: #b5b1b5;
             width: 50%;
@@ -143,7 +146,7 @@ export default function Signup(props: Props) {
             width: 50%;
             height: 65vh;
             background-position: 25% 75%;
-            animation: flybirds 16s linear infinite;
+            animation: flydog 16s linear infinite;
           }
 
           button {
@@ -160,7 +163,7 @@ export default function Signup(props: Props) {
             border: none;
           }
 
-          @keyframes flybirds {
+          @keyframes flydog {
             from {
               background-position: 0px 0px;
             }
@@ -170,7 +173,6 @@ export default function Signup(props: Props) {
           }
           input {
             margin: 1em auto;
-            width: 50%;
             height: 2em;
             border-radius: 5px;
             border: none;
@@ -187,28 +189,35 @@ export default function Signup(props: Props) {
           }
 
           @media (max-width: 450px) {
+            .container {
+              margin: 0 auto;
+              text-align: center;
+            }
             .auth {
               display: block;
             }
             .left {
-              width: 100vw;
-              height: 45vh;
               padding: 2em;
+              text-align: center;
+              margin: 1em auto;
             }
+            .left-text {
+              margin: 1em auto;
+            }
+
             .right {
               background-image: url('/welcome.jpg');
               background-position: 50% 50%;
               width: 100vw;
-              height: 60vh;
+              height: 80vh;
             }
+
             h2 {
               margin: 2em auto;
               color: pink;
               text-align: center;
             }
-            input {
-              margin: 0 auto;
-            }
+
             .submit {
               width: 5em;
               margin: 1em auto;

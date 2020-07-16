@@ -1,3 +1,5 @@
+// THIS PAGE IS NOT BEING USED, IS A TEST PAGE WHICH FETCH THE API, IT HAS THE SAME CONTENT LIKE SEARCH.JS
+
 import React, { useState } from 'react';
 import Head from 'next/head';
 import Header from '../components/Header';

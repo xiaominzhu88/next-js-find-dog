@@ -54,6 +54,11 @@ function Footer() {
           }
 
           @media (max-width: 450px) {
+            footer {
+              margin: 0 auto;
+              display: block;
+              text-align: center;
+            }
             p {
               font-size: 1em;
             }
@@ -63,6 +68,9 @@ function Footer() {
             }
             .contact {
               margin: 0 auto;
+              display: flex;
+              justify-content: center;
+              align-items: center;
             }
           }
         `}

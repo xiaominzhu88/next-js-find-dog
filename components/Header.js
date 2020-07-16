@@ -152,6 +152,7 @@ export default function Header() {
           .nav-header {
             display: flex;
             flex-direction: column;
+            width: 95vw;
           }
 
           a {
