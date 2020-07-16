@@ -95,14 +95,18 @@ export default function SearchDogs({ favoDogList }) {
             })}
           </ul>
         ) : (
-          <div>
-            <h2>You don't have any favourite now</h2>
+          <div style={{ textAlign: 'center' }}>
+            <h2 style={{ fontSize: '1.2em' }}>
+              You don't have any favourite now
+            </h2>
             <Link href="/home">
               <a>
                 <Button
                   variant="contained"
                   color="primary"
-                  style={{ marginLeft: '45%' }}
+                  style={{
+                    marginBottom: '1em',
+                  }}
                 >
                   To Home
                 </Button>
