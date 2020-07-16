@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
+//import Header from '../../components/Header';
+//import Footer from '../../components/Footer';
 import Link from 'next/link';
 
 function Dog(props) {
@@ -13,7 +13,7 @@ function Dog(props) {
         <title>Find-your-dog</title>
         <link rel="icon" href="/favicon.jpg" />
       </Head>
-      <Header />
+      {/* <Header /> */}
 
       <main>
         <h1>
@@ -41,8 +41,8 @@ function Dog(props) {
           </a>
         </Link>
       </div>
+      {/* <Footer /> */}
 
-      <Footer />
       <style jsx>{`
         main {
           margin: 0 auto;
@@ -108,6 +108,12 @@ function Dog(props) {
         button:active {
           transition: transformY(4px);
           background-color: rgb(235, 208, 121);
+        }
+        @media (max-width: 450px) {
+          p {
+            font-size: 12px;
+            padding: 1.5em;
+          }
         }
       `}</style>
     </div>

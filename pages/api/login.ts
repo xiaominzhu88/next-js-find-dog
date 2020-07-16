@@ -1,6 +1,10 @@
 import crypto from 'crypto';
 import { serialize } from 'cookie';
-import { selectUserByUsername, insertSession } from '../../db';
+import {
+  selectUserByUsername,
+  insertSession,
+  deleteSessionByTime,
+} from '../../db';
 import { hashPassword, verifyHashMatchesPassword } from '../../hashing';
 import { NextApiRequest, NextApiResponse } from 'next';
 
@@ -37,6 +41,7 @@ export default async function login(req: NextApiRequest, res: NextApiResponse) {
 
   // below imported from db, which insert userId and token to sessions Table(00006)
   await insertSession(users[0].id, token);
+  await deleteSessionByTime();
 
   // use serialize to set cookie token
   const cookie = serialize('token', token, {

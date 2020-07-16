@@ -101,6 +101,8 @@ INSERT INTO users (username, password_hash) VALUES (${username}, ${passwordHash}
 export async function insertSession(userId, token) {
   return sql`
     INSERT INTO sessions (user_id, token) VALUES (${userId}, ${token})
+    
+
   `;
 }
 
@@ -108,12 +110,21 @@ export async function selectSessionByToken(token) {
   //console.log('TOKEN: ', token);
   return sql`
     SELECT * FROM sessions WHERE token = ${token}
+
         `;
 }
 
 export async function deleteSessionByToken(token) {
   return sql`
     DELETE FROM sessions WHERE token = ${token}
+
+  `;
+}
+
+export async function deleteSessionByTime() {
+  return sql`
+DELETE FROM sessions WHERE expiry_timestamp < NOW();
+
   `;
 }
 

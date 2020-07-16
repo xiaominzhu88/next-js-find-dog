@@ -219,6 +219,12 @@ export default function Contact({ favoDogList }) {
           background-color: rgba(224, 39, 174, 1);
           color: #fff;
         }
+        @media (max-width: 450px) {
+          .ul {
+            text-align: center;
+            margin: 0 auto;
+          }
+        }
       `}</style>
     </div>
   );

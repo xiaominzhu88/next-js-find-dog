@@ -9,7 +9,7 @@ function Footer() {
         <link rel="icon" href="/favicon.jpg" />
       </Head>
 
-      <footer className="footer">
+      <div className="footer">
         <div className="footerText">
           <p>Created by ZHU</p>
         </div>
@@ -17,6 +17,7 @@ function Footer() {
           <a href="https://github.com/xiaominzhu88">
             <img src="./github.png" alt="github link" />
           </a>
+
           <a href="https://twitter.com/Zhu23592976">
             <img src="./twitter.png" alt="twitter link" />
           </a>
@@ -24,7 +25,7 @@ function Footer() {
             <img src="./linkedIn.png" alt="linkedIn link" />
           </a>
         </div>
-      </footer>
+      </div>
       <style jsx>
         {`
           p {
@@ -35,7 +36,7 @@ function Footer() {
             font-size: 1em;
           }
 
-          footer {
+          .footer {
             background-color: black;
             padding: 5px;
             margin-top: 1em;
@@ -54,7 +55,7 @@ function Footer() {
           }
 
           @media (max-width: 450px) {
-            footer {
+            .footer {
               margin: 0 auto;
               display: block;
               text-align: center;

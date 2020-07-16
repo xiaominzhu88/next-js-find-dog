@@ -13,6 +13,7 @@ type dogsList = {
   h3: string;
   p: string;
 };
+
 type Props = { dogsList: dogsList[] };
 
 export default function Star(props: Props) {
@@ -29,7 +30,7 @@ export default function Star(props: Props) {
         <ul>
           {props.dogsList.map((list, i) => {
             return (
-              <li className={list.className} key={list.id}>
+              <li className={list.className} key={i}>
                 <div className="starDogs">
                   {/* Use Typescript, for Link error add : yarn upgrade @types/react@latest  */}
                   <Link href={list.url}>
