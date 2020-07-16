@@ -155,7 +155,7 @@ export default function Login() {
           }
           input {
             margin: 1em auto;
-            width: 80%;
+            width: 60%;
             height: 2em;
             border-radius: 5px;
             border: none;

@@ -60,10 +60,6 @@ function FetchedDog({ fetchedDogs, statusCode }) {
         </p>
 
         <h1>
-          <span role="img" aria-label="star">
-            🌟
-          </span>
-
           {fetchedDogs.name
             ? fetchedDogs.name
             : 'There is no information about me'}
@@ -159,13 +155,13 @@ function FetchedDog({ fetchedDogs, statusCode }) {
 
         h3 {
           font-family: 'Lucida Console', Monaco, monospace;
-          text-shadow: 0px 3px 3px orange;
-          color: darkcyan;
+          text-shadow: 0px 3px 3px #6e8309;
+          color: #3046bf;
         }
         p {
           font-size: 15px;
-          text-shadow: 0px 1px 2px orange;
-          color: darkcyan;
+          text-shadow: 0px 1px 2px #ffc107;
+          color: #3f51b5;
           text-align: left;
           font-weight: 700;
           margin: 1em auto;
@@ -194,6 +190,18 @@ function FetchedDog({ fetchedDogs, statusCode }) {
         .error-page {
           margin: 1em auto;
           text-align: center;
+        }
+        @media (max-width: 450px) {
+          h1 {
+            font-size: 1em;
+          }
+          h3 {
+            font-size: 0.8em;
+            color: ;
+          }
+          p {
+            font-size: 0.6em;
+          }
         }
       `}</style>
     </div>
