@@ -27,7 +27,9 @@ export default function Contact({ favoDogList }) {
   };
 
   const sendMail = () => {
-    return open ? (window.location.href = 'mailto:findogs@gmail.com') : null;
+    return !nameError && !emailError
+      ? (window.location.href = 'mailto:findogs@gmail.com')
+      : null;
   };
 
   const handleClose = () => {
@@ -55,7 +57,7 @@ export default function Contact({ favoDogList }) {
   function handleSubmit(e) {
     e.preventDefault();
 
-    const isValid = validate(openSnackBar());
+    const isValid = validate();
     console.log('VALIDATION: ', isValid);
 
     fetch('/api/deleteFavos', {
@@ -113,7 +115,7 @@ export default function Contact({ favoDogList }) {
               Submit
             </Button>{' '}
             <Button type="submit" variant="contained" onClick={sendMail}>
-              Send
+              Send Email
             </Button>{' '}
             <Snackbar
               anchorOrigin={{

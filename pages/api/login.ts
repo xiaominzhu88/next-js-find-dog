@@ -40,8 +40,8 @@ export default async function login(req: NextApiRequest, res: NextApiResponse) {
   console.log('Login.ts--session-token: ', token);
 
   // below imported from db, which insert userId and token to sessions Table(00006)
-  await insertSession(users[0].id, token);
   await deleteSessionByTime();
+  await insertSession(users[0].id, token);
 
   // use serialize to set cookie token
   const cookie = serialize('token', token, {
