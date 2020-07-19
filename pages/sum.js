@@ -2,14 +2,18 @@ import React, { useState } from 'react';
 import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-//import nextCookies from 'next-cookies';
 import Link from 'next/link';
 import Button from '@material-ui/core/Button';
+//import nextCookies from 'next-cookies';
 //import Cookies from 'js-cookie';
+import PopUp from '../components/PopUp';
 
 export default function SearchDogs({ favoDogList }) {
-  const [color, setColor] = useState('secondary');
-  const [isClicked, setIsClicked] = useState(false);
+  const [msg, setMsg] = useState('');
+  const [warning, setWarning] = useState('');
+  const [visible, setVisible] = useState(false);
+  const [status, setStatus] = useState('');
+
   // save cookie with favo names for contact page
   // function save() {
   //   const eachName = favoDogList.map((el) => el.favoname);
@@ -20,8 +24,35 @@ export default function SearchDogs({ favoDogList }) {
   //   Cookies.set('adopt', favo);
   // }
 
-  const favoIds = favoDogList.map((each) => each.dogid);
-  console.log(favoIds);
+  const togglePop = () => {
+    setVisible(true);
+  };
+  const close = () => {
+    setVisible(false);
+  };
+
+  const removeAll = (e) => {
+    e.preventDefault();
+
+    fetch('/api/deleteFavos', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((res) => {
+        if (res.ok !== true) {
+          setStatus('DELETE ERROR!!!');
+        }
+        return res.json();
+      })
+      .then((json) => {
+        setStatus('DOGS DELETED!!!');
+      })
+      .catch(() => setStatus("NOOOP, doesn't work!!!"));
+    console.log('STATUS: ', status);
+    window.localStorage.removeItem('contactedDogs');
+  };
 
   return (
     <>
@@ -32,79 +63,102 @@ export default function SearchDogs({ favoDogList }) {
       <Header />
 
       <div className="favorite-sum">
-        {favoDogList.length !== 0 ? (
-          <ul>
-            {favoDogList.map((eachFavorite, i) => {
-              return (
-                <div className="favorite-list" key={i}>
-                  <li>
-                    <img src={eachFavorite.url} alt="favorite-dog" />
-                  </li>
-                  <li>
-                    <h3> {eachFavorite.favoname}</h3>
-                  </li>
-                  {eachFavorite.lifespan ? (
-                    <li>
-                      <b>Lifespan:</b> {eachFavorite.lifespan}
-                    </li>
-                  ) : (
-                    ''
-                  )}
-                  {eachFavorite.breedgroup ? (
-                    <li>
-                      <b>Breed Group: </b>
-                      {eachFavorite.breedgroup}
-                    </li>
-                  ) : (
-                    ''
-                  )}
-                  {eachFavorite.temperament ? (
-                    <li>
-                      {' '}
-                      <b>Temperament: </b>
-                      {eachFavorite.temperament}
-                    </li>
-                  ) : (
-                    ''
-                  )}
-                  {eachFavorite.dogid ? (
-                    <li>
-                      {' '}
-                      <b>Id: </b>
-                      {eachFavorite.dogid}
-                    </li>
-                  ) : (
-                    ''
-                  )}
+        {/* PopUp component to show information */}
 
-                  <li>
-                    <a
-                      href={`mailto:shelter@vienna.com?subject=request to see ${eachFavorite.favoname}&body=Hey, I want to connect you for the dog ${eachFavorite.favoname} with id: ${eachFavorite.dogid}. Thank you`}
-                    >
+        {favoDogList.length !== 0 ? (
+          <div>
+            <ul>
+              {favoDogList.map((eachFavorite, i) => {
+                return (
+                  <div className="favorite-list" key={i}>
+                    <li>
+                      <img src={eachFavorite.url} alt="favorite-dog" />
+                    </li>
+                    <li>
+                      <h3> {eachFavorite.favoname}</h3>
+                    </li>
+                    {eachFavorite.lifespan ? (
+                      <li>
+                        <b>Lifespan:</b> {eachFavorite.lifespan}
+                      </li>
+                    ) : (
+                      ''
+                    )}
+                    {eachFavorite.breedgroup ? (
+                      <li>
+                        <b>Breed Group: </b>
+                        {eachFavorite.breedgroup}
+                      </li>
+                    ) : (
+                      ''
+                    )}
+                    {eachFavorite.temperament ? (
+                      <li>
+                        {' '}
+                        <b>Temperament: </b>
+                        {eachFavorite.temperament}
+                      </li>
+                    ) : (
+                      ''
+                    )}
+                    {eachFavorite.dogid ? (
+                      <li>
+                        {' '}
+                        <b>Id: </b>
+                        {eachFavorite.dogid}
+                      </li>
+                    ) : (
+                      ''
+                    )}
+                    <li>
+                      {/* <a
+                      href={`mailto:shelter@vienna.com?subject=request to see ${eachFavorite.favoname}&body=Hey, %0D%0A%0D%0AI want to connect you for %0D%0A%0D%0A🐶${eachFavorite.favoname} %0D%0A%0D%0Awith %0D%0A%0D%0A🎲id: ${eachFavorite.dogid}. %0D%0A%0D%0AThank you!`}
+                    > */}
                       {/* <Link href="/contact">
                       <a> */}
 
                       <div className="adopt-button">
                         <Button
                           variant="contained"
-                          color={isClicked ? 'inherit' : color}
-                          onClick={(e) => {
+                          color="secondary"
+                          key={i}
+                          //choose dogs and save ids to localStorage, click on adopt button directly open Email-send-contact window
+                          onClick={() => {
                             if (typeof window === 'undefined') {
                               throw new Error(
                                 'Cannot set localStorage (window is undefined)',
                               );
                             }
 
+                            const contactedDogs =
+                              JSON.parse(
+                                window.localStorage.getItem('contactedDogs'),
+                                // window.localStorage.getItem(
+                                //   JSON.stringify(eachFavorite.favoname),
+                                // ),
+                              ) || [];
+
+                            // no dubble dog is allowed to storage
+                            contactedDogs.indexOf(eachFavorite.dogid) === -1
+                              ? contactedDogs.push(eachFavorite.dogid)
+                              : setWarning(
+                                  'You can not adopt me more than 1 time 💥',
+                                  setTimeout(() => {
+                                    setWarning('');
+                                  }, 5000),
+                                );
+
                             window.localStorage.setItem(
                               'contactedDogs',
-                              JSON.stringify({ ...favoIds }),
+                              //JSON.stringify(eachFavorite.favoname),
+                              JSON.stringify(contactedDogs),
                             );
 
-                            const contactedDogs = JSON.parse(
-                              window.localStorage.getItem('contactedDogs') ||
-                                [],
-                            );
-                            console.log('contactedDogs: ', contactedDogs);
+                            console.log('contactedDogId: ', contactedDogs);
+
+                            setMsg(`You choosed 🐶 Id(s): ${contactedDogs}`);
+
+                            togglePop();
                           }}
                         >
                           Adopt Me{' '}
@@ -112,15 +166,52 @@ export default function SearchDogs({ favoDogList }) {
                             💌
                           </span>
                         </Button>
+                        <a
+                          href={`mailto:shelter@vienna.com?subject=request to see ${eachFavorite.favoname}&body=Hey, %0D%0A%0D%0AI want to connect you for %0D%0A%0D%0A🐶${eachFavorite.favoname} %0D%0A%0D%0Awith %0D%0A%0D%0A🎲id: ${eachFavorite.dogid}. %0D%0A%0D%0AThank you!`}
+                        >
+                          <Button
+                            variant="contained"
+                            color="inherit"
+                            style={{ color: 'red', marginLeft: '1em' }}
+                          >
+                            Send Email
+                            <span role="img" aria-label="emoji">
+                              ❣️
+                            </span>
+                          </Button>
+                        </a>
+                        <div className="popup">
+                          {visible ? (
+                            <PopUp
+                              toggle={togglePop}
+                              msg={msg}
+                              warning={warning}
+                              close={close}
+                            />
+                          ) : null}
+                        </div>
                       </div>
                       {/* </a>
                     </Link> */}
-                    </a>
-                  </li>
-                </div>
-              );
-            })}
-          </ul>
+                    </li>
+                  </div>
+                );
+              })}
+            </ul>
+            <div className="removeButton" style={{ textAlign: 'center' }}>
+              <Button
+                variant="contained"
+                color="secondary"
+                style={{ color: '#fff' }}
+                onClick={removeAll}
+              >
+                Remove All
+                <span role="img" aria-label="emoji">
+                  🍥
+                </span>
+              </Button>
+            </div>
+          </div>
         ) : (
           <div style={{ textAlign: 'center' }}>
             <h2 style={{ fontSize: '1.2em' }}>
@@ -181,6 +272,17 @@ export default function SearchDogs({ favoDogList }) {
           }
           a {
             text-decoration: none;
+          }
+
+          p,
+          h4 {
+            text-align: center;
+            font-family: 'Fira Mono', monospace;
+            color: rgb(221, 23, 90);
+            background-color: #dddadb;
+            width: 50%;
+            margin: 2em auto;
+            border-radius: 10px;
           }
 
           @media (max-width: 450px) {
