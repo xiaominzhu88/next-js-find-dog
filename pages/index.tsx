@@ -104,9 +104,8 @@ export default function Signup(props: Props) {
         <style jsx>{`
           html,
           body {
-            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-              Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-              sans-serif;
+            display: block;
+            margin: 0;
           }
 
           .start {

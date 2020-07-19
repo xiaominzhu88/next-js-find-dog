@@ -129,7 +129,7 @@ function FetchedDog({ fetchedDogs, statusCode }) {
         <Link href="/home">
           <a>
             <Button variant="contained" color="secondary">
-              To Home
+              To home
             </Button>
           </a>
         </Link>

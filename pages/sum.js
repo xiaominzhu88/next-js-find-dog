@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -8,6 +8,8 @@ import Button from '@material-ui/core/Button';
 //import Cookies from 'js-cookie';
 
 export default function SearchDogs({ favoDogList }) {
+  const [color, setColor] = useState('secondary');
+  const [isClicked, setIsClicked] = useState(false);
   // save cookie with favo names for contact page
   // function save() {
   //   const eachName = favoDogList.map((el) => el.favoname);
@@ -17,6 +19,9 @@ export default function SearchDogs({ favoDogList }) {
   //   favo.push(favoName);
   //   Cookies.set('adopt', favo);
   // }
+
+  const favoIds = favoDogList.map((each) => each.dogid);
+  console.log(favoIds);
 
   return (
     <>
@@ -73,22 +78,44 @@ export default function SearchDogs({ favoDogList }) {
                   )}
 
                   <li>
-                    <Link href="/contact">
-                      <a>
-                        <div className="adopt-button">
-                          <Button
-                            variant="contained"
-                            color="secondary"
-                            //onClick={save}
-                          >
-                            Adopt Me{' '}
-                            <span role="img" aria-label="emoji">
-                              💌
-                            </span>
-                          </Button>
-                        </div>
-                      </a>
-                    </Link>
+                    <a
+                      href={`mailto:shelter@vienna.com?subject=request to see ${eachFavorite.favoname}&body=Hey, I want to connect you for the dog ${eachFavorite.favoname} with id: ${eachFavorite.dogid}. Thank you`}
+                    >
+                      {/* <Link href="/contact">
+                      <a> */}
+
+                      <div className="adopt-button">
+                        <Button
+                          variant="contained"
+                          color={isClicked ? 'inherit' : color}
+                          onClick={(e) => {
+                            if (typeof window === 'undefined') {
+                              throw new Error(
+                                'Cannot set localStorage (window is undefined)',
+                              );
+                            }
+
+                            window.localStorage.setItem(
+                              'contactedDogs',
+                              JSON.stringify({ ...favoIds }),
+                            );
+
+                            const contactedDogs = JSON.parse(
+                              window.localStorage.getItem('contactedDogs') ||
+                                [],
+                            );
+                            console.log('contactedDogs: ', contactedDogs);
+                          }}
+                        >
+                          Adopt Me{' '}
+                          <span role="img" aria-label="emoji">
+                            💌
+                          </span>
+                        </Button>
+                      </div>
+                      {/* </a>
+                    </Link> */}
+                    </a>
                   </li>
                 </div>
               );
@@ -148,6 +175,7 @@ export default function SearchDogs({ favoDogList }) {
           .adopt-button {
             margin: 1.5em auto;
           }
+
           span {
             margin-left: 1em;
           }

@@ -235,7 +235,7 @@ export default function Home() {
       <Header />
 
       <div className="dogList">
-        <div>
+        <div className="imgDiv">
           {loading ? (
             <img src={loadingUrl} alt="preloadingUrl" />
           ) : (
@@ -360,17 +360,25 @@ export default function Home() {
       </div>
 
       <Footer />
+      <style jsx global>{`
+        body {
+          margin: 0;
+          padding: 0;
+        }
+      `}</style>
+
       <style jsx>
         {`
           @import url('https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap');
 
-          * {
+          div {
             box-sizing: border-box;
+            display: block;
+            margin: 0;
           }
 
           .container {
             margin: 0 auto;
-            padding: 0.5em;
           }
           .dogList {
             margin: 2em;
@@ -384,7 +392,7 @@ export default function Home() {
             height: 10em;
             border-radius: 50%;
             box-shadow: 3px 11px 18px #1b1a1aed;
-            margin: 2em 8.5em;
+            margin: 2em;
           }
           h2 {
             letter-spacing: 0.2em;
@@ -461,13 +469,17 @@ export default function Home() {
             .container {
               width: 100vw;
             }
+            .imgDiv {
+              text-align: center;
+              margin: 0 auto;
+            }
             img {
-              width: 7em;
-              height: 7em;
+              width: 10em;
+              height: 10em;
+              margin: 2em 0;
             }
             .dogList {
               display: block;
-              width: 100vw;
             }
 
             .button-container {

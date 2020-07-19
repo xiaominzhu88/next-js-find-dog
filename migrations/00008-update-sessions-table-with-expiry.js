@@ -1,7 +1,7 @@
-// Create the sessions table
+// Update sessions table with expiry-timestamp
 exports.up = async (sql) => {
-  // ALTER TABLE distributors ADD COLUMN address varchar(30);
-  //ALTER TABLE distributors DROP COLUMN address RESTRICT;
+  // ALTER TABLE --- ADD COLUMN --- ;
+  //ALTER TABLE --- DROP COLUMN --- ;
 
   sql`
     ALTER TABLE sessions ADD COLUMN 
@@ -9,7 +9,7 @@ exports.up = async (sql) => {
       `;
 };
 
-// Delete the sessions table
+// Delete from the sessions table expiry-timestamp
 exports.down = async (sql) => {
   sql`
     ALTER TABLE sessions DROP COLUMN expiry_timestamp

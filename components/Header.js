@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 export default function Header() {
   const [user, setUser] = useState(null);
+  const router = useRouter();
 
   const linkList = [
-    { name: 'Home', url: '/home' },
+    { name: 'Find', url: '/home' },
+    { name: 'Favourite', url: '/sum' },
     { name: 'About', url: '/about' },
-    { name: 'Search', url: './search' },
-    { name: 'Contact', url: '/contact' },
+    { name: 'Search', url: '/search' },
+    // { name: 'Contact', url: '/contact' },
   ];
 
   if (user === null) {
@@ -72,7 +75,10 @@ export default function Header() {
           {linkList.map((link, i) => {
             return (
               <Link href={link.url} key={i}>
-                <a>{link.name}</a>
+                {/* use useRouter define current page link style */}
+                <a className={router.pathname === link.url ? 'active' : ''}>
+                  {link.name}
+                </a>
               </Link>
             );
           })}
@@ -92,7 +98,7 @@ export default function Header() {
           );
           box-shadow: 3px 11px 18px #b3d1e9;
           text-align: center;
-          padding-top: 15px;
+          padding: 25px;
         }
 
         .links {
@@ -107,7 +113,9 @@ export default function Header() {
           margin-right: 1em;
           font-family: monospace;
         }
-        a:hover {
+
+        a:hover,
+        .active {
           text-decoration: underline;
           color: silver;
           font-weight: 700;
@@ -145,6 +153,12 @@ export default function Header() {
           display: inline-block;
         }
 
+        @media (max-width: 550px) {
+          a {
+            font-size: 1em;
+          }
+        }
+
         @media (max-width: 450px) {
           h1 {
             font-size: 1.5em;
@@ -152,16 +166,17 @@ export default function Header() {
           .nav-header {
             display: flex;
             flex-direction: column;
-            width: 95vw;
           }
 
           a {
-            font-size: 0.5em;
+            font-size: 0.8em;
             line-height: 1.2em;
-            margin-bottom: 1em;
+            padding: 1em 0;
+            display: inline-block;
           }
-          a:hover {
-            font-size: 0.5em;
+
+          .status {
+            border: none;
           }
         }
       `}</style>

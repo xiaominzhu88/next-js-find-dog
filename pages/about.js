@@ -46,7 +46,7 @@ export default function About() {
         setIndexes(getNextIndex(index));
       });
     }, 1500);
-    // clear interval, although images will go faster and crazy !
+    // clear interval!
     return () => clearInterval(interval);
     // wrap dependensies inside Array
   }, [index, getNextIndex, setIndexes, move, next]);
@@ -64,21 +64,32 @@ export default function About() {
         <p className="about">
           While adopting a dog is super rewarding, it is also a life-changing.
           You need to be prepared: <br />
+          <br />
           * You're Going to Spend a Lot of Money <br />
+          <br />
           * Any Extra Mental and Physical Energy You Have? Yep, That Goes to the
           Dog
           <br />
+          <br />
           * Are You Ready for a Little Family Drama?
+          <br />
           <br />
           * Say Goodbye to Spontaneous Travel or Late Nights for That Matter
           <br />
+          <br />
           * It's Not Going to Be What You Expect
+          <br />
           <br />
         </p>{' '}
         <h2>You can go to search page and find your dogs</h2>
         <br />
         <div className="dog-items">
-          <img src={pics[index]} alt="cute-dogs" />
+          {/* use dynamically inline-style instead img tag*/}
+          <div
+            style={{ backgroundImage: `url(${pics[index]}) ` }}
+            alt="cute-dogs"
+            className="dynamic-images"
+          ></div>
 
           <p className="about-text">
             {' '}
@@ -95,8 +106,7 @@ export default function About() {
         </div>
       </div>
       <div className="stars">
-        <img src="/about-us-dog.jpg" alt="cute-dogs" />
-        <br />
+        <div className="about-us-dog"></div>
         <Link href="/star">
           <a>
             <div className="star-view">
@@ -142,13 +152,23 @@ export default function About() {
             color: #9d9c9f;
           }
 
-          img {
-            width: 8em;
-            height: 8em;
+          .dynamic-images {
+            height: 20em;
+            min-width: 6em;
             border-radius: 20px;
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.33);
-            margin-top: 1em;
+            background-size: contain;
+            margin-top: 1.1em;
+            margin-bottom: 3.5em;
           }
+          .about-us-dog {
+            background-image: url('/about-us-dog.jpg');
+            background-size: cover;
+            height: 8em;
+            width: 10em;
+            background-position: right;
+            border-radius: 20px;
+          }
+
           .stars {
             margin: 0.5em auto;
             text-align: center;
@@ -169,25 +189,42 @@ export default function About() {
             margin-left: 2.5em;
           }
 
-          @media only screen and (max-width: 450px) {
+          @media (max-width: 650px) {
+            .stars {
+              display: block;
+            }
+            .star-view {
+              margin: 1em auto;
+            }
+            .dog-items {
+              display: block;
+            }
+            .dynamic-images {
+              height: 12em;
+              min-width: 5em;
+              background-size: contain;
+              background-size: cover;
+              background-position: center;
+              margin: 0 22px 30px;
+            }
+            .about-us-dog {
+              margin: 2em auto;
+            }
+          }
+          @media (max-width: 450px) {
             .about,
             .about-text {
               font-size: 0.8em;
               margin-left: 0;
             }
-            .dog-items {
-              display: block;
-            }
-            img {
-              margin: 1em auto;
-            }
+
             .stars {
               display: block;
               text-align: left;
               margin: 1em auto;
             }
             .star-view {
-              margin: 1em auto;
+              text-align: center;
             }
           }
         `}

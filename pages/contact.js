@@ -26,12 +26,6 @@ export default function Contact({ favoDogList }) {
     setOpen(true);
   };
 
-  const sendMail = () => {
-    return !nameError && !emailError
-      ? (window.location.href = 'mailto:findogs@gmail.com')
-      : null;
-  };
-
   const handleClose = () => {
     setOpen(false);
   };
@@ -57,9 +51,6 @@ export default function Contact({ favoDogList }) {
   function handleSubmit(e) {
     e.preventDefault();
 
-    const isValid = validate();
-    console.log('VALIDATION: ', isValid);
-
     fetch('/api/deleteFavos', {
       method: 'POST',
       headers: {
@@ -77,7 +68,16 @@ export default function Contact({ favoDogList }) {
       })
       .catch(() => setStatus("NOOOP, doesn't work!!!"));
     console.log('STATUS: ', status);
+
+    const isValid = validate();
+    console.log('VALIDATION: ', isValid);
   }
+
+  const sendMail = () => {
+    return !nameError && !emailError
+      ? (window.location.href = 'mailto:findogs@gmail.com')
+      : alert('NOT SENT');
+  };
 
   return (
     <div>
@@ -119,8 +119,8 @@ export default function Contact({ favoDogList }) {
             </Button>{' '}
             <Snackbar
               anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
+                vertical: 'top',
+                horizontal: 'right',
               }}
               open={!emailError && !nameError ? open : false}
               autoHideDuration={4000}

@@ -32,7 +32,7 @@ function Dog(props) {
       <div className="buttons">
         <Link href="/star">
           <a>
-            <button className="toStarButton">Our Stars</button>
+            <button className="toStarButton">To Stars</button>
           </a>
         </Link>
         <Link href="/home">
