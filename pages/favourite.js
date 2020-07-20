@@ -146,7 +146,7 @@ export default function SearchDogs({ favoDogList }) {
                             contactedDogs.indexOf(eachFavorite.dogid) === -1
                               ? contactedDogs.push(eachFavorite.dogid)
                               : setWarning(
-                                  'You can not adopt me more than 1 time 💥',
+                                  "I'm Unique, You can not adopt me more than 1 time 💥",
                                   setTimeout(() => {
                                     setWarning('');
                                   }, 5000),
