@@ -67,7 +67,7 @@ export default function SearchDogs({ favoDogList }) {
       <Header />
 
       <div className="favorite-sum">
-        {/* PopUp component to show information */}
+        {/* PopUp component show information */}
 
         {favoDogList.length !== 0 ? (
           <div>
@@ -115,9 +115,6 @@ export default function SearchDogs({ favoDogList }) {
                       ''
                     )}
                     <li>
-                      {/* <a
-                      href={`mailto:shelter@vienna.com?subject=request to see ${eachFavorite.favoname}&body=Hey, %0D%0A%0D%0AI want to connect you for %0D%0A%0D%0A🐶${eachFavorite.favoname} %0D%0A%0D%0Awith %0D%0A%0D%0A🎲id: ${eachFavorite.dogid}. %0D%0A%0D%0AThank you!`}
-                    > */}
                       {/* <Link href="/contact">
                       <a> */}
 
@@ -149,7 +146,7 @@ export default function SearchDogs({ favoDogList }) {
                                   "I'm Unique, You can not adopt me more than 1 time 💥",
                                   setTimeout(() => {
                                     setWarning('');
-                                  }, 5000),
+                                  }, 3000),
                                 );
 
                             window.localStorage.setItem(

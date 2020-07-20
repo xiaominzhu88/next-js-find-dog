@@ -24,7 +24,7 @@ export default function PopUp(props) {
           text-align: center;
           font-family: 'Fira Mono', monospace;
           color: rgb(221, 23, 90);
-          background-color: #dddadb;
+          background-color: #f6f0f0;
           width: 50%;
           margin: auto;
           padding: 1em;
