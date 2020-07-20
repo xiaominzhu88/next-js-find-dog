@@ -25,3 +25,6 @@
 - TypeScript
 
 
+Page Screenshot:
+
+<img src="/public/findogs.png" width="500" height="350">
