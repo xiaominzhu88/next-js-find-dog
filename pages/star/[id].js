@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Button from '@material-ui/core/Button';
-
+import Header from '../../components/Header';
 function Dog(props) {
   if (!props.dogs) return <div>Dogs not found!</div>;
 
@@ -12,7 +12,7 @@ function Dog(props) {
         <title>Find-your-dog</title>
         <link rel="icon" href="/favicon.jpg" />
       </Head>
-
+      <Header />
       <main>
         <h1>
           <span role="img" aria-label="star">

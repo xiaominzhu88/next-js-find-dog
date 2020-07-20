@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-//import Header from '../../components/Header';
+import Header from '../../components/Header';
 //import Footer from '../../components/Footer';
 import Link from 'next/link';
 import Button from '@material-ui/core/Button';
@@ -46,6 +46,7 @@ function FetchedDog({ fetchedDogs, statusCode }) {
         <title>Find-your-dog</title>
         <link rel="icon" href="/favicon.jpg" />
       </Head>
+      <Header />
       <main>
         <img
           src={fetchedDogs.url === null ? '/no-dog.jpg' : fetchedDogs.url}
