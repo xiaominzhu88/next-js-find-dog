@@ -7,6 +7,8 @@ import Button from '@material-ui/core/Button';
 //import nextCookies from 'next-cookies';
 //import Cookies from 'js-cookie';
 import PopUp from '../components/PopUp';
+import Router from 'next/router';
+
 
 export default function SearchDogs({ favoDogList }) {
   const [msg, setMsg] = useState('');
@@ -52,6 +54,9 @@ export default function SearchDogs({ favoDogList }) {
       .catch(() => setStatus("NOOOP, doesn't work!!!"));
     console.log('STATUS: ', status);
     window.localStorage.removeItem('contactedDogs');
+    setTimeout(() => {
+      Router.replace('/sum');
+    }, 1000);
   };
 
   return (

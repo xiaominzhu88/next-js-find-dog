@@ -64,7 +64,7 @@ function FetchedDog({ fetchedDogs, statusCode }) {
             ? fetchedDogs.name
             : 'There is no information about me'}
           <span role="img" aria-label="star">
-            🌟
+            💞
           </span>
         </h1>
         <h3>
@@ -121,7 +121,7 @@ function FetchedDog({ fetchedDogs, statusCode }) {
       <div className="buttons">
         <Link href="/search">
           <a>
-            <Button variant="contained" color="primary">
+            <Button variant="contained" color="inherit" style={{color:'red'}}>
               To Search
             </Button>
           </a>
@@ -140,28 +140,33 @@ function FetchedDog({ fetchedDogs, statusCode }) {
         @import url('https://fonts.googleapis.com/css2?family=Bitter:ital@1&display=swap');
 
         main {
-          margin: 3em auto;
           display: flex;
           flex-direction: column;
           align-items: center;
+          background-color: #f8f0f4;
+          padding: 2em;
+          margin: 0;
         }
 
         h1 {
           font-family: 'Lucida Console', Monaco, monospace;
           text-align: center;
           padding: 5px;
-          text-shadow: 0px 1px 2px orange;
+          text-shadow: 0px 1px 2px #ec6392;
+
+          color: #9E9E9E;
         }
 
         h3 {
           font-family: 'Lucida Console', Monaco, monospace;
-          text-shadow: 0px 3px 3px #6e8309;
-          color: #3046bf;
+          text-shadow: 0px 1px 2px #ec6392;
+          color: #9E9E9E;
         }
+
         p {
           font-size: 15px;
-          text-shadow: 0px 1px 2px #ffc107;
-          color: #3f51b5;
+          text-shadow: 0px 1px 2px #d2c9c9;
+          color: #9E9E9E;
           text-align: left;
           font-weight: 700;
           margin: 1em auto;

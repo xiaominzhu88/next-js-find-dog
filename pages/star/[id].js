@@ -1,8 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
-//import Header from '../../components/Header';
-//import Footer from '../../components/Footer';
 import Link from 'next/link';
+import Button from '@material-ui/core/Button';
+
 
 function Dog(props) {
   if (!props.dogs) return <div>Dogs not found!</div>;
@@ -13,7 +13,6 @@ function Dog(props) {
         <title>Find-your-dog</title>
         <link rel="icon" href="/favicon.jpg" />
       </Head>
-      {/* <Header /> */}
 
       <main>
         <h1>
@@ -32,17 +31,20 @@ function Dog(props) {
       <div className="buttons">
         <Link href="/star">
           <a>
-            <button className="toStarButton">To Stars</button>
+            <Button variant="contained" color="primary">
+              To Stars 🌟
+            </Button>
           </a>
         </Link>
         <Link href="/home">
           <a>
-            <button className="toHomeButton">To Home</button>
+            <Button variant="contained" color="secondary">
+              To home ➡️
+            </Button>
           </a>
         </Link>
       </div>
-      {/* <Footer /> */}
-
+     
       <style jsx>{`
         main {
           margin: 0 auto;
@@ -83,32 +85,12 @@ function Dog(props) {
           display: flex;
           justify-content: space-around;
           align-items: center;
+          margin:2em auto;
         }
-        button {
-          margin: 1em auto;
-          width: 6em;
-          height: 3em;
-          border: none;
-          padding: 5px;
-          border-radius: 5px;
-          cursor: pointer;
-          box-shadow: 6px 8px 10px lightpink;
-          background-color: rgb(217, 236, 230);
-          font-family: cursive;
-          font-size: 1em;
-          font-weight: bold;
-          outline: none;
-          transition: background-color 1s ease-in;
+        a{
+          text-decoration:none;
         }
-        button:hover {
-          background-color: yellow;
-          color: hotpink;
-          font-weight: 700;
-        }
-        button:active {
-          transition: transformY(4px);
-          background-color: rgb(235, 208, 121);
-        }
+
         @media (max-width: 450px) {
           p {
             font-size: 12px;

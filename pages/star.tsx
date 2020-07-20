@@ -55,6 +55,7 @@ export default function Star(props: Props) {
       <style jsx>{`
         h1 {
           text-align: center;
+          color:rgb(240, 76, 141);
         }
 
         .starDogs {
@@ -71,19 +72,24 @@ export default function Star(props: Props) {
           display: flex;
           justify-content: space-around;
           align-items: center;
-          background-color: #e7ecf0;
+          background-color: #f8f0f4;
         }
         p {
           font-size: 1em;
-          color: darkcyan;
+          color: rgb(240, 76, 141);
           text-decoration-line: overline;
           text-align: center;
           padding: 10px;
+          margin-left: 1em;
+
         }
         h3 {
           font-family: 'Lucida Console', Monaco, monospace;
           text-align: center;
           padding: 10px;
+          margin-left: 1em;
+          color:#9d9c9f;
+
         }
         img {
           box-shadow: 3px 11px 18px #7d7d7d7d;
@@ -92,17 +98,19 @@ export default function Star(props: Props) {
         @media (max-width: 450px) {
           h1 {
             font-size: 1.8em;
-            margin-top: 2em;
+            margin: 0.5em auto;
           }
           h3 {
             font-family: 'Lucida Console', Monaco, monospace;
             font-size: 0.7em;
             text-align: left;
-            margin-left: 2em;
+            margin-left: 0.3em;
           }
           p {
             font-size: 0.5em;
             margin-right: 0.5em;
+            margin-left:0.2em;
+
           }
           li {
             display: block;
