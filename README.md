@@ -1,30 +1,30 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## This is a desktop app created by Next.js
+# Findogs
 
-## Getting Started
+## Description
+- “FINDOGS” makes the dog adoption process easier, by helping the user to discover a winning match. The user can search and match hundreds of adoptable dogs from different shelters or contact the shelter directly to get in touch.
 
-First, run the development server:
+### As a user, you have possibility to 
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+- [ ] register / log in / out 
+- [ ] About Page: read information about adoption, view 'weekly star dogs', they could be updated each 3 weeks
+- [ ] Find Page: receive random dog images with one button click
+- [ ] Find Page: "like" the dogs and save them as favourite
+- [ ] Favourite page: click on 'adopt me' you will be able to see the choosed dog id(s) and with 'send Email' button you will be link to the email sending form which already contains id and name from those choosed dogs
+- [ ] Search Page: you are able to search dogs by breeds, you will get lists from your search field, each of them links to a page which contains information from that dog, on that page you are able to view the image, name, temperament, lifespan information... 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-## Learn More
+## This project contains:
 
-To learn more about Next.js, take a look at the following resources:
+- frontend code 
+- backend code
+- PostgreSQL database
+- user authentication (registration + login)
+- a readme with description, screenshots, technologies
+- TypeScript
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Page Screenshot:
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<img src="/public/findogs.png" width="500" height="350">
