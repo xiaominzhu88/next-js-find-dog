@@ -8,8 +8,8 @@ export default function Header() {
   const router = useRouter();
 
   const linkList = [
-    { name: 'Find', url: '/home' },
-    { name: 'Favourite', url: '/sum' },
+    { name: 'Fetch', url: '/fetch' },
+    { name: 'Favourite', url: '/favourite' },
     { name: 'About', url: '/about' },
     { name: 'Search', url: '/search' },
     // { name: 'Contact', url: '/contact' },

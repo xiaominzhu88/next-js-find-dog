@@ -9,7 +9,6 @@ import Button from '@material-ui/core/Button';
 import PopUp from '../components/PopUp';
 import Router from 'next/router';
 
-
 export default function SearchDogs({ favoDogList }) {
   const [msg, setMsg] = useState('');
   const [warning, setWarning] = useState('');
@@ -55,7 +54,7 @@ export default function SearchDogs({ favoDogList }) {
     console.log('STATUS: ', status);
     window.localStorage.removeItem('contactedDogs');
     setTimeout(() => {
-      Router.replace('/sum');
+      Router.replace('/favourite');
     }, 1000);
   };
 
@@ -207,7 +206,11 @@ export default function SearchDogs({ favoDogList }) {
               <Button
                 variant="contained"
                 color="secondary"
-                style={{ color: '#fff' }}
+                style={{
+                  color: '#fff',
+                  marginBottom: '1.5em',
+                  marginTop: '1.5em',
+                }}
                 onClick={removeAll}
               >
                 Remove All
@@ -222,7 +225,7 @@ export default function SearchDogs({ favoDogList }) {
             <h2 style={{ fontSize: '1.2em' }}>
               You don't have any favourite now
             </h2>
-            <Link href="/home">
+            <Link href="/fetch">
               <a>
                 <Button
                   variant="contained"
@@ -231,7 +234,7 @@ export default function SearchDogs({ favoDogList }) {
                     marginBottom: '1em',
                   }}
                 >
-                  To Home
+                  To Fetch
                 </Button>
               </a>
             </Link>

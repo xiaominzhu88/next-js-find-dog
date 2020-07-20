@@ -36,9 +36,9 @@ export default function Login() {
           setStatus('Failed logging in - check username and password');
         } else {
           setStatus('You are Logged in!!');
-          // Redirect to homepage after 1 seconds
+          // Redirect to fetchpage after 1 seconds
           setTimeout(() => {
-            Router.replace('/home');
+            Router.replace('/fetch');
           }, 1000);
         }
       })

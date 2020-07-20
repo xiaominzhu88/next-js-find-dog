@@ -27,7 +27,7 @@ export default function PopUp(props) {
           background-color: #dddadb;
           width: 50%;
           margin: 5em auto;
-          padding: 3em;
+          padding: 2em;
           border-radius: 10px;
         }
       `}</style>

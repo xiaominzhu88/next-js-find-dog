@@ -13,9 +13,9 @@ function CustomError({ statusCode }) {
         <h1>
           Page not exist ! <span>{statusCode}</span>
         </h1>
-        <Link href="/home">
+        <Link href="/fetch">
           <a>
-            <button className="toHomeButton">To Home</button>
+            <button className="toHomeButton">To Fetch</button>
           </a>
         </Link>
       </figcaption>

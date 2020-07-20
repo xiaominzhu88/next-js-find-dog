@@ -348,7 +348,7 @@ export default function Home() {
           </span>
         </button>
 
-        <Link href="/sum">
+        <Link href="/favourite">
           <a>
             <button className="favoButton" type="button">
               <span className="buttonSpan" role="img" aria-label="emoji">

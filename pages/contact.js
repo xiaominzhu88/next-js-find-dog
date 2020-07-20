@@ -169,7 +169,7 @@ export default function Contact({ favoDogList }) {
           )}
         </div>
 
-        <Link href="/sum ">
+        <Link href="/favourite ">
           <a>
             <Button
               variant="contained"
@@ -231,7 +231,7 @@ export default function Contact({ favoDogList }) {
     </div>
   );
 }
-// get NAMES from cookies which were saved from sum page
+// get NAMES from cookies which were saved from favourite page
 // export function getServerSideProps(context) {
 //   const { adopt } = nextCookies(context);
 

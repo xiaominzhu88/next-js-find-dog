@@ -21,10 +21,10 @@ function FetchedDog({ fetchedDogs, statusCode }) {
             </Button>
           </a>
         </Link>
-        <Link href="/home">
+        <Link href="/fetch">
           <a style={{ textDecoration: 'none' }}>
             <Button variant="contained" color="secondary">
-              To Homepage
+              To Fetch Page
             </Button>
           </a>
         </Link>
@@ -121,15 +121,19 @@ function FetchedDog({ fetchedDogs, statusCode }) {
       <div className="buttons">
         <Link href="/search">
           <a>
-            <Button variant="contained" color="inherit" style={{color:'red'}}>
+            <Button
+              variant="contained"
+              color="inherit"
+              style={{ color: 'red' }}
+            >
               To Search
             </Button>
           </a>
         </Link>
-        <Link href="/home">
+        <Link href="/fetch">
           <a>
             <Button variant="contained" color="secondary">
-              To home
+              To Fetch
             </Button>
           </a>
         </Link>
@@ -154,19 +158,19 @@ function FetchedDog({ fetchedDogs, statusCode }) {
           padding: 5px;
           text-shadow: 0px 1px 2px #ec6392;
 
-          color: #9E9E9E;
+          color: #9e9e9e;
         }
 
         h3 {
           font-family: 'Lucida Console', Monaco, monospace;
           text-shadow: 0px 1px 2px #ec6392;
-          color: #9E9E9E;
+          color: #9e9e9e;
         }
 
         p {
           font-size: 15px;
           text-shadow: 0px 1px 2px #d2c9c9;
-          color: #9E9E9E;
+          color: #9e9e9e;
           text-align: left;
           font-weight: 700;
           margin: 1em auto;

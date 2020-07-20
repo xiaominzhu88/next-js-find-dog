@@ -143,7 +143,7 @@ export async function insertFavo(
 `;
 }
 
-// for sum page get favourite
+// for vafourite page get favourite
 export async function getFavoDogs() {
   const favoDogs = await sql`
   SELECT * FROM favos
