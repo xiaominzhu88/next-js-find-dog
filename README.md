@@ -1,4 +1,4 @@
-## This is a desktop app using Next.js
+## This is a desktop app created by Next.js
 # Findogs
 
 ## Description
@@ -7,12 +7,12 @@
 ### As a user, you have possibility to 
 
 - [ ] register / log in / out 
-- [ ] view 'weekly star dogs', they will be updated statically from database
-- [ ] receive random dog images with button click
-- [ ] "like" the dogs and save them as favourite, you are able to go to that favourite page to view all of the saved favourite dogs
-- [ ] on favourite page you are able to "adopt" them, click on 'adopt me' you will be linked to contact page where you are able to send your contact form
-- [ ] you are able to search dogs by breeds, you will get lists from your search field, each of them links to a page which contains information from that dog 
-- [ ] on that page above you are able to view the image, name, temperament, lifespan information... 
+- [ ] About Page: read information about adoption, view 'weekly star dogs', they could be updated each 3 weeks
+- [ ] Find Page: receive random dog images with one button click
+- [ ] Find Page: "like" the dogs and save them as favourite
+- [ ] Favourite page: click on 'adopt me' you will be able to see the choosed dog id(s) and with 'send Email' button you will be link to the email sending form which already contains id and name from those choosed dogs
+- [ ] Search Page: you are able to search dogs by breeds, you will get lists from your search field, each of them links to a page which contains information from that dog, on that page you are able to view the image, name, temperament, lifespan information... 
+
 
 
 ## This project contains:
