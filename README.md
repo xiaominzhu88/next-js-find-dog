@@ -1,6 +1,6 @@
-## This is a desktop app created by Next.js
+## This is a desktop app created with Next.js ☘️
 
-# Findogs
+# Findogs 🐶
 
 ## Description
 
@@ -9,11 +9,19 @@
 ### As a user, you have possibility to
 
 - [ ] register / log in / out
-- [ ] About Page: read information about adoption, view 'weekly star dogs', they could be updated each 3 weeks
-- [ ] Find Page: receive random dog images with one button click
-- [ ] Find Page: "like" the dogs and save them as favourite
-- [ ] Favourite page: click on 'adopt me' you will be able to see the choosed dog id(s) and with 'send Email' button you will be link to the email sending form which already contains id and name from those choosed dogs
-- [ ] Search Page: you are able to search dogs by breeds, you will get lists from your search field, each of them links to a page which contains information from that dog, on that page you are able to view the image, name, temperament, lifespan information...
+
+- [ ] About Page: you can read about important notes before adopt a dog, you can view weekly dog stars, which could be updated every 3 weeks
+
+- [ ] Fetch Page: receive random dog images and information with button 🐶 click (thedogapi)
+- [ ] Fetch Page: click on button with 🤍, you will "like" the dogs and save them as favourite
+
+If you are not sure about the dog behaviours, you can search them by breeds
+
+- [ ] Search Page: you are able to search dogs by breeds(doesn't matter Uppercase or Lowercase), you will get lists from your search field, each of them links to a page which contains information from that dog, on that page you are able to view the image, name, temperament, lifespan information...
+
+You can choose the final dogs which you want to adopt, send Email with your request to shelter
+
+- [ ] Favourite page: click on 'adopt me' you will be able to see the saved dog id(s) and with 'send Email' button you will be link to the email sending form which already contains id and name from those dogs
 
 ## This project contains:
 
@@ -23,6 +31,7 @@
 - user authentication (registration + login)
 - a readme with description, screenshots, technologies
 - TypeScript
+- 404 page
 
 ## Technologies used
 
