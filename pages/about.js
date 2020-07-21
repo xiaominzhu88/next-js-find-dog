@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import Link from 'next/link';
+import Router from 'next/router';
 import Button from '@material-ui/core/Button';
 
 const pics = [
@@ -107,18 +107,19 @@ export default function About() {
       </div>
       <div className="stars">
         <div className="about-us-dog"></div>
-        <Link href="/star">
-          <a>
-            <div className="star-view">
-              <Button variant="contained" color="secondary">
-                Visit Our Stars
-                <span role="img" aria-label="emoji">
-                  🌟
-                </span>
-              </Button>
-            </div>
-          </a>
-        </Link>
+
+        <div className="star-view">
+          <Button
+            onClick={() => Router.push('/star')}
+            variant="contained"
+            color="secondary"
+          >
+            Visit Our Stars
+            <span role="img" aria-label="emoji">
+              🌟
+            </span>
+          </Button>
+        </div>
       </div>
 
       <Footer />

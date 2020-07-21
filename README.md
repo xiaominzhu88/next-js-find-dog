@@ -35,7 +35,7 @@ You can choose the final dogs which you want to adopt, send Email with your requ
 
 ## Technologies used
 
-This project is a Next.js app which makes use of PostgresQL database.
+This project is a Next.js app which makes use of a PostgresQL database.
 
 Migrations are set up with Ley.
 
@@ -43,35 +43,37 @@ Migrations are set up with Ley.
 
 - [ ] [`postgres`](https://www.npmjs.com/package/postgres)
 
-Some pages and components are written using Typescript.
+Some pages and components are written using TypeScript.
 
 Deployment was carried out with Heroku.
 
-## Setup instructions
+## Setup Instructions
 
 ### Database Setup
 
-Copy the .env.example file to .env and add the database connection information.
+Copy the `.env.example` file to `.env` and add the database connection information.
 
 You'll also need PostgreSQL for this.
 
-PostgreSQL Installation instructions
+#### PostgreSQL Installation Instructions
 
-Follow the instructions from the PostgreSQL step on https://www.postgresql.org/docs/10/runtime.html
+Follow the instructions from the PostgreSQL step on https://github.com/upleveled/system-setup/
 
-- [ ] Run the following queries inside of psql to set up the database and the user:
+```
+Run the following queries inside of psql to set up the database and the user:
 
-- [ ] CREATE DATABASE;
+CREATE DATABASE;
 
-- [ ] CREATE USER next_js_find_dog WITH ENCRYPTED PASSWORD 'net_js_find_dog';
+CREATE USER next_js_find_dog WITH ENCRYPTED PASSWORD 'net_js_find_dog';
 
-- [ ] GRANT ALL PRIVILEGES ON DATABASE next_js_find_dog TO next_js_find_dog;
+GRANT ALL PRIVILEGES ON DATABASE next_js_find_dog TO next_js_find_dog;
 
-- [ ] Then, to connect to the database using this new user, quit psql and reconnect:
+Then, to connect to the database using this new user, quit psql and reconnect:
 
 \q
 
 psql -U next_js_find_dog next_js_find_dog
+```
 
 You can run the migrations with the following command:
 `yarn migrate up`
@@ -92,16 +94,16 @@ To drop the last migration run the following in your terminal:
 
 Page Screenshot:
 
-<img src="/public/findogs.png" width="400" height="250">
+<img src="/public/findogs.png" width="400" height="250" alt='home'>
 
 Login page:
 
-<img src="/public/findogs-login.png" width="400" height="250">
+<img src="/public/findogs-login.png" width="400" height="250" alt='login'>
 
 Search page:
 
-<img src="/public/findogs-search.png" width="400" height="250">
+<img src="/public/findogs-search.png" width="400" height="250" alt='search'>
 
 Star page:
 
-<img src="/public/findogs-star.png" width="400" height="250">
+<img src="/public/findogs-star.png" width="400" height="250" alt='star'>

@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
+import Router from 'next/router';
 
 function CustomError({ statusCode }) {
   return (
@@ -13,11 +13,10 @@ function CustomError({ statusCode }) {
         <h1>
           Page not exist ! <span>{statusCode}</span>
         </h1>
-        <Link href="/fetch">
-          <a>
-            <button className="toHomeButton">To Fetch</button>
-          </a>
-        </Link>
+
+        <button onClick={() => Router.push('/fetch')} className="toHomeButton">
+          To Fetch
+        </button>
       </figcaption>
       <style jsx>{`
         h1 {

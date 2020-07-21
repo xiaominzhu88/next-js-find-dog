@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -58,11 +57,6 @@ export default function Header() {
 
   return (
     <div className="app">
-      <Head>
-        <title>Find-your-dog</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <header className="nav-header">
         <div className="nav">
           <div className="logo">

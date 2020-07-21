@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
+import Router from 'next/router';
 import Button from '@material-ui/core/Button';
 import Header from '../../components/Header';
 function Dog(props) {
@@ -28,38 +28,28 @@ function Dog(props) {
         <p>{props.dogs.p}</p>
       </main>
       <div className="buttons">
-        <Link href="/star">
-          <a>
-            <Button
-              variant="contained"
-              color="inherit"
-              style={{ color: 'red' }}
-            >
-              To Stars{' '}
-              <span
-                role="img"
-                aria-label="emoji"
-                style={{ marginLeft: '0.5em' }}
-              >
-                🌟
-              </span>
-            </Button>
-          </a>
-        </Link>
-        <Link href="/fetch">
-          <a>
-            <Button variant="contained" color="secondary">
-              To Fetch{' '}
-              <span
-                role="img"
-                aria-label="emoji"
-                style={{ marginLeft: '0.5em' }}
-              >
-                ➡️
-              </span>
-            </Button>
-          </a>
-        </Link>
+        <Button
+          variant="contained"
+          color="inherit"
+          style={{ color: 'red' }}
+          onClick={() => Router.push('/star')}
+        >
+          To Stars{' '}
+          <span role="img" aria-label="emoji" style={{ marginLeft: '0.5em' }}>
+            🌟
+          </span>
+        </Button>
+
+        <Button
+          variant="contained"
+          color="secondary"
+          onClick={() => Router.push('/retch')}
+        >
+          To Fetch{' '}
+          <span role="img" aria-label="emoji" style={{ marginLeft: '0.5em' }}>
+            ➡️
+          </span>
+        </Button>
       </div>
 
       <style jsx>{`

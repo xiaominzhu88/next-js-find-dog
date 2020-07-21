@@ -18,7 +18,7 @@ export default async function register(
   if (typeof secret !== 'string') {
     throw new Error('Token secret misconfigured!');
   }
-  console.log('register.ts--REquest: ', req.body);
+  console.log('register.ts--Request: ', req.body);
   const user = {
     username: req.body.username,
     password_hash: await argon2.hash(req.body.password),

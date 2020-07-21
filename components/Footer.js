@@ -1,13 +1,9 @@
 import React from 'react';
-import Head from 'next/head';
 
 function Footer() {
   return (
     <>
-      <Head>
-        <title>Find-your-dog</title>
-        <link rel="icon" href="/favicon.jpg" />
-      </Head>
+      
 
       <div className="footer">
         <div className="footerText">

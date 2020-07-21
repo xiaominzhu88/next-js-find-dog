@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import Link from 'next/link';
+import Router from 'next/router';
 //import Cookies from 'js-cookie';
 import Snackbar from '@material-ui/core/Snackbar';
 import Button from '@material-ui/core/Button';
@@ -348,15 +348,15 @@ export default function Home() {
           </span>
         </button>
 
-        <Link href="/favourite">
-          <a>
-            <button className="favoButton" type="button">
-              <span className="buttonSpan" role="img" aria-label="emoji">
-                ⭐️
-              </span>
-            </button>
-          </a>
-        </Link>
+        <button
+          className="favoButton"
+          type="button"
+          onClick={() => Router.push('/favourite')}
+        >
+          <span className="buttonSpan" role="img" aria-label="emoji">
+            ⭐️
+          </span>
+        </button>
       </div>
 
       <Footer />

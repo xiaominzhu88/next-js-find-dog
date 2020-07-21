@@ -2,7 +2,7 @@ import React, { useState, Fragment } from 'react';
 import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import Link from 'next/link';
+import Router from 'next/router';
 //import Cookies from 'js-cookie';
 //import nextCookies from 'next-cookies';
 //import TextField from '@material-ui/core/TextField';
@@ -169,17 +169,14 @@ export default function Contact({ favoDogList }) {
           )}
         </div>
 
-        <Link href="/favourite ">
-          <a>
-            <Button
-              variant="contained"
-              color="secondary"
-              style={{ margin: '1em auto' }}
-            >
-              To Favourite Page
-            </Button>
-          </a>
-        </Link>
+        <Button
+          variant="contained"
+          color="secondary"
+          style={{ margin: '1em auto' }}
+          onClick={() => Router.push('/favourite')}
+        >
+          To Favourite Page
+        </Button>
       </div>
       <Footer />
       <style jsx>{`

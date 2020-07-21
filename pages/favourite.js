@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import Link from 'next/link';
 import Button from '@material-ui/core/Button';
 //import nextCookies from 'next-cookies';
 //import Cookies from 'js-cookie';
@@ -222,19 +221,17 @@ export default function SearchDogs({ favoDogList }) {
             <h2 style={{ fontSize: '1.2em' }}>
               You don't have any favourite now
             </h2>
-            <Link href="/fetch">
-              <a>
-                <Button
-                  variant="contained"
-                  color="primary"
-                  style={{
-                    marginBottom: '1em',
-                  }}
-                >
-                  To Fetch
-                </Button>
-              </a>
-            </Link>
+
+            <Button
+              variant="contained"
+              color="primary"
+              style={{
+                marginBottom: '1em',
+              }}
+              onClick={() => Router.push('/fetch')}
+            >
+              To Fetch
+            </Button>
           </div>
         )}
       </div>

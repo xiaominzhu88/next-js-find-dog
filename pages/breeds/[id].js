@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Header from '../../components/Header';
 //import Footer from '../../components/Footer';
-import Link from 'next/link';
+import Router from 'next/router';
 import Button from '@material-ui/core/Button';
 import Error from 'next/error';
 
@@ -14,20 +14,22 @@ function FetchedDog({ fetchedDogs, statusCode }) {
         style={{ margin: '1em auto', textAlign: 'center', padding: '1em' }}
       >
         <h1>Ops! This dog is not at home!</h1>
-        <Link href="/search">
-          <a style={{ textDecoration: 'none' }}>
-            <Button variant="contained" color="primary">
-              To Search Page
-            </Button>
-          </a>
-        </Link>
-        <Link href="/fetch">
-          <a style={{ textDecoration: 'none' }}>
-            <Button variant="contained" color="secondary">
-              To Fetch Page
-            </Button>
-          </a>
-        </Link>
+
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() => Router.push('/search')}
+        >
+          To Search Page
+        </Button>
+
+        <Button
+          variant="contained"
+          color="secondary"
+          onClick={() => Router.push('/fetch')}
+        >
+          To Fetch Page
+        </Button>
       </div>
     );
   }
@@ -120,24 +122,22 @@ function FetchedDog({ fetchedDogs, statusCode }) {
       </main>
 
       <div className="buttons">
-        <Link href="/search">
-          <a>
-            <Button
-              variant="contained"
-              color="inherit"
-              style={{ color: 'red' }}
-            >
-              To Search
-            </Button>
-          </a>
-        </Link>
-        <Link href="/fetch">
-          <a>
-            <Button variant="contained" color="secondary">
-              To Fetch
-            </Button>
-          </a>
-        </Link>
+        <Button
+          variant="contained"
+          color="inherit"
+          style={{ color: 'red' }}
+          onClick={() => Router.push('/search')}
+        >
+          To Search
+        </Button>
+
+        <Button
+          variant="contained"
+          color="secondary"
+          onClick={() => Router.push('/fetch')}
+        >
+          To Fetch
+        </Button>
       </div>
 
       {/* <Footer /> */}
