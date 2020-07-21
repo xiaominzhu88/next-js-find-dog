@@ -9,8 +9,9 @@ function Dog(props) {
   return (
     <div>
       <Head>
-        <title>Find-your-dog</title>
+        <title>star</title>
         <link rel="icon" href="/favicon.jpg" />
+        <meta name="description" content="star" />
       </Head>
       <Header />
       <main>

@@ -54,8 +54,9 @@ export default function About() {
   return (
     <>
       <Head>
-        <title>Find-your-dog</title>
+        <title>about</title>
         <link rel="icon" href="/favicon.jpg" />
+        <meta name="description" content="about" />
       </Head>
       <Header />
 

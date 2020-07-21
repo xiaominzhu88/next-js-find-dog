@@ -60,8 +60,9 @@ export default function SearchDogs({ favoDogList }) {
   return (
     <>
       <Head>
-        <title>Find-your-dog</title>
+        <title>favourite</title>
         <link rel="icon" href="/favicon.jpg" />
+        <meta name="description" content="favourite" />
       </Head>
       <Header />
 

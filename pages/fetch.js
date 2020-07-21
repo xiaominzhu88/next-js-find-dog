@@ -228,8 +228,9 @@ export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>Find-your-dog</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>fetch</title>
+        <link rel="icon" href="/favicon.jpg" />
+        <meta name="description" content="fetch" />
       </Head>
 
       <Header />

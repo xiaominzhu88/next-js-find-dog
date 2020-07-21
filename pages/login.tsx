@@ -50,8 +50,9 @@ export default function Login() {
   return (
     <div className="container">
       <Head>
-        <title>Find-your-dog</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>login</title>
+        <link rel="icon" href="/favicon.jpg" />
+        <meta name="description" content="login" />
       </Head>
       <Header />
 

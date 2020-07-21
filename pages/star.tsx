@@ -20,8 +20,9 @@ export default function Star(props: Props) {
   return (
     <div>
       <Head>
-        <title>Find-your-dog</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>star</title>
+        <link rel="icon" href="/favicon.jpg" />
+        <meta name="description" content="star" />
       </Head>
 
       <Header />
@@ -55,7 +56,7 @@ export default function Star(props: Props) {
       <style jsx>{`
         h1 {
           text-align: center;
-          color:rgb(240, 76, 141);
+          color: rgb(240, 76, 141);
         }
 
         .starDogs {
@@ -81,15 +82,13 @@ export default function Star(props: Props) {
           text-align: center;
           padding: 10px;
           margin-left: 1em;
-
         }
         h3 {
           font-family: 'Lucida Console', Monaco, monospace;
           text-align: center;
           padding: 10px;
           margin-left: 1em;
-          color:#9d9c9f;
-
+          color: #9d9c9f;
         }
         img {
           box-shadow: 3px 11px 18px #7d7d7d7d;
@@ -109,8 +108,7 @@ export default function Star(props: Props) {
           p {
             font-size: 0.5em;
             margin-right: 0.5em;
-            margin-left:0.2em;
-
+            margin-left: 0.2em;
           }
           li {
             display: block;

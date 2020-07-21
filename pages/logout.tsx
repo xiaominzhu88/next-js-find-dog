@@ -8,7 +8,9 @@ export default function Logout() {
   return (
     <div>
       <Head>
-        <title>Logged out</title>
+        <title>logout</title>
+        <link rel="icon" href="/favicon.jpg" />
+        <meta name="description" content="logout" />
       </Head>
       <Header />
       <div>

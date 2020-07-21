@@ -49,8 +49,9 @@ export default function Breeds() {
   return (
     <div>
       <Head>
-        <title>Find-your-dog</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>search</title>
+        <link rel="icon" href="/favicon.jpg" />
+        <meta name="description" content="search" />
       </Head>
       <Header />
 
