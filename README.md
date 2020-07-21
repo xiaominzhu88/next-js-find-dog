@@ -83,13 +83,16 @@ To drop the last migration run the following in your terminal:
 
 Page Screenshot:
 
-<img src="/public/findogs.png" width="500" height="350">
+<img src="/public/findogs.png" width="400" height="250">
 
 Login page:
-<img src="/public/findogs-login.png" width="500" height="350">
+
+<img src="/public/findogs-login.png" width="400" height="250">
 
 Search page:
-<img src="/public/findogs-search.png" width="500" height="350">
+
+<img src="/public/findogs-search.png" width="400" height="250">
 
 Star page:
-<img src="/public/findogs-star.png" width="500" height="350">
+
+<img src="/public/findogs-star.png" width="400" height="250">
