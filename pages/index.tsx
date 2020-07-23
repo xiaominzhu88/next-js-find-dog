@@ -52,7 +52,7 @@ export default function Signup(props: Props) {
     <div className="container">
       <Head>
         <title>Find-your-dog</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.jpg" />
       </Head>
       <Header />
 

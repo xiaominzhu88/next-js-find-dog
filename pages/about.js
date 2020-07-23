@@ -56,7 +56,7 @@ export default function About() {
       <Head>
         <title>about</title>
         <link rel="icon" href="/favicon.jpg" />
-        <meta name="description" content="about" />
+        <meta name="about findogs page" content="about" />
       </Head>
       <Header />
 

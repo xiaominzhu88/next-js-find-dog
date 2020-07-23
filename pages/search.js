@@ -51,7 +51,7 @@ export default function Breeds() {
       <Head>
         <title>search</title>
         <link rel="icon" href="/favicon.jpg" />
-        <meta name="description" content="search" />
+        <meta name="search dogs by breeds" content="search" />
       </Head>
       <Header />
 

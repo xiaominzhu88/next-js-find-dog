@@ -62,7 +62,7 @@ export default function SearchDogs({ favoDogList }) {
       <Head>
         <title>favourite</title>
         <link rel="icon" href="/favicon.jpg" />
-        <meta name="description" content="favourite" />
+        <meta name="saved favourite dogs page" content="favourite" />
       </Head>
       <Header />
 
@@ -157,7 +157,7 @@ export default function SearchDogs({ favoDogList }) {
 
                             console.log('contactedDogId: ', contactedDogs);
 
-                            setMsg(`You choosed 🐶 Id(s): ${contactedDogs}`);
+                            setMsg(`You chose 🐶 Id(s): ${contactedDogs}`);
 
                             togglePop();
                           }}
@@ -168,7 +168,7 @@ export default function SearchDogs({ favoDogList }) {
                           </span>
                         </Button>
                         <a
-                          href={`mailto:shelter@vienna.com?subject=request to see ${eachFavorite.favoname}&body=Hey, %0D%0A%0D%0AI want to connect you for %0D%0A%0D%0A🐶${eachFavorite.favoname} %0D%0A%0D%0Awith %0D%0A%0D%0A🎲id: ${eachFavorite.dogid}. %0D%0A%0D%0AThank you!`}
+                          href={`mailto:shelter@vienna.com?subject=request to see ${eachFavorite.favoname}&body=Hey, %0D%0A%0D%0AI%20 want%20 to%20 connect%20 you%20 for %0D%0A%0D%0A🐶${eachFavorite.favoname} %0D%0A%0D%0Awith %0D%0A%0D%0A🎲id: ${eachFavorite.dogid}. %0D%0A%0D%0AThank%20you!%0D%0A%0D%0AAll%20the%20Best`}
                         >
                           <Button
                             variant="contained"

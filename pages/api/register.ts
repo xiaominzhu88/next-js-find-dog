@@ -36,5 +36,5 @@ export default async function register(
   res.json({
     user,
   });
-  console.log('USER with username and password: ', user);
+  console.log('USER with username and password_hash: ', user);
 }

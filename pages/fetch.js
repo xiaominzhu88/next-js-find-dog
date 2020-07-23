@@ -230,7 +230,10 @@ export default function Home() {
       <Head>
         <title>fetch</title>
         <link rel="icon" href="/favicon.jpg" />
-        <meta name="description" content="fetch" />
+        <meta
+          name="fetch and save dog images and informations"
+          content="fetch"
+        />
       </Head>
 
       <Header />

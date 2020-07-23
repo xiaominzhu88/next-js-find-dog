@@ -22,7 +22,7 @@ export default function Star(props: Props) {
       <Head>
         <title>star</title>
         <link rel="icon" href="/favicon.jpg" />
-        <meta name="description" content="star" />
+        <meta name="star dogs view" content="star" />
       </Head>
 
       <Header />
