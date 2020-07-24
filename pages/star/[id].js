@@ -44,7 +44,7 @@ function Dog(props) {
         <Button
           variant="contained"
           color="secondary"
-          onClick={() => Router.push('/retch')}
+          onClick={() => Router.push('/fetch')}
         >
           To Fetch{' '}
           <span role="img" aria-label="emoji" style={{ marginLeft: '0.5em' }}>
