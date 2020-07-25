@@ -132,6 +132,7 @@ export default function Signup(props: Props) {
           }
           form {
             margin: 1em auto;
+            text-align: center;
           }
           .left {
             background-color: #b5b1b5;

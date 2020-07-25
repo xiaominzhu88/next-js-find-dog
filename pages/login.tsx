@@ -108,10 +108,11 @@ export default function Login() {
             box-sizing: border-box;
             margin: 2em auto;
           }
-          .start {
+          form {
             margin: 2em auto;
             text-align: center;
           }
+
           h1 {
             margin: 1em auto;
             color: rgb(240, 93, 130);
@@ -169,6 +170,7 @@ export default function Login() {
             color: #fff;
             border-radius: 5px;
           }
+
           img {
             width: 50vw;
             height: 50vh;

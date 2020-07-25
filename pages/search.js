@@ -47,7 +47,7 @@ export default function Breeds() {
   }
   //console.log('filtered: ', filtered);
   return (
-    <div>
+    <div className="search-content">
       <Head>
         <title>search</title>
         <link rel="icon" href="/favicon.jpg" />
@@ -120,12 +120,19 @@ export default function Breeds() {
       <Footer />
 
       <style jsx>{`
+        .search-content {
+          display: flex;
+          flex-direction: column;
+          height: calc(100vh - 20px);
+        }
+
         .searchBar {
           display: flex;
           justify-content: center;
-          align-items: center;
+          align-items: flex-start;
           margin: 2em auto;
           width: 10em;
+          flex: 1;
         }
 
         table,
@@ -134,7 +141,7 @@ export default function Breeds() {
           list-style: none;
           font-family: Gill sans;
           line-height: 2em;
-          margin: 2em auto;
+          margin: 0 auto;
           background-color: rgb(227, 52, 167);
           border-radius: 15px;
           width: 60%;

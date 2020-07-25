@@ -15,7 +15,6 @@ export default function PopUp(props) {
         >
           &times;{' '}
         </span>
-        <h3>{props.msg}</h3>
         <h2>{props.warning}</h2>
       </div>
 
@@ -50,6 +49,13 @@ export default function PopUp(props) {
 
         .popup_inner {
           animation: popupA 0.8s;
+        }
+        h2 {
+          margin: 2.5em auto;
+        }
+        span {
+          font-size: 3em;
+          float: right;
         }
 
         @keyframes popupA {

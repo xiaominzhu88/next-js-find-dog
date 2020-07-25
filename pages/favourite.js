@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -9,10 +9,10 @@ import PopUp from '../components/PopUp';
 import Router from 'next/router';
 
 export default function SearchDogs({ favoDogList }) {
-  const [msg, setMsg] = useState('');
   const [warning, setWarning] = useState('');
   const [visible, setVisible] = useState(false);
   const [status, setStatus] = useState('');
+  const [adoptedDogs, setAdoptedDogs] = useState([]);
 
   // save cookie with favo names for contact page
   // function save() {
@@ -57,6 +57,12 @@ export default function SearchDogs({ favoDogList }) {
     }, 1000);
   };
 
+  useEffect(() => {
+    setAdoptedDogs(
+      JSON.parse(window.localStorage.getItem('contactedDogs')) || [],
+    );
+  }, []);
+
   return (
     <>
       <Head>
@@ -67,8 +73,6 @@ export default function SearchDogs({ favoDogList }) {
       <Header />
 
       <div className="favorite-sum">
-        {/* PopUp component show information */}
-
         {favoDogList.length !== 0 ? (
           <div>
             <ul>
@@ -115,85 +119,63 @@ export default function SearchDogs({ favoDogList }) {
                       ''
                     )}
                     <li>
-                      {/* <Link href="/contact">
-                      <a> */}
-
                       <div className="adopt-button">
-                        <Button
-                          variant="contained"
-                          color="secondary"
-                          key={i}
-                          //choose dogs and save ids to localStorage, click on adopt button directly open Email-send-contact window
-                          onClick={() => {
-                            if (typeof window === 'undefined') {
-                              throw new Error(
-                                'Cannot set localStorage (window is undefined)',
-                              );
-                            }
-
-                            const contactedDogs =
-                              JSON.parse(
-                                window.localStorage.getItem('contactedDogs'),
-                                // window.localStorage.getItem(
-                                //   JSON.stringify(eachFavorite.favoname),
-                                // ),
-                              ) || [];
-
-                            // no dubble dog is allowed to storage
-                            contactedDogs.indexOf(eachFavorite.dogid) === -1
-                              ? contactedDogs.push(eachFavorite.dogid)
-                              : setWarning(
-                                  "I'm Unique, You can not adopt me more than 1 time 💥",
-                                  setTimeout(() => {
-                                    setWarning('');
-                                  }, 3000),
-                                );
-
-                            window.localStorage.setItem(
-                              'contactedDogs',
-                              //JSON.stringify(eachFavorite.favoname),
-                              JSON.stringify(contactedDogs),
-                            );
-
-                            console.log('contactedDogId: ', contactedDogs);
-
-                            setMsg(`You chose 🐶 Id(s): ${contactedDogs}`);
-
-                            togglePop();
-                          }}
-                        >
-                          Adopt Me{' '}
-                          <span role="img" aria-label="emoji">
-                            💌
-                          </span>
-                        </Button>
+                        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                         <a
-                          href={`mailto:shelter@vienna.com?subject=request to see ${eachFavorite.favoname}&body=Hey, %0D%0A%0D%0AI%20 want%20 to%20 connect%20 you%20 for %0D%0A%0D%0A🐶${eachFavorite.favoname} %0D%0A%0D%0Awith %0D%0A%0D%0A🎲id: ${eachFavorite.dogid}. %0D%0A%0D%0AThank%20you!%0D%0A%0D%0AAll%20the%20Best`}
+                          href={
+                            adoptedDogs.includes(eachFavorite.dogid)
+                              ? '#'
+                              : `mailto:shelter@vienna.com?subject=request to see ${eachFavorite.favoname}&body=Hey, %0D%0A%0D%0AI%20 want%20 to%20 connect%20 you%20 for %0D%0A%0D%0A🐶${eachFavorite.favoname} %0D%0A%0D%0Awith %0D%0A%0D%0A🎲id: ${eachFavorite.dogid}. %0D%0A%0D%0AThank%20you!%0D%0A%0D%0AAll%20the%20Best`
+                          }
                         >
                           <Button
                             variant="contained"
-                            color="inherit"
-                            style={{ color: 'red', marginLeft: '1em' }}
+                            color="secondary"
+                            key={i}
+                            disabled={adoptedDogs.includes(eachFavorite.dogid)}
+                            //choose dogs and save ids to localStorage, click on adopt button -- open Email form
+                            onClick={() => {
+                              const contactedDogs =
+                                JSON.parse(
+                                  window.localStorage.getItem('contactedDogs'),
+                                ) || [];
+
+                              if (
+                                contactedDogs.indexOf(eachFavorite.dogid) === -1
+                              ) {
+                                window.localStorage.setItem(
+                                  'contactedDogs',
+                                  JSON.stringify([
+                                    ...contactedDogs,
+                                    eachFavorite.dogid,
+                                  ]),
+                                );
+                              } else {
+                                setWarning(
+                                  "I'm Unique, You can not adopt me more than 1 time 💥",
+                                );
+                                setAdoptedDogs(contactedDogs);
+                                togglePop();
+                              }
+                            }}
                           >
-                            Send Email
+                            Adopt Me{' '}
                             <span role="img" aria-label="emoji">
-                              ❣️
+                              💌
                             </span>
                           </Button>
                         </a>
+
                         <div className="popup">
                           {visible ? (
                             <PopUp
                               toggle={togglePop}
-                              msg={msg}
                               warning={warning}
                               close={close}
                             />
                           ) : null}
                         </div>
                       </div>
-                      {/* </a>
-                    </Link> */}
                     </li>
                   </div>
                 );
