@@ -15,7 +15,7 @@ function Footer() {
           <a href="https://twitter.com/Zhu23592976">
             <img src="./twitter.png" alt="twitter link" />
           </a>
-          <a href="https://www.linkedin.com/in/xiaomin-zhu-79462815/?locale=de_DE">
+          <a href="https://www.linkedin.com/in/xiaominzhu/ ">
             <img src="./linkedIn.png" alt="linkedIn link" />
           </a>
         </div>
