@@ -50,7 +50,6 @@ function Footer() {
 
           @media (max-width: 450px) {
             .footer {
-              margin: 0 auto;
               display: block;
               text-align: center;
             }

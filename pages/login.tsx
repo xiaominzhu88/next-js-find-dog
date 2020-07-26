@@ -38,7 +38,7 @@ export default function Login() {
           setStatus('You are Logged in!!');
           // Redirect to fetchpage after 1 seconds
           setTimeout(() => {
-            Router.replace('/fetch');
+            Router.replace('/about');
           }, 1000);
         }
       })

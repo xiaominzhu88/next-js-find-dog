@@ -20,14 +20,14 @@ export default function Star(props: Props) {
   return (
     <div>
       <Head>
-        <title>star</title>
+        <title>recommendations</title>
         <link rel="icon" href="/favicon.jpg" />
-        <meta name="star dogs view" content="star" />
+        <meta name="recommendations dogs view" content="recommendations" />
       </Head>
 
       <Header />
       <div>
-        <h1>Stars</h1>
+        <h1>Recommendations</h1>
         <ul>
           {props.dogsList.map((list, i) => {
             return (
@@ -96,11 +96,10 @@ export default function Star(props: Props) {
 
         @media (max-width: 450px) {
           h1 {
-            font-size: 1.8em;
+            font-size: 1.6em;
             margin: 0.5em auto;
           }
           h3 {
-            font-family: 'Lucida Console', Monaco, monospace;
             font-size: 0.7em;
             text-align: left;
             margin-left: 0.3em;

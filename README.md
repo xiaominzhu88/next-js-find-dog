@@ -10,7 +10,7 @@
 
 - [ ] register / log in / out
 
-- [ ] About Page: you can read about important notes before adopt a dog, you can view weekly dog stars, which could be updated every 3 weeks
+- [ ] About Page: you can read about important notes before adopt a dog, you can view weekly dog recommendations, which could be updated every 3 weeks
 
 - [ ] Fetch Page: receive random dog images and information with button 🐶 click (thedogapi)
 - [ ] Fetch Page: click on button with 🤍, you will "like" the dogs and save them as favourite
@@ -104,6 +104,6 @@ Search page:
 
 <img src="/public/findogs-search.png" width="400" height="250" alt='search'>
 
-Star page:
+recommendations page:
 
 <img src="/public/findogs-star.png" width="400" height="250" alt='star'>

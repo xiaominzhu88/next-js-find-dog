@@ -141,7 +141,7 @@ export default function Breeds() {
           list-style: none;
           font-family: Gill sans;
           line-height: 2em;
-          margin: 0 auto;
+          margin: 1em auto;
           background-color: rgb(227, 52, 167);
           border-radius: 15px;
           width: 60%;
@@ -165,6 +165,7 @@ export default function Breeds() {
             line-height: 1em;
             margin: 1em auto;
             padding: 0.5;
+            width: 80%;
           }
           .searchBar {
             width: 200px;

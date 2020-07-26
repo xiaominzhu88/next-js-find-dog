@@ -9,9 +9,9 @@ function Dog(props) {
   return (
     <div>
       <Head>
-        <title>star</title>
+        <title>recommendations</title>
         <link rel="icon" href="/favicon.jpg" />
-        <meta name="description" content="star" />
+        <meta name="description" content="recommendations" />
       </Head>
       <Header />
       <main>
@@ -33,9 +33,9 @@ function Dog(props) {
           variant="contained"
           color="inherit"
           style={{ color: 'red' }}
-          onClick={() => Router.push('/star')}
+          onClick={() => Router.push('/recommendations')}
         >
-          To Stars{' '}
+          Recommendations{' '}
           <span role="img" aria-label="emoji" style={{ marginLeft: '0.5em' }}>
             🌟
           </span>

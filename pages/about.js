@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Router from 'next/router';
-import Button from '@material-ui/core/Button';
+//import Button from '@material-ui/core/Button';
 
 const pics = [
   '/favicon.jpg',
@@ -82,7 +82,7 @@ export default function About() {
           <br />
           <br />
         </p>{' '}
-        <h2>You can go to search page and find your dogs</h2>
+        <h2 className="testimonials">Testimonials</h2>
         <br />
         <div className="dog-items">
           {/* use dynamically inline-style instead img tag*/}
@@ -95,31 +95,62 @@ export default function About() {
           <p className="about-text">
             {' '}
             “Before you get a dog, <br />
-            you can’t quite imagine what living with one might be like;
-            <br /> Afterward, <br />
-            you can’t imagine living any other way.” <br />– Caroline Knapp
+            you can’t quite imagine what living with one might be like.” <br />
+            <span style={{ color: 'black', fontWeight: '900' }}>
+              – Caroline Knapp
+            </span>
             <br />
           </p>
           <p className="about-text">
             “When you adopt a dog, you have a lot of very good days and one very
-            bad day.” <br />– W. Bruce Cameron
+            bad day.” <br />
+            <span style={{ color: 'black', fontWeight: '900' }}>
+              – W. Bruce Cameron
+            </span>
           </p>
         </div>
       </div>
+
+      <div className="finest">
+        <h2 className="recommendations">
+          <span role="img" aria-label="findogs finest">
+            💥
+          </span>
+          Recommendations: Findogs Finest
+          <span role="img" aria-label="findogs finest">
+            💥
+          </span>
+        </h2>
+        <p>
+          If you have difficulties choosing a dog, we have exclusive
+          recommendations for you.
+        </p>
+        <p>* Don't be shy just try ...</p>
+      </div>
+
       <div className="stars">
         <div className="about-us-dog"></div>
 
         <div className="star-view">
-          <Button
+          {/* <Button
             onClick={() => Router.push('/star')}
             variant="contained"
             color="secondary"
           >
-            Visit Our Stars
+            Visit Our recommendations
             <span role="img" aria-label="emoji">
               🌟
             </span>
-          </Button>
+          </Button> */}
+          <button
+            className="viewButton"
+            type="button"
+            onClick={() => Router.push('/recommendations')}
+          >
+            <span className="MuiButton-label" role="img" aria-label="emoji">
+              💥
+            </span>
+          </button>
         </div>
       </div>
 
@@ -136,7 +167,13 @@ export default function About() {
             text-align: center;
             font-family: monospace;
             font-size: 2em;
+            letter-spacing: 0.2em;
           }
+          .testimonials,
+          .recommendations {
+            letter-spacing: 0.08em;
+          }
+
           .about-text {
             margin-left: 50px;
           }
@@ -175,9 +212,7 @@ export default function About() {
             margin: 0.5em auto;
             text-align: center;
           }
-          span {
-            margin-left: 0.5em;
-          }
+
           a {
             text-decoration: none;
           }
@@ -190,8 +225,43 @@ export default function About() {
           .star-view {
             margin-left: 2.5em;
           }
+          .finest {
+            padding: 2em;
+          }
+
+          .MuiButton-label {
+            font-size: 5em;
+          }
+          .viewButton {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+          }
+          button {
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.33);
+          }
+
+          button:hover .MuiButton-label {
+            font-size: 6em !important;
+            transition: 0.5s;
+          }
+          button:focus {
+            outline: 0 !important;
+          }
+          button:active {
+            transition: transformY(4px);
+            background-color: rgb(235, 208, 121);
+          }
 
           @media (max-width: 650px) {
+            h2 {
+              font-size: 1.5em;
+            }
+            p {
+              font-size: 1em;
+            }
             .stars {
               display: block;
             }
@@ -202,15 +272,15 @@ export default function About() {
               display: block;
             }
             .dynamic-images {
-              height: 12em;
-              min-width: 5em;
+              height: 10em;
+              min-width: 5.5em;
               background-size: contain;
               background-size: cover;
               background-position: center;
               margin: 0 22px 30px;
             }
             .about-us-dog {
-              margin: 2em auto;
+              margin: 0 22px 30px;
             }
           }
           @media (max-width: 450px) {
@@ -219,10 +289,9 @@ export default function About() {
               font-size: 0.8em;
               margin-left: 0;
             }
-
             .stars {
               display: block;
-              text-align: left;
+              text-align: center;
               margin: 1em auto;
             }
             .star-view {
