@@ -309,7 +309,7 @@ export default function Home() {
               </p>
             </div>
           ) : (
-            <p>Relax ! Visit Next !</p>
+            <p>Want more? Visit Next !</p>
           )}
         </div>
       </div>
